@@ -27,10 +27,10 @@
                           withIndex:(NSInteger)index {
     self.pointXList = pointXList;
     self.index = index;
-//    UIColor *color = [UIColor colorWithRed:arc4random_uniform(255) / 255.0
-//                                     green:arc4random_uniform(255) / 255.0
-//                                      blue:arc4random_uniform(255) / 255.0
-//                                     alpha:1];
+    UIColor *color = [UIColor colorWithRed:arc4random_uniform(255) / 255.0
+                                     green:arc4random_uniform(255) / 255.0
+                                      blue:arc4random_uniform(255) / 255.0
+                                     alpha:1];
     [self setBackgroundColor:[UIColor whiteColor]];
     [self layoutIfNeeded];
 }
