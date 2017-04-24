@@ -15,6 +15,7 @@
 		842CBDCE1EAE0F5F0090D92F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842CBDCC1EAE0F5F0090D92F /* LaunchScreen.storyboard */; };
 		842CBDD81EAE10DD0090D92F /* DrawLineCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 842CBDD71EAE10DD0090D92F /* DrawLineCollectionView.m */; };
 		842CBDDB1EAE110E0090D92F /* DrawLineCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842CBDDA1EAE110E0090D92F /* DrawLineCollectionViewCell.m */; };
+		842CBDDE1EAE125D0090D92F /* DrawLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 842CBDDD1EAE125D0090D92F /* DrawLineView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		842CBDD71EAE10DD0090D92F /* DrawLineCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineCollectionView.m; sourceTree = "<group>"; };
 		842CBDD91EAE110E0090D92F /* DrawLineCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineCollectionViewCell.h; sourceTree = "<group>"; };
 		842CBDDA1EAE110E0090D92F /* DrawLineCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineCollectionViewCell.m; sourceTree = "<group>"; };
+		842CBDDC1EAE125D0090D92F /* DrawLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineView.h; sourceTree = "<group>"; };
+		842CBDDD1EAE125D0090D92F /* DrawLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 				842CBDD71EAE10DD0090D92F /* DrawLineCollectionView.m */,
 				842CBDD91EAE110E0090D92F /* DrawLineCollectionViewCell.h */,
 				842CBDDA1EAE110E0090D92F /* DrawLineCollectionViewCell.m */,
+				842CBDDC1EAE125D0090D92F /* DrawLineView.h */,
+				842CBDDD1EAE125D0090D92F /* DrawLineView.m */,
 			);
 			path = DrawView;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				842CBDDE1EAE125D0090D92F /* DrawLineView.m in Sources */,
 				842CBDD81EAE10DD0090D92F /* DrawLineCollectionView.m in Sources */,
 				842CBDC61EAE0F5F0090D92F /* ViewController.m in Sources */,
 				842CBDC31EAE0F5F0090D92F /* AppDelegate.m in Sources */,

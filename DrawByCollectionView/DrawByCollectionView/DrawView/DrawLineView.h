@@ -1,5 +1,5 @@
 //
-//  DrawLineCollectionView.h
+//  DrawLineView.h
 //  DrawByCollectionView
 //
 //  Created by 宋永建 on 2017/4/24.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DrawLineCollectionView : UICollectionView
-
-+ (instancetype)collectionView;
+@interface DrawLineView : UIView
 
 @end

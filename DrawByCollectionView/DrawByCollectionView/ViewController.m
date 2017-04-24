@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "DrawLineView.h"
+#define STDScreenW [UIScreen mainScreen].bounds.size.width
 
 @interface ViewController ()
 
@@ -17,6 +19,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    [self setupDrawLineView];
+}
+
+- (void)setupDrawLineView {
+    DrawLineView *lineView = [[DrawLineView alloc] init];
+    lineView.frame = CGRectMake(0, 120, STDScreenW, 100);
+    [self.view addSubview:lineView];
 }
 
 
