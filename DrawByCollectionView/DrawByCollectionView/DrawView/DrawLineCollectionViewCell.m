@@ -31,8 +31,8 @@
                                      green:arc4random_uniform(255) / 255.0
                                       blue:arc4random_uniform(255) / 255.0
                                      alpha:1];
-    [self setBackgroundColor:[UIColor whiteColor]];
-    [self layoutIfNeeded];
+    [self setBackgroundColor:[UIColor grayColor]];
+    [self setNeedsDisplay];
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -56,7 +56,7 @@
 - (void)lastPointDraw {
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextMoveToPoint(context, 0, [self lastPointY]);
-    CGContextAddLineToPoint(context, 100, [self currentPointY]);
+    CGContextAddLineToPoint(context, 50, [self currentPointY]);
     [[UIColor orangeColor] setStroke];
     CGContextDrawPath(context, kCGPathStroke);
 }

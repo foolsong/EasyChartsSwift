@@ -70,7 +70,7 @@
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
     layout.itemSize = CGSizeMake(100, 100);
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    layout.minimumLineSpacing = 1;
+    layout.minimumLineSpacing = 2;
     return layout;
 }
 
