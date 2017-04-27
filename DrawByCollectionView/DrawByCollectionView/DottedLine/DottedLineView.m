@@ -33,11 +33,27 @@
 - (void)drawRect:(CGRect)rect { // 可以通过 setNeedsDisplay 方法调用 drawRect:
     // Drawing code
     
-    CGContextRef context =UIGraphicsGetCurrentContext();
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    
+    
+    
+    CGContextMoveToPoint(context, 10, 10);
+    CGContextAddLineToPoint(context, 50, 80);
+    CGContextAddLineToPoint(context, 100,20);
+    [[UIColor orangeColor] setStroke];
+    CGContextDrawPath(context, kCGPathStroke);
+    
+    
+    
+    
+    
+    
+    
     // 设置线条的样式
     CGContextSetLineCap(context, kCGLineCapRound);
     // 绘制线的宽度
-    CGContextSetLineWidth(context, 3.0);
+    CGContextSetLineWidth(context, 1.0);
     // 线的颜色
     CGContextSetStrokeColorWithColor(context, [UIColor orangeColor].CGColor);
     // 开始绘制
@@ -52,6 +68,8 @@
     CGContextAddLineToPoint(context, 310.0,20.0);
     // 绘制
     CGContextStrokePath(context);
+    
+    
     // 关闭图像
     CGContextClosePath(context);
     
