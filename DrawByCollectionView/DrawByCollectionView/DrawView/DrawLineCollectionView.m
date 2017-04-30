@@ -14,12 +14,16 @@
 
 #import "DrawLineCollectionView.h"
 #import "DrawLineCollectionViewCell.h"
+#import "PointViewModel.h"
+
 #define STDScreenW [UIScreen mainScreen].bounds.size.width
 
 @interface DrawLineCollectionView ()<UICollectionViewDelegate,
                                    UICollectionViewDataSource>
 
 @property (nonatomic, copy) NSArray *pointXList;
+
+@property (nonatomic, strong) NSMutableArray <PointViewModel *>*pointModelLits;
 
 @end
 
@@ -86,7 +90,7 @@
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
 //    LessonPlanImage *lessonImage = self.imageUrls[indexPath.row];
-    [(DrawLineCollectionViewCell *)cell configureCellWithPointXList:self.pointXList withIndex:indexPath.row];
+    [(DrawLineCollectionViewCell *)cell configureCellWithPointXList:self.pointModelLits withIndex:indexPath.row];
 }
 
 #pragma mark - UICollectionViewDelegate
@@ -101,9 +105,94 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
 - (NSArray *)pointXList {
     if (_pointXList == nil) {
-        _pointXList = @[@"12",@"23",@"57",@"23",@"54",@"56",@"97",@"34",@"3",@"76",@"35",@"73",@"27",@"23"];
+        _pointXList = @[@"12",@"51",@"-1",@"73",@"27",@"23",@"12",@"51",@"-1",@"-1",@"27",@"23"];
     }
     return _pointXList;
+}
+
+
+- (NSMutableArray<PointViewModel *> *)pointModelLits {
+    if (_pointModelLits == nil) {
+        _pointModelLits = [NSMutableArray array];
+        [self test];
+    }
+    return _pointModelLits;
+}
+
+#pragma mark - 
+- (void)test {
+    
+    CGFloat offest = 0;
+    for (int i = 0; i < [self.pointXList count]; i++) {
+        NSString *numString = self.pointXList[i];
+        NSString *lastNumString;
+        NSString *nextNumString = nil;
+        
+        NSString *lastNum ;
+        
+        PointViewModel *pointModel = [[PointViewModel alloc] init];
+        
+        if (i - 1 < 0) {
+            lastNumString = nil;
+        } else {
+            PointViewModel *pointModel = [self.pointModelLits lastObject];
+            lastNumString = pointModel.pointX;
+            lastNum = self.pointXList[i - 1];
+        }
+        
+        if (i + 1 >= [self.pointXList count]) {
+            nextNumString = nil;
+        } else {
+            nextNumString = self.pointXList[i + 1];
+        }
+        
+        
+        
+        
+        if (lastNumString == nil) {
+            pointModel.leftLineType = LineTypeNoline;
+        } else if ([@"-1" isEqualToString:lastNum] || [@"-1" isEqualToString:numString]) {
+            pointModel.leftLineType = LineTypeDotted;
+        } else {
+            pointModel.leftLineType = LineTypeNormal;
+        }
+        
+        
+        
+        if (offest == 0) {
+            pointModel.pointX = numString;
+            [self.pointModelLits addObject:pointModel];
+        } else {
+            pointModel.pointX = [NSString stringWithFormat:@"%.0f",[lastNumString integerValue] + offest];
+            [self.pointModelLits addObject:pointModel];
+        }
+        
+        if (nextNumString == nil) {
+            offest = 0;
+            pointModel.rightLineType = LineTypeNoline;
+        } else if ([@"-1" isEqualToString:nextNumString]  || [@"-1" isEqualToString:numString]) {
+            pointModel.rightLineType = LineTypeDotted;
+        } else {
+            offest = 0;
+            pointModel.rightLineType = LineTypeNormal;
+        }
+        
+        if (offest == 0 &&  [@"-1" isEqualToString:nextNumString]) {
+            CGFloat num = 1;
+            for (int j = i + 1 ; [self.pointXList count]; j++) {
+                if ([@"-1" isEqualToString:self.pointXList[j]]) {
+                    num ++;
+                } else {
+                    offest = ([self.pointXList[j] integerValue] - [numString integerValue]) / num;
+                    break;
+                }
+            }
+        }
+        
+    }
+    
+    NSLog(@"%@",self.pointModelLits);
+    
 }
 
 @end

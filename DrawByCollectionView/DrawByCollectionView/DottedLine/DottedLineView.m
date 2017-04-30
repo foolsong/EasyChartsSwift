@@ -45,7 +45,11 @@
     CGContextDrawPath(context, kCGPathStroke);
     
     
-    
+    CGContextMoveToPoint(context, 100, 10);
+    CGContextAddLineToPoint(context, 150, 80);
+    CGContextAddLineToPoint(context, 150,20);
+    [[UIColor orangeColor] setStroke];
+    CGContextDrawPath(context, kCGPathStroke);
     
     
     

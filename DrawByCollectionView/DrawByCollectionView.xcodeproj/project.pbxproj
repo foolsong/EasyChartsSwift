@@ -17,6 +17,7 @@
 		842CBDDB1EAE110E0090D92F /* DrawLineCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842CBDDA1EAE110E0090D92F /* DrawLineCollectionViewCell.m */; };
 		842CBDDE1EAE125D0090D92F /* DrawLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 842CBDDD1EAE125D0090D92F /* DrawLineView.m */; };
 		84AD075A1EB2134900AA1A2A /* DottedLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD07591EB2134900AA1A2A /* DottedLineView.m */; };
+		AA362FA31EB4F342007E710A /* PointViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA362FA21EB4F342007E710A /* PointViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,8 @@
 		842CBDDD1EAE125D0090D92F /* DrawLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineView.m; sourceTree = "<group>"; };
 		84AD07581EB2134900AA1A2A /* DottedLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DottedLineView.h; sourceTree = "<group>"; };
 		84AD07591EB2134900AA1A2A /* DottedLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DottedLineView.m; sourceTree = "<group>"; };
+		AA362FA11EB4F342007E710A /* PointViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointViewModel.h; sourceTree = "<group>"; };
+		AA362FA21EB4F342007E710A /* PointViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +105,8 @@
 				842CBDDA1EAE110E0090D92F /* DrawLineCollectionViewCell.m */,
 				842CBDDC1EAE125D0090D92F /* DrawLineView.h */,
 				842CBDDD1EAE125D0090D92F /* DrawLineView.m */,
+				AA362FA11EB4F342007E710A /* PointViewModel.h */,
+				AA362FA21EB4F342007E710A /* PointViewModel.m */,
 			);
 			path = DrawView;
 			sourceTree = "<group>";
@@ -188,6 +193,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				842CBDDE1EAE125D0090D92F /* DrawLineView.m in Sources */,
+				AA362FA31EB4F342007E710A /* PointViewModel.m in Sources */,
 				842CBDD81EAE10DD0090D92F /* DrawLineCollectionView.m in Sources */,
 				842CBDC61EAE0F5F0090D92F /* ViewController.m in Sources */,
 				84AD075A1EB2134900AA1A2A /* DottedLineView.m in Sources */,
