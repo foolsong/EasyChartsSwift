@@ -61,14 +61,6 @@
     self.showsHorizontalScrollIndicator = NO;
 }
 
-- (BOOL)isRespondsDelegate {
-//    return _imageDelegate &&
-//    [_imageDelegate respondsToSelector:@selector(lessonPlanCollectionview:
-//                                                 imageClickedWithIndex:
-//                                                 imageType:)];
-    return NO;
-}
-
 #pragma mark - CollectionViewFlowLayout
 + (UICollectionViewFlowLayout *)collectionViewFlowLayout {
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
