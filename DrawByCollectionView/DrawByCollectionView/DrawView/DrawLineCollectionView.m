@@ -89,23 +89,17 @@
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-//    LessonPlanImage *lessonImage = self.imageUrls[indexPath.row];
     [(DrawLineCollectionViewCell *)cell configureCellWithPointXList:self.pointModelLits withIndex:indexPath.row];
 }
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    if ([self isRespondsDelegate]) {
-//        [_imageDelegate lessonPlanCollectionview:self
-//                           imageClickedWithIndex:indexPath.row
-//                                       imageType:_planType];
-//    }
 }
 
 - (NSArray *)pointXList {
     if (_pointXList == nil) {
-        _pointXList = @[@"12",@"51",@"-1",@"73",@"27",@"23",@"12",@"51",@"-1",@"-1",@"27",@"23"];
+        _pointXList = @[@"12",@"51",@"-1",@"73",@"27",@"63",@"12",@"51",@"-1",@"-1",@"27",@"93"];
     }
     return _pointXList;
 }
@@ -121,78 +115,36 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
 #pragma mark - 
 - (void)test {
-    
-    CGFloat offest = 0;
     for (int i = 0; i < [self.pointXList count]; i++) {
         NSString *numString = self.pointXList[i];
-        NSString *lastNumString;
-        NSString *nextNumString = nil;
-        
-        NSString *lastNum ;
+        NSString *lastNumString = [self numStringWithIndex:i - 1];
+        NSString *nextNumString = [self numStringWithIndex:i + 1];;
         
         PointViewModel *pointModel = [[PointViewModel alloc] init];
+        pointModel.leftLineType = [self lineTypeWithNumString:numString nearNumString:lastNumString];
+        pointModel.rightLineType = [self lineTypeWithNumString:numString nearNumString:nextNumString];
+        pointModel.pointX = [@"-1" isEqualToString:numString] ? @"99" : numString;
         
-        if (i - 1 < 0) {
-            lastNumString = nil;
-        } else {
-            PointViewModel *pointModel = [self.pointModelLits lastObject];
-            lastNumString = pointModel.pointX;
-            lastNum = self.pointXList[i - 1];
-        }
-        
-        if (i + 1 >= [self.pointXList count]) {
-            nextNumString = nil;
-        } else {
-            nextNumString = self.pointXList[i + 1];
-        }
-        
-        
-        
-        
-        if (lastNumString == nil) {
-            pointModel.leftLineType = LineTypeNoline;
-        } else if ([@"-1" isEqualToString:lastNum] || [@"-1" isEqualToString:numString]) {
-            pointModel.leftLineType = LineTypeDotted;
-        } else {
-            pointModel.leftLineType = LineTypeNormal;
-        }
-        
-        
-        
-        if (offest == 0) {
-            pointModel.pointX = numString;
-            [self.pointModelLits addObject:pointModel];
-        } else {
-            pointModel.pointX = [NSString stringWithFormat:@"%.0f",[lastNumString integerValue] + offest];
-            [self.pointModelLits addObject:pointModel];
-        }
-        
-        if (nextNumString == nil) {
-            offest = 0;
-            pointModel.rightLineType = LineTypeNoline;
-        } else if ([@"-1" isEqualToString:nextNumString]  || [@"-1" isEqualToString:numString]) {
-            pointModel.rightLineType = LineTypeDotted;
-        } else {
-            offest = 0;
-            pointModel.rightLineType = LineTypeNormal;
-        }
-        
-        if (offest == 0 &&  [@"-1" isEqualToString:nextNumString]) {
-            CGFloat num = 1;
-            for (int j = i + 1 ; [self.pointXList count]; j++) {
-                if ([@"-1" isEqualToString:self.pointXList[j]]) {
-                    num ++;
-                } else {
-                    offest = ([self.pointXList[j] integerValue] - [numString integerValue]) / num;
-                    break;
-                }
-            }
-        }
-        
+        [self.pointModelLits addObject:pointModel];
     }
-    
-    NSLog(@"%@",self.pointModelLits);
-    
+}
+
+- (NSString *)numStringWithIndex:(NSInteger)index {
+    if (index < 0 || index >= [self.pointXList count]) {
+        return nil;
+    } else {
+        return self.pointXList[index];
+    }
+}
+
+- (LineType)lineTypeWithNumString:(NSString *) numString nearNumString:(NSString *) nearNumString{
+    if (nearNumString == nil) {
+        return  LineTypeNoline;
+    } else if ([@"-1" isEqualToString:nearNumString] || [@"-1" isEqualToString:numString]) {
+        return LineTypeDotted;
+    } else {
+        return LineTypeNormal;
+    }
 }
 
 @end
