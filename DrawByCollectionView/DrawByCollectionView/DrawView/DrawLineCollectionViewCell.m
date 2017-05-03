@@ -99,7 +99,7 @@
     // 设置虚线绘制起点
     CGContextMoveToPoint(self.context, point.x, point.y);
     // lengths的值｛10,10｝表示先绘制10个点，再跳过10个点，如此反复
-    CGFloat lengths[] = {10,10};
+    CGFloat lengths[] = {5,5};
     // 虚线的起始点
     CGContextSetLineDash(self.context, 0, lengths,2);
     // 绘制虚线的终点
@@ -139,7 +139,7 @@
 
 
 - (CGFloat)currentPointY {
-    return [self.pointModel.pointX floatValue];
+    return [self.pointModel.pointY floatValue];
 }
 
 - (CGFloat)nextPointY {
@@ -147,7 +147,7 @@
         return 0;
     }
     PointViewModel *pointModel = self.pointXList[self.index + 1];
-    return ([pointModel.pointX floatValue] + [self currentPointY]) * 0.5;
+    return ([pointModel.pointY floatValue] + [self currentPointY]) * 0.5;
 }
 
 - (CGFloat)lastPointY {
@@ -155,7 +155,7 @@
         return 0;
     }
     PointViewModel *pointModel = self.pointXList[self.index - 1];
-    return ([pointModel.pointX floatValue] + [self currentPointY]) * 0.5;
+    return ([pointModel.pointY floatValue] + [self currentPointY]) * 0.5;
 }
 
 @end

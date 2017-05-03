@@ -21,7 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self setDottedLineView];
+//    [self setDottedLineView];
     
     [self setupDrawLineView];
     
@@ -30,14 +30,14 @@
 - (void)setDottedLineView {
     DottedLineView *dottedLineView = [[DottedLineView alloc] init];
     
-    dottedLineView.frame = CGRectMake(0, 100, STDScreenW, 100);
+    dottedLineView.frame = CGRectMake(0, 100, STDScreenW, 200);
     
     [self.view addSubview:dottedLineView];
 }
 
 - (void)setupDrawLineView {
     DrawLineView *lineView = [[DrawLineView alloc] init];
-    lineView.frame = CGRectMake(0, 220, STDScreenW, 100);
+    lineView.frame = CGRectMake(0, 220, STDScreenW, 200);
     [self.view addSubview:lineView];
 }
 

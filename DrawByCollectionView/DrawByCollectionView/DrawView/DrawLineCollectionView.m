@@ -30,7 +30,7 @@
 @implementation DrawLineCollectionView
 + (instancetype)collectionView {
     DrawLineCollectionView *collectionView =
-    [[self alloc]initWithFrame:CGRectMake(0, 0,STDScreenW ,100)
+    [[self alloc]initWithFrame:CGRectMake(0, 0,STDScreenW ,200)
           collectionViewLayout:[self collectionViewFlowLayout]];
     
     [collectionView registerClass:[DrawLineCollectionViewCell class] forCellWithReuseIdentifier:@"DrawLineCollectionViewCell"];
@@ -64,7 +64,7 @@
 #pragma mark - CollectionViewFlowLayout
 + (UICollectionViewFlowLayout *)collectionViewFlowLayout {
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
-    layout.itemSize = CGSizeMake(100, 100);
+    layout.itemSize = CGSizeMake(100, 200);
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     layout.minimumLineSpacing = 2;
     return layout;
@@ -115,7 +115,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         PointViewModel *pointModel = [[PointViewModel alloc] init];
         pointModel.leftLineType = [self lineTypeWithNumString:numString nearNumString:lastNumString];
         pointModel.rightLineType = [self lineTypeWithNumString:numString nearNumString:nextNumString];
-        pointModel.pointX = [@"-1" isEqualToString:numString] ? @"99" : numString;
+        pointModel.pointY = [@"-1" isEqualToString:numString] ? @"199" : [NSString stringWithFormat:@"%f",[numString floatValue] * 2];
         
         [self.pointModelLits addObject:pointModel];
     }

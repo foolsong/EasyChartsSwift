@@ -22,7 +22,7 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat:@"%lu    %lu     %@",(unsigned long)_leftLineType,(unsigned long)_rightLineType,_pointX];
+    return [NSString stringWithFormat:@"%lu    %lu     %@",(unsigned long)_leftLineType,(unsigned long)_rightLineType,_pointY];
 }
 
 @end
