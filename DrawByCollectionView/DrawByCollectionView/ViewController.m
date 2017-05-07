@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "DrawLineView.h"
 #import "DottedLineView.h"
+#import "DrawCircleView.h"
+#import "DrawProgressView.h"
 
 #define STDScreenW [UIScreen mainScreen].bounds.size.width
 
@@ -25,6 +27,10 @@
     
     [self setupDrawLineView];
     
+    [self setupDrawCircleView];
+    
+    [self setupProgressView];
+    
 }
 
 - (void)setDottedLineView {
@@ -37,10 +43,21 @@
 
 - (void)setupDrawLineView {
     DrawLineView *lineView = [[DrawLineView alloc] init];
-    lineView.frame = CGRectMake(0, 220, STDScreenW, 200);
+    lineView.frame = CGRectMake(0, 20, STDScreenW, 200);
     [self.view addSubview:lineView];
 }
 
+- (void)setupDrawCircleView {
+    DrawCircleView *circleView = [[DrawCircleView alloc] init];
+    circleView.frame = CGRectMake(0, 240, STDScreenW, 200);
+    [self.view addSubview:circleView];
+}
+
+- (void)setupProgressView {
+    DrawProgressView *progressView = [[DrawProgressView alloc] init];
+    progressView.frame = CGRectMake(0, 460, STDScreenW, 200);
+    [self.view addSubview:progressView];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
