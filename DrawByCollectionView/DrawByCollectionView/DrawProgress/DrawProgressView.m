@@ -100,6 +100,8 @@
     CGFloat startA = -M_PI_2;
     CGFloat endA = -M_PI_2 + (_lastProgress / 100.0) * M_PI * 2;
     UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:startA endAngle:endA clockwise:YES];
+    CGContextSetStrokeColorWithColor(ctx, [UIColor orangeColor].CGColor);
+    CGContextSetLineWidth(ctx, 6.0);
     
     CGContextAddPath(ctx, path.CGPath);
     CGContextStrokePath(ctx);

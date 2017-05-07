@@ -34,7 +34,7 @@ static inline float radians(double degrees) {
 }
 
 - (void)drawRect:(CGRect)rect {
-    [self draw2];
+    [self draw1];
 }
 
 - (void)draw2 {
@@ -105,21 +105,14 @@ static inline float radians(double degrees) {
     CGFloat w = self.bounds.size.width * 0.5;
     CGFloat h = self.bounds.size.height * 0.5 ;
     
-    //数据数组
     NSArray *array = @[@25,@30,@45];
-    //颜色数组
     NSArray *colorArray = @[[UIColor redColor], [UIColor greenColor], [UIColor yellowColor]];
     
     CGContextRef ctx =UIGraphicsGetCurrentContext();
-    
-    //中心点
     CGPoint center = CGPointMake(w * 0.7, h * 0.9);
-    //半径
     CGFloat radius = w * 0.5 - 5;
     
-    //起点角度
     CGFloat startA = 0;
-    //终点角度
     CGFloat endA = 0;
     //扫过角度范围
     CGFloat angle = 0;
@@ -133,15 +126,10 @@ static inline float radians(double degrees) {
         //弧形路径
         //clockwise: 是否是按照时钟的方向旋转(是否顺时针)
         UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:startA endAngle:endA clockwise:YES];
-        //连接中心, 构成扇形
         [path addLineToPoint:center];
-        
-        //填充颜色
         [(UIColor *)colorArray[i] set];
         
         CGContextAddPath(ctx, path.CGPath);
-        
-        // 将上下文渲染到视图
         CGContextFillPath(ctx);
     }
 }
