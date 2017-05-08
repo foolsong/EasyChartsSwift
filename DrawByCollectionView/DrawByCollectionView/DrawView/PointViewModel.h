@@ -22,8 +22,4 @@ typedef NS_ENUM(NSUInteger, LineType) {
 
 @property (nonatomic, copy) NSString *pointY;
 
-//@property(nonatomic, assign) CGPoint leftPoint;
-//@property(nonatomic, assign) CGPoint middlePoint;
-//@property(nonatomic, assign) CGPoint rightPoint;
-
 @end

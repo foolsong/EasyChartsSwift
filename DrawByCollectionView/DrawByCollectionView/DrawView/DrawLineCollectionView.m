@@ -96,7 +96,6 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     return _pointXList;
 }
 
-
 - (NSMutableArray<PointViewModel *> *)pointModelLits {
     if (_pointModelLits == nil) {
         _pointModelLits = [NSMutableArray array];
