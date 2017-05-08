@@ -30,6 +30,8 @@
 		84E5BF431EBA16F200BCFCF2 /* UIView+XZMFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5BF351EBA16F200BCFCF2 /* UIView+XZMFrame.m */; };
 		84E5BF441EBA16F200BCFCF2 /* XZMRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84E5BF371EBA16F200BCFCF2 /* XZMRefresh.bundle */; };
 		AA362FA31EB4F342007E710A /* PointViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA362FA21EB4F342007E710A /* PointViewModel.m */; };
+		AA4616171EBF625200FEE1DD /* DrawCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4616161EBF625200FEE1DD /* DrawCircleView.m */; };
+		AA46161F1EBF735A00FEE1DD /* DrawProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA46161E1EBF735A00FEE1DD /* DrawProgressView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,10 @@
 		84E5BF381EBA16F200BCFCF2 /* XZMRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZMRefresh.h; sourceTree = "<group>"; };
 		AA362FA11EB4F342007E710A /* PointViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointViewModel.h; sourceTree = "<group>"; };
 		AA362FA21EB4F342007E710A /* PointViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointViewModel.m; sourceTree = "<group>"; };
+		AA4616151EBF625200FEE1DD /* DrawCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawCircleView.h; sourceTree = "<group>"; };
+		AA4616161EBF625200FEE1DD /* DrawCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawCircleView.m; sourceTree = "<group>"; };
+		AA46161D1EBF735A00FEE1DD /* DrawProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawProgressView.h; sourceTree = "<group>"; };
+		AA46161E1EBF735A00FEE1DD /* DrawProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawProgressView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +115,8 @@
 		842CBDBD1EAE0F5F0090D92F /* DrawByCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				AA46161C1EBF733D00FEE1DD /* DrawProgress */,
+				AA4616141EBF623600FEE1DD /* DrawCircle */,
 				84E5BF1A1EBA16F200BCFCF2 /* XZMRefresh */,
 				84AD07571EB2132300AA1A2A /* DottedLine */,
 				842CBDD51EAE102D0090D92F /* DrawView */,
@@ -236,6 +244,24 @@
 			path = Other;
 			sourceTree = "<group>";
 		};
+		AA4616141EBF623600FEE1DD /* DrawCircle */ = {
+			isa = PBXGroup;
+			children = (
+				AA4616151EBF625200FEE1DD /* DrawCircleView.h */,
+				AA4616161EBF625200FEE1DD /* DrawCircleView.m */,
+			);
+			path = DrawCircle;
+			sourceTree = "<group>";
+		};
+		AA46161C1EBF733D00FEE1DD /* DrawProgress */ = {
+			isa = PBXGroup;
+			children = (
+				AA46161D1EBF735A00FEE1DD /* DrawProgressView.h */,
+				AA46161E1EBF735A00FEE1DD /* DrawProgressView.m */,
+			);
+			path = DrawProgress;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -309,6 +335,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA46161F1EBF735A00FEE1DD /* DrawProgressView.m in Sources */,
 				84E5BF421EBA16F200BCFCF2 /* XZMRefreshConst.m in Sources */,
 				842CBDDE1EAE125D0090D92F /* DrawLineView.m in Sources */,
 				AA362FA31EB4F342007E710A /* PointViewModel.m in Sources */,
@@ -327,6 +354,7 @@
 				84E5BF3F1EBA16F200BCFCF2 /* XZMRefreshGifHeader.m in Sources */,
 				842CBDC31EAE0F5F0090D92F /* AppDelegate.m in Sources */,
 				842CBDDB1EAE110E0090D92F /* DrawLineCollectionViewCell.m in Sources */,
+				AA4616171EBF625200FEE1DD /* DrawCircleView.m in Sources */,
 				842CBDC01EAE0F5F0090D92F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
