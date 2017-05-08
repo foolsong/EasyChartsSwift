@@ -20,6 +20,10 @@
 @property (nonatomic, assign) NSInteger index;
 @property (nonatomic, assign) CGFloat offest;
 
+
+//test
+@property (nonatomic, strong) CAShapeLayer *progressLayer;
+
 @end
 
 @implementation DrawProgressView
@@ -37,6 +41,9 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (self.timer) {
+        return;
+    }
     self.index = 0;
     NSInteger newProgress = [self createProgress];
     self.offest = (newProgress - self.progress) / 10;
@@ -56,6 +63,16 @@
     self.timer = timer;
 }
 
+- (CGFloat)timeInterval {
+    if (self.offest < 2 && self.offest > -2) {
+        return 0.1;
+    } if (self.offest < 5 && self.offest > -5) {
+        return 0.1;
+    } else {
+        return 0.02;
+    }
+}
+
 - (void)timerAction {
     self.index ++;
     
@@ -71,8 +88,7 @@
    
 }
 
-- (UILabel *)label
-{
+- (UILabel *)label {
     if (_label == nil) {
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(50, 50, 100, 100)];
         label.textAlignment = NSTextAlignmentCenter;
@@ -91,21 +107,48 @@
 }
 
 
-- (void)drawRect:(CGRect)rect
-{
+- (void)drawRect:(CGRect)rect {
+    
+    
+    
+    
+    
+    
     CGContextRef ctx = UIGraphicsGetCurrentContext();
+    
     
     CGPoint center = CGPointMake(100, 100);
     CGFloat radius = 50 - 2;
     CGFloat startA = -M_PI_2;
-    CGFloat endA = -M_PI_2 + (_lastProgress / 100.0) * M_PI * 2;
-    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:startA endAngle:endA clockwise:YES];
-    CGContextSetStrokeColorWithColor(ctx, [UIColor orangeColor].CGColor);
-    CGContextSetLineWidth(ctx, 6.0);
+    CGFloat endA = -M_PI_2 - (_lastProgress / 100.0) * M_PI * 2;
+    
+    
+    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:startA endAngle:endA clockwise:NO];
+    
+    self.progressLayer.path = [path CGPath];
+    [self.layer addSublayer:self.progressLayer];
+    
+//    CGContextSetStrokeColorWithColor(ctx, [UIColor orangeColor].CGColor);
+//    CGContextSetLineWidth(ctx, 6.0);
     
     CGContextAddPath(ctx, path.CGPath);
     CGContextStrokePath(ctx);
     
+    
+//    CGContextDrawPath(context, kCGPathFillStroke);
 }
 
+- (CAShapeLayer *)progressLayer {
+    if (_progressLayer == nil) {
+        _progressLayer = [CAShapeLayer layer];//创建一个track shape layer
+        _progressLayer.frame = self.bounds;
+        _progressLayer.fillColor = [[UIColor clearColor] CGColor];  //填充色为无色
+        _progressLayer.strokeColor = [[UIColor orangeColor] CGColor]; //指定path的渲染颜色,这里可以设置任意不透明颜色
+        _progressLayer.opacity = 1; //背景颜色的透明度
+        _progressLayer.lineCap = kCALineCapRound;//指定线的边缘是圆的
+        _progressLayer.lineWidth = 10;//线的宽度
+        
+    }
+    return _progressLayer;
+}
 @end

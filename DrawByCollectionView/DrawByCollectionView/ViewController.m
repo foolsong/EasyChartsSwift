@@ -11,6 +11,7 @@
 #import "DottedLineView.h"
 #import "DrawCircleView.h"
 #import "DrawProgressView.h"
+#import "DrawProgressByShapeLayer.h"
 
 #define STDScreenW [UIScreen mainScreen].bounds.size.width
 
@@ -30,6 +31,7 @@
     [self setupDrawCircleView];
     
     [self setupProgressView];
+    [self setupDrawProgressByShapeLayer];
     
 }
 
@@ -55,7 +57,14 @@
 
 - (void)setupProgressView {
     DrawProgressView *progressView = [[DrawProgressView alloc] init];
-    progressView.frame = CGRectMake(0, 460, STDScreenW, 200);
+    progressView.frame = CGRectMake(0, 460, 0.5 * STDScreenW, 200);
+    [self.view addSubview:progressView];
+}
+
+- (void)setupDrawProgressByShapeLayer {
+    
+    DrawProgressByShapeLayer *progressView = [[DrawProgressByShapeLayer alloc] init];
+    progressView.frame = CGRectMake(0.5 * STDScreenW, 460, 0.5 * STDScreenW, 200);
     [self.view addSubview:progressView];
 }
 
