@@ -18,18 +18,6 @@
 		842CBDDE1EAE125D0090D92F /* DrawLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 842CBDDD1EAE125D0090D92F /* DrawLineView.m */; };
 		84AD075A1EB2134900AA1A2A /* DottedLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD07591EB2134900AA1A2A /* DottedLineView.m */; };
 		84E46D401EC0234800E626E5 /* DrawProgressByShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E46D3F1EC0234800E626E5 /* DrawProgressByShapeLayer.m */; };
-		84E5BF391EBA16F200BCFCF2 /* XZMBaseRefreshView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5BF1D1EBA16F200BCFCF2 /* XZMBaseRefreshView.m */; };
-		84E5BF3A1EBA16F200BCFCF2 /* UIScrollView+XZMExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5BF201EBA16F200BCFCF2 /* UIScrollView+XZMExtension.m */; };
-		84E5BF3B1EBA16F200BCFCF2 /* UIScrollView+XZMRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5BF221EBA16F200BCFCF2 /* UIScrollView+XZMRefresh.m */; };
-		84E5BF3C1EBA16F200BCFCF2 /* XZMRefreshFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5BF261EBA16F200BCFCF2 /* XZMRefreshFooter.m */; };
-		84E5BF3D1EBA16F200BCFCF2 /* XZMRefreshGifFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5BF281EBA16F200BCFCF2 /* XZMRefreshGifFooter.m */; };
-		84E5BF3E1EBA16F200BCFCF2 /* XZMRefreshNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5BF2A1EBA16F200BCFCF2 /* XZMRefreshNormalFooter.m */; };
-		84E5BF3F1EBA16F200BCFCF2 /* XZMRefreshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5BF2D1EBA16F200BCFCF2 /* XZMRefreshGifHeader.m */; };
-		84E5BF401EBA16F200BCFCF2 /* XZMRefreshHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5BF2F1EBA16F200BCFCF2 /* XZMRefreshHeader.m */; };
-		84E5BF411EBA16F200BCFCF2 /* XZMRefreshNormalHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5BF311EBA16F200BCFCF2 /* XZMRefreshNormalHeader.m */; };
-		84E5BF421EBA16F200BCFCF2 /* XZMRefreshConst.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5BF331EBA16F200BCFCF2 /* XZMRefreshConst.m */; };
-		84E5BF431EBA16F200BCFCF2 /* UIView+XZMFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E5BF351EBA16F200BCFCF2 /* UIView+XZMFrame.m */; };
-		84E5BF441EBA16F200BCFCF2 /* XZMRefresh.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84E5BF371EBA16F200BCFCF2 /* XZMRefresh.bundle */; };
 		AA362FA31EB4F342007E710A /* PointViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA362FA21EB4F342007E710A /* PointViewModel.m */; };
 		AA4616171EBF625200FEE1DD /* DrawCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4616161EBF625200FEE1DD /* DrawCircleView.m */; };
 		AA46161F1EBF735A00FEE1DD /* DrawProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA46161E1EBF735A00FEE1DD /* DrawProgressView.m */; };
@@ -56,30 +44,6 @@
 		84AD07591EB2134900AA1A2A /* DottedLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DottedLineView.m; sourceTree = "<group>"; };
 		84E46D3E1EC0234800E626E5 /* DrawProgressByShapeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawProgressByShapeLayer.h; sourceTree = "<group>"; };
 		84E46D3F1EC0234800E626E5 /* DrawProgressByShapeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawProgressByShapeLayer.m; sourceTree = "<group>"; };
-		84E5BF1C1EBA16F200BCFCF2 /* XZMBaseRefreshView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZMBaseRefreshView.h; sourceTree = "<group>"; };
-		84E5BF1D1EBA16F200BCFCF2 /* XZMBaseRefreshView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZMBaseRefreshView.m; sourceTree = "<group>"; };
-		84E5BF1F1EBA16F200BCFCF2 /* UIScrollView+XZMExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+XZMExtension.h"; sourceTree = "<group>"; };
-		84E5BF201EBA16F200BCFCF2 /* UIScrollView+XZMExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+XZMExtension.m"; sourceTree = "<group>"; };
-		84E5BF211EBA16F200BCFCF2 /* UIScrollView+XZMRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+XZMRefresh.h"; sourceTree = "<group>"; };
-		84E5BF221EBA16F200BCFCF2 /* UIScrollView+XZMRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+XZMRefresh.m"; sourceTree = "<group>"; };
-		84E5BF251EBA16F200BCFCF2 /* XZMRefreshFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZMRefreshFooter.h; sourceTree = "<group>"; };
-		84E5BF261EBA16F200BCFCF2 /* XZMRefreshFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZMRefreshFooter.m; sourceTree = "<group>"; };
-		84E5BF271EBA16F200BCFCF2 /* XZMRefreshGifFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZMRefreshGifFooter.h; sourceTree = "<group>"; };
-		84E5BF281EBA16F200BCFCF2 /* XZMRefreshGifFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZMRefreshGifFooter.m; sourceTree = "<group>"; };
-		84E5BF291EBA16F200BCFCF2 /* XZMRefreshNormalFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZMRefreshNormalFooter.h; sourceTree = "<group>"; };
-		84E5BF2A1EBA16F200BCFCF2 /* XZMRefreshNormalFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZMRefreshNormalFooter.m; sourceTree = "<group>"; };
-		84E5BF2C1EBA16F200BCFCF2 /* XZMRefreshGifHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZMRefreshGifHeader.h; sourceTree = "<group>"; };
-		84E5BF2D1EBA16F200BCFCF2 /* XZMRefreshGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZMRefreshGifHeader.m; sourceTree = "<group>"; };
-		84E5BF2E1EBA16F200BCFCF2 /* XZMRefreshHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZMRefreshHeader.h; sourceTree = "<group>"; };
-		84E5BF2F1EBA16F200BCFCF2 /* XZMRefreshHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZMRefreshHeader.m; sourceTree = "<group>"; };
-		84E5BF301EBA16F200BCFCF2 /* XZMRefreshNormalHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZMRefreshNormalHeader.h; sourceTree = "<group>"; };
-		84E5BF311EBA16F200BCFCF2 /* XZMRefreshNormalHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XZMRefreshNormalHeader.m; sourceTree = "<group>"; };
-		84E5BF331EBA16F200BCFCF2 /* XZMRefreshConst.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "\U001aXZMRefreshConst.m"; sourceTree = "<group>"; };
-		84E5BF341EBA16F200BCFCF2 /* UIView+XZMFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XZMFrame.h"; sourceTree = "<group>"; };
-		84E5BF351EBA16F200BCFCF2 /* UIView+XZMFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XZMFrame.m"; sourceTree = "<group>"; };
-		84E5BF361EBA16F200BCFCF2 /* XZMRefreshConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZMRefreshConst.h; sourceTree = "<group>"; };
-		84E5BF371EBA16F200BCFCF2 /* XZMRefresh.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = XZMRefresh.bundle; sourceTree = "<group>"; };
-		84E5BF381EBA16F200BCFCF2 /* XZMRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XZMRefresh.h; sourceTree = "<group>"; };
 		AA362FA11EB4F342007E710A /* PointViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointViewModel.h; sourceTree = "<group>"; };
 		AA362FA21EB4F342007E710A /* PointViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointViewModel.m; sourceTree = "<group>"; };
 		AA4616151EBF625200FEE1DD /* DrawCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawCircleView.h; sourceTree = "<group>"; };
@@ -120,7 +84,6 @@
 			children = (
 				AA46161C1EBF733D00FEE1DD /* DrawProgress */,
 				AA4616141EBF623600FEE1DD /* DrawCircle */,
-				84E5BF1A1EBA16F200BCFCF2 /* XZMRefresh */,
 				84AD07571EB2132300AA1A2A /* DottedLine */,
 				842CBDD51EAE102D0090D92F /* DrawView */,
 				842CBDC11EAE0F5F0090D92F /* AppDelegate.h */,
@@ -166,85 +129,6 @@
 				84AD07591EB2134900AA1A2A /* DottedLineView.m */,
 			);
 			path = DottedLine;
-			sourceTree = "<group>";
-		};
-		84E5BF1A1EBA16F200BCFCF2 /* XZMRefresh */ = {
-			isa = PBXGroup;
-			children = (
-				84E5BF1B1EBA16F200BCFCF2 /* Base */,
-				84E5BF1E1EBA16F200BCFCF2 /* Category */,
-				84E5BF231EBA16F200BCFCF2 /* Custom */,
-				84E5BF321EBA16F200BCFCF2 /* Other */,
-				84E5BF371EBA16F200BCFCF2 /* XZMRefresh.bundle */,
-				84E5BF381EBA16F200BCFCF2 /* XZMRefresh.h */,
-			);
-			path = XZMRefresh;
-			sourceTree = "<group>";
-		};
-		84E5BF1B1EBA16F200BCFCF2 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				84E5BF1C1EBA16F200BCFCF2 /* XZMBaseRefreshView.h */,
-				84E5BF1D1EBA16F200BCFCF2 /* XZMBaseRefreshView.m */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
-		84E5BF1E1EBA16F200BCFCF2 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				84E5BF1F1EBA16F200BCFCF2 /* UIScrollView+XZMExtension.h */,
-				84E5BF201EBA16F200BCFCF2 /* UIScrollView+XZMExtension.m */,
-				84E5BF211EBA16F200BCFCF2 /* UIScrollView+XZMRefresh.h */,
-				84E5BF221EBA16F200BCFCF2 /* UIScrollView+XZMRefresh.m */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		84E5BF231EBA16F200BCFCF2 /* Custom */ = {
-			isa = PBXGroup;
-			children = (
-				84E5BF241EBA16F200BCFCF2 /* Footer */,
-				84E5BF2B1EBA16F200BCFCF2 /* Header */,
-			);
-			path = Custom;
-			sourceTree = "<group>";
-		};
-		84E5BF241EBA16F200BCFCF2 /* Footer */ = {
-			isa = PBXGroup;
-			children = (
-				84E5BF251EBA16F200BCFCF2 /* XZMRefreshFooter.h */,
-				84E5BF261EBA16F200BCFCF2 /* XZMRefreshFooter.m */,
-				84E5BF271EBA16F200BCFCF2 /* XZMRefreshGifFooter.h */,
-				84E5BF281EBA16F200BCFCF2 /* XZMRefreshGifFooter.m */,
-				84E5BF291EBA16F200BCFCF2 /* XZMRefreshNormalFooter.h */,
-				84E5BF2A1EBA16F200BCFCF2 /* XZMRefreshNormalFooter.m */,
-			);
-			path = Footer;
-			sourceTree = "<group>";
-		};
-		84E5BF2B1EBA16F200BCFCF2 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				84E5BF2C1EBA16F200BCFCF2 /* XZMRefreshGifHeader.h */,
-				84E5BF2D1EBA16F200BCFCF2 /* XZMRefreshGifHeader.m */,
-				84E5BF2E1EBA16F200BCFCF2 /* XZMRefreshHeader.h */,
-				84E5BF2F1EBA16F200BCFCF2 /* XZMRefreshHeader.m */,
-				84E5BF301EBA16F200BCFCF2 /* XZMRefreshNormalHeader.h */,
-				84E5BF311EBA16F200BCFCF2 /* XZMRefreshNormalHeader.m */,
-			);
-			path = Header;
-			sourceTree = "<group>";
-		};
-		84E5BF321EBA16F200BCFCF2 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				84E5BF331EBA16F200BCFCF2 /* XZMRefreshConst.m */,
-				84E5BF341EBA16F200BCFCF2 /* UIView+XZMFrame.h */,
-				84E5BF351EBA16F200BCFCF2 /* UIView+XZMFrame.m */,
-				84E5BF361EBA16F200BCFCF2 /* XZMRefreshConst.h */,
-			);
-			path = Other;
 			sourceTree = "<group>";
 		};
 		AA4616141EBF623600FEE1DD /* DrawCircle */ = {
@@ -329,7 +213,6 @@
 				842CBDCE1EAE0F5F0090D92F /* LaunchScreen.storyboard in Resources */,
 				842CBDCB1EAE0F5F0090D92F /* Assets.xcassets in Resources */,
 				842CBDC91EAE0F5F0090D92F /* Main.storyboard in Resources */,
-				84E5BF441EBA16F200BCFCF2 /* XZMRefresh.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -341,23 +224,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA46161F1EBF735A00FEE1DD /* DrawProgressView.m in Sources */,
-				84E5BF421EBA16F200BCFCF2 /* XZMRefreshConst.m in Sources */,
 				842CBDDE1EAE125D0090D92F /* DrawLineView.m in Sources */,
 				84E46D401EC0234800E626E5 /* DrawProgressByShapeLayer.m in Sources */,
 				AA362FA31EB4F342007E710A /* PointViewModel.m in Sources */,
-				84E5BF3C1EBA16F200BCFCF2 /* XZMRefreshFooter.m in Sources */,
 				842CBDD81EAE10DD0090D92F /* DrawLineCollectionView.m in Sources */,
-				84E5BF401EBA16F200BCFCF2 /* XZMRefreshHeader.m in Sources */,
-				84E5BF3D1EBA16F200BCFCF2 /* XZMRefreshGifFooter.m in Sources */,
-				84E5BF3E1EBA16F200BCFCF2 /* XZMRefreshNormalFooter.m in Sources */,
 				842CBDC61EAE0F5F0090D92F /* ViewController.m in Sources */,
-				84E5BF431EBA16F200BCFCF2 /* UIView+XZMFrame.m in Sources */,
-				84E5BF411EBA16F200BCFCF2 /* XZMRefreshNormalHeader.m in Sources */,
-				84E5BF3B1EBA16F200BCFCF2 /* UIScrollView+XZMRefresh.m in Sources */,
 				84AD075A1EB2134900AA1A2A /* DottedLineView.m in Sources */,
-				84E5BF3A1EBA16F200BCFCF2 /* UIScrollView+XZMExtension.m in Sources */,
-				84E5BF391EBA16F200BCFCF2 /* XZMBaseRefreshView.m in Sources */,
-				84E5BF3F1EBA16F200BCFCF2 /* XZMRefreshGifHeader.m in Sources */,
 				842CBDC31EAE0F5F0090D92F /* AppDelegate.m in Sources */,
 				842CBDDB1EAE110E0090D92F /* DrawLineCollectionViewCell.m in Sources */,
 				AA4616171EBF625200FEE1DD /* DrawCircleView.m in Sources */,
