@@ -12,6 +12,8 @@
 @protocol DrawLineCollectionViewDataSource <NSObject>
 
 - (NSArray *)collectionViewPointYList:(DrawLineCollectionView *)collectionView;
+- (CGSize)collectionView:(UICollectionView *)collectionView
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 

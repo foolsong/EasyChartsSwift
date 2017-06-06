@@ -13,4 +13,6 @@
 - (void)configureCellWithPointYList:(NSArray *)pointXList
                           withIndex:(NSInteger)index;
 
+- (void)setItemSize:(CGSize)size;
+
 @end

@@ -17,6 +17,8 @@
 
 @interface DrawLineCollectionViewCell ()
 
+@property (nonatomic, assign) CGSize size;
+
 @property (nonatomic, copy) NSArray *pointYList;
 @property (nonatomic, assign) NSInteger index;
 
@@ -37,6 +39,10 @@
     [self setNeedsDisplay];
 }
 
+- (void)setItemSize:(CGSize)size {
+    _size = size;
+}
+
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
     self.context = context;
@@ -46,7 +52,7 @@
 
 - (void)drawLeftLine {
     CGPoint firstPoint = CGPointMake(0, [self lastPointY]);
-    CGPoint nextPoint = CGPointMake(50, [self currentPointY]);
+    CGPoint nextPoint = CGPointMake(self.size.width * 0.5, [self currentPointY]);
     if (self.pointModel.leftLineType == LineTypeNormal) {
         [self drawNormalLineFirstPoint:firstPoint nextPoint:nextPoint];
     } else if (self.pointModel.leftLineType == LineTypeDotted) {
@@ -55,8 +61,8 @@
 }
 
 - (void)drawRightLine {
-    CGPoint firstPoint = CGPointMake(50, [self currentPointY]);
-    CGPoint nextPoint = CGPointMake(100, [self nextPointY]);
+    CGPoint firstPoint = CGPointMake(self.size.width * 0.5, [self currentPointY]);
+    CGPoint nextPoint = CGPointMake(self.size.width, [self nextPointY]);
     if (self.pointModel.rightLineType == LineTypeNormal) {
         [self drawNormalLineFirstPoint:firstPoint nextPoint:nextPoint];
     } else if (self.pointModel.rightLineType == LineTypeDotted) {

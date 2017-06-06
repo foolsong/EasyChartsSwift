@@ -16,7 +16,7 @@
 #import "DrawLineCollectionViewCell.h"
 #import "PointViewModel.h"
 
-#define STDScreenW [UIScreen mainScreen].bounds.size.width
+#define ScreenW [UIScreen mainScreen].bounds.size.width
 
 @interface DrawLineCollectionView ()<UICollectionViewDelegate,
                                    UICollectionViewDataSource>
@@ -30,7 +30,7 @@
 @implementation DrawLineCollectionView
 + (instancetype)collectionView {
     DrawLineCollectionView *collectionView =
-    [[self alloc]initWithFrame:CGRectMake(0, 0,STDScreenW ,200)
+    [[self alloc]initWithFrame:CGRectMake(0, 0,ScreenW ,200)
           collectionViewLayout:[self collectionViewFlowLayout]];
     
     [collectionView registerClass:[DrawLineCollectionViewCell class] forCellWithReuseIdentifier:@"DrawLineCollectionViewCell"];
@@ -64,9 +64,8 @@
 #pragma mark - CollectionViewFlowLayout
 + (UICollectionViewFlowLayout *)collectionViewFlowLayout {
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
-    layout.itemSize = CGSizeMake(100, 200);
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    layout.minimumLineSpacing = 2;
+    layout.minimumLineSpacing = 0;
     return layout;
 }
 
@@ -76,8 +75,15 @@
 }
 
 - ( UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return [collectionView dequeueReusableCellWithReuseIdentifier:@"DrawLineCollectionViewCell" forIndexPath:indexPath];
+    DrawLineCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DrawLineCollectionViewCell" forIndexPath:indexPath];
+    [cell setItemSize:[self sizeForItemAtIndexPath:indexPath]];
+    return cell;
 }
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return [self sizeForItemAtIndexPath:indexPath];
+}
+
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -104,6 +110,16 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         [self test];
     }
     return _pointModelLits;
+}
+
+- (CGSize)sizeForItemAtIndexPath:(NSIndexPath *)indexPath  {
+    if (_drawLineDataSource &&
+        [_drawLineDataSource respondsToSelector:@selector(collectionView:
+                                                          sizeForItemAtIndexPath:)]) {
+        return [_drawLineDataSource collectionView:self sizeForItemAtIndexPath:indexPath];
+    }
+    NSAssert(NO, @"需添加折线图的size");
+    return CGSizeZero;
 }
 
 #pragma mark - computer pointY

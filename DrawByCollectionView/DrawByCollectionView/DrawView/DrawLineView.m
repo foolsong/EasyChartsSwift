@@ -43,6 +43,12 @@
     return self.pointYList;
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat itemW = [UIScreen mainScreen].bounds.size.width / 5.0;
+    return CGSizeMake(itemW, 200);
+}
+
 - (NSArray *)pointYList {
     if (_pointYList == nil) {
         _pointYList = @[@"12",@"51",@"-1",@"73",@"27",@"63",@"12",@"51",@"-1",@"-1",@"27",@"93"];
