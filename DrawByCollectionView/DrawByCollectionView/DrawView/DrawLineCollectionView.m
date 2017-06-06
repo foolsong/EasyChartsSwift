@@ -90,7 +90,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (NSArray *)pointYList {
-    if (_drawLineDataSource && [_drawLineDataSource respondsToSelector:@selector(collectionView:numberOfItemsInSection:)]) {
+    if (_drawLineDataSource && [_drawLineDataSource respondsToSelector:@selector(collectionViewPointYList:)]) {
         _pointYList = [_drawLineDataSource collectionViewPointYList:self];
     } else {
         NSAssert(NO, @"添加数据源");

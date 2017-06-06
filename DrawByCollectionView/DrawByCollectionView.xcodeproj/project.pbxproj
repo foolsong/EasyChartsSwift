@@ -16,6 +16,9 @@
 		842CBDD81EAE10DD0090D92F /* DrawLineCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 842CBDD71EAE10DD0090D92F /* DrawLineCollectionView.m */; };
 		842CBDDB1EAE110E0090D92F /* DrawLineCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 842CBDDA1EAE110E0090D92F /* DrawLineCollectionViewCell.m */; };
 		842CBDDE1EAE125D0090D92F /* DrawLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 842CBDDD1EAE125D0090D92F /* DrawLineView.m */; };
+		8465558A1EE67B21008B902A /* DrawLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846555891EE67B21008B902A /* DrawLineViewController.m */; };
+		8465558D1EE67B7A008B902A /* DrawCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8465558C1EE67B7A008B902A /* DrawCircleViewController.m */; };
+		846555901EE67BD3008B902A /* ProgressViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8465558F1EE67BD3008B902A /* ProgressViewViewController.m */; };
 		84AD075A1EB2134900AA1A2A /* DottedLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD07591EB2134900AA1A2A /* DottedLineView.m */; };
 		84E46D401EC0234800E626E5 /* DrawProgressByShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E46D3F1EC0234800E626E5 /* DrawProgressByShapeLayer.m */; };
 		AA362FA31EB4F342007E710A /* PointViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA362FA21EB4F342007E710A /* PointViewModel.m */; };
@@ -40,6 +43,12 @@
 		842CBDDA1EAE110E0090D92F /* DrawLineCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineCollectionViewCell.m; sourceTree = "<group>"; };
 		842CBDDC1EAE125D0090D92F /* DrawLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineView.h; sourceTree = "<group>"; };
 		842CBDDD1EAE125D0090D92F /* DrawLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineView.m; sourceTree = "<group>"; };
+		846555881EE67B21008B902A /* DrawLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineViewController.h; sourceTree = "<group>"; };
+		846555891EE67B21008B902A /* DrawLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineViewController.m; sourceTree = "<group>"; };
+		8465558B1EE67B7A008B902A /* DrawCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawCircleViewController.h; sourceTree = "<group>"; };
+		8465558C1EE67B7A008B902A /* DrawCircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawCircleViewController.m; sourceTree = "<group>"; };
+		8465558E1EE67BD3008B902A /* ProgressViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressViewViewController.h; sourceTree = "<group>"; };
+		8465558F1EE67BD3008B902A /* ProgressViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressViewViewController.m; sourceTree = "<group>"; };
 		84AD07581EB2134900AA1A2A /* DottedLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DottedLineView.h; sourceTree = "<group>"; };
 		84AD07591EB2134900AA1A2A /* DottedLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DottedLineView.m; sourceTree = "<group>"; };
 		84E46D3E1EC0234800E626E5 /* DrawProgressByShapeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawProgressByShapeLayer.h; sourceTree = "<group>"; };
@@ -90,6 +99,12 @@
 				842CBDC21EAE0F5F0090D92F /* AppDelegate.m */,
 				842CBDC41EAE0F5F0090D92F /* ViewController.h */,
 				842CBDC51EAE0F5F0090D92F /* ViewController.m */,
+				846555881EE67B21008B902A /* DrawLineViewController.h */,
+				846555891EE67B21008B902A /* DrawLineViewController.m */,
+				8465558B1EE67B7A008B902A /* DrawCircleViewController.h */,
+				8465558C1EE67B7A008B902A /* DrawCircleViewController.m */,
+				8465558E1EE67BD3008B902A /* ProgressViewViewController.h */,
+				8465558F1EE67BD3008B902A /* ProgressViewViewController.m */,
 				842CBDC71EAE0F5F0090D92F /* Main.storyboard */,
 				842CBDCA1EAE0F5F0090D92F /* Assets.xcassets */,
 				842CBDCC1EAE0F5F0090D92F /* LaunchScreen.storyboard */,
@@ -225,12 +240,15 @@
 			files = (
 				AA46161F1EBF735A00FEE1DD /* DrawProgressView.m in Sources */,
 				842CBDDE1EAE125D0090D92F /* DrawLineView.m in Sources */,
+				846555901EE67BD3008B902A /* ProgressViewViewController.m in Sources */,
 				84E46D401EC0234800E626E5 /* DrawProgressByShapeLayer.m in Sources */,
 				AA362FA31EB4F342007E710A /* PointViewModel.m in Sources */,
 				842CBDD81EAE10DD0090D92F /* DrawLineCollectionView.m in Sources */,
 				842CBDC61EAE0F5F0090D92F /* ViewController.m in Sources */,
 				84AD075A1EB2134900AA1A2A /* DottedLineView.m in Sources */,
+				8465558D1EE67B7A008B902A /* DrawCircleViewController.m in Sources */,
 				842CBDC31EAE0F5F0090D92F /* AppDelegate.m in Sources */,
+				8465558A1EE67B21008B902A /* DrawLineViewController.m in Sources */,
 				842CBDDB1EAE110E0090D92F /* DrawLineCollectionViewCell.m in Sources */,
 				AA4616171EBF625200FEE1DD /* DrawCircleView.m in Sources */,
 				842CBDC01EAE0F5F0090D92F /* main.m in Sources */,

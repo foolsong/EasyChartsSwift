@@ -7,15 +7,16 @@
 //
 
 #import "ViewController.h"
-#import "DrawLineView.h"
-#import "DottedLineView.h"
-#import "DrawCircleView.h"
-#import "DrawProgressView.h"
-#import "DrawProgressByShapeLayer.h"
+#import "DrawLineViewController.h"
+#import "DrawCircleViewController.h"
+#import "ProgressViewViewController.h"
 
-#define STDScreenW [UIScreen mainScreen].bounds.size.width
+#define ScreenW [UIScreen mainScreen].bounds.size.width
+#define ScreenH [UIScreen mainScreen].bounds.size.height
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+
+@property (nonatomic, copy) NSArray *titleList;
 
 @end
 
@@ -23,54 +24,71 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupTableView];
     
-//    [self setDottedLineView];
-    
-    [self setupDrawLineView];
-    
-    [self setupDrawCircleView];
-    
-    [self setupProgressView];
-    [self setupDrawProgressByShapeLayer];
-    
+    [self jump2DrawLineVC];
 }
 
-- (void)setDottedLineView {
-    DottedLineView *dottedLineView = [[DottedLineView alloc] init];
-    
-    dottedLineView.frame = CGRectMake(0, 100, STDScreenW, 200);
-    
-    [self.view addSubview:dottedLineView];
+- (void)setupTableView {
+    UITableView *tableView = [[UITableView alloc] init];
+    tableView.tableFooterView = [[UITableView alloc] init];
+    tableView.frame = CGRectMake(0, 0, ScreenW, ScreenH - 64);
+    tableView.delegate = self;
+    tableView.dataSource = self;
+    [self.view addSubview:tableView];
 }
 
-- (void)setupDrawLineView {
-    DrawLineView *lineView = [[DrawLineView alloc] init];
-    lineView.frame = CGRectMake(0, 20, STDScreenW, 200);
-    [self.view addSubview:lineView];
+- (void)jump2DrawLineVC {
+    DrawLineViewController *vc = [[DrawLineViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)setupDrawCircleView {
-    DrawCircleView *circleView = [[DrawCircleView alloc] init];
-    circleView.frame = CGRectMake(0, 240, STDScreenW, 200);
-    [self.view addSubview:circleView];
+- (void)jump2DrawCircleVC {
+    DrawCircleViewController *vc = [[DrawCircleViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)setupProgressView {
-    DrawProgressView *progressView = [[DrawProgressView alloc] init];
-    progressView.frame = CGRectMake(0, 460, 0.5 * STDScreenW, 200);
-    [self.view addSubview:progressView];
+- (void)jump2ProgressVC {
+    ProgressViewViewController *vc = [[ProgressViewViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)setupDrawProgressByShapeLayer {
-    
-    DrawProgressByShapeLayer *progressView = [[DrawProgressByShapeLayer alloc] init];
-    progressView.frame = CGRectMake(0.5 * STDScreenW, 460, 0.5 * STDScreenW, 200);
-    [self.view addSubview:progressView];
+
+#pragma  mark - UITableViewDelegate,UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.titleList count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellID = @"DrawVCIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:cellID];
+    }
+    [cell.textLabel setText:self.titleList[indexPath.row]];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row == 0) {
+        [self jump2DrawLineVC];
+    } else if (indexPath.row == 1) {
+        [self jump2DrawCircleVC];
+    } else if (indexPath.row == 2) {
+        [self jump2ProgressVC];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
+- (NSArray *)titleList {
+    if (_titleList == nil) {
+        _titleList = @[@"折线图",@"圆饼图",@"进度条"];
+    }
+    return _titleList;
+}
 
 @end
