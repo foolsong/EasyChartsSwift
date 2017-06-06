@@ -32,7 +32,7 @@
 - (void)setupTableView {
     UITableView *tableView = [[UITableView alloc] init];
     tableView.tableFooterView = [[UITableView alloc] init];
-    tableView.frame = CGRectMake(0, 0, ScreenW, ScreenH - 64);
+    tableView.frame = CGRectMake(0, 64, ScreenW, ScreenH - 64);
     tableView.delegate = self;
     tableView.dataSource = self;
     [self.view addSubview:tableView];

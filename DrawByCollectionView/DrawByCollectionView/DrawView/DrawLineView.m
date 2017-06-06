@@ -14,6 +14,7 @@
 
 #import "DrawLineView.h"
 #import "DrawLineCollectionView.h"
+#import "DrawLineBackgroundView.h"
 
 @interface DrawLineView ()<DrawLineCollectionViewDataSource>
 
@@ -27,9 +28,15 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
+        [self setupBackgroundView];
         [self setupCollectionView];
     }
     return self;
+}
+
+- (void)setupBackgroundView {
+    DrawLineBackgroundView *backgroupView = [DrawLineBackgroundView backgroundView];
+    [self addSubview:backgroupView];
 }
 
 - (void)setupCollectionView {

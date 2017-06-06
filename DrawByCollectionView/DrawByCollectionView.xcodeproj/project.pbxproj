@@ -19,6 +19,7 @@
 		8465558A1EE67B21008B902A /* DrawLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846555891EE67B21008B902A /* DrawLineViewController.m */; };
 		8465558D1EE67B7A008B902A /* DrawCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8465558C1EE67B7A008B902A /* DrawCircleViewController.m */; };
 		846555901EE67BD3008B902A /* ProgressViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8465558F1EE67BD3008B902A /* ProgressViewViewController.m */; };
+		846555951EE69876008B902A /* DrawLineBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846555941EE69876008B902A /* DrawLineBackgroundView.m */; };
 		84AD075A1EB2134900AA1A2A /* DottedLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD07591EB2134900AA1A2A /* DottedLineView.m */; };
 		84E46D401EC0234800E626E5 /* DrawProgressByShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E46D3F1EC0234800E626E5 /* DrawProgressByShapeLayer.m */; };
 		AA362FA31EB4F342007E710A /* PointViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA362FA21EB4F342007E710A /* PointViewModel.m */; };
@@ -49,6 +50,8 @@
 		8465558C1EE67B7A008B902A /* DrawCircleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawCircleViewController.m; sourceTree = "<group>"; };
 		8465558E1EE67BD3008B902A /* ProgressViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressViewViewController.h; sourceTree = "<group>"; };
 		8465558F1EE67BD3008B902A /* ProgressViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressViewViewController.m; sourceTree = "<group>"; };
+		846555931EE69876008B902A /* DrawLineBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineBackgroundView.h; sourceTree = "<group>"; };
+		846555941EE69876008B902A /* DrawLineBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineBackgroundView.m; sourceTree = "<group>"; };
 		84AD07581EB2134900AA1A2A /* DottedLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DottedLineView.h; sourceTree = "<group>"; };
 		84AD07591EB2134900AA1A2A /* DottedLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DottedLineView.m; sourceTree = "<group>"; };
 		84E46D3E1EC0234800E626E5 /* DrawProgressByShapeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawProgressByShapeLayer.h; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				842CBDDD1EAE125D0090D92F /* DrawLineView.m */,
 				AA362FA11EB4F342007E710A /* PointViewModel.h */,
 				AA362FA21EB4F342007E710A /* PointViewModel.m */,
+				846555931EE69876008B902A /* DrawLineBackgroundView.h */,
+				846555941EE69876008B902A /* DrawLineBackgroundView.m */,
 			);
 			path = DrawView;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA46161F1EBF735A00FEE1DD /* DrawProgressView.m in Sources */,
+				846555951EE69876008B902A /* DrawLineBackgroundView.m in Sources */,
 				842CBDDE1EAE125D0090D92F /* DrawLineView.m in Sources */,
 				846555901EE67BD3008B902A /* ProgressViewViewController.m in Sources */,
 				84E46D401EC0234800E626E5 /* DrawProgressByShapeLayer.m in Sources */,

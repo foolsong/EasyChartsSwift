@@ -53,7 +53,7 @@
 }
 
 - (void)p_configOwnProperties {
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor clearColor];
     self.delegate = self;
     self.dataSource = self;
     self.scrollsToTop = NO;
@@ -83,7 +83,6 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return [self sizeForItemAtIndexPath:indexPath];
 }
-
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -132,7 +131,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         PointViewModel *pointModel = [[PointViewModel alloc] init];
         pointModel.leftLineType = [self lineTypeWithNumString:numString nearNumString:lastNumString];
         pointModel.rightLineType = [self lineTypeWithNumString:numString nearNumString:nextNumString];
-        pointModel.pointY = [@"-1" isEqualToString:numString] ? @"199" : [NSString stringWithFormat:@"%f",[numString floatValue] * 2];
+        pointModel.pointY = [@"-1" isEqualToString:numString] ? @"198" : [NSString stringWithFormat:@"%f",[numString floatValue] * 2];
         
         [self.pointModelLits addObject:pointModel];
     }

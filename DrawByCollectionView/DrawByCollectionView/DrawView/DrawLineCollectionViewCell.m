@@ -35,7 +35,7 @@
     self.pointYList = pointYList;
     self.index = index;
     self.pointModel = self.pointYList[self.index];
-    [self setBackgroundColor:[UIColor grayColor]];
+    [self setBackgroundColor:[UIColor clearColor]];
     [self setNeedsDisplay];
 }
 
@@ -78,7 +78,7 @@
     
     CGContextMoveToPoint(self.context, point.x, point.y);
     CGContextAddLineToPoint(self.context, nextPoint.x, nextPoint.y);
-    [[UIColor orangeColor] setStroke];
+    [[UIColor whiteColor] setStroke];
     CGContextDrawPath(self.context, kCGPathStroke);
 }
 
@@ -88,7 +88,7 @@
     // 绘制线的宽度
     CGContextSetLineWidth(self.context, 1.0);
     // 线的颜色
-    CGContextSetStrokeColorWithColor(self.context, [UIColor orangeColor].CGColor);
+    CGContextSetStrokeColorWithColor(self.context, [UIColor whiteColor].CGColor);
     // 开始绘制
     CGContextBeginPath(self.context);
     // 设置虚线绘制起点
