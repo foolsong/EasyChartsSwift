@@ -21,7 +21,7 @@
 @interface DrawLineCollectionView ()<UICollectionViewDelegate,
                                    UICollectionViewDataSource>
 
-@property (nonatomic, copy) NSArray *pointXList;
+@property (nonatomic, copy) NSArray *pointYList;
 
 @property (nonatomic, strong) NSMutableArray <PointViewModel *>*pointModelLits;
 
@@ -47,8 +47,8 @@
 }
 
 #pragma mark - functions
-- (void)reloadCollectionWithImageUrls:(NSArray *)pointXList {
-    self.pointXList = pointXList;
+- (void)reloadCollectionWithImageUrls:(NSArray *)pointYList {
+    self.pointYList = pointYList;
     [self reloadData];
 }
 
@@ -71,17 +71,17 @@
 }
 
 #pragma mark - UICollectionViewDataSource
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return [self.pointXList count];
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [self.pointYList count];
 }
 
-- ( UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+- ( UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     return [collectionView dequeueReusableCellWithReuseIdentifier:@"DrawLineCollectionViewCell" forIndexPath:indexPath];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    [(DrawLineCollectionViewCell *)cell configureCellWithPointXList:self.pointModelLits withIndex:indexPath.row];
+    [(DrawLineCollectionViewCell *)cell configureCellWithPointYList:self.pointModelLits withIndex:indexPath.row];
 }
 
 #pragma mark - UICollectionViewDelegate
@@ -89,11 +89,13 @@
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 }
 
-- (NSArray *)pointXList {
-    if (_pointXList == nil) {
-        _pointXList = @[@"12",@"51",@"-1",@"73",@"27",@"63",@"12",@"51",@"-1",@"-1",@"27",@"93"];
+- (NSArray *)pointYList {
+    if (_drawLineDataSource && [_drawLineDataSource respondsToSelector:@selector(collectionView:numberOfItemsInSection:)]) {
+        _pointYList = [_drawLineDataSource collectionViewPointYList:self];
+    } else {
+        NSAssert(NO, @"添加数据源");
     }
-    return _pointXList;
+    return _pointYList;
 }
 
 - (NSMutableArray<PointViewModel *> *)pointModelLits {
@@ -104,10 +106,10 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     return _pointModelLits;
 }
 
-#pragma mark - 
+#pragma mark - computer pointY
 - (void)test {
-    for (int i = 0; i < [self.pointXList count]; i++) {
-        NSString *numString = self.pointXList[i];
+    for (int i = 0; i < [self.pointYList count]; i++) {
+        NSString *numString = self.pointYList[i];
         NSString *lastNumString = [self numStringWithIndex:i - 1];
         NSString *nextNumString = [self numStringWithIndex:i + 1];;
         
@@ -121,10 +123,10 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (NSString *)numStringWithIndex:(NSInteger)index {
-    if (index < 0 || index >= [self.pointXList count]) {
+    if (index < 0 || index >= [self.pointYList count]) {
         return nil;
     } else {
-        return self.pointXList[index];
+        return self.pointYList[index];
     }
 }
 

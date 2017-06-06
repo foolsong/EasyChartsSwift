@@ -10,7 +10,7 @@
 
 @interface DrawLineCollectionViewCell : UICollectionViewCell
 
-- (void)configureCellWithPointXList:(NSArray *)pointXList
+- (void)configureCellWithPointYList:(NSArray *)pointXList
                           withIndex:(NSInteger)index;
 
 @end

@@ -17,7 +17,7 @@
 
 @interface DrawLineCollectionViewCell ()
 
-@property (nonatomic, copy) NSArray *pointXList;
+@property (nonatomic, copy) NSArray *pointYList;
 @property (nonatomic, assign) NSInteger index;
 
 @property (nonatomic, strong) PointViewModel *pointModel;
@@ -28,11 +28,11 @@
 
 @implementation DrawLineCollectionViewCell
 
-- (void)configureCellWithPointXList:(NSArray *)pointXList
+- (void)configureCellWithPointYList:(NSArray *)pointYList
                           withIndex:(NSInteger)index {
-    self.pointXList = pointXList;
+    self.pointYList = pointYList;
     self.index = index;
-    self.pointModel = self.pointXList[self.index];
+    self.pointModel = self.pointYList[self.index];
     [self setBackgroundColor:[UIColor grayColor]];
     [self setNeedsDisplay];
 }
@@ -106,10 +106,10 @@
 }
 
 - (CGFloat)nextPointY {
-    if (self.index + 1 >= [self.pointXList count]) {
+    if (self.index + 1 >= [self.pointYList count]) {
         return 0;
     }
-    PointViewModel *pointModel = self.pointXList[self.index + 1];
+    PointViewModel *pointModel = self.pointYList[self.index + 1];
     return ([pointModel.pointY floatValue] + [self currentPointY]) * 0.5;
 }
 
@@ -117,7 +117,7 @@
     if (self.index - 1 < 0) {
         return 0;
     }
-    PointViewModel *pointModel = self.pointXList[self.index - 1];
+    PointViewModel *pointModel = self.pointYList[self.index - 1];
     return ([pointModel.pointY floatValue] + [self currentPointY]) * 0.5;
 }
 

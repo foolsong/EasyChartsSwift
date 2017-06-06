@@ -15,9 +15,10 @@
 #import "DrawLineView.h"
 #import "DrawLineCollectionView.h"
 
-@interface DrawLineView ()
+@interface DrawLineView ()<DrawLineCollectionViewDataSource>
 
 @property (nonatomic, strong) DrawLineCollectionView *lineCollectionView;
+@property (nonatomic, copy) NSArray *pointYList;
 
 @end
 
@@ -33,9 +34,20 @@
 
 - (void)setupCollectionView {
     DrawLineCollectionView *lineCollectionView = [DrawLineCollectionView collectionView];
+    lineCollectionView.drawLineDataSource = self;
     self.lineCollectionView = lineCollectionView;
     [self addSubview:lineCollectionView];
 }
 
+- (NSArray *)collectionViewPointYList:(DrawLineCollectionView *)collectionView {
+    return self.pointYList;
+}
+
+- (NSArray *)pointYList {
+    if (_pointYList == nil) {
+        _pointYList = @[@"12",@"51",@"-1",@"73",@"27",@"63",@"12",@"51",@"-1",@"-1",@"27",@"93"];
+    }
+    return _pointYList;
+}
 
 @end

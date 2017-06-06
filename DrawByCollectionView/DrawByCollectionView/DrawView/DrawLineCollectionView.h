@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@class DrawLineCollectionView;
+@protocol DrawLineCollectionViewDataSource <NSObject>
+
+- (NSArray *)collectionViewPointYList:(DrawLineCollectionView *)collectionView;
+
+@end
+
 @interface DrawLineCollectionView : UICollectionView
 
+@property (nonatomic, weak) id<DrawLineCollectionViewDataSource> drawLineDataSource;
 + (instancetype)collectionView;
 
 @end
