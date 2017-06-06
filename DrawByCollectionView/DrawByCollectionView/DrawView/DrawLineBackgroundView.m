@@ -31,8 +31,17 @@
     self = [super init];
     if (self) {
         [self configOwnProperties];
+        [self setupBackGroupImageView];
     }
     return self;
+}
+
+- (void)setupBackGroupImageView {
+    UIImage *backGroupImage = [UIImage imageNamed:@"lineBackground"];
+    UIImageView *backGroupImageView = [[UIImageView alloc] init];
+    backGroupImageView.image = backGroupImage;
+    backGroupImageView.frame = CGRectMake(0, 10, backGroupImage.size.width, backGroupImage.size.height);
+    [self addSubview:backGroupImageView];
 }
 
 - (void)configOwnProperties {
