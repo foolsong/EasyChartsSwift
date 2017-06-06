@@ -59,6 +59,8 @@
     self.scrollsToTop = NO;
     self.showsVerticalScrollIndicator = NO;
     self.showsHorizontalScrollIndicator = NO;
+    
+    self.contentInset = UIEdgeInsetsMake(0, ScreenW * 0.4 , 0, ScreenW * 0.4);
 }
 
 #pragma mark - CollectionViewFlowLayout
