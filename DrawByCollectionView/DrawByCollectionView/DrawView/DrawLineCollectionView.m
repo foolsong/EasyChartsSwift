@@ -64,8 +64,8 @@
 }
 
 #pragma mark - CollectionViewFlowLayout
-+ (UICollectionViewFlowLayout *)collectionViewFlowLayout {
-    UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
++ (DrawLineCollectionViewFlowLayout *)collectionViewFlowLayout {
+    DrawLineCollectionViewFlowLayout *layout = [DrawLineCollectionViewFlowLayout new];
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     layout.minimumLineSpacing = 0;
     return layout;
@@ -157,4 +157,68 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     }
 }
 
+
 @end
+#pragma mark - collectionView 的 flowLayout
+/**
+ collectionView 的 flowLayout
+ */
+@interface DrawLineCollectionViewFlowLayout()
+
+@end
+
+@implementation DrawLineCollectionViewFlowLayout
+
+- (void)prepareLayout {
+    [super prepareLayout];
+}
+
+- (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset
+                                 withScrollingVelocity:(CGPoint)velocity {
+    //获取期望滑到的位置的点的x值
+    CGFloat proposedOffsetX = [super targetContentOffsetForProposedContentOffset:proposedContentOffset
+                                                           withScrollingVelocity:velocity].x;
+    
+    CGRect proposedRect = CGRectMake(proposedContentOffset.x,
+                                     proposedContentOffset.y,
+                                     self.collectionView.bounds.size.width,
+                                     self.collectionView.bounds.size.height);
+    
+    //拿到正在显示的 cell 的 Attributes
+    NSArray *proposedAttrs = [self layoutAttributesForElementsInRect:proposedRect];
+    //拿到正在显示的 rect 中点
+    CGFloat centerX = proposedOffsetX + self.collectionView.bounds.size.width * 0.5;
+    
+    CGFloat cache = CGFLOAT_MAX;
+    NSInteger index = 0;
+    
+    for (int i = 0; i < proposedAttrs.count; i++) {
+        UICollectionViewLayoutAttributes *attr = proposedAttrs[i];
+        //计算 cell 距离正在显示的 rect 中点的距离
+        CGFloat centerDiffABS = ABS(attr.center.x - centerX);
+        //保留距离最小的 cell 作为最后要显示的cell
+        if (centerDiffABS < cache) {
+            cache = centerDiffABS;
+            index = i;
+        }
+    }
+    
+    CGFloat centerDiff = 0;
+    //拿到距离屏幕中心最近的cell
+    if (proposedAttrs.count > index) {
+        UICollectionViewLayoutAttributes *attr = proposedAttrs[index];
+        //计算该cell的center和屏幕的center的距离 即偏移量
+        centerDiff = attr.center.x - centerX;
+    } else {
+        centerDiff = CGFLOAT_MAX;
+    }
+    //返回期望滑到的点的x加偏移量
+    return CGPointMake(proposedOffsetX + centerDiff, 0);
+}
+
+-(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
+    return YES;
+}
+
+@end
+

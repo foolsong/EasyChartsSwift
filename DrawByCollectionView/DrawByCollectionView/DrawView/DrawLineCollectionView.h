@@ -23,3 +23,7 @@
 + (instancetype)collectionView;
 
 @end
+
+@interface DrawLineCollectionViewFlowLayout : UICollectionViewFlowLayout
+
+@end
