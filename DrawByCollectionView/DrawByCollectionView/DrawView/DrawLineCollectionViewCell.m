@@ -30,7 +30,7 @@
 
 @property (nonatomic, strong) UIImage *circleImage;
 
-@property (nonatomic, strong) CALayer *circleLayer;
+@property (nonatomic, strong) CAShapeLayer *circleLayer;
 
 @end
 
@@ -143,13 +143,14 @@
 }
 
 
-- (CALayer*)circleLayer{
+- (CAShapeLayer*)circleLayer{
     if (_circleLayer == nil) {
-        CALayer *circleLayer = [CALayer layer];
+        CAShapeLayer *circleLayer = [CAShapeLayer layer];
         UIImage *img = [self circleImage];
         [circleLayer setContents:(id)img.CGImage];
         [circleLayer setFrame:CGRectMake(self.size.width * 0.5 - 3.5,[self.pointModel.pointY floatValue] - 3.5, img.size.width, img.size.height)];
         [circleLayer setGeometryFlipped:YES];
+        [circleLayer setLineJoin:kCALineJoinBevel];
         _circleLayer = circleLayer;
         [self.layer addSublayer:_circleLayer];
     }
@@ -169,9 +170,9 @@
         
         UIBezierPath* ovalPath = [UIBezierPath bezierPathWithOvalInRect: (CGRect){CGPointMake(strokeWidth/2.0, strokeWidth/2.0),
             CGSizeMake(CIRCLE_SIZE-strokeWidth, CIRCLE_SIZE-strokeWidth)}];
+        
         CGContextSaveGState(context);
         //yjSong 圆圈填充
-//        [[self.chartContainer elementFillColor] setFill];
         UIColor *color = [UIColor colorWithRed:(255)/255.0 green:(209)/255.0 blue:(93)/255.0 alpha:1.0];
               [color setFill];
         
@@ -179,7 +180,6 @@
         CGContextRestoreGState(context);
         
         //yjSong 圆圈边框
-//        [[self.chartContainer elementStrokeColor] setStroke];
         [[UIColor whiteColor] setStroke];
         [ovalPath setLineWidth:strokeWidth];
         [ovalPath stroke];
