@@ -40,8 +40,7 @@
     UIImage *backGroupImage = [UIImage imageNamed:@"lineBackground"];
     UIImageView *backGroupImageView = [[UIImageView alloc] init];
     backGroupImageView.image = backGroupImage;
-    
-    backGroupImageView.frame = CGRectMake(0, 10, backGroupImage.size.width, backGroupImage.size.height);
+    backGroupImageView.frame = CGRectMake(0, 10, [UIScreen mainScreen].bounds.size.width, backGroupImage.size.height);
     [self addSubview:backGroupImageView];
 }
 
