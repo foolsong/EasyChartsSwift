@@ -94,6 +94,11 @@
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat cellWidth = (ScreenW / 5.0);
+    CGFloat offsetX = (indexPath.row - 2) * cellWidth;
+    [UIView animateWithDuration:0.3 animations:^{
+        self.contentOffset = CGPointMake(offsetX, 0);
+    }];
 }
 
 - (NSArray *)pointYList {
