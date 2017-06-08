@@ -26,7 +26,6 @@
 		84E46D401EC0234800E626E5 /* DrawProgressByShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E46D3F1EC0234800E626E5 /* DrawProgressByShapeLayer.m */; };
 		AA362FA31EB4F342007E710A /* PointViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA362FA21EB4F342007E710A /* PointViewModel.m */; };
 		AA4616171EBF625200FEE1DD /* DrawCircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4616161EBF625200FEE1DD /* DrawCircleView.m */; };
-		AA46161F1EBF735A00FEE1DD /* DrawProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA46161E1EBF735A00FEE1DD /* DrawProgressView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,8 +65,6 @@
 		AA362FA21EB4F342007E710A /* PointViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointViewModel.m; sourceTree = "<group>"; };
 		AA4616151EBF625200FEE1DD /* DrawCircleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawCircleView.h; sourceTree = "<group>"; };
 		AA4616161EBF625200FEE1DD /* DrawCircleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawCircleView.m; sourceTree = "<group>"; };
-		AA46161D1EBF735A00FEE1DD /* DrawProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawProgressView.h; sourceTree = "<group>"; };
-		AA46161E1EBF735A00FEE1DD /* DrawProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawProgressView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,8 +178,6 @@
 		AA46161C1EBF733D00FEE1DD /* DrawProgress */ = {
 			isa = PBXGroup;
 			children = (
-				AA46161D1EBF735A00FEE1DD /* DrawProgressView.h */,
-				AA46161E1EBF735A00FEE1DD /* DrawProgressView.m */,
 				84E46D3E1EC0234800E626E5 /* DrawProgressByShapeLayer.h */,
 				84E46D3F1EC0234800E626E5 /* DrawProgressByShapeLayer.m */,
 			);
@@ -262,7 +257,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA46161F1EBF735A00FEE1DD /* DrawProgressView.m in Sources */,
 				846555951EE69876008B902A /* DrawLineBackgroundView.m in Sources */,
 				842CBDDE1EAE125D0090D92F /* DrawLineView.m in Sources */,
 				846555901EE67BD3008B902A /* ProgressViewViewController.m in Sources */,

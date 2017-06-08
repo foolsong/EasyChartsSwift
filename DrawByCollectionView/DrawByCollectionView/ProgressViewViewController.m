@@ -13,13 +13,12 @@
 //  ************************************************************************
 
 #import "ProgressViewViewController.h"
-#import "DrawProgressView.h"
 #import "DrawProgressByShapeLayer.h"
 
 #define STDScreenW [UIScreen mainScreen].bounds.size.width
 @interface ProgressViewViewController ()
 
-
+@property (nonatomic, strong) DrawProgressByShapeLayer *progressView;
 
 @end
 
@@ -43,20 +42,23 @@
 
 #pragma mark - HandleViews
 - (void)p_configSubViews {
-//    [self setupProgressView];
     [self setupDrawProgressByShapeLayer];
 }
-
-//- (void)setupProgressView {
-//    DrawProgressView *progressView = [[DrawProgressView alloc] init];
-//    progressView.frame = CGRectMake(0, 460, 0.5 * STDScreenW, 200);
-//    [self.view addSubview:progressView];
-//}
 
 - (void)setupDrawProgressByShapeLayer {
     DrawProgressByShapeLayer *progressView = [[DrawProgressByShapeLayer alloc] init];
     progressView.frame = CGRectMake(100 , 100, 0.5 * STDScreenW, 200);
     [self.view addSubview:progressView];
+    self.progressView = progressView;
 }
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self.progressView resetProgress:[self createProgress]];
+}
+
+- (CGFloat)createProgress {
+    return arc4random_uniform(100) / 100.0;
+}
+
 
 @end

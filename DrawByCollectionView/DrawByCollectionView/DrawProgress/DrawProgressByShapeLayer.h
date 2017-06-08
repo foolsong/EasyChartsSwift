@@ -10,4 +10,6 @@
 
 @interface DrawProgressByShapeLayer : UIView
 
+- (void)resetProgress:(CGFloat)progress;
+
 @end
