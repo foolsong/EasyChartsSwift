@@ -43,19 +43,19 @@
 
 #pragma mark - HandleViews
 - (void)p_configSubViews {
-    [self setupProgressView];
+//    [self setupProgressView];
     [self setupDrawProgressByShapeLayer];
 }
 
-- (void)setupProgressView {
-    DrawProgressView *progressView = [[DrawProgressView alloc] init];
-    progressView.frame = CGRectMake(0, 460, 0.5 * STDScreenW, 200);
-    [self.view addSubview:progressView];
-}
+//- (void)setupProgressView {
+//    DrawProgressView *progressView = [[DrawProgressView alloc] init];
+//    progressView.frame = CGRectMake(0, 460, 0.5 * STDScreenW, 200);
+//    [self.view addSubview:progressView];
+//}
 
 - (void)setupDrawProgressByShapeLayer {
     DrawProgressByShapeLayer *progressView = [[DrawProgressByShapeLayer alloc] init];
-    progressView.frame = CGRectMake(0.5 * STDScreenW, 100, 0.5 * STDScreenW, 200);
+    progressView.frame = CGRectMake(100 , 100, 0.5 * STDScreenW, 200);
     [self.view addSubview:progressView];
 }
 

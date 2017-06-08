@@ -26,7 +26,7 @@
     [super viewDidLoad];
     [self setupTableView];
     
-    [self jump2DrawLineVC];
+    [self jump2ProgressVC];
 }
 
 - (void)setupTableView {
