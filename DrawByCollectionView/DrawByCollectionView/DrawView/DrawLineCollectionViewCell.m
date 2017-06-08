@@ -53,15 +53,13 @@
     self.pointModel = self.pointYList[self.index];
     
     [self resetCircleLayerFrame];
-
     [self setNeedsDisplay];
 }
 
 - (void)resetCircleLayerFrame {
     CGRect frame = self.circleLayer.frame;
-    frame.origin.y = [self.pointModel.pointY floatValue] - 3.5;
-    frame.origin.x = self.size.width * 0.5 - 3.5;
-    
+    frame.origin.y = [self.pointModel.pointY floatValue] - 4.25;
+    frame.origin.x = self.size.width * 0.5 - 4.25;
     [CATransaction begin];
     [CATransaction setDisableActions:YES];
     [self.circleLayer setFrame: frame];

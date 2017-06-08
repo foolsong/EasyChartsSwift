@@ -57,6 +57,7 @@
 		8465559C1EE6C738008B902A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		846555A41EE8E566008B902A /* DrawLineCirclePointLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineCirclePointLayer.h; sourceTree = "<group>"; };
 		846555A51EE8E566008B902A /* DrawLineCirclePointLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineCirclePointLayer.m; sourceTree = "<group>"; };
+		846555AA1EE8F0D1008B902A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		84AD07581EB2134900AA1A2A /* DottedLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DottedLineView.h; sourceTree = "<group>"; };
 		84AD07591EB2134900AA1A2A /* DottedLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DottedLineView.m; sourceTree = "<group>"; };
 		84E46D3E1EC0234800E626E5 /* DrawProgressByShapeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawProgressByShapeLayer.h; sourceTree = "<group>"; };
@@ -85,6 +86,7 @@
 			children = (
 				842CBDBD1EAE0F5F0090D92F /* DrawByCollectionView */,
 				842CBDBC1EAE0F5F0090D92F /* Products */,
+				846555A91EE8F0D1008B902A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,6 +150,14 @@
 				846555A51EE8E566008B902A /* DrawLineCirclePointLayer.m */,
 			);
 			path = DrawView;
+			sourceTree = "<group>";
+		};
+		846555A91EE8F0D1008B902A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				846555AA1EE8F0D1008B902A /* AdSupport.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		84AD07571EB2132300AA1A2A /* DottedLine */ = {
