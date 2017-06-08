@@ -29,8 +29,6 @@
 
 + (instancetype)circlePointLayer {
     DrawLineCirclePointLayer *circleLayer = [self layer];
-    
-//    [circleLayer setBackgroundColor:[UIColor whiteColor].CGColor];
     UIImage *img = [self circleImage];
     [circleLayer setContents:(id)img.CGImage];
     [circleLayer setFrame:CGRectMake(0,0, img.size.width, img.size.height)];

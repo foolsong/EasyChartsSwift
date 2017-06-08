@@ -23,7 +23,7 @@
 
 + (instancetype)backgroundView {
     DrawLineBackgroundView *view = [[self alloc] init];
-    view.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 200);
+    view.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 210);
     return view;
 }
 
@@ -40,7 +40,7 @@
     UIImage *backGroupImage = [UIImage imageNamed:@"lineBackground"];
     UIImageView *backGroupImageView = [[UIImageView alloc] init];
     backGroupImageView.image = backGroupImage;
-    backGroupImageView.frame = CGRectMake(0, 10, [UIScreen mainScreen].bounds.size.width, backGroupImage.size.height);
+    backGroupImageView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, backGroupImage.size.height);
     [self addSubview:backGroupImageView];
 }
 

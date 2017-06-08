@@ -45,7 +45,7 @@
 
 - (void)setupDrawLineView {
     DrawLineView *lineView = [[DrawLineView alloc] init];
-    lineView.frame = CGRectMake(0, 120, STDScreenW, 200);
+    lineView.frame = CGRectMake(0, 120, STDScreenW, 210);
     [self.view addSubview:lineView];
 }
 

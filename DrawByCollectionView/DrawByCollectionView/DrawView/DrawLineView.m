@@ -53,7 +53,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat itemW = [UIScreen mainScreen].bounds.size.width / 5.0;
-    return CGSizeMake(itemW, 200);
+    return CGSizeMake(itemW, 210);
 }
 
 - (NSArray *)pointYList {

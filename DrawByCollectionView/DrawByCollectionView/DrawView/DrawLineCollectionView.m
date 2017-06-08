@@ -30,7 +30,7 @@
 @implementation DrawLineCollectionView
 + (instancetype)collectionView {
     DrawLineCollectionView *collectionView =
-    [[self alloc]initWithFrame:CGRectMake(0, 0,ScreenW ,200)
+    [[self alloc]initWithFrame:CGRectMake(0, 0,ScreenW ,210)
           collectionViewLayout:[self collectionViewFlowLayout]];
     
     [collectionView registerClass:[DrawLineCollectionViewCell class] forCellWithReuseIdentifier:@"DrawLineCollectionViewCell"];
@@ -138,8 +138,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         PointViewModel *pointModel = [[PointViewModel alloc] init];
         pointModel.leftLineType = [self lineTypeWithNumString:numString nearNumString:lastNumString];
         pointModel.rightLineType = [self lineTypeWithNumString:numString nearNumString:nextNumString];
-        pointModel.pointY = [@"-1" isEqualToString:numString] ? @"198" : [NSString stringWithFormat:@"%f",[numString floatValue] * 2];
-        
+        pointModel.pointY = [@"-1" isEqualToString:numString] ? @"0" : [NSString stringWithFormat:@"%f",[numString floatValue]];
+        pointModel.pointY = [NSString stringWithFormat:@"%f",(1 - ([pointModel.pointY floatValue]/100)) * 185];
         [self.pointModelLits addObject:pointModel];
     }
 }
