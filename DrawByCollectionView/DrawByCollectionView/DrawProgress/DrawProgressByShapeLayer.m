@@ -47,6 +47,7 @@
     [self animationChangeProgress];
 }
 
+#pragma mark - function
 - (void)animationChangeProgress {
     CABasicAnimation *pathAnima = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
     pathAnima.duration = 0.4f;
