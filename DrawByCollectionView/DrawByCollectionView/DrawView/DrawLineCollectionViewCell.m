@@ -21,7 +21,7 @@
 
 @interface DrawLineCollectionViewCell ()
 
-@property (nonatomic, assign) CGSize size;
+@property (nonatomic, assign) CGSize cellSize;
 
 @property (nonatomic, copy) NSArray *pointYList;
 @property (nonatomic, assign) NSInteger index;
@@ -42,6 +42,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         [self setBackgroundColor:[UIColor clearColor]];
+        [self setupNumLabel];
     }
     return self;
 }
@@ -59,7 +60,7 @@
 - (void)resetCircleLayerFrame {
     CGRect frame = self.circleLayer.frame;
     frame.origin.y = [self.pointModel.pointY floatValue] - 4.25;
-    frame.origin.x = self.size.width * 0.5 - 4.25;
+    frame.origin.x = self.cellSize.width * 0.5 - 4.25;
     [CATransaction begin];
     [CATransaction setDisableActions:YES];
     [self.circleLayer setFrame: frame];
@@ -67,7 +68,7 @@
 }
 
 - (void)setItemSize:(CGSize)size {
-    _size = size;
+    _cellSize = size;
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -80,7 +81,7 @@
 
 - (void)drawLeftLine {
     CGPoint firstPoint = CGPointMake(0, [self lastPointY]);
-    CGPoint nextPoint = CGPointMake(self.size.width * 0.5, [self currentPointY]);
+    CGPoint nextPoint = CGPointMake(self.cellSize.width * 0.5, [self currentPointY]);
     if (self.pointModel.leftLineType == LineTypeNormal) {
         [self drawNormalLineFirstPoint:firstPoint nextPoint:nextPoint];
     } else if (self.pointModel.leftLineType == LineTypeDotted) {
@@ -89,8 +90,8 @@
 }
 
 - (void)drawRightLine {
-    CGPoint firstPoint = CGPointMake(self.size.width * 0.5, [self currentPointY]);
-    CGPoint nextPoint = CGPointMake(self.size.width, [self nextPointY]);
+    CGPoint firstPoint = CGPointMake(self.cellSize.width * 0.5, [self currentPointY]);
+    CGPoint nextPoint = CGPointMake(self.cellSize.width, [self nextPointY]);
     if (self.pointModel.rightLineType == LineTypeNormal) {
         [self drawNormalLineFirstPoint:firstPoint nextPoint:nextPoint];
     } else if (self.pointModel.rightLineType == LineTypeDotted) {
@@ -162,6 +163,16 @@
         [self.layer addSublayer:_circleLayer];
     }
     return _circleLayer;
+}
+
+- (void)setupNumLabel {
+    UILabel *datelabel = [[UILabel alloc] init];
+    [datelabel setText:@"12.12~12.19"];
+    datelabel.textAlignment = NSTextAlignmentCenter;
+    datelabel.frame = CGRectMake(0, self.frame.size.height - 20, self.frame.size.width, 20);
+    [datelabel setFont:[UIFont systemFontOfSize:11]];
+    [datelabel setTextColor:[UIColor colorWithRed:(255)/255.0 green:(209)/255.0 blue:(93)/255.0 alpha:0.8]];
+    [self addSubview:datelabel];
 }
 
 @end
