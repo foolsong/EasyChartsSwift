@@ -15,10 +15,12 @@
 #import "DrawBarCollectionView.h"
 #import "DrawBarCollectionViewCell.h"
 
+#define ScreenW [UIScreen mainScreen].bounds.size.width
+
 @interface DrawBarCollectionView ()<UICollectionViewDelegate,
                                   UICollectionViewDataSource>
 
-
+@property (nonatomic, assign) NSInteger cellCount;
 
 @end
 
@@ -50,13 +52,15 @@
     self.showsVerticalScrollIndicator = NO;
     self.showsHorizontalScrollIndicator = NO;
     
-//    self.contentInset = UIEdgeInsetsMake(0, ScreenW * 0.4 , 0, ScreenW * 0.4);
+//    self.contentInset = UIEdgeInsetsMake(0, ScreenW * 0.25 , 0, ScreenW * 0.25);
+    
+//    self.contentOffset = CGPointMake( -ScreenW * 0.5 + 78 * 0.5, 0);
 }
 
 + (UICollectionViewFlowLayout *)collectionViewFlowLayout {
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    layout.minimumLineSpacing = 10;
+    layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing = 0;
     return layout;
 }
@@ -64,7 +68,7 @@
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 13;//[self.pointYList count];
+    return _cellCount;//[self.pointYList count];
 }
 
 - ( UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -101,6 +105,23 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 //    [UIView animateWithDuration:0.3 animations:^{
 //        self.contentOffset = CGPointMake(offsetX, 0);
 //    }];
+//    self.contentOffset = CGPointMake(-ScreenW * 0.5, 0);
+    
+}
+
+
+- (void)reset:(NSInteger)cellCount {
+    _cellCount = cellCount;
+    [self reloadData];
+    
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.contentOffset = CGPointMake( -ScreenW * 0.5 + 87 * 0.5 * cellCount, 0);
+    });
+    
+    NSLog(@"%ld -      %f",(long)cellCount,-ScreenW * 0.5 + 87 * 0.5 * cellCount);
+    
+//    [self layoutIfNeeded];
 }
 
 @end

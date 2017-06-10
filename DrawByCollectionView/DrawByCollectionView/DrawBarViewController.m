@@ -19,7 +19,7 @@
 
 @interface DrawBarViewController ()
 
-
+@property (nonatomic, strong) DrawBarCollectionView *barView;
 
 @end
 
@@ -36,6 +36,7 @@
     self = [super init];
     if (self) {
         [self p_configSubViews];
+        [self reset];
     }
     return self;
 }
@@ -50,14 +51,25 @@
 
 - (void)p_configOwnProperties {
     [self.view setBackgroundColor:[UIColor whiteColor]];
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 #pragma mark - HandleViews
 - (void)p_configSubViews {
     DrawBarCollectionView *barView = [DrawBarCollectionView collectionView];
-    [barView setBackgroundColor:[UIColor lightGrayColor]];
+    [barView setBackgroundColor:[UIColor whiteColor]];
     barView.frame = CGRectMake(0, 120, ScreenW, 210);
     [self.view addSubview:barView];
+    self.barView = barView;
+}
+
+- (void)reset {
+    NSInteger count = arc4random_uniform(3) + 1;
+    [self.barView reset:count];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self reset];
 }
 
 @end

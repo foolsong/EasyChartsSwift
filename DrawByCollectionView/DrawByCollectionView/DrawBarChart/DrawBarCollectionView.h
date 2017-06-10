@@ -11,5 +11,6 @@
 @interface DrawBarCollectionView : UICollectionView
 
 + (instancetype)collectionView;
+- (void)reset:(NSInteger)cellCount;
 
 @end
