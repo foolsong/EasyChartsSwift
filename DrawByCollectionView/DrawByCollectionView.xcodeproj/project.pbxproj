@@ -22,6 +22,9 @@
 		846555951EE69876008B902A /* DrawLineBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846555941EE69876008B902A /* DrawLineBackgroundView.m */; };
 		8465559D1EE6C738008B902A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8465559C1EE6C738008B902A /* Images.xcassets */; };
 		846555A61EE8E567008B902A /* DrawLineCirclePointLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 846555A51EE8E566008B902A /* DrawLineCirclePointLayer.m */; };
+		8491B66A1EEA78E400AF335F /* DrawBarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491B6691EEA78E400AF335F /* DrawBarCollectionView.m */; };
+		8491B66D1EEA7DE400AF335F /* DrawBarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491B66C1EEA7DE400AF335F /* DrawBarCollectionViewCell.m */; };
+		8491B6701EEA7E5C00AF335F /* DrawBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491B66F1EEA7E5C00AF335F /* DrawBarViewController.m */; };
 		84AD075A1EB2134900AA1A2A /* DottedLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD07591EB2134900AA1A2A /* DottedLineView.m */; };
 		84E46D401EC0234800E626E5 /* DrawProgressByShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E46D3F1EC0234800E626E5 /* DrawProgressByShapeLayer.m */; };
 		AA362FA31EB4F342007E710A /* PointViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA362FA21EB4F342007E710A /* PointViewModel.m */; };
@@ -57,6 +60,12 @@
 		846555A41EE8E566008B902A /* DrawLineCirclePointLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineCirclePointLayer.h; sourceTree = "<group>"; };
 		846555A51EE8E566008B902A /* DrawLineCirclePointLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineCirclePointLayer.m; sourceTree = "<group>"; };
 		846555AA1EE8F0D1008B902A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		8491B6681EEA78E400AF335F /* DrawBarCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawBarCollectionView.h; sourceTree = "<group>"; };
+		8491B6691EEA78E400AF335F /* DrawBarCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawBarCollectionView.m; sourceTree = "<group>"; };
+		8491B66B1EEA7DE400AF335F /* DrawBarCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawBarCollectionViewCell.h; sourceTree = "<group>"; };
+		8491B66C1EEA7DE400AF335F /* DrawBarCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawBarCollectionViewCell.m; sourceTree = "<group>"; };
+		8491B66E1EEA7E5C00AF335F /* DrawBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawBarViewController.h; sourceTree = "<group>"; };
+		8491B66F1EEA7E5C00AF335F /* DrawBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawBarViewController.m; sourceTree = "<group>"; };
 		84AD07581EB2134900AA1A2A /* DottedLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DottedLineView.h; sourceTree = "<group>"; };
 		84AD07591EB2134900AA1A2A /* DottedLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DottedLineView.m; sourceTree = "<group>"; };
 		84E46D3E1EC0234800E626E5 /* DrawProgressByShapeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawProgressByShapeLayer.h; sourceTree = "<group>"; };
@@ -98,6 +107,7 @@
 		842CBDBD1EAE0F5F0090D92F /* DrawByCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				8491B6671EEA784500AF335F /* DrawBarChart */,
 				AA46161C1EBF733D00FEE1DD /* DrawProgress */,
 				AA4616141EBF623600FEE1DD /* DrawCircle */,
 				84AD07571EB2132300AA1A2A /* DottedLine */,
@@ -112,6 +122,8 @@
 				8465558C1EE67B7A008B902A /* DrawCircleViewController.m */,
 				8465558E1EE67BD3008B902A /* ProgressViewViewController.h */,
 				8465558F1EE67BD3008B902A /* ProgressViewViewController.m */,
+				8491B66E1EEA7E5C00AF335F /* DrawBarViewController.h */,
+				8491B66F1EEA7E5C00AF335F /* DrawBarViewController.m */,
 				842CBDC71EAE0F5F0090D92F /* Main.storyboard */,
 				842CBDCA1EAE0F5F0090D92F /* Assets.xcassets */,
 				842CBDCC1EAE0F5F0090D92F /* LaunchScreen.storyboard */,
@@ -155,6 +167,17 @@
 				846555AA1EE8F0D1008B902A /* AdSupport.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8491B6671EEA784500AF335F /* DrawBarChart */ = {
+			isa = PBXGroup;
+			children = (
+				8491B6681EEA78E400AF335F /* DrawBarCollectionView.h */,
+				8491B6691EEA78E400AF335F /* DrawBarCollectionView.m */,
+				8491B66B1EEA7DE400AF335F /* DrawBarCollectionViewCell.h */,
+				8491B66C1EEA7DE400AF335F /* DrawBarCollectionViewCell.m */,
+			);
+			path = DrawBarChart;
 			sourceTree = "<group>";
 		};
 		84AD07571EB2132300AA1A2A /* DottedLine */ = {
@@ -268,7 +291,10 @@
 				84AD075A1EB2134900AA1A2A /* DottedLineView.m in Sources */,
 				8465558D1EE67B7A008B902A /* DrawCircleViewController.m in Sources */,
 				842CBDC31EAE0F5F0090D92F /* AppDelegate.m in Sources */,
+				8491B66D1EEA7DE400AF335F /* DrawBarCollectionViewCell.m in Sources */,
 				8465558A1EE67B21008B902A /* DrawLineViewController.m in Sources */,
+				8491B66A1EEA78E400AF335F /* DrawBarCollectionView.m in Sources */,
+				8491B6701EEA7E5C00AF335F /* DrawBarViewController.m in Sources */,
 				842CBDDB1EAE110E0090D92F /* DrawLineCollectionViewCell.m in Sources */,
 				AA4616171EBF625200FEE1DD /* DrawCircleView.m in Sources */,
 				842CBDC01EAE0F5F0090D92F /* main.m in Sources */,

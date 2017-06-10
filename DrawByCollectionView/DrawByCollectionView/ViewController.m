@@ -10,6 +10,7 @@
 #import "DrawLineViewController.h"
 #import "DrawCircleViewController.h"
 #import "ProgressViewViewController.h"
+#import "DrawBarViewController.h"
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 #define ScreenH [UIScreen mainScreen].bounds.size.height
@@ -26,7 +27,7 @@
     [super viewDidLoad];
     [self setupTableView];
     
-    [self jump2ProgressVC];
+    [self jump2DrawBarVC];
 }
 
 - (void)setupTableView {
@@ -53,6 +54,10 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)jump2DrawBarVC {
+    DrawBarViewController *vc = [[DrawBarViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 #pragma  mark - UITableViewDelegate,UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -77,6 +82,8 @@
         [self jump2DrawCircleVC];
     } else if (indexPath.row == 2) {
         [self jump2ProgressVC];
+    } else if (indexPath.row == 3) {
+        [self jump2DrawBarVC];
     }
 }
 
@@ -86,7 +93,7 @@
 
 - (NSArray *)titleList {
     if (_titleList == nil) {
-        _titleList = @[@"折线图",@"圆饼图",@"进度条"];
+        _titleList = @[@"折线图",@"圆饼图",@"进度条",@"柱状图"];
     }
     return _titleList;
 }
