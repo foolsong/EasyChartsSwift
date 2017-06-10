@@ -10,4 +10,6 @@
 
 @interface DrawCircleView : UIView
 
+- (void)resetCircleList:(NSArray *)circleModelList;
+
 @end

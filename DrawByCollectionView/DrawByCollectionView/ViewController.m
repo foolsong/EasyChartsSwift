@@ -27,7 +27,7 @@
     [super viewDidLoad];
     [self setupTableView];
     
-    [self jump2DrawBarVC];
+    [self jump2DrawCircleVC];
 }
 
 - (void)setupTableView {
