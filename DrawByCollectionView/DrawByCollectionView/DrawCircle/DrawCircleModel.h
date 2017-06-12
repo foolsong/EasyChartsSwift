@@ -9,6 +9,14 @@
 //#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, ArcCenterQuadrant) {
+    //以下是枚举成员
+    ArcCenterQuadrantFirst = 0,
+    ArcCenterQuadrantSecond,
+    ArcCenterQuadrantThird,
+    ArcCenterQuadrantFourth
+};
+
 @interface DrawCircleModel : UIView
 
 @property (nonatomic, strong) UIColor *circleColor;
@@ -17,8 +25,13 @@
 
 
 @property (nonatomic, assign) CGFloat offestX;
-
 @property (nonatomic, assign) CGFloat offestY;
 
+@property (nonatomic, assign) CGPoint inflectionPoint;  // 拐点
+@property (nonatomic, assign) CGPoint textLeftCenterPoint;
+
+@property (nonatomic, assign) ArcCenterQuadrant arcCenterQuadrant;
+
+- (void)computerLinePoint;
 
 @end

@@ -15,11 +15,13 @@
 #import "DrawCircleViewController.h"
 #import "DrawCircleView.h"
 #import "DrawCircleModel.h"
+#import "DrawCircleLineView.h"
 
 #define STDScreenW [UIScreen mainScreen].bounds.size.width
 @interface DrawCircleViewController ()
 
 @property (nonatomic, strong) DrawCircleView *circleView;
+@property (nonatomic, strong) DrawCircleLineView *lineView;
 
 @end
 
@@ -44,6 +46,8 @@
 #pragma mark - HandleViews
 - (void)p_configSubViews {
     [self setupDrawCircleView];
+    [self setupDrawCircleLineView];
+    [self test];
 }
 
 - (void)setupDrawCircleView {
@@ -52,7 +56,13 @@
     [self.view addSubview:circleView];
     self.circleView = circleView;
     
-    [self test];
+}
+
+- (void)setupDrawCircleLineView {
+    DrawCircleLineView *lineView = [[DrawCircleLineView alloc] init];
+    lineView.frame = CGRectMake(0, 240, STDScreenW, 200);
+    [self.view addSubview:lineView];
+    self.lineView = lineView;
 }
 
 - (void)test {
@@ -71,6 +81,7 @@
     model1.endAngle = model1.startAngle + 2 * M_PI * arr[0]     - off;
     model1.offestY = 100 + 76.5 * sin(model1.endAngle - (2 * M_PI * arr[0] * 0.5));
     model1.offestX = STDScreenW * 0.5 + 76.5 * cos(model1.endAngle - (M_PI * arr[0]));
+    [model1 computerLinePoint];
     
     DrawCircleModel *model2 = [[DrawCircleModel alloc] init];
     model2.circleColor = [UIColor colorWithRed:(255)/255.0 green:(133)/255.0 blue:(155)/255.0 alpha:1.0];
@@ -81,7 +92,7 @@
     
     model2.offestY = 100 + 76.5 * sin(model2.endAngle - (M_PI * arr[1]));
     model2.offestX = STDScreenW * 0.5 + 76.5 * cos(model2.endAngle - (M_PI * arr[1]));
-    
+    [model2 computerLinePoint];
     
     DrawCircleModel *model3 = [[DrawCircleModel alloc] init];
     model3.circleColor = [UIColor colorWithRed:(255)/255.0 green:(179)/255.0 blue:(0)/255.0 alpha:1.0];
@@ -92,6 +103,7 @@
     
     model3.offestY = 100 + 76.5 * sin(model3.endAngle - (M_PI * arr[2]));
     model3.offestX = STDScreenW * 0.5 + 76.5 * cos(model3.endAngle - (M_PI * arr[2]));
+    [model3 computerLinePoint];
     
     
     DrawCircleModel *model4 = [[DrawCircleModel alloc] init];
@@ -104,11 +116,13 @@
     
     model4.offestY = 100 + 76.5 * sin(model4.endAngle - (M_PI * (1 - tArr)));
     model4.offestX = STDScreenW * 0.5 + 76.5 * cos(model4.endAngle - (M_PI * (1 - tArr)));
+    [model4 computerLinePoint];
     
     
     
     
     [self.circleView resetCircleList:@[model1,model2,model3,model4]];
+    [self.lineView resetLine:@[model1,model2,model3,model4]];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
