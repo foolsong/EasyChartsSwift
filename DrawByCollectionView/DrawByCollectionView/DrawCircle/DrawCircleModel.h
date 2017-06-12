@@ -16,5 +16,9 @@
 @property (nonatomic, assign) CGFloat endAngle;
 
 
+@property (nonatomic, assign) CGFloat offestX;
+
+@property (nonatomic, assign) CGFloat offestY;
+
 
 @end
