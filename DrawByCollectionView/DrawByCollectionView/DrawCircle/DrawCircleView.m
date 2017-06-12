@@ -12,6 +12,7 @@
 @interface DrawCircleView()
 
 @property (nonatomic, copy) NSArray *circleModelList;
+@property (nonatomic, strong) NSMutableArray *layerMutableArray;
 
 @end
 
@@ -20,13 +21,6 @@
     self = [super init];
     if (self) {
         [self setBackgroundColor:[UIColor whiteColor]];
-//        self.fromValue = 0;
-//        self.toValue = 0;
-//        self.currentProgress = 0;
-//        [self drawBackGroupCircle];
-//        [self drawBackGroupCircle2];
-//        [self drawBackGroupCircle4];
-//        [self drawBackGroupCircle3];
     }
     return self;
 }
@@ -37,16 +31,23 @@
 
 #pragma mark - function
 - (void)resetCircleList:(NSArray *)circleModelList {
+    [self clearLayerMutableArray];
     self.circleModelList = circleModelList;
     for (DrawCircleModel *model in self.circleModelList) {
         [self drawBackGroupCircle:model];
     }
 }
 
+- (void)clearLayerMutableArray {
+    for (CAShapeLayer *shapeLayer in self.layerMutableArray) {
+        [shapeLayer removeFromSuperlayer];
+    }
+    
+    [self.layerMutableArray removeAllObjects];
+}
+
 #pragma mark - subviewsDrawCircleModel
 - (void)drawBackGroupCircle:(DrawCircleModel *)model {
-    
-//    UIColor *circleColor = [UIColor colorWithRed:(64)/255.0 green:(186)/255.0 blue:(255)/255.0 alpha:1];
     [self drawCircleWithLineWidth:5.0f
                         lineColor:[model.circleColor colorWithAlphaComponent:0.4]
                            radius:35
@@ -64,66 +65,6 @@
                              endA:model.endAngle];
 }
 
-//- (void)drawBackGroupCircle2 {
-//    UIColor *circle1Color = [UIColor colorWithRed:(255)/255.0 green:(133)/255.0 blue:(155)/255.0 alpha:0.4];
-//    [self drawCircleWithLineWidth:5.0f
-//                        lineColor:circle1Color
-//                           radius:35
-//                           startA:-M_PI_2 + M_PI * 0.5];
-//    
-//    UIColor *circle2Color = [UIColor colorWithRed:(255)/255.0 green:(133)/255.0 blue:(155)/255.0 alpha:1.0];
-//    [self drawCircleWithLineWidth:39.0f
-//                        lineColor:circle2Color
-//                           radius:57
-//                           startA:-M_PI_2 + M_PI * 0.5];
-//    
-//    UIColor *circle3Color = [UIColor colorWithRed:(255)/255.0 green:(133)/255.0 blue:(155)/255.0 alpha:0.2];
-//    [self drawCircleWithLineWidth:5.0f
-//                        lineColor:circle3Color
-//                           radius:79
-//                           startA:-M_PI_2 + M_PI * 0.5];
-//}
-//
-//- (void)drawBackGroupCircle3 {
-//    UIColor *circle1Color = [UIColor colorWithRed:(255)/255.0 green:(179)/255.0 blue:(0)/255.0 alpha:0.4];
-//    [self drawCircleWithLineWidth:5.0f
-//                        lineColor:circle1Color
-//                           radius:35
-//                           startA:-M_PI_2 + M_PI * 1];
-//    
-//    UIColor *circle2Color = [UIColor colorWithRed:(255)/255.0 green:(179)/255.0 blue:(0)/255.0 alpha:1.0];
-//    [self drawCircleWithLineWidth:39.0f
-//                        lineColor:circle2Color
-//                           radius:57
-//                           startA:-M_PI_2 + M_PI * 1];
-//    
-//    UIColor *circle3Color = [UIColor colorWithRed:(255)/255.0 green:(179)/255.0 blue:(0)/255.0 alpha:0.2];
-//    [self drawCircleWithLineWidth:5.0f
-//                        lineColor:circle3Color
-//                           radius:79
-//                           startA:-M_PI_2 + M_PI * 1];
-//}
-//
-//- (void)drawBackGroupCircle4 {
-//    UIColor *circle1Color = [UIColor colorWithRed:(152)/255.0 green:(230)/255.0 blue:(123)/255.0 alpha:0.4];
-//    [self drawCircleWithLineWidth:5.0f
-//                        lineColor:circle1Color
-//                           radius:35
-//                           startA:-M_PI_2 + M_PI * 1.5];
-//    
-//    UIColor *circle2Color = [UIColor colorWithRed:(152)/255.0 green:(230)/255.0 blue:(123)/255.0 alpha:1.0];
-//    [self drawCircleWithLineWidth:39.0f
-//                        lineColor:circle2Color
-//                           radius:57
-//                           startA:-M_PI_2 + M_PI * 1.5];
-//    
-//    UIColor *circle3Color = [UIColor colorWithRed:(152)/255.0 green:(230)/255.0 blue:(123)/255.0 alpha:0.2];
-//    [self drawCircleWithLineWidth:5.0f
-//                        lineColor:circle3Color
-//                           radius:79
-//                           startA:-M_PI_2 + M_PI * 1.5];
-//}
-
 - (CAShapeLayer *)drawCircleWithLineWidth:(CGFloat )lineWidth
                                 lineColor:(UIColor *)color
                                    radius:(CGFloat ) radius
@@ -138,6 +79,7 @@
     shapeLayer.lineWidth = lineWidth;
     shapeLayer.lineCap = kCALineCapButt;
     shapeLayer.strokeColor = color.CGColor;
+    [self.layerMutableArray addObject:shapeLayer];
     [self.layer addSublayer:shapeLayer];
     return shapeLayer;
 }
@@ -152,5 +94,11 @@
     return _circleModelList;
 }
 
+-(NSMutableArray *)layerMutableArray {
+    if (_layerMutableArray == nil) {
+        _layerMutableArray = [NSMutableArray array];
+    }
+    return _layerMutableArray;
+}
 
 @end
