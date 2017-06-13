@@ -72,6 +72,7 @@
                             [UIColor colorWithRed:(255)/255.0 green:(179)/255.0 blue:(0)/255.0 alpha:1.0],
                             [UIColor colorWithRed:(152)/255.0 green:(230)/255.0 blue:(123)/255.0 alpha:1.0]];
     
+    NSArray *arcTextArray  = @[@"精通",@"薄弱",@"了解",@"掌握"];
     
     NSMutableArray *circleModelList = [NSMutableArray array];
     
@@ -87,7 +88,8 @@
     for (int i = 0 ; i < 4; i++) {
         DrawCircleModel *model = [DrawCircleModel circleModelWithSrartAngle:startAngle
                                                                    arcPercent:arr[i]
-                                                                      color:colorArray[i]];
+                                                                      color:colorArray[i]
+                                                                    arcText:arcTextArray[i]];
         startAngle = model.endAngle;
         [circleModelList addObject:model];
     }

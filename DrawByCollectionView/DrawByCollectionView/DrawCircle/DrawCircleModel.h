@@ -18,26 +18,21 @@ typedef NS_ENUM(NSInteger, ArcCenterQuadrant) {
 
 @interface DrawCircleModel : UIView
 
-@property (nonatomic, strong) UIColor *circleColor;
 @property (nonatomic, assign) CGFloat startAngle;
 @property (nonatomic, assign) CGFloat endAngle;
 
-@property (nonatomic, assign) CGFloat arcPercent;
-
-
-
-
-
-@property (nonatomic, assign) CGPoint arcCenterPoint;
-
+@property (nonatomic, assign) CGPoint arcCenterPoint;   // 圆弧中心点
 @property (nonatomic, assign) CGPoint inflectionPoint;  // 拐点
 @property (nonatomic, assign) CGPoint textLeftCenterPoint;
 
 @property (nonatomic, assign) ArcCenterQuadrant arcCenterQuadrant;
+@property (nonatomic, strong) UIColor *circleColor;
+@property (nonatomic, strong) NSString *arcText;
 
 + (instancetype)circleModelWithSrartAngle:(CGFloat)startAngle
                                arcPercent:(CGFloat) arcPercent
-                                    color:(UIColor *)color;
+                                    color:(UIColor *)color
+                                  arcText:(NSString *)arcText;
 
 
 @end

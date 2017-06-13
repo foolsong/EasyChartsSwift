@@ -17,17 +17,21 @@
 
 @interface DrawCircleModel ()
 
+@property (nonatomic, assign) CGFloat arcPercent;
+
 @end
 
 @implementation DrawCircleModel
 
 + (instancetype)circleModelWithSrartAngle:(CGFloat)startAngle
                                arcPercent:(CGFloat) arcPercent
-                                    color:(UIColor *)color {
+                                    color:(UIColor *)color
+                                  arcText:(NSString *)arcText{
     DrawCircleModel *model = [[self alloc] init];
     model.circleColor = color;
     model.arcPercent = arcPercent;
     model.startAngle = startAngle;
+    model.arcText = arcText;
     [model computerEndAngle];
     [model computerArcCenterPoint];
     [model computerLinePoint];

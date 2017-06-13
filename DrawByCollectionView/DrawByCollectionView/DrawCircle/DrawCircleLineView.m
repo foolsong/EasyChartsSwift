@@ -45,7 +45,7 @@
     UILabel *label = [[UILabel alloc] init];
     [label setFont:[UIFont systemFontOfSize:13]];
     label.frame = frame;
-    [label setText:@"掌握"];
+    [label setText:model.arcText];
     [label setTextColor:model.circleColor];
     [self addSubview:label];
 }
