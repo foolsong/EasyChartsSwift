@@ -36,7 +36,7 @@
 }
 
 - (void)computerEndAngle {
-    self.endAngle = _startAngle + 2 * M_PI * _arcPercent  - 0.02;
+    self.endAngle = _startAngle + 2 * M_PI * _arcPercent  - 0.00;
 }
 
 - (void)computerArcCenterPoint {

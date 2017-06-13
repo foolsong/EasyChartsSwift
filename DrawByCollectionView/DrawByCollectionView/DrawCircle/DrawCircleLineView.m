@@ -19,7 +19,7 @@
 
 @interface DrawCircleLineView ()
 
-
+@property (nonatomic, strong) NSMutableArray *layerMutableList;
 
 @end
 
@@ -55,7 +55,19 @@
         DrawCircleModel *model = circleModelList[i];
         [self drawLine:model];
         [self setupLabel:model];
+        [self drawCircleWithLineWidth:49
+                            lineColor:[UIColor whiteColor]
+                               radius:57
+                               startA:model.startAngle
+                                 endA:model.startAngle + 0.02];
     }
+}
+
+- (void)clearLayerList {
+    for (CAShapeLayer *layer in self.layerMutableList) {
+        [layer removeFromSuperlayer];
+    }
+    [self.layerMutableList removeAllObjects];
 }
 
 - (void)drawLine:(DrawCircleModel *)model{
@@ -73,8 +85,34 @@
     lineLayer.strokeColor = model.circleColor.CGColor;
     lineLayer.path = linePath.CGPath;
     lineLayer.fillColor = nil; // 默认为blackColor
-    
+    [self.layerMutableList addObject:lineLayer];
     [self.layer addSublayer:lineLayer];
+}
+
+- (CAShapeLayer *)drawCircleWithLineWidth:(CGFloat )lineWidth
+                                lineColor:(UIColor *)color
+                                   radius:(CGFloat ) radius
+                                   startA:(CGFloat ) startA
+                                     endA:(CGFloat ) endA {
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    shapeLayer.frame = self.bounds;
+    CGPoint center = CGPointMake([UIScreen mainScreen].bounds.size.width * 0.5, 100);
+    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:startA endAngle:endA clockwise:YES];
+    shapeLayer.path = path.CGPath;
+    shapeLayer.fillColor = [UIColor clearColor].CGColor;
+    shapeLayer.lineWidth = lineWidth;
+    shapeLayer.lineCap = kCALineCapButt;
+    shapeLayer.strokeColor = color.CGColor;
+    [self.layerMutableList addObject:shapeLayer];
+    [self.layer addSublayer:shapeLayer];
+    return shapeLayer;
+}
+
+-(NSMutableArray *)layerMutableList {
+    if (_layerMutableList == nil) {
+        _layerMutableList = [NSMutableArray array];
+    }
+    return _layerMutableList;
 }
 
 @end
