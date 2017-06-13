@@ -65,11 +65,11 @@
     [linePath moveToPoint:model.textLeftCenterPoint];
     // 其他点
     [linePath addLineToPoint:model.inflectionPoint];
-    [linePath addLineToPoint:CGPointMake(model.offestX, model.offestY)];
+    [linePath addLineToPoint:model.arcCenterPoint];
     
     CAShapeLayer *lineLayer = [CAShapeLayer layer];
     
-    lineLayer.lineWidth = 1;
+    lineLayer.lineWidth = ((1 / [UIScreen mainScreen].scale) / 2);
     lineLayer.strokeColor = model.circleColor.CGColor;
     lineLayer.path = linePath.CGPath;
     lineLayer.fillColor = nil; // 默认为blackColor

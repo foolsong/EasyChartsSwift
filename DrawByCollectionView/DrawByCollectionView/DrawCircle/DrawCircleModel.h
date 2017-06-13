@@ -10,7 +10,6 @@
 #import <UIKit/UIKit.h>
 
 typedef NS_ENUM(NSInteger, ArcCenterQuadrant) {
-    //以下是枚举成员
     ArcCenterQuadrantFirst = 0,
     ArcCenterQuadrantSecond,
     ArcCenterQuadrantThird,
@@ -23,15 +22,22 @@ typedef NS_ENUM(NSInteger, ArcCenterQuadrant) {
 @property (nonatomic, assign) CGFloat startAngle;
 @property (nonatomic, assign) CGFloat endAngle;
 
+@property (nonatomic, assign) CGFloat arcPercent;
 
-@property (nonatomic, assign) CGFloat offestX;
-@property (nonatomic, assign) CGFloat offestY;
+
+
+
+
+@property (nonatomic, assign) CGPoint arcCenterPoint;
 
 @property (nonatomic, assign) CGPoint inflectionPoint;  // 拐点
 @property (nonatomic, assign) CGPoint textLeftCenterPoint;
 
 @property (nonatomic, assign) ArcCenterQuadrant arcCenterQuadrant;
 
-- (void)computerLinePoint;
++ (instancetype)circleModelWithSrartAngle:(CGFloat)startAngle
+                               arcPercent:(CGFloat) arcPercent
+                                    color:(UIColor *)color;
+
 
 @end

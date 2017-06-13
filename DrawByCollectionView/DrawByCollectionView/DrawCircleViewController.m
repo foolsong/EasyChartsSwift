@@ -67,28 +67,48 @@
 
 - (void)test {
     
-    float arr[] = {0.2,0.1,0.2,0.2};
+    NSArray *colorArray = @[[UIColor colorWithRed:(64)/255.0 green:(186)/255.0 blue:(255)/255.0 alpha:1.0],
+                            [UIColor colorWithRed:(255)/255.0 green:(133)/255.0 blue:(155)/255.0 alpha:1.0],
+                            [UIColor colorWithRed:(255)/255.0 green:(179)/255.0 blue:(0)/255.0 alpha:1.0],
+                            [UIColor colorWithRed:(152)/255.0 green:(230)/255.0 blue:(123)/255.0 alpha:1.0]];
+    
+    
+    NSMutableArray *circleModelList = [NSMutableArray array];
+    
+    float arr[] = {0.51,0.03,0.02,0.2};
     
     float tArr = arr[0] + arr[1] + arr[2];
     
+    arr[3] = 1 - tArr;
     NSAssert(tArr <= 1, @"测试数组百分比 和 大于 1");
     
     CGFloat off = 0.02;
     
+    CGFloat startAngle = - 2 * M_PI * arr[0];
+    
+    for (int i = 0 ; i < 4; i++) {
+        if (i != 0) {
+            startAngle += off;
+        }
+        DrawCircleModel *model = [DrawCircleModel circleModelWithSrartAngle:startAngle
+                                                                   arcPercent:arr[i]
+                                                                      color:colorArray[i]];
+        startAngle = model.endAngle;
+        
+        [circleModelList addObject:model];
+    }
+    /*
     DrawCircleModel *model1 = [[DrawCircleModel alloc] init];
     model1.circleColor = [UIColor colorWithRed:(64)/255.0 green:(186)/255.0 blue:(255)/255.0 alpha:1.0];
     model1.startAngle =  - 2 * M_PI * arr[0];
     model1.endAngle = model1.startAngle + 2 * M_PI * arr[0]     - off;
-    model1.offestY = 100 + 76.5 * sin(model1.endAngle - (2 * M_PI * arr[0] * 0.5));
-    model1.offestX = STDScreenW * 0.5 + 76.5 * cos(model1.endAngle - (M_PI * arr[0]));
+    
     [model1 computerLinePoint];
     
     DrawCircleModel *model2 = [[DrawCircleModel alloc] init];
     model2.circleColor = [UIColor colorWithRed:(255)/255.0 green:(133)/255.0 blue:(155)/255.0 alpha:1.0];
     model2.startAngle = model1.endAngle   + off;
     model2.endAngle = model2.startAngle + 2 * M_PI * arr[1]  - off;
-//    model2.offestY = 100 + 76.5 * sin(M_PI - model2.endAngle + (2 * M_PI * arr[1]) * 0.5);
-//    model2.offestX = STDScreenW * 0.5 - 76.5 * cos(M_PI - model2.endAngle + (2 * M_PI * arr[1]) * 0.5);
     
     model2.offestY = 100 + 76.5 * sin(model2.endAngle - (M_PI * arr[1]));
     model2.offestX = STDScreenW * 0.5 + 76.5 * cos(model2.endAngle - (M_PI * arr[1]));
@@ -119,10 +139,10 @@
     [model4 computerLinePoint];
     
     
+    */
     
-    
-    [self.circleView resetCircleList:@[model1,model2,model3,model4]];
-    [self.lineView resetLine:@[model1,model2,model3,model4]];
+    [self.circleView resetCircleList:circleModelList];
+    [self.lineView resetLine:circleModelList];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {

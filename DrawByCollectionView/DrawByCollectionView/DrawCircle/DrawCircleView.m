@@ -36,7 +36,7 @@
     self.circleModelList = circleModelList;
     for (DrawCircleModel *model in self.circleModelList) {
         [self drawBackGroupCircle:model];
-        [self testAddPoint:model];
+//        [self testAddPoint:model];
     }
 }
 
@@ -87,13 +87,13 @@
 }
 
 - (void)testAddPoint:(DrawCircleModel *)model {
-    if (model.offestX <= 0) {
+    if (model.arcCenterPoint.x <= 0) {
         return;
     }
     DrawLineCirclePointLayer *layer = [DrawLineCirclePointLayer circlePointLayer];
     CGRect frame = layer.frame;
-    frame.origin.x = model.offestX - 4.25;
-    frame.origin.y = model.offestY - 4.25;
+    frame.origin.x = model.arcCenterPoint.x - 4.25;
+    frame.origin.y = model.arcCenterPoint.y - 4.25;
     layer.frame = frame;
     [self.layer addSublayer:layer];
 }
