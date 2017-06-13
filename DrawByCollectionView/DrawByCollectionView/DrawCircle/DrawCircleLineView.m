@@ -21,6 +21,8 @@
 
 @property (nonatomic, strong) NSMutableArray *layerMutableList;
 
+@property (nonatomic, strong) NSMutableArray *labelList;
+
 @end
 
 @implementation DrawCircleLineView
@@ -47,19 +49,32 @@
     label.frame = frame;
     [label setText:model.arcText];
     [label setTextColor:model.circleColor];
+    [self.labelList addObject:label];
     [self addSubview:label];
 }
 
 - (void)resetLine:(NSArray *)circleModelList {
+    [self clearLayerList];
     for (int i = 0; i < [circleModelList count]; i ++) {
         DrawCircleModel *model = circleModelList[i];
-        [self drawLine:model];
-        [self setupLabel:model];
+        if (model.arcPercent >= 1) {
+            break;
+        }
+        
         [self drawCircleWithLineWidth:49
                             lineColor:[UIColor whiteColor]
                                radius:57
                                startA:model.startAngle
                                  endA:model.startAngle + 0.02];
+
+    }
+    
+    for (int i = 0; i < [circleModelList count]; i ++) {
+        DrawCircleModel *model = circleModelList[i];
+        
+        
+        [self drawLine:model];
+        [self setupLabel:model];
     }
 }
 
@@ -67,6 +82,11 @@
     for (CAShapeLayer *layer in self.layerMutableList) {
         [layer removeFromSuperlayer];
     }
+    for (UILabel *label in self.labelList) {
+        [label removeFromSuperview];
+    }
+    
+    [self.labelList removeAllObjects];
     [self.layerMutableList removeAllObjects];
 }
 
@@ -81,7 +101,7 @@
     
     CAShapeLayer *lineLayer = [CAShapeLayer layer];
     
-    lineLayer.lineWidth = ((1 / [UIScreen mainScreen].scale) / 2);
+    lineLayer.lineWidth = 2 * ((1 / [UIScreen mainScreen].scale) / 2);
     lineLayer.strokeColor = model.circleColor.CGColor;
     lineLayer.path = linePath.CGPath;
     lineLayer.fillColor = nil; // 默认为blackColor
@@ -113,6 +133,13 @@
         _layerMutableList = [NSMutableArray array];
     }
     return _layerMutableList;
+}
+
+- (NSMutableArray *)labelList {
+    if (_labelList == nil) {
+        _labelList = [NSMutableArray array];
+    }
+    return _labelList;
 }
 
 @end

@@ -38,13 +38,14 @@
         [self drawBackGroupCircle:model];
 //        [self testAddPoint:model];
     }
+//    [self layoutIfNeeded];
 }
 
 - (void)clearLayerMutableArray {
     for (CAShapeLayer *shapeLayer in self.layerMutableArray) {
         [shapeLayer removeFromSuperlayer];
     }
-    
+//    self.circleModelList = @[];
     [self.layerMutableArray removeAllObjects];
 }
 
@@ -86,17 +87,17 @@
     return shapeLayer;
 }
 
-- (void)testAddPoint:(DrawCircleModel *)model {
-    if (model.arcCenterPoint.x <= 0) {
-        return;
-    }
-    DrawLineCirclePointLayer *layer = [DrawLineCirclePointLayer circlePointLayer];
-    CGRect frame = layer.frame;
-    frame.origin.x = model.arcCenterPoint.x - 4.25;
-    frame.origin.y = model.arcCenterPoint.y - 4.25;
-    layer.frame = frame;
-    [self.layer addSublayer:layer];
-}
+//- (void)testAddPoint:(DrawCircleModel *)model {
+//    if (model.arcCenterPoint.x <= 0) {
+//        return;
+//    }
+//    DrawLineCirclePointLayer *layer = [DrawLineCirclePointLayer circlePointLayer];
+//    CGRect frame = layer.frame;
+//    frame.origin.x = model.arcCenterPoint.x - 4.25;
+//    frame.origin.y = model.arcCenterPoint.y - 4.25;
+//    layer.frame = frame;
+//    [self.layer addSublayer:layer];
+//}
 
 #pragma mark - LazyLoads
 - (NSArray *)circleModelList {

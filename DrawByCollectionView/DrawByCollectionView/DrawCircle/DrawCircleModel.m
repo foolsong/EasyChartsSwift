@@ -17,7 +17,7 @@
 
 @interface DrawCircleModel ()
 
-@property (nonatomic, assign) CGFloat arcPercent;
+@property (nonatomic, assign) CGFloat offset;
 
 @end
 
@@ -40,7 +40,11 @@
 }
 
 - (void)computerEndAngle {
-    self.endAngle = _startAngle + 2 * M_PI * _arcPercent  - 0.00;
+    self.endAngle = _startAngle + 2 * M_PI * _arcPercent;
+    _offset = 10;
+    if (_arcPercent < 0.03) {
+        _offset = 10;
+    }
 }
 
 - (void)computerArcCenterPoint {
@@ -56,7 +60,7 @@
     } else if (self.arcCenterPoint.x > ScreenW * 0.5  && self.arcCenterPoint.y > 100) {
         [self firstQuadrant];
         self.arcCenterQuadrant = ArcCenterQuadrantFirst;
-    } else  if (self.arcCenterPoint.x < ScreenW * 0.5  && self.arcCenterPoint.y > 100) {
+    } else  if (self.arcCenterPoint.x <= ScreenW * 0.5  && self.arcCenterPoint.y >= 100) {
         [self secondQuadrant];
         self.arcCenterQuadrant = ArcCenterQuadrantSecond;
     } else {
@@ -65,19 +69,35 @@
     }
 }
 
+- (void)resetLinePositionWithLastPointY:(CGFloat)pointY {
+    CGFloat currentPointY = 0;//= self.textLeftCenterPoint.y;
+    if (self.arcCenterQuadrant == ArcCenterQuadrantFirst) {
+        currentPointY = pointY + 15;
+    } else if (self.arcCenterQuadrant == ArcCenterQuadrantSecond) {
+        currentPointY = pointY - 15;
+    } else if (self.arcCenterQuadrant == ArcCenterQuadrantThird) {
+        currentPointY = pointY - 15;
+    } else if (self.arcCenterQuadrant == ArcCenterQuadrantFourth) {
+        currentPointY = pointY + 15;
+    }
+    
+    self.textLeftCenterPoint = CGPointMake(self.textLeftCenterPoint.x, currentPointY);
+    self.inflectionPoint = CGPointMake(self.inflectionPoint.x, self.textLeftCenterPoint.y);
+}
+
 - (void)firstQuadrant {
-    self.textLeftCenterPoint = CGPointMake(ScreenW - 84, self.arcCenterPoint.y + 10);
-    self.inflectionPoint = CGPointMake(self.arcCenterPoint.x + 10, self.textLeftCenterPoint.y);
+    self.textLeftCenterPoint = CGPointMake(ScreenW - 84, self.arcCenterPoint.y + _offset);
+    self.inflectionPoint = CGPointMake(self.arcCenterPoint.x + _offset, self.textLeftCenterPoint.y);
 }
 
 - (void)secondQuadrant {
-    self.textLeftCenterPoint = CGPointMake(80, self.arcCenterPoint.y + 10);
-    self.inflectionPoint = CGPointMake(self.arcCenterPoint.x - 10, self.textLeftCenterPoint.y);
+    self.textLeftCenterPoint = CGPointMake(80, self.arcCenterPoint.y + _offset);
+    self.inflectionPoint = CGPointMake(self.arcCenterPoint.x - _offset, self.textLeftCenterPoint.y);
 }
 
 - (void)thirdQuadrant {
-    self.textLeftCenterPoint = CGPointMake(80, self.arcCenterPoint.y - 10);
-    self.inflectionPoint = CGPointMake(self.arcCenterPoint.x - 10, self.textLeftCenterPoint.y);
+    self.textLeftCenterPoint = CGPointMake(80, self.arcCenterPoint.y - _offset);
+    self.inflectionPoint = CGPointMake(self.arcCenterPoint.x - _offset, self.textLeftCenterPoint.y);
 }
 
 - (void)fourthQuadrant {

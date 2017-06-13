@@ -20,6 +20,7 @@ typedef NS_ENUM(NSInteger, ArcCenterQuadrant) {
 
 @property (nonatomic, assign) CGFloat startAngle;
 @property (nonatomic, assign) CGFloat endAngle;
+@property (nonatomic, assign) CGFloat arcPercent;
 
 @property (nonatomic, assign) CGPoint arcCenterPoint;   // 圆弧中心点
 @property (nonatomic, assign) CGPoint inflectionPoint;  // 拐点
@@ -34,5 +35,5 @@ typedef NS_ENUM(NSInteger, ArcCenterQuadrant) {
                                     color:(UIColor *)color
                                   arcText:(NSString *)arcText;
 
-
+- (void)resetLinePositionWithLastPointY:(CGFloat)pointY;
 @end
