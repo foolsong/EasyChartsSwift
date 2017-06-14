@@ -6,18 +6,18 @@
 //  Copyright © 2017年 宋永建. All rights reserved.
 //
 
-#import "DrawCircleView.h"
-#import "DrawCircleModel.h"
+#import "DrawPieChartView.h"
+#import "DrawPieChartModel.h"
 #import "DrawLineCirclePointLayer.h"
 
-@interface DrawCircleView()
+@interface DrawPieChartView()
 
 @property (nonatomic, copy) NSArray *circleModelList;
 @property (nonatomic, strong) NSMutableArray *layerMutableArray;
 
 @end
 
-@implementation DrawCircleView
+@implementation DrawPieChartView
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -34,23 +34,20 @@
 - (void)resetCircleList:(NSArray *)circleModelList {
     [self clearLayerMutableArray];
     self.circleModelList = circleModelList;
-    for (DrawCircleModel *model in self.circleModelList) {
+    for (DrawPieChartModel *model in self.circleModelList) {
         [self drawBackGroupCircle:model];
-//        [self testAddPoint:model];
     }
-//    [self layoutIfNeeded];
 }
 
 - (void)clearLayerMutableArray {
     for (CAShapeLayer *shapeLayer in self.layerMutableArray) {
         [shapeLayer removeFromSuperlayer];
     }
-//    self.circleModelList = @[];
     [self.layerMutableArray removeAllObjects];
 }
 
 #pragma mark - subviewsDrawCircleModel
-- (void)drawBackGroupCircle:(DrawCircleModel *)model {
+- (void)drawBackGroupCircle:(DrawPieChartModel *)model {
     [self drawCircleWithLineWidth:5.0f
                         lineColor:[model.circleColor colorWithAlphaComponent:0.4]
                            radius:35
@@ -86,18 +83,6 @@
     [self.layer addSublayer:shapeLayer];
     return shapeLayer;
 }
-
-//- (void)testAddPoint:(DrawCircleModel *)model {
-//    if (model.arcCenterPoint.x <= 0) {
-//        return;
-//    }
-//    DrawLineCirclePointLayer *layer = [DrawLineCirclePointLayer circlePointLayer];
-//    CGRect frame = layer.frame;
-//    frame.origin.x = model.arcCenterPoint.x - 4.25;
-//    frame.origin.y = model.arcCenterPoint.y - 4.25;
-//    layer.frame = frame;
-//    [self.layer addSublayer:layer];
-//}
 
 #pragma mark - LazyLoads
 - (NSArray *)circleModelList {

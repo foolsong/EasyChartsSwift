@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, ArcCenterQuadrant) {
     ArcCenterQuadrantFourth
 };
 
-@interface DrawCircleModel : UIView
+@interface DrawPieChartModel : UIView
 
 @property (nonatomic, assign) CGFloat startAngle;
 @property (nonatomic, assign) CGFloat endAngle;

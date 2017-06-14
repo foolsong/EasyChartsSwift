@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DrawCircleLineView : UIView
+@interface DrawPieChartLineView : UIView
 
 - (void)resetLine:(NSArray *)circleModelList;
 

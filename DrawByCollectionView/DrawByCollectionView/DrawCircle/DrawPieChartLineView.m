@@ -12,12 +12,12 @@
 //
 //  ************************************************************************
 
-#import "DrawCircleLineView.h"
-#import "DrawCircleModel.h"
+#import "DrawPieChartLineView.h"
+#import "DrawPieChartModel.h"
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 
-@interface DrawCircleLineView ()
+@interface DrawPieChartLineView ()
 
 @property (nonatomic, strong) NSMutableArray *layerMutableList;
 
@@ -25,7 +25,7 @@
 
 @end
 
-@implementation DrawCircleLineView
+@implementation DrawPieChartLineView
 
 - (instancetype)init {
     self = [super init];
@@ -35,7 +35,7 @@
     return self;
 }
 
-- (void)setupLabel:(DrawCircleModel *)model {
+- (void)setupLabel:(DrawPieChartModel *)model {
     CGRect frame;
     if (model.arcCenterQuadrant == ArcCenterQuadrantFourth || model.arcCenterQuadrant == ArcCenterQuadrantFirst) {
         frame = CGRectMake(model.textLeftCenterPoint.x + 4, model.textLeftCenterPoint.y - 11, 32, 22);
@@ -56,7 +56,7 @@
 - (void)resetLine:(NSArray *)circleModelList {
     [self clearLayerList];
     for (int i = 0; i < [circleModelList count]; i ++) {
-        DrawCircleModel *model = circleModelList[i];
+        DrawPieChartModel *model = circleModelList[i];
         if (model.arcPercent >= 1) {
             break;
         }
@@ -70,7 +70,7 @@
     }
     
     for (int i = 0; i < [circleModelList count]; i ++) {
-        DrawCircleModel *model = circleModelList[i];
+        DrawPieChartModel *model = circleModelList[i];
         
         
         [self drawLine:model];
@@ -90,7 +90,7 @@
     [self.layerMutableList removeAllObjects];
 }
 
-- (void)drawLine:(DrawCircleModel *)model{
+- (void)drawLine:(DrawPieChartModel *)model{
     // 线的路径
     UIBezierPath *linePath = [UIBezierPath bezierPath];
     // 起点

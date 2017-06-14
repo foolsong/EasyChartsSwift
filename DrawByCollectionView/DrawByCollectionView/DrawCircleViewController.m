@@ -13,15 +13,15 @@
 //  ************************************************************************
 
 #import "DrawCircleViewController.h"
-#import "DrawCircleView.h"
-#import "DrawCircleModel.h"
-#import "DrawCircleLineView.h"
+#import "DrawPieChartView.h"
+#import "DrawPieChartModel.h"
+#import "DrawPieChartLineView.h"
 
 #define STDScreenW [UIScreen mainScreen].bounds.size.width
 @interface DrawCircleViewController ()
 
-@property (nonatomic, strong) DrawCircleView *circleView;
-@property (nonatomic, strong) DrawCircleLineView *lineView;
+@property (nonatomic, strong) DrawPieChartView *circleView;
+@property (nonatomic, strong) DrawPieChartLineView *lineView;
 
 @end
 
@@ -51,7 +51,7 @@
 }
 
 - (void)setupDrawCircleView {
-    DrawCircleView *circleView = [[DrawCircleView alloc] init];
+    DrawPieChartView *circleView = [[DrawPieChartView alloc] init];
     circleView.frame = CGRectMake(0, 240, STDScreenW, 200);
     [self.view addSubview:circleView];
     self.circleView = circleView;
@@ -59,7 +59,7 @@
 }
 
 - (void)setupDrawCircleLineView {
-    DrawCircleLineView *lineView = [[DrawCircleLineView alloc] init];
+    DrawPieChartLineView *lineView = [[DrawPieChartLineView alloc] init];
     lineView.frame = CGRectMake(0, 240, STDScreenW, 200);
     [self.view addSubview:lineView];
     self.lineView = lineView;
@@ -86,7 +86,7 @@
     CGFloat startAngle = 0;//- 2 * M_PI * arr[0];
     
     for (int i = 0 ; i < 2; i++) {
-        DrawCircleModel *model = [DrawCircleModel circleModelWithSrartAngle:startAngle
+        DrawPieChartModel *model = [DrawPieChartModel circleModelWithSrartAngle:startAngle
                                                                    arcPercent:arr[i]
                                                                       color:colorArray[i]
                                                                     arcText:arcTextArray[i]];
@@ -94,9 +94,9 @@
         [circleModelList addObject:model];
     }
     
-    DrawCircleModel *lastModel = nil;
+    DrawPieChartModel *lastModel = nil;
     
-    for (DrawCircleModel *model in circleModelList) {
+    for (DrawPieChartModel *model in circleModelList) {
         if (lastModel == nil) {
             lastModel = [circleModelList lastObject];
         }
@@ -138,7 +138,7 @@
     CGFloat startAngle = 0;//- 2 * M_PI * arr[0];
     
     for (int i = 0 ; i < 4; i++) {
-        DrawCircleModel *model = [DrawCircleModel circleModelWithSrartAngle:startAngle
+        DrawPieChartModel *model = [DrawPieChartModel circleModelWithSrartAngle:startAngle
                                                                  arcPercent:arr[i]
                                                                       color:colorArray[i]
                                                                     arcText:arcTextArray[i]];
@@ -146,9 +146,9 @@
         [circleModelList addObject:model];
     }
     
-    DrawCircleModel *lastModel = nil;
+    DrawPieChartModel *lastModel = nil;
     
-    for (DrawCircleModel *model in circleModelList) {
+    for (DrawPieChartModel *model in circleModelList) {
         if (lastModel == nil) {
             lastModel = [circleModelList lastObject];
         }
@@ -248,7 +248,7 @@
     CGFloat startAngle = 0;//- 2 * M_PI * arr[0];
     
     for (int i = 0 ; i < [muArr count]; i++) {
-        DrawCircleModel *model = [DrawCircleModel circleModelWithSrartAngle:startAngle
+        DrawPieChartModel *model = [DrawPieChartModel circleModelWithSrartAngle:startAngle
                                                                  arcPercent:arr[i]
                                                                       color:colorArray[i]
                                                                     arcText:arcTextArray[i]];
@@ -256,9 +256,9 @@
         [circleModelList addObject:model];
     }
     
-    DrawCircleModel *lastModel = nil;
+    DrawPieChartModel *lastModel = nil;
     
-    for (DrawCircleModel *model in circleModelList) {
+    for (DrawPieChartModel *model in circleModelList) {
         if (lastModel == nil) {
             lastModel = [circleModelList lastObject];
         }

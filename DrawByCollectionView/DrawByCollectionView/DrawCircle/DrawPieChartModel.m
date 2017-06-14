@@ -12,22 +12,22 @@
 //
 //  ************************************************************************
 
-#import "DrawCircleModel.h"
+#import "DrawPieChartModel.h"
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 
-@interface DrawCircleModel ()
+@interface DrawPieChartModel ()
 
 @property (nonatomic, assign) CGFloat offset;
 
 @end
 
-@implementation DrawCircleModel
+@implementation DrawPieChartModel
 
 + (instancetype)circleModelWithSrartAngle:(CGFloat)startAngle
                                arcPercent:(CGFloat) arcPercent
                                     color:(UIColor *)color
                                   arcText:(NSString *)arcText{
-    DrawCircleModel *model = [[self alloc] init];
+    DrawPieChartModel *model = [[self alloc] init];
     model.circleColor = color;
     model.arcPercent = arcPercent;
     model.startAngle = startAngle;
@@ -42,9 +42,6 @@
 - (void)computerEndAngle {
     self.endAngle = _startAngle + 2 * M_PI * _arcPercent;
     _offset = 10;
-    if (_arcPercent < 0.03) {
-        _offset = 10;
-    }
 }
 
 - (void)computerArcCenterPoint {
