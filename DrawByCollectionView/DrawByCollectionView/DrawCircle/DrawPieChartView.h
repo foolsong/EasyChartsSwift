@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DrawPieChartView : UIView
-
+@property (nonatomic, assign) CGPoint arcCenter;
 - (void)resetCircleList:(NSArray *)circleModelList;
 
 @end

@@ -16,6 +16,7 @@
 #import "DrawPieChartView.h"
 #import "DrawPieChartModel.h"
 #import "DrawPieChartLineView.h"
+#import "EasyPieChartView.h"
 
 #define STDScreenW [UIScreen mainScreen].bounds.size.width
 @interface DrawCircleViewController ()
@@ -43,6 +44,12 @@
     [self.view setBackgroundColor:[UIColor whiteColor]];
 }
 
+- (void)p_configSubViews {
+    EasyPieChartView *view = [EasyPieChartView pieChartViewWithFrame:CGRectMake(0, 100, STDScreenW, 200)];
+    [self.view addSubview:view];
+}
+
+/*
 #pragma mark - HandleViews
 - (void)p_configSubViews {
     [self setupDrawCircleView];
@@ -76,7 +83,7 @@
     
     NSMutableArray *circleModelList = [NSMutableArray array];
     
-    float arr[] = {0.5,0.5,0.01,0.2};
+    float arr[] = {0.2,0.2,0.31,0.2};
     
     float tArr = arr[0] + arr[1] + arr[2];
     
@@ -276,5 +283,5 @@
     
     [self.circleView resetCircleList:circleModelList];
     [self.lineView resetLine:circleModelList];
-}
+}*/
 @end

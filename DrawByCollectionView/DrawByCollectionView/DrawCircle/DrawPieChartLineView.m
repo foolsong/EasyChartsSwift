@@ -15,7 +15,7 @@
 #import "DrawPieChartLineView.h"
 #import "DrawPieChartModel.h"
 
-#define ScreenW [UIScreen mainScreen].bounds.size.width
+//#define ScreenW [UIScreen mainScreen].bounds.size.width
 
 @interface DrawPieChartLineView ()
 
@@ -116,8 +116,8 @@
                                      endA:(CGFloat ) endA {
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     shapeLayer.frame = self.bounds;
-    CGPoint center = CGPointMake([UIScreen mainScreen].bounds.size.width * 0.5, 100);
-    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:center radius:radius startAngle:startA endAngle:endA clockwise:YES];
+//    CGPoint center = CGPointMake([UIScreen mainScreen].bounds.size.width * 0.5, 100);
+    UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:self.arcCenter radius:radius startAngle:startA endAngle:endA clockwise:YES];
     shapeLayer.path = path.CGPath;
     shapeLayer.fillColor = [UIColor clearColor].CGColor;
     shapeLayer.lineWidth = lineWidth;

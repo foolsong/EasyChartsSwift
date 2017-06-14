@@ -11,5 +11,5 @@
 @interface DrawPieChartLineView : UIView
 
 - (void)resetLine:(NSArray *)circleModelList;
-
+@property (nonatomic, assign) CGPoint arcCenter;
 @end

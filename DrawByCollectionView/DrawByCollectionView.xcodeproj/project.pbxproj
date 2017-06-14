@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		841B3E251EF130D200B4A637 /* EasyPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 841B3E241EF130D200B4A637 /* EasyPieChartView.m */; };
 		842CBDC01EAE0F5F0090D92F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 842CBDBF1EAE0F5F0090D92F /* main.m */; };
 		842CBDC31EAE0F5F0090D92F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 842CBDC21EAE0F5F0090D92F /* AppDelegate.m */; };
 		842CBDC61EAE0F5F0090D92F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 842CBDC51EAE0F5F0090D92F /* ViewController.m */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		841B3E231EF130D200B4A637 /* EasyPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyPieChartView.h; sourceTree = "<group>"; };
+		841B3E241EF130D200B4A637 /* EasyPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyPieChartView.m; sourceTree = "<group>"; };
 		842CBDBB1EAE0F5F0090D92F /* DrawByCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawByCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		842CBDBF1EAE0F5F0090D92F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		842CBDC11EAE0F5F0090D92F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -204,6 +207,8 @@
 				8491B6831EEBEC0F00AF335F /* DrawPieChartModel.m */,
 				8491B6A11EEEC44F00AF335F /* DrawPieChartLineView.h */,
 				8491B6A21EEEC44F00AF335F /* DrawPieChartLineView.m */,
+				841B3E231EF130D200B4A637 /* EasyPieChartView.h */,
+				841B3E241EF130D200B4A637 /* EasyPieChartView.m */,
 			);
 			path = DrawCircle;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 			files = (
 				846555951EE69876008B902A /* DrawLineBackgroundView.m in Sources */,
 				842CBDDE1EAE125D0090D92F /* DrawLineView.m in Sources */,
+				841B3E251EF130D200B4A637 /* EasyPieChartView.m in Sources */,
 				846555901EE67BD3008B902A /* ProgressViewViewController.m in Sources */,
 				846555A61EE8E567008B902A /* DrawLineCirclePointLayer.m in Sources */,
 				84E46D401EC0234800E626E5 /* DrawProgressByShapeLayer.m in Sources */,

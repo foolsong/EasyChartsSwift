@@ -26,8 +26,10 @@
 + (instancetype)circleModelWithSrartAngle:(CGFloat)startAngle
                                arcPercent:(CGFloat) arcPercent
                                     color:(UIColor *)color
-                                  arcText:(NSString *)arcText{
+                                  arcText:(NSString *)arcText
+                                arcCenter:(CGPoint)arcCenter {
     DrawPieChartModel *model = [[self alloc] init];
+    model.arcCenter = arcCenter;
     model.circleColor = color;
     model.arcPercent = arcPercent;
     model.startAngle = startAngle;
@@ -45,19 +47,19 @@
 }
 
 - (void)computerArcCenterPoint {
-    CGFloat pointY = 100 + 76.5 * sin(_endAngle - (M_PI * _arcPercent));
-    CGFloat pointX = ScreenW * 0.5 + 76.5 * cos(_endAngle - (M_PI * _arcPercent));
+    CGFloat pointY = self.arcCenter.y + 76.5 * sin(_endAngle - (M_PI * _arcPercent));
+    CGFloat pointX = self.arcCenter.x + 76.5 * cos(_endAngle - (M_PI * _arcPercent));
     self.arcCenterPoint = CGPointMake(pointX, pointY);
 }
 
 - (void)computerLinePoint {
-    if (self.arcCenterPoint.x >= ScreenW * 0.5  && self.arcCenterPoint.y <= 100) {
+    if (self.arcCenterPoint.x >= self.arcCenter.x  && self.arcCenterPoint.y <= self.arcCenter.y) {
         [self fourthQuadrant];
         self.arcCenterQuadrant = ArcCenterQuadrantFourth;
-    } else if (self.arcCenterPoint.x > ScreenW * 0.5  && self.arcCenterPoint.y > 100) {
+    } else if (self.arcCenterPoint.x > self.arcCenter.x  && self.arcCenterPoint.y > self.arcCenter.y) {
         [self firstQuadrant];
         self.arcCenterQuadrant = ArcCenterQuadrantFirst;
-    } else  if (self.arcCenterPoint.x <= ScreenW * 0.5  && self.arcCenterPoint.y >= 100) {
+    } else  if (self.arcCenterPoint.x <= self.arcCenter.x  && self.arcCenterPoint.y >= self.arcCenter.y) {
         [self secondQuadrant];
         self.arcCenterQuadrant = ArcCenterQuadrantSecond;
     } else {
