@@ -54,7 +54,7 @@
 }
 
 - (void)computerLinePoint {
-    if (self.arcCenterPoint.x > ScreenW * 0.5  && self.arcCenterPoint.y < 100) {
+    if (self.arcCenterPoint.x >= ScreenW * 0.5  && self.arcCenterPoint.y <= 100) {
         [self fourthQuadrant];
         self.arcCenterQuadrant = ArcCenterQuadrantFourth;
     } else if (self.arcCenterPoint.x > ScreenW * 0.5  && self.arcCenterPoint.y > 100) {

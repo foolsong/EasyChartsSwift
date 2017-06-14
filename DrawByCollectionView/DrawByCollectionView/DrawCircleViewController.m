@@ -173,14 +173,18 @@
 
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self testAll];
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        [self testAll];
+    });
+    
 }
 
 - (void)testAll {
     
     dispatch_async(dispatch_get_global_queue(0, NO), ^{
         NSMutableArray *array = [NSMutableArray array];
-        for (int i = 32; i <= 100; i ++) {
+        for (int i = 56; i <= 100; i ++) {
             for (int j = 0; j <= 100; j ++) {
                 for (int k = 0; k <= 100; k++) {
                     if (i + j + k <= 100) {

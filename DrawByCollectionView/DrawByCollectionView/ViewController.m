@@ -36,6 +36,7 @@
     tableView.frame = CGRectMake(0, 64, ScreenW, ScreenH - 64);
     tableView.delegate = self;
     tableView.dataSource = self;
+    tableView.estimatedRowHeight = 200;
     [self.view addSubview:tableView];
 }
 
@@ -61,7 +62,13 @@
 
 #pragma  mark - UITableViewDelegate,UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    NSLog(@"------------------------");
     return [self.titleList count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"+++++++++++++++++++++++");
+    return 44;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -72,6 +79,7 @@
                                       reuseIdentifier:cellID];
     }
     [cell.textLabel setText:self.titleList[indexPath.row]];
+    NSLog(@"----cellcellcellcellcellcell-------------------");
     return cell;
 }
 
