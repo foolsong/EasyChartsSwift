@@ -29,7 +29,7 @@
 		8491B6841EEBEC0F00AF335F /* DrawPieChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491B6831EEBEC0F00AF335F /* DrawPieChartModel.m */; };
 		8491B6A31EEEC44F00AF335F /* DrawPieChartLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491B6A21EEEC44F00AF335F /* DrawPieChartLineView.m */; };
 		84AD075A1EB2134900AA1A2A /* DottedLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD07591EB2134900AA1A2A /* DottedLineView.m */; };
-		84E46D401EC0234800E626E5 /* DrawProgressByShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E46D3F1EC0234800E626E5 /* DrawProgressByShapeLayer.m */; };
+		84E46D401EC0234800E626E5 /* DrawProgressChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E46D3F1EC0234800E626E5 /* DrawProgressChartView.m */; };
 		AA362FA31EB4F342007E710A /* PointViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = AA362FA21EB4F342007E710A /* PointViewModel.m */; };
 		AA4616171EBF625200FEE1DD /* DrawPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = AA4616161EBF625200FEE1DD /* DrawPieChartView.m */; };
 /* End PBXBuildFile section */
@@ -77,8 +77,8 @@
 		8491B6A21EEEC44F00AF335F /* DrawPieChartLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawPieChartLineView.m; sourceTree = "<group>"; };
 		84AD07581EB2134900AA1A2A /* DottedLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DottedLineView.h; sourceTree = "<group>"; };
 		84AD07591EB2134900AA1A2A /* DottedLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DottedLineView.m; sourceTree = "<group>"; };
-		84E46D3E1EC0234800E626E5 /* DrawProgressByShapeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawProgressByShapeLayer.h; sourceTree = "<group>"; };
-		84E46D3F1EC0234800E626E5 /* DrawProgressByShapeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawProgressByShapeLayer.m; sourceTree = "<group>"; };
+		84E46D3E1EC0234800E626E5 /* DrawProgressChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawProgressChartView.h; sourceTree = "<group>"; };
+		84E46D3F1EC0234800E626E5 /* DrawProgressChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawProgressChartView.m; sourceTree = "<group>"; };
 		AA362FA11EB4F342007E710A /* PointViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointViewModel.h; sourceTree = "<group>"; };
 		AA362FA21EB4F342007E710A /* PointViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointViewModel.m; sourceTree = "<group>"; };
 		AA4616151EBF625200FEE1DD /* DrawPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawPieChartView.h; sourceTree = "<group>"; };
@@ -216,8 +216,8 @@
 		AA46161C1EBF733D00FEE1DD /* DrawProgress */ = {
 			isa = PBXGroup;
 			children = (
-				84E46D3E1EC0234800E626E5 /* DrawProgressByShapeLayer.h */,
-				84E46D3F1EC0234800E626E5 /* DrawProgressByShapeLayer.m */,
+				84E46D3E1EC0234800E626E5 /* DrawProgressChartView.h */,
+				84E46D3F1EC0234800E626E5 /* DrawProgressChartView.m */,
 			);
 			path = DrawProgress;
 			sourceTree = "<group>";
@@ -300,7 +300,7 @@
 				841B3E251EF130D200B4A637 /* EasyPieChartView.m in Sources */,
 				846555901EE67BD3008B902A /* ProgressViewViewController.m in Sources */,
 				846555A61EE8E567008B902A /* DrawLineCirclePointLayer.m in Sources */,
-				84E46D401EC0234800E626E5 /* DrawProgressByShapeLayer.m in Sources */,
+				84E46D401EC0234800E626E5 /* DrawProgressChartView.m in Sources */,
 				AA362FA31EB4F342007E710A /* PointViewModel.m in Sources */,
 				842CBDD81EAE10DD0090D92F /* DrawLineCollectionView.m in Sources */,
 				842CBDC61EAE0F5F0090D92F /* ViewController.m in Sources */,

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DrawProgressByShapeLayer : UIView
+@interface DrawProgressChartView : UIView
 
 - (void)resetProgress:(CGFloat)progress;
 

@@ -58,6 +58,7 @@
     self.pieChartLineView = pieChartLineView;
 }
 
+//测试代码
 - (void)test {
     
     NSArray *colorArray = @[[UIColor colorWithRed:(64)/255.0 green:(186)/255.0 blue:(255)/255.0 alpha:1.0],

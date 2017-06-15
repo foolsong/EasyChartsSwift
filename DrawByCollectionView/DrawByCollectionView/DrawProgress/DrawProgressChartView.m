@@ -12,9 +12,9 @@
 //
 //  ************************************************************************
 
-#import "DrawProgressByShapeLayer.h"
+#import "DrawProgressChartView.h"
 
-@interface DrawProgressByShapeLayer ()
+@interface DrawProgressChartView ()
 
 @property (nonatomic, assign) CGFloat currentProgress;
 
@@ -27,7 +27,7 @@
 
 @end
 
-@implementation DrawProgressByShapeLayer
+@implementation DrawProgressChartView
 
 - (instancetype)init {
     self = [super init];

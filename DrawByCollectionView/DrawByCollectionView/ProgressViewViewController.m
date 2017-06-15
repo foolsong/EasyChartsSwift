@@ -13,12 +13,12 @@
 //  ************************************************************************
 
 #import "ProgressViewViewController.h"
-#import "DrawProgressByShapeLayer.h"
+#import "DrawProgressChartView.h"
 
 #define STDScreenW [UIScreen mainScreen].bounds.size.width
 @interface ProgressViewViewController ()
 
-@property (nonatomic, strong) DrawProgressByShapeLayer *progressView;
+@property (nonatomic, strong) DrawProgressChartView *progressView;
 
 @end
 
@@ -46,7 +46,7 @@
 }
 
 - (void)setupDrawProgressByShapeLayer {
-    DrawProgressByShapeLayer *progressView = [[DrawProgressByShapeLayer alloc] init];
+    DrawProgressChartView *progressView = [[DrawProgressChartView alloc] init];
     progressView.frame = CGRectMake(100 , 100, 0.5 * STDScreenW, 200);
     [self.view addSubview:progressView];
     self.progressView = progressView;
