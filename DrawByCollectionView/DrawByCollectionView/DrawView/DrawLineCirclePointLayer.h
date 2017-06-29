@@ -11,5 +11,6 @@
 @interface DrawLineCirclePointLayer : CAShapeLayer
 
 + (instancetype)circlePointLayer;
++ (instancetype)circlePointSelectedLayer;
 
 @end

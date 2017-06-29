@@ -15,6 +15,7 @@
 #import "DrawLineCollectionView.h"
 #import "DrawLineCollectionViewCell.h"
 #import "PointViewModel.h"
+#import "CommonColor.h"
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 
@@ -25,13 +26,24 @@
 
 @property (nonatomic, strong) NSMutableArray <PointViewModel *>*pointModelLits;
 
+@property (nonatomic, strong) DrawLineCollectionViewCell *currentCell;
+@property (nonatomic, assign) NSInteger currentIndex;
+
+@property (nonatomic, assign) BOOL isNeedSettingLastCell;
+
 @end
 
 @implementation DrawLineCollectionView
 + (instancetype)collectionView {
+    DrawLineCollectionViewFlowLayout *layout = [self collectionViewFlowLayout];
     DrawLineCollectionView *collectionView =
     [[self alloc]initWithFrame:CGRectMake(0, 0,ScreenW ,210)
-          collectionViewLayout:[self collectionViewFlowLayout]];
+          collectionViewLayout:layout];
+    __weak typeof(collectionView) weakself = collectionView;
+    layout.indexBlock = ^(NSInteger index){
+        weakself.currentIndex = index;
+        [weakself didSelectItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
+    };
     
     [collectionView registerClass:[DrawLineCollectionViewCell class] forCellWithReuseIdentifier:@"DrawLineCollectionViewCell"];
     return collectionView;
@@ -52,6 +64,42 @@
     [self reloadData];
 }
 
+- (void)p_setupCellSelected {
+    NSInteger index = 0;
+    if (self.currentIndex == 0) {
+        index = 0;
+    } else if (self.currentIndex == 1) {
+        index = 1;
+    } else {
+        index = 2;
+    }
+    
+    //    if ([self.visibleCells count] > 5) {
+    //        index = 3;
+    //    }
+    
+    if ([self.visibleCells count] < index) {
+        return;
+    }
+    [self p_setupCellUnSelected];
+    
+    NSArray *visibleCellIndex = [self visibleCells];
+    NSArray *sortedIndexPaths = [visibleCellIndex sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+        NSIndexPath *path1 = (NSIndexPath *)[self indexPathForCell:obj1];
+        NSIndexPath *path2 = (NSIndexPath *)[self indexPathForCell:obj2];
+        return [path1 compare:path2];
+    }];
+    
+    self.currentCell = sortedIndexPaths[index];
+    [self.currentCell setupCellSelected:YES];
+}
+
+- (void)p_setupCellUnSelected {
+    if (self.currentCell) {
+        [self.currentCell setupCellSelected:NO];
+    }
+}
+
 - (void)p_configOwnProperties {
     self.backgroundColor = [UIColor clearColor];
     self.delegate = self;
@@ -63,6 +111,13 @@
     self.contentInset = UIEdgeInsetsMake(0, ScreenW * 0.4 , 0, ScreenW * 0.4);
 }
 
+- (void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (_drawLineDelegate && [_drawLineDelegate respondsToSelector:@selector(collectionViewPointYList:
+                                                                             didSelectItemAtIndexPath:)]) {
+        [_drawLineDelegate collectionViewPointYList:self didSelectItemAtIndexPath:indexPath];
+    }
+}
+
 #pragma mark - CollectionViewFlowLayout
 + (DrawLineCollectionViewFlowLayout *)collectionViewFlowLayout {
     DrawLineCollectionViewFlowLayout *layout = [DrawLineCollectionViewFlowLayout new];
@@ -72,6 +127,15 @@
 }
 
 #pragma mark - UICollectionViewDataSource
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+    [self p_setupCellSelected];
+}
+
+-(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
+    [self p_setupCellUnSelected];
+}
+
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [self.pointYList count];
 }
@@ -79,6 +143,14 @@
 - ( UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     DrawLineCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DrawLineCollectionViewCell" forIndexPath:indexPath];
     [cell setItemSize:[self sizeForItemAtIndexPath:indexPath]];
+    
+    if ([self.pointYList count] - 1 == indexPath.row && self.isNeedSettingLastCell) {
+        self.isNeedSettingLastCell = NO;
+        [self p_setupCellUnSelected];
+        self.currentCell = cell;
+        self.currentIndex = indexPath.row;
+        [self.currentCell setupCellSelected:YES];
+    }
     return cell;
 }
 
@@ -96,9 +168,25 @@
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat cellWidth = (ScreenW / 5.0);
     CGFloat offsetX = (indexPath.row - 2) * cellWidth;
-    [UIView animateWithDuration:0.3 animations:^{
-        self.contentOffset = CGPointMake(offsetX, 0);
-    }];
+    CGFloat contentOffsetXOffset = iPhone6Plus ? 0.2 : 0;
+    [UIView animateWithDuration:0.3
+                     animations:^{
+                         self.contentOffset = CGPointMake(offsetX + contentOffsetXOffset, 0);
+                     } completion:^(BOOL finished) {
+                         if (self.currentIndex != indexPath.row) {
+                             [self p_setupCellUnSelected];
+                             self.currentIndex = indexPath.row;
+                             [self p_setupCellSelected];
+                         }
+                         
+                     }];
+    
+    
+    
+    if (_drawLineDelegate && [_drawLineDelegate respondsToSelector:@selector(collectionViewPointYList:
+                                                                             didSelectItemAtIndexPath:)]) {
+        [_drawLineDelegate collectionViewPointYList:self didSelectItemAtIndexPath:indexPath];
+    }
 }
 
 - (NSArray *)pointYList {
@@ -139,6 +227,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         pointModel.leftLineType = [self lineTypeWithNumString:numString nearNumString:lastNumString];
         pointModel.rightLineType = [self lineTypeWithNumString:numString nearNumString:nextNumString];
         pointModel.pointY = [@"-1" isEqualToString:numString] ? @"0" : [NSString stringWithFormat:@"%f",[numString floatValue]];
+        pointModel.titleText = @"12.1~12.31";
         pointModel.pointY = [NSString stringWithFormat:@"%f",(1 - ([pointModel.pointY floatValue]/100)) * 185];
         [self.pointModelLits addObject:pointModel];
     }
@@ -218,7 +307,10 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         centerDiff = CGFLOAT_MAX;
     }
     //返回期望滑到的点的x加偏移量
-    return CGPointMake(proposedOffsetX + centerDiff, 0);
+    NSInteger blockIndex = (proposedOffsetX + centerDiff) / ([UIScreen mainScreen].bounds.size.width * 0.2 ) + 2.1;
+    _indexBlock(blockIndex);
+    CGFloat contentOffsetXOffset = iPhone6Plus ? 0.2 : 0;
+    return CGPointMake(proposedOffsetX + centerDiff + contentOffsetXOffset, 0);
 }
 
 -(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {

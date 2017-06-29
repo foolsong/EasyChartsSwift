@@ -15,4 +15,6 @@
 
 - (void)setItemSize:(CGSize)size;
 
+- (void)setupCellSelected:(BOOL)selected;
+
 @end

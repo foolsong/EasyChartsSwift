@@ -22,4 +22,6 @@ typedef NS_ENUM(NSUInteger, LineType) {
 
 @property (nonatomic, copy) NSString *pointY;
 
+@property (nonatomic, copy) NSString *titleText;
+
 @end

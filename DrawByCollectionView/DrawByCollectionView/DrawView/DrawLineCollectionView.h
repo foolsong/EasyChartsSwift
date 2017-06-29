@@ -17,13 +17,25 @@
 
 @end
 
+@protocol DrawLineCollectionViewDelegate <NSObject>
+
+- (void)collectionViewPointYList:(DrawLineCollectionView *)collectionView
+        didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+
+@end
+
 @interface DrawLineCollectionView : UICollectionView
 
 @property (nonatomic, weak) id<DrawLineCollectionViewDataSource> drawLineDataSource;
+@property (nonatomic, weak) id<DrawLineCollectionViewDelegate> drawLineDelegate;
 + (instancetype)collectionView;
 
 @end
 
+typedef  void (^ScrollIndexBlock)(NSInteger);
+
 @interface DrawLineCollectionViewFlowLayout : UICollectionViewFlowLayout
+
+@property (nonatomic, copy) ScrollIndexBlock indexBlock;
 
 @end

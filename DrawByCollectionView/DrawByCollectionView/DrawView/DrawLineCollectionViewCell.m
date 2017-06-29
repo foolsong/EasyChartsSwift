@@ -6,7 +6,7 @@
 //  Created by 宋永建 on 2017/4/24.
 //  Copyright © 2017年 宋永建. All rights reserved.
 //
-//  Main function: 
+//  Main function:
 //
 //  Other specifications:
 //
@@ -14,6 +14,7 @@
 
 #import "DrawLineCollectionViewCell.h"
 #import "PointViewModel.h"
+#import "CommonColor.h"
 
 #import "DrawLineCirclePointLayer.h"
 
@@ -33,6 +34,11 @@
 @property (nonatomic, strong) UIImage *circleImage;
 
 @property (nonatomic, strong) DrawLineCirclePointLayer *circleLayer;
+@property (nonatomic, strong) DrawLineCirclePointLayer *circleSelectedLayer;
+
+@property (nonatomic, strong) UILabel *datelabel;
+
+@property (nonatomic, strong) NSMutableArray *lineLayerList;
 
 @end
 
@@ -49,12 +55,18 @@
 
 - (void)configureCellWithPointYList:(NSArray *)pointYList
                           withIndex:(NSInteger)index {
+    if (index > [pointYList count] - 1) {
+        return;
+    }
+    [self clearLineLayerList];
     self.pointYList = pointYList;
     self.index = index;
     self.pointModel = self.pointYList[self.index];
+    [self.datelabel setText:self.pointModel.titleText];
     
+    [self drawLeftLine];
+    [self drawRightLine];
     [self resetCircleLayerFrame];
-    [self setNeedsDisplay];
 }
 
 - (void)resetCircleLayerFrame {
@@ -65,6 +77,12 @@
     [CATransaction setDisableActions:YES];
     [self.circleLayer setFrame: frame];
     [CATransaction commit];
+    
+    if (_circleSelectedLayer) {
+        [_circleSelectedLayer removeFromSuperlayer];
+        _circleSelectedLayer = nil;
+        [self p_setupCircleSelectedLayer];
+    }
 }
 
 - (void)setItemSize:(CGSize)size {
@@ -73,19 +91,15 @@
 
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    self.context = context;
-    [self drawLeftLine];
-    [self drawRightLine];
 }
 
 - (void)drawLeftLine {
     CGPoint firstPoint = CGPointMake(0, [self lastPointY]);
     CGPoint nextPoint = CGPointMake(self.cellSize.width * 0.5, [self currentPointY]);
     if (self.pointModel.leftLineType == LineTypeNormal) {
-        [self drawNormalLineFirstPoint:firstPoint nextPoint:nextPoint];
+        [self drawLineFirstPoint:firstPoint nextPoint:nextPoint dotted:NO];
     } else if (self.pointModel.leftLineType == LineTypeDotted) {
-        [self drawDottedLineFirstPoint:firstPoint nextPoint:nextPoint];
+        [self drawLineFirstPoint:firstPoint nextPoint:nextPoint dotted:YES];
     }
 }
 
@@ -93,47 +107,39 @@
     CGPoint firstPoint = CGPointMake(self.cellSize.width * 0.5, [self currentPointY]);
     CGPoint nextPoint = CGPointMake(self.cellSize.width, [self nextPointY]);
     if (self.pointModel.rightLineType == LineTypeNormal) {
-        [self drawNormalLineFirstPoint:firstPoint nextPoint:nextPoint];
+        [self drawLineFirstPoint:firstPoint nextPoint:nextPoint dotted:NO];
     } else if (self.pointModel.rightLineType == LineTypeDotted) {
-        [self drawDottedLineFirstPoint:firstPoint nextPoint:nextPoint];
+        [self drawLineFirstPoint:firstPoint nextPoint:nextPoint dotted:YES];
     }
 }
 
-- (void)drawNormalLineFirstPoint:(CGPoint)point nextPoint:(CGPoint)nextPoint {
+- (void)drawLineFirstPoint:(CGPoint)firstPoint
+                 nextPoint:(CGPoint)nextPoint
+                    dotted:(BOOL) dotted {
+    // 线的路径
+    UIBezierPath *linePath = [UIBezierPath bezierPath];
+    // 起点
+    [linePath moveToPoint:firstPoint];
+    // 其他点
+    [linePath addLineToPoint:nextPoint];
     
-    CGFloat lengths[] = {10,0};
-    // 虚线的起始点
-    CGContextSetLineDash(self.context, 0, lengths,2);
-    
-    CGContextMoveToPoint(self.context, point.x, point.y);
-    CGContextAddLineToPoint(self.context, nextPoint.x, nextPoint.y);
-    [[UIColor whiteColor] setStroke];
-    CGContextDrawPath(self.context, kCGPathStroke);
+    CAShapeLayer *lineLayer = [CAShapeLayer layer];
+    if (dotted) {
+        lineLayer.lineDashPattern = @[@5, @5];
+    }
+    lineLayer.lineWidth = 1.3;
+    lineLayer.strokeColor = [UIColor whiteColor].CGColor;
+    lineLayer.path = linePath.CGPath;
+    lineLayer.fillColor = nil; // 默认为blackColor
+    [self.layer insertSublayer:lineLayer below:self.circleLayer];
+    [self.lineLayerList addObject:lineLayer];
 }
 
-- (void)drawDottedLineFirstPoint:(CGPoint)point nextPoint:(CGPoint)nextPoint {
-    // 设置线条的样式
-    CGContextSetLineCap(self.context, kCGLineCapRound);
-    // 绘制线的宽度
-    CGContextSetLineWidth(self.context, 1.5);
-    // 线的颜色
-    CGContextSetStrokeColorWithColor(self.context, [UIColor whiteColor].CGColor);
-    // 开始绘制
-    CGContextBeginPath(self.context);
-    // 设置虚线绘制起点
-    CGContextMoveToPoint(self.context, point.x, point.y);
-    // lengths的值｛10,10｝表示先绘制10个点，再跳过10个点，如此反复
-    CGFloat lengths[] = {5,5};
-    // 虚线的起始点
-    CGContextSetLineDash(self.context, 0, lengths,2);
-    // 绘制虚线的终点
-    CGContextAddLineToPoint(self.context, nextPoint.x,nextPoint.y);
-    // 绘制
-    CGContextStrokePath(self.context);
-    
-    
-    // 关闭图像
-    CGContextClosePath(self.context);
+- (void)clearLineLayerList {
+    for (CAShapeLayer *lineLayer in self.lineLayerList) {
+        [lineLayer removeFromSuperlayer];
+    }
+    [self.lineLayerList removeAllObjects];
 }
 
 - (CGFloat)currentPointY {
@@ -165,14 +171,53 @@
     return _circleLayer;
 }
 
+- (DrawLineCirclePointLayer *)circleSelectedLayer {
+    if (_circleSelectedLayer == nil) {
+        _circleSelectedLayer = [DrawLineCirclePointLayer circlePointSelectedLayer];
+    }
+    return _circleSelectedLayer;
+}
+
 - (void)setupNumLabel {
     UILabel *datelabel = [[UILabel alloc] init];
     [datelabel setText:@"12.12~12.19"];
     datelabel.textAlignment = NSTextAlignmentCenter;
-    datelabel.frame = CGRectMake(0, self.frame.size.height - 20, self.frame.size.width, 20);
+    datelabel.frame = CGRectMake(0, self.frame.size.height - 13, self.frame.size.width, 15);
     [datelabel setFont:[UIFont systemFontOfSize:11]];
     [datelabel setTextColor:[UIColor colorWithRed:(255)/255.0 green:(209)/255.0 blue:(93)/255.0 alpha:0.8]];
     [self addSubview:datelabel];
+    self.datelabel = datelabel;
+}
+
+- (void)p_setupCircleSelectedLayer {
+    CGRect frame = self.circleLayer.frame;
+    frame.origin.x -= 6;
+    frame.origin.y += 6;
+    self.circleSelectedLayer.frame = frame;
+    [self.layer addSublayer:self.circleSelectedLayer];
+}
+
+- (void)setupCellSelected:(BOOL)selected {
+    if (selected) {
+        [self p_setupCircleSelectedLayer];
+        [self.datelabel setTextColor:kColorC3_1];
+        [self.datelabel setFont:[UIFont boldSystemFontOfSize:T9_22PX]];
+    } else {
+        if (_circleSelectedLayer) {
+            [_circleSelectedLayer removeFromSuperlayer];
+            _circleSelectedLayer = nil;
+        }
+        [self.datelabel setTextColor:[kColorC5_1 colorWithAlphaComponent:0.8]];
+        [self.datelabel setFont:[UIFont systemFontOfSize:T9_22PX]];
+    }
+    
+}
+
+- (NSMutableArray *)lineLayerList {
+    if (_lineLayerList == nil) {
+        _lineLayerList = [NSMutableArray array];
+    }
+    return _lineLayerList;
 }
 
 @end

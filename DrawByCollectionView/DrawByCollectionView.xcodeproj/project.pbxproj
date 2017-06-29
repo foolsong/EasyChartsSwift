@@ -37,6 +37,7 @@
 /* Begin PBXFileReference section */
 		841B3E231EF130D200B4A637 /* EasyPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyPieChartView.h; sourceTree = "<group>"; };
 		841B3E241EF130D200B4A637 /* EasyPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyPieChartView.m; sourceTree = "<group>"; };
+		841D53BF1F0499790034B0B8 /* CommonColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonColor.h; sourceTree = "<group>"; };
 		842CBDBB1EAE0F5F0090D92F /* DrawByCollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DrawByCollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		842CBDBF1EAE0F5F0090D92F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		842CBDC11EAE0F5F0090D92F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -96,6 +97,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		841D53BE1F04996D0034B0B8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				841D53BF1F0499790034B0B8 /* CommonColor.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		842CBDB21EAE0F5F0090D92F = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +125,7 @@
 		842CBDBD1EAE0F5F0090D92F /* DrawByCollectionView */ = {
 			isa = PBXGroup;
 			children = (
+				841D53BE1F04996D0034B0B8 /* Common */,
 				8491B6671EEA784500AF335F /* DrawBarChart */,
 				AA46161C1EBF733D00FEE1DD /* DrawProgress */,
 				AA4616141EBF623600FEE1DD /* DrawCircle */,
