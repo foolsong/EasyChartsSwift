@@ -15,9 +15,13 @@
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 #define ScreenH [UIScreen mainScreen].bounds.size.height
 
+
+
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, copy) NSArray *titleList;
+
+@property (nonatomic, copy) NSArray *labFArr;;
 
 @end
 
@@ -27,7 +31,44 @@
     [super viewDidLoad];
     [self setupTableView];
     
-    [self jump2DrawCircleVC];
+//    [self jump2DrawCircleVC];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
+//    [self testLabel];
+}
+
+- (void)testLabel {
+    CGFloat x = 40;
+    CGFloat h = 34;
+    CGFloat w = 300;
+    for (int i = 0; i < [self.labFArr count]; i++) {
+        CGFloat y = 64 + i * 40;
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(x, y, w, h)];
+        [label setTextColor:[UIColor blackColor]];
+        label.text = @"好好学习，天天向上";
+        label.font = self.labFArr[i];
+        [self.view addSubview:label];
+    }
+}
+
+- (NSArray *)labFArr {
+    if (_labFArr == nil) {
+        _labFArr = @[[UIFont systemFontOfSize:15] ,
+                     [UIFont boldSystemFontOfSize:15.0],
+                     [UIFont fontWithName:@"Helvetica-Bold" size:15],
+                     [UIFont fontWithName:@"Arial-BoldMT" size:15],
+                     [UIFont fontWithName:@"ArialMT" size:15],
+                     [UIFont fontWithName:@"Arial-ItalicMT" size:15],
+                     [UIFont fontWithName:@"Arial-BoldItalicMT" size:15],
+                     [UIFont fontWithName:@"Arial Rounded MT Bold" size:15],
+                     [UIFont fontWithName:@"AmericanTypewriter-Bold" size:15],
+                     [UIFont fontWithName:@"ArialRoundedMTBold" size:15],
+                     [UIFont fontWithName:@"Courier-Bold" size:15],
+                     [UIFont fontWithName:@"Georgia-Bold" size:15],
+                     [UIFont fontWithName:@"TimesNewRomanPS-BoldMT" size:15],
+                     [UIFont fontWithName:@"TrebuchetMS-Bold" size:15],
+                     [UIFont fontWithName:@"Verdana-Bold" size:15]];
+    }
+    return _labFArr;
 }
 
 - (void)setupTableView {
