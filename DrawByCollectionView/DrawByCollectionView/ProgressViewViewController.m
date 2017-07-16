@@ -29,6 +29,7 @@
     [super viewDidLoad];
     [self p_configOwnProperties];
     [self p_configSubViews];
+    [self setupTestButton];
 }
 
 - (void)dealloc {
@@ -46,19 +47,38 @@
 }
 
 - (void)setupDrawProgressByShapeLayer {
-    DrawProgressChartView *progressView = [[DrawProgressChartView alloc] init];
-    progressView.frame = CGRectMake(100 , 100, 0.5 * STDScreenW, 200);
+    
+    CGFloat width = 200;
+    CGFloat height = 200;
+    CGFloat x = (STDScreenW - width) * 0.5;
+    CGFloat y = CGRectGetMaxY(self.progressView.frame) + 100;
+    
+    CGRect frame = CGRectMake(x ,y ,width , height);;
+    DrawProgressChartView *progressView = [DrawProgressChartView progressChartViewWithFrame:frame];
     [self.view addSubview:progressView];
     self.progressView = progressView;
-}
-
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.progressView resetProgress:[self createProgress]];
 }
 
 - (CGFloat)createProgress {
     return arc4random_uniform(100) / 100.0;
 }
 
+- (void)setupTestButton {
+    CGFloat width = 80;
+    CGFloat height = 40;
+    CGFloat x = (STDScreenW - width) * 0.5;
+    CGFloat y = CGRectGetMaxY(self.progressView.frame) + 100;
+    UIButton *testButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [testButton setTitle:@"点击测试" forState:UIControlStateNormal];
+    [testButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    testButton.frame = CGRectMake(x, y, width, height);
+    [testButton addTarget:self
+                   action:@selector(testButtonClicked:)
+         forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:testButton];
+}
 
+- (void)testButtonClicked:(UIButton *)button {
+    [self.progressView resetProgress:[self createProgress]];
+}
 @end

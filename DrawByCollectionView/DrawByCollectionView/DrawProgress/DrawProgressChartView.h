@@ -10,6 +10,7 @@
 
 @interface DrawProgressChartView : UIView
 
++ (instancetype)progressChartViewWithFrame:(CGRect)frame;
 - (void)resetProgress:(CGFloat)progress;
 
 @end
