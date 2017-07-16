@@ -15,8 +15,6 @@
 #import "DrawPieChartLineView.h"
 #import "DrawPieChartModel.h"
 
-//#define ScreenW [UIScreen mainScreen].bounds.size.width
-
 @interface DrawPieChartLineView ()
 
 @property (nonatomic, strong) NSMutableArray *layerMutableList;
@@ -91,11 +89,8 @@
 }
 
 - (void)drawLine:(DrawPieChartModel *)model{
-    // 线的路径
     UIBezierPath *linePath = [UIBezierPath bezierPath];
-    // 起点
     [linePath moveToPoint:model.textLeftCenterPoint];
-    // 其他点
     [linePath addLineToPoint:model.inflectionPoint];
     [linePath addLineToPoint:model.arcCenterPoint];
     
@@ -111,12 +106,11 @@
 
 - (CAShapeLayer *)drawCircleWithLineWidth:(CGFloat )lineWidth
                                 lineColor:(UIColor *)color
-                                   radius:(CGFloat ) radius
-                                   startA:(CGFloat ) startA
-                                     endA:(CGFloat ) endA {
+                                   radius:(CGFloat )radius
+                                   startA:(CGFloat )startA
+                                     endA:(CGFloat )endA {
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     shapeLayer.frame = self.bounds;
-//    CGPoint center = CGPointMake([UIScreen mainScreen].bounds.size.width * 0.5, 100);
     UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:self.arcCenter radius:radius startAngle:startA endAngle:endA clockwise:YES];
     shapeLayer.path = path.CGPath;
     shapeLayer.fillColor = [UIColor clearColor].CGColor;
