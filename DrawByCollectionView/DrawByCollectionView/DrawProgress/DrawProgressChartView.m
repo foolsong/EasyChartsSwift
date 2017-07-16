@@ -6,13 +6,15 @@
 //  Created by 宋永建 on 2017/5/8.
 //  Copyright © 2017年 宋永建. All rights reserved.
 //
-//  Main function:
+//  Main function:  进度条
 //
 //  Other specifications:
 //
 //  ************************************************************************
 
 #import "DrawProgressChartView.h"
+
+#define animationDuration 0.4
 
 @interface DrawProgressChartView ()
 
@@ -25,6 +27,8 @@
 
 @property (nonatomic, assign) CGFloat radius;
 @property (nonatomic, assign) CGPoint circleCenter;
+
+@property (nonatomic, strong) CABasicAnimation *progressPathAnima;
 
 @end
 
@@ -41,10 +45,10 @@
     DrawProgressChartView *chartView = [[DrawProgressChartView alloc] init];
     [chartView computerRadiusAndCircleCenterWithFrame:frame];
     chartView.frame = frame;
+    [chartView setupNumlabelWithFrame:frame];
     [chartView setupProperty];
     [chartView setDefaultValue];
     [chartView drawBackGroupCircle];
-    [chartView setupNumlabelWithFrame:frame];
     return chartView;
 }
 
@@ -52,11 +56,14 @@
     self.fromValue = 0;
     self.toValue = 0;
     self.currentProgress = 0;
-    [self.numLabel setText:[NSString stringWithFormat:@"%.0f%%",self.currentProgress * 100]];
+    [self resetProgress:0];
 }
 
 - (void)setupProperty {
-    [self setBackgroundColor:[UIColor colorWithRed:(255)/255.0 green:(156)/255.0 blue:(14)/255.0 alpha:1.0]];
+    [self setBackgroundColor:[UIColor colorWithRed:(255)/255.0
+                                             green:(156)/255.0
+                                              blue:(14)/255.0
+                                             alpha:1.0]];
 }
 
 - (void)drawRect:(CGRect)rect {
@@ -68,31 +75,34 @@
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, frame.size.width, frame.size.height)];
     label.center = self.circleCenter;
     label.textAlignment = NSTextAlignmentCenter;
-    
     [self addSubview:label];
     self.numLabel = label;
 }
 
 #pragma mark - function
 - (void)animationChangeProgress {
-    CABasicAnimation *pathAnima = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-    pathAnima.duration = 0.4f;
-    pathAnima.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-    pathAnima.fromValue = [NSNumber numberWithFloat:self.fromValue];
-    pathAnima.toValue = [NSNumber numberWithFloat:self.toValue];
-    pathAnima.fillMode = kCAFillModeForwards;
-    pathAnima.removedOnCompletion = NO;
-    [self.progresShapeLayer addAnimation:pathAnima forKey:@"strokeEndAnimation"];
+    self.progressPathAnima.fromValue = [NSNumber numberWithFloat:self.fromValue];
+    self.progressPathAnima.toValue = [NSNumber numberWithFloat:self.toValue];
+    [self.progresShapeLayer addAnimation:self.progressPathAnima forKey:@"strokeEndAnimation"];
 }
 
 - (void)resetProgress:(CGFloat)progress {
     self.fromValue =  _currentProgress ;
     self.toValue = progress;
     self.currentProgress = progress;
-    
+    [self hideProgresShapeLayerIfNeeded];
     [self.numLabel setText:[NSString stringWithFormat:@"%.0f%%",self.currentProgress * 100]];
     [self setNeedsDisplay];
-    
+}
+
+- (void)hideProgresShapeLayerIfNeeded {
+    if (self.currentProgress * 100 == 0) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(animationDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            self.progresShapeLayer.hidden = YES;
+        });
+    } else {
+        self.progresShapeLayer.hidden = NO;
+    }
 }
 
 - (void)computerRadiusAndCircleCenterWithFrame:(CGRect) frame {
@@ -113,8 +123,6 @@
 - (CAShapeLayer *)drawCircleWithLineWidth:(CGFloat)lineWidth lineColor:(UIColor *)color {
     CAShapeLayer *shapeLayer = [CAShapeLayer layer];
     shapeLayer.frame = self.bounds;
-//    CGPoint center = CGPointMake(100, 100);
-//    CGFloat radius = 62.5;
     CGFloat startA = -M_PI_2;
     CGFloat endA = -M_PI_2 +  M_PI * 2;
     UIBezierPath *path = [UIBezierPath bezierPathWithArcCenter:self.circleCenter radius:self.radius startAngle:startA endAngle:endA clockwise:YES];
@@ -131,9 +139,23 @@
 - (CAShapeLayer *)progresShapeLayer {
     if (_progresShapeLayer == nil) {
         _progresShapeLayer = [self drawCircleWithLineWidth:5.0f
-                                                 lineColor:[UIColor whiteColor]];;
+                                                 lineColor:[UIColor whiteColor]];
+        _progresShapeLayer.hidden = YES;
     }
     return _progresShapeLayer;
+}
+
+- (CABasicAnimation *)progressPathAnima {
+    if (_progresShapeLayer == nil) {
+        CABasicAnimation *pathAnima = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
+        pathAnima.duration = animationDuration;
+        pathAnima.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        
+        pathAnima.fillMode = kCAFillModeForwards;
+        pathAnima.removedOnCompletion = NO;
+        _progressPathAnima = pathAnima;
+    }
+    return _progressPathAnima;
 }
 
 @end
