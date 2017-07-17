@@ -51,7 +51,6 @@
     pieChartView.frame = self.frame;
     [self addSubview:pieChartView];
     self.pieChartView = pieChartView;
-    
 }
 
 - (void)setupDrawCircleLineView {
