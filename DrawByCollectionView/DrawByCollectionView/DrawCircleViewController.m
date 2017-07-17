@@ -24,6 +24,10 @@
 @property (nonatomic, strong) DrawPieChartView *circleView;
 @property (nonatomic, strong) DrawPieChartLineView *lineView;
 
+@property (nonatomic, copy) NSArray<NSNumber *> *percentList;
+@property (nonatomic, copy) NSArray<UIColor *> *colorList;
+@property (nonatomic, copy) NSArray<NSString *> *arcTextList;
+
 @end
 
 @implementation DrawCircleViewController
@@ -47,7 +51,54 @@
 - (void)p_configSubViews {
     EasyPieChartView *view = [EasyPieChartView pieChartViewWithFrame:CGRectMake(0, 100, STDScreenW, 200)];
     [self.view addSubview:view];
+    
+    [view drawPieChartWithPercentList:self.percentList
+                            colorList:self.colorList
+                          arcTextList:self.arcTextList];
 }
+
+- (NSArray<NSNumber *> *)percentList {
+    if (_percentList == nil) {
+        _percentList = @[@(0.2),@(0.4),@(0.1),@(0.3)];
+    }
+    return _percentList;
+}
+
+- (NSArray<UIColor *> *)colorList {
+    if (_colorList == nil) {
+        _colorList = @[[UIColor colorWithRed:(64)/255.0 green:(186)/255.0 blue:(255)/255.0 alpha:1.0],
+                       [UIColor colorWithRed:(255)/255.0 green:(133)/255.0 blue:(155)/255.0 alpha:1.0],
+                       [UIColor colorWithRed:(255)/255.0 green:(179)/255.0 blue:(0)/255.0 alpha:1.0],
+                       [UIColor colorWithRed:(152)/255.0 green:(230)/255.0 blue:(123)/255.0 alpha:1.0]];
+    }
+    return _colorList;
+}
+
+- (NSArray<NSString *> *)arcTextList {
+    if (_arcTextList == nil) {
+        _arcTextList = @[@"精通",@"薄弱",@"了解",@"掌握"];
+    }
+    return _arcTextList;
+}
+
+/*
+ 
+ NSArray *colorArray = @[[UIColor colorWithRed:(64)/255.0 green:(186)/255.0 blue:(255)/255.0 alpha:1.0],
+ [UIColor colorWithRed:(255)/255.0 green:(133)/255.0 blue:(155)/255.0 alpha:1.0],
+ [UIColor colorWithRed:(255)/255.0 green:(179)/255.0 blue:(0)/255.0 alpha:1.0],
+ [UIColor colorWithRed:(152)/255.0 green:(230)/255.0 blue:(123)/255.0 alpha:1.0],
+ [UIColor colorWithRed:(64)/255.0 green:(186)/255.0 blue:(255)/255.0 alpha:1.0],
+ [UIColor colorWithRed:(255)/255.0 green:(133)/255.0 blue:(155)/255.0 alpha:1.0],
+ [UIColor colorWithRed:(255)/255.0 green:(179)/255.0 blue:(0)/255.0 alpha:1.0],
+ [UIColor colorWithRed:(152)/255.0 green:(230)/255.0 blue:(123)/255.0 alpha:1.0]];
+ 
+ NSArray *arcTextArray  = @[@"精通",@"薄弱",@"了解",@"掌握",@"精通",@"薄弱",@"了解",@"掌握"];
+ 
+ NSMutableArray *circleModelList = [NSMutableArray array];
+ 
+ float arr[] = {0.2,0.2,0.01,0.01,0.18,0.1,0.2,0.1};
+ 
+ */
 
 /*
 #pragma mark - HandleViews

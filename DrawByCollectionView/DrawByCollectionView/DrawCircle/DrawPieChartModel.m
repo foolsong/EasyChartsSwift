@@ -24,14 +24,14 @@
 @implementation DrawPieChartModel
 
 + (instancetype)circleModelWithSrartAngle:(CGFloat)startAngle
-                               arcPercent:(CGFloat) arcPercent
+                               arcPercent:(NSNumber *) arcPercent
                                     color:(UIColor *)color
                                   arcText:(NSString *)arcText
                                 arcCenter:(CGPoint)arcCenter {
     DrawPieChartModel *model = [[self alloc] init];
     model.arcCenter = arcCenter;
     model.circleColor = color;
-    model.arcPercent = arcPercent;
+    model.arcPercent = [arcPercent floatValue];
     model.startAngle = startAngle;
     model.arcText = arcText;
     [model computerEndAngle];

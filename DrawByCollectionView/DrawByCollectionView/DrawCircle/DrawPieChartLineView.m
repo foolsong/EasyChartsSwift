@@ -39,7 +39,6 @@
         frame = CGRectMake(model.textLeftCenterPoint.x + 4, model.textLeftCenterPoint.y - 11, 32, 22);
     } else {
         frame = CGRectMake(model.textLeftCenterPoint.x + 4 - 32, model.textLeftCenterPoint.y - 11, 32, 22);
-
     }
     
     UILabel *label = [[UILabel alloc] init];
@@ -53,24 +52,27 @@
 
 - (void)resetLine:(NSArray *)circleModelList {
     [self clearLayerList];
+    [self drawHalvingLine:circleModelList];
+    [self drawDescriptionLabel:circleModelList];
+}
+
+- (void)drawHalvingLine:(NSArray *)circleModelList {
     for (int i = 0; i < [circleModelList count]; i ++) {
         DrawPieChartModel *model = circleModelList[i];
         if (model.arcPercent >= 1) {
             break;
         }
-        
         [self drawCircleWithLineWidth:49
                             lineColor:[UIColor whiteColor]
                                radius:57
                                startA:model.startAngle
                                  endA:model.startAngle + 0.02];
-
     }
-    
+}
+
+- (void)drawDescriptionLabel:(NSArray *)circleModelList {
     for (int i = 0; i < [circleModelList count]; i ++) {
         DrawPieChartModel *model = circleModelList[i];
-        
-        
         [self drawLine:model];
         [self setupLabel:model];
     }

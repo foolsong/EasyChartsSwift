@@ -32,7 +32,7 @@ typedef NS_ENUM(NSInteger, ArcCenterQuadrant) {
 @property (nonatomic, strong) NSString *arcText;
 
 + (instancetype)circleModelWithSrartAngle:(CGFloat)startAngle
-                               arcPercent:(CGFloat) arcPercent
+                               arcPercent:(NSNumber *) arcPercent
                                     color:(UIColor *)color
                                   arcText:(NSString *)arcText
                                 arcCenter:(CGPoint)arcCenter;
