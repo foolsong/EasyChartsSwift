@@ -141,7 +141,7 @@
 
 - (void)randomText {
     NSMutableArray *textMutableList = [NSMutableArray array];
-    NSArray *textList = @[@"精通",@"薄弱",@"了解",@"掌握",@"skillful",@"weak",@"know",@"master"];
+    NSArray *textList = @[@"精通",@"薄弱",@"了解",@"掌握",@"skill",@"weak",@"know",@"master"];
     for (int i = 0; i < [self.percentList count]; i++) {
         [textMutableList addObject:textList[i]];
     }

@@ -85,22 +85,22 @@
 }
 
 - (void)firstQuadrant {
-    self.textLeftCenterPoint = CGPointMake(ScreenW - 84, self.arcCenterPoint.y + _offset);
+    self.textLeftCenterPoint = CGPointMake(ScreenW - 64, self.arcCenterPoint.y + _offset);
     self.inflectionPoint = CGPointMake(self.arcCenterPoint.x + _offset, self.textLeftCenterPoint.y);
 }
 
 - (void)secondQuadrant {
-    self.textLeftCenterPoint = CGPointMake(80, self.arcCenterPoint.y + _offset);
+    self.textLeftCenterPoint = CGPointMake(50, self.arcCenterPoint.y + _offset);
     self.inflectionPoint = CGPointMake(self.arcCenterPoint.x - _offset, self.textLeftCenterPoint.y);
 }
 
 - (void)thirdQuadrant {
-    self.textLeftCenterPoint = CGPointMake(80, self.arcCenterPoint.y - _offset);
+    self.textLeftCenterPoint = CGPointMake(50, self.arcCenterPoint.y - _offset);
     self.inflectionPoint = CGPointMake(self.arcCenterPoint.x - _offset, self.textLeftCenterPoint.y);
 }
 
 - (void)fourthQuadrant {
-    self.textLeftCenterPoint = CGPointMake(ScreenW - 84, self.arcCenterPoint.y - 10);
+    self.textLeftCenterPoint = CGPointMake(ScreenW - 64, self.arcCenterPoint.y - 10);
     self.inflectionPoint = CGPointMake(self.arcCenterPoint.x + 10, self.textLeftCenterPoint.y);
 }
 @end
