@@ -20,6 +20,7 @@
 
 @property (nonatomic, strong) DrawLineCollectionView *lineCollectionView;
 @property (nonatomic, copy) NSArray *pointYList;
+@property (nonatomic, assign) CGSize lineViewSize;
 
 @end
 
@@ -28,14 +29,24 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [self setupBackgroundView];
-        [self setupCollectionView];
     }
     return self;
 }
 
-- (void)setupBackgroundView {
-    DrawLineBackgroundView *backgroupView = [DrawLineBackgroundView backgroundView];
++ (instancetype)lineViewWithFrame:(CGRect) frame {
+    DrawLineView *lineView = [[self alloc] init];
+    lineView.frame = frame;
+    [lineView setupSubviews];
+    return lineView;
+}
+
+- (void)setupSubviews {
+    [self setupBackgroundViewWithFrame:self.frame];
+    [self setupCollectionView];
+}
+
+- (void)setupBackgroundViewWithFrame:(CGRect) frame {
+    DrawLineBackgroundView *backgroupView = [DrawLineBackgroundView backgroundViewWithFrame:frame];
     [self addSubview:backgroupView];
 }
 
@@ -58,7 +69,7 @@
 
 - (NSArray *)pointYList {
     if (_pointYList == nil) {
-        _pointYList = @[@"12",@"-1",@"68",@"73",@"27",@"63",@"12",@"51",@"-1",@"-1",@"27",@"93"];
+        _pointYList = @[@"12",@"-1",@"68",@"73",@"27",@"63",@"12",@"51",@"-1",@"-1",@"27",@"93",@"100"];
     }
     return _pointYList;
 }

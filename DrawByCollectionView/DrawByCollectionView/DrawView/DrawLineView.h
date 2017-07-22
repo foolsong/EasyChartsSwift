@@ -10,4 +10,6 @@
 
 @interface DrawLineView : UIView
 
++ (instancetype)lineViewWithFrame:(CGRect) frame;
+
 @end

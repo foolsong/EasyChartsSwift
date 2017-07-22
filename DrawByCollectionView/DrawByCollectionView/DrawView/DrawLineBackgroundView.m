@@ -21,9 +21,9 @@
 
 @implementation DrawLineBackgroundView
 
-+ (instancetype)backgroundView {
++ (instancetype)backgroundViewWithFrame:(CGRect)frame {
     DrawLineBackgroundView *view = [[self alloc] init];
-    view.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 210);
+    view.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
     return view;
 }
 

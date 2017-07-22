@@ -10,6 +10,6 @@
 
 @interface DrawLineBackgroundView : UIView
 
-+ (instancetype)backgroundView;
++ (instancetype)backgroundViewWithFrame:(CGRect)frame;
 
 @end
