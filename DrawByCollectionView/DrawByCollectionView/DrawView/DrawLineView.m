@@ -51,7 +51,8 @@
 }
 
 - (void)setupCollectionView {
-    DrawLineCollectionView *lineCollectionView = [DrawLineCollectionView collectionView];
+    DrawLineCollectionView *lineCollectionView =
+    [DrawLineCollectionView collectionViewWithFrame:self.frame];
     lineCollectionView.drawLineDataSource = self;
     self.lineCollectionView = lineCollectionView;
     [self addSubview:lineCollectionView];
@@ -63,7 +64,7 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat itemW = [UIScreen mainScreen].bounds.size.width / 5.0;
+    CGFloat itemW = self.frame.size.width * 0.2 + 0.2;
     return CGSizeMake(itemW, 210);
 }
 

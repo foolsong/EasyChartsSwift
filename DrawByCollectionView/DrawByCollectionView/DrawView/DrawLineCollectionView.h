@@ -28,9 +28,10 @@
 
 @property (nonatomic, weak) id<DrawLineCollectionViewDataSource> drawLineDataSource;
 @property (nonatomic, weak) id<DrawLineCollectionViewDelegate> drawLineDelegate;
-+ (instancetype)collectionView;
++ (instancetype)collectionViewWithFrame:(CGRect)frmae;
 
 @end
+
 
 
 

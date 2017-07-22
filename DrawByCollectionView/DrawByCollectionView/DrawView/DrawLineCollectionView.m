@@ -34,10 +34,10 @@
 @end
 
 @implementation DrawLineCollectionView
-+ (instancetype)collectionView {
++ (instancetype)collectionViewWithFrame:(CGRect)frmae {
     DrawLineCollectionViewFlowLayout *layout = [self collectionViewFlowLayout];
     DrawLineCollectionView *collectionView =
-    [[self alloc]initWithFrame:CGRectMake(0, 0,ScreenW ,210)
+    [[self alloc]initWithFrame:CGRectMake(0, 0,frmae.size.width ,frmae.size.height)
           collectionViewLayout:layout];
     __weak typeof(collectionView) weakself = collectionView;
     layout.indexBlock = ^(NSInteger index){
@@ -74,9 +74,9 @@
         index = 2;
     }
     
-    //    if ([self.visibleCells count] > 5) {
-    //        index = 3;
-    //    }
+//        if ([self.visibleCells count] > 5) {
+//            index = 3;
+//        }
     
     if ([self.visibleCells count] < index) {
         return;
@@ -108,7 +108,7 @@
     self.showsVerticalScrollIndicator = NO;
     self.showsHorizontalScrollIndicator = NO;
     
-    self.contentInset = UIEdgeInsetsMake(0, ScreenW * 0.4 , 0, ScreenW * 0.4);
+    self.contentInset = UIEdgeInsetsMake(0, (ScreenW * 0.2 + 0.2) * 2 , 0, (ScreenW * 0.2 + 0.2) * 2);
 }
 
 - (void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -166,9 +166,9 @@
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat cellWidth = (ScreenW / 5.0);
+    CGFloat cellWidth = (ScreenW * 0.2) + 0.2;
     CGFloat offsetX = (indexPath.row - 2) * cellWidth;
-    CGFloat contentOffsetXOffset = iPhone6Plus ? 0.2 : 0;
+    CGFloat contentOffsetXOffset = iPhone6Plus ? 0.5 : 0;
     [UIView animateWithDuration:0.3
                      animations:^{
                          self.contentOffset = CGPointMake(offsetX + contentOffsetXOffset, 0);
@@ -309,7 +309,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     //返回期望滑到的点的x加偏移量
     NSInteger blockIndex = (proposedOffsetX + centerDiff) / ([UIScreen mainScreen].bounds.size.width * 0.2 ) + 2.1;
     _indexBlock(blockIndex);
-    CGFloat contentOffsetXOffset = iPhone6Plus ? 0.2 : 0;
+    CGFloat contentOffsetXOffset = iPhone6Plus ? 0 : 0;
     return CGPointMake(proposedOffsetX + centerDiff + contentOffsetXOffset, 0);
 }
 
