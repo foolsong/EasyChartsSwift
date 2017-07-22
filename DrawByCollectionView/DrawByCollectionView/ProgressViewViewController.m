@@ -82,8 +82,4 @@
     [self.progressView resetProgress:[self createProgress]];
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self.progressView resetProgress:0];
-}
-
 @end
