@@ -45,6 +45,7 @@
     [self p_configOwnProperties];
     [self p_configSubViews];
     [self setupTestButton];
+    
 }
 
 - (void)dealloc {
@@ -60,6 +61,7 @@
     EasyPieChartView *pieView = [EasyPieChartView pieChartViewWithFrame:CGRectMake(0, 100, STDScreenW, 200)];
     [self.view addSubview:pieView];
     self.pieView = pieView;
+    
     [pieView drawPieChartWithPercentList:self.percentList
                                colorList:self.colorList
                              arcTextList:self.arcTextList];
@@ -105,6 +107,9 @@
 }
 
 - (void)testButtonClicked:(UIButton *)button {
+    
+//    [[UIApplication sharedApplication]openURL:[NSURL   URLWithString:@"mailto:example@example.com"]];
+    
     [self randomNumList];
     [self randomColorList];
     [self randomText];
@@ -119,7 +124,7 @@
     int sum = 0;
     while (YES) {
         int temp = arc4random_uniform(60) + 1;
-        if (sum + temp >= 100) {
+        if (sum + temp >= 100 || [numMutableList count] >= 7) {
             [numMutableList addObject:@((100 - sum) / 100.0)];
             break;
         } else {
@@ -141,7 +146,7 @@
 
 - (void)randomText {
     NSMutableArray *textMutableList = [NSMutableArray array];
-    NSArray *textList = @[@"精通",@"薄弱",@"了解",@"掌握",@"skill",@"weak",@"know",@"master"];
+    NSArray *textList = @[@"精通",@"薄弱",@"了解",@"掌握",@"weak",@"know",@"master",@"skill"];
     for (int i = 0; i < [self.percentList count]; i++) {
         [textMutableList addObject:textList[i]];
     }

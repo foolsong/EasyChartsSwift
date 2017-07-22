@@ -90,12 +90,12 @@
 }
 
 - (void)secondQuadrant {
-    self.textLeftCenterPoint = CGPointMake(50, self.arcCenterPoint.y + _offset);
+    self.textLeftCenterPoint = CGPointMake(60, self.arcCenterPoint.y + _offset);
     self.inflectionPoint = CGPointMake(self.arcCenterPoint.x - _offset, self.textLeftCenterPoint.y);
 }
 
 - (void)thirdQuadrant {
-    self.textLeftCenterPoint = CGPointMake(50, self.arcCenterPoint.y - _offset);
+    self.textLeftCenterPoint = CGPointMake(60, self.arcCenterPoint.y - _offset);
     self.inflectionPoint = CGPointMake(self.arcCenterPoint.x - _offset, self.textLeftCenterPoint.y);
 }
 
