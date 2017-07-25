@@ -22,10 +22,6 @@
 @interface DrawLineCollectionView ()<UICollectionViewDelegate,
                                    UICollectionViewDataSource>
 
-@property (nonatomic, copy) NSArray *pointYList;
-
-@property (nonatomic, strong) NSMutableArray <PointViewModel *>*pointModelLits;
-
 @property (nonatomic, strong) DrawLineCollectionViewCell *currentCell;
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, assign) CGFloat cellWidth;
@@ -60,8 +56,7 @@
 }
 
 #pragma mark - functions
-- (void)reloadCollectionWithImageUrls:(NSArray *)pointYList {
-    self.pointYList = pointYList;
+- (void)reloadCollectionData {
     [self reloadData];
 }
 
@@ -138,14 +133,14 @@
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [self.pointYList count];
+    return [[self pointModelList] count];
 }
 
 - ( UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     DrawLineCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DrawLineCollectionViewCell" forIndexPath:indexPath];
     [cell setItemSize:[self sizeForItemAtIndexPath:indexPath]];
     
-    if ([self.pointYList count] - 1 == indexPath.row && self.isNeedSettingLastCell) {
+    if ([[self pointModelList] count] - 1 == indexPath.row && self.isNeedSettingLastCell) {
         self.isNeedSettingLastCell = NO;
         [self p_setupCellUnSelected];
         self.currentCell = cell;
@@ -161,7 +156,7 @@
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    [(DrawLineCollectionViewCell *)cell configureCellWithPointYList:self.pointModelLits withIndex:indexPath.row];
+    [(DrawLineCollectionViewCell *)cell configureCellWithPointYList:[self pointModelList] withIndex:indexPath.row];
 }
 
 #pragma mark - UICollectionViewDelegate
@@ -185,21 +180,14 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     }
 }
 
-- (NSArray *)pointYList {
+- (NSArray *)pointModelList {
+    NSArray * pointModelList;
     if (_drawLineDataSource && [_drawLineDataSource respondsToSelector:@selector(collectionViewPointYList:)]) {
-        _pointYList = [_drawLineDataSource collectionViewPointYList:self];
+        pointModelList = [_drawLineDataSource collectionViewPointYList:self];
     } else {
         NSAssert(NO, @"添加数据源");
     }
-    return _pointYList;
-}
-
-- (NSMutableArray<PointViewModel *> *)pointModelLits {
-    if (_pointModelLits == nil) {
-        _pointModelLits = [NSMutableArray array];
-        [self test];
-    }
-    return _pointModelLits;
+    return pointModelList;
 }
 
 - (CGSize)sizeForItemAtIndexPath:(NSIndexPath *)indexPath  {
@@ -210,41 +198,6 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     }
     NSAssert(NO, @"需添加折线图的size");
     return CGSizeZero;
-}
-
-#pragma mark - computer pointY
-- (void)test {
-    for (int i = 0; i < [self.pointYList count]; i++) {
-        NSString *numString = self.pointYList[i];
-        NSString *lastNumString = [self numStringWithIndex:i - 1];
-        NSString *nextNumString = [self numStringWithIndex:i + 1];;
-        
-        PointViewModel *pointModel = [[PointViewModel alloc] init];
-        pointModel.leftLineType = [self lineTypeWithNumString:numString nearNumString:lastNumString];
-        pointModel.rightLineType = [self lineTypeWithNumString:numString nearNumString:nextNumString];
-        pointModel.pointY = [@"-1" isEqualToString:numString] ? @"0" : [NSString stringWithFormat:@"%f",[numString floatValue]];
-        pointModel.titleText = @"12.1~12.31";
-        pointModel.pointY = [NSString stringWithFormat:@"%f",15 + (1 - ([pointModel.pointY floatValue]/100)) * (self.frame.size.height - 40)];
-        [self.pointModelLits addObject:pointModel];
-    }
-}
-
-- (NSString *)numStringWithIndex:(NSInteger)index {
-    if (index < 0 || index >= [self.pointYList count]) {
-        return nil;
-    } else {
-        return self.pointYList[index];
-    }
-}
-
-- (LineType)lineTypeWithNumString:(NSString *) numString nearNumString:(NSString *) nearNumString{
-    if (nearNumString == nil) {
-        return  LineTypeNoline;
-    } else if ([@"-1" isEqualToString:nearNumString] || [@"-1" isEqualToString:numString]) {
-        return LineTypeDotted;
-    } else {
-        return LineTypeNormal;
-    }
 }
 
 - (CGFloat)cellWidth {

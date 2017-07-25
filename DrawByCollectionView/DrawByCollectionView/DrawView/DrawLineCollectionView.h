@@ -29,10 +29,9 @@
 @property (nonatomic, weak) id<DrawLineCollectionViewDataSource> drawLineDataSource;
 @property (nonatomic, weak) id<DrawLineCollectionViewDelegate> drawLineDelegate;
 + (instancetype)collectionViewWithFrame:(CGRect)frmae;
+- (void)reloadCollectionData;
 
 @end
-
-
 
 
 typedef  void (^ScrollIndexBlock)(NSInteger);

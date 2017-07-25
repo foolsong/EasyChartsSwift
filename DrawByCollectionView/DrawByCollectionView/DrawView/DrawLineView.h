@@ -12,4 +12,14 @@
 
 + (instancetype)lineViewWithFrame:(CGRect) frame;
 
+
+/**
+ 重新设置图标的数据
+
+ @param pointValueList 展示数据的数组
+ @param titleTextList 对应的title数组
+ */
+- (void)reloadLineViewDataWithPointValveList:(NSArray *)pointValueList
+                                   titleText:(NSArray *)titleTextList;
+
 @end

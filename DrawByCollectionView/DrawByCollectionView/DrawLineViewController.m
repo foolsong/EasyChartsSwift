@@ -18,6 +18,8 @@
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 @interface DrawLineViewController ()
 
+@property (nonatomic, strong) DrawLineView *lineView;
+
 @end
 
 @implementation DrawLineViewController
@@ -41,12 +43,28 @@
 #pragma mark - HandleViews
 - (void)p_configSubViews {
     [self setupDrawLineView];
+    [self test];
 }
 
 - (void)setupDrawLineView {
-    CGRect frame = CGRectMake(100, 120, 300, 440);
+    CGRect frame = CGRectMake(60, 120, 300, 400);
     DrawLineView *lineView = [DrawLineView lineViewWithFrame:frame];
     [self.view addSubview:lineView];
+    self.lineView = lineView;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self test1];
+}
+
+- (void)test {
+    [self.lineView reloadLineViewDataWithPointValveList:@[@"12",@"90",@"-1",@"56",@"34"]
+                                              titleText:@[@"1月",@"2月",@"3月",@"4月",@"5月"]];
+}
+
+- (void)test1 {
+    [self.lineView reloadLineViewDataWithPointValveList:@[@"34",@"12",@"100",@"16",@"1"]
+                                              titleText:@[@"1月",@"2月",@"3月",@"4月",@"5月"]];
 }
 
 
