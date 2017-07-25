@@ -167,21 +167,17 @@
 - (void)collectionView:(UICollectionView *)collectionView
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat cellWidth = (ScreenW * 0.2) + 0.2;
-    CGFloat offsetX = (indexPath.row - 2) * cellWidth;
-    CGFloat contentOffsetXOffset = iPhone6Plus ? 0.5 : 0;
+    CGFloat offsetX = (indexPath.row - 2) * cellWidth + 0.2 * 2;
     [UIView animateWithDuration:0.3
                      animations:^{
-                         self.contentOffset = CGPointMake(offsetX + contentOffsetXOffset, 0);
+                         self.contentOffset = CGPointMake(offsetX, 0);
                      } completion:^(BOOL finished) {
                          if (self.currentIndex != indexPath.row) {
                              [self p_setupCellUnSelected];
                              self.currentIndex = indexPath.row;
                              [self p_setupCellSelected];
                          }
-                         
                      }];
-    
-    
     
     if (_drawLineDelegate && [_drawLineDelegate respondsToSelector:@selector(collectionViewPointYList:
                                                                              didSelectItemAtIndexPath:)]) {
@@ -309,8 +305,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     //返回期望滑到的点的x加偏移量
     NSInteger blockIndex = (proposedOffsetX + centerDiff) / ([UIScreen mainScreen].bounds.size.width * 0.2 ) + 2.1;
     _indexBlock(blockIndex);
-    CGFloat contentOffsetXOffset = iPhone6Plus ? 0 : 0;
-    return CGPointMake(proposedOffsetX + centerDiff + contentOffsetXOffset, 0);
+    return CGPointMake(proposedOffsetX + centerDiff, 0);
 }
 
 -(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
