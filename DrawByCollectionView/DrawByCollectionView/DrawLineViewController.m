@@ -44,7 +44,7 @@
 }
 
 - (void)setupDrawLineView {
-    CGRect frame = CGRectMake(100, 120, 300, 240);
+    CGRect frame = CGRectMake(100, 120, 300, 440);
     DrawLineView *lineView = [DrawLineView lineViewWithFrame:frame];
     [self.view addSubview:lineView];
 }

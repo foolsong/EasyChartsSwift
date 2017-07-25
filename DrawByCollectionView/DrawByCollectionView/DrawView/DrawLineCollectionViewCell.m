@@ -182,7 +182,7 @@
     UILabel *datelabel = [[UILabel alloc] init];
     [datelabel setText:@"12.12~12.19"];
     datelabel.textAlignment = NSTextAlignmentCenter;
-    datelabel.frame = CGRectMake(0, self.frame.size.height - 13, self.frame.size.width, 15);
+    datelabel.frame = CGRectMake(0, self.frame.size.height - 16, self.frame.size.width, 15);
     [datelabel setFont:[UIFont systemFontOfSize:11]];
     [datelabel setTextColor:[UIColor colorWithRed:(255)/255.0 green:(209)/255.0 blue:(93)/255.0 alpha:0.8]];
     [self addSubview:datelabel];

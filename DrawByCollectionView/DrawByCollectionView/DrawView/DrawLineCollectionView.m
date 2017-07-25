@@ -167,7 +167,6 @@
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-//    CGFloat cellWidth = (ScreenW * 0.2) + 0.2;
     CGFloat offsetX = (indexPath.row - 2) * self.cellWidth + 0.2 * 2;
     [UIView animateWithDuration:0.3
                      animations:^{
@@ -225,7 +224,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         pointModel.rightLineType = [self lineTypeWithNumString:numString nearNumString:nextNumString];
         pointModel.pointY = [@"-1" isEqualToString:numString] ? @"0" : [NSString stringWithFormat:@"%f",[numString floatValue]];
         pointModel.titleText = @"12.1~12.31";
-        pointModel.pointY = [NSString stringWithFormat:@"%f",(1 - ([pointModel.pointY floatValue]/100)) * 185];
+        pointModel.pointY = [NSString stringWithFormat:@"%f",15 + (1 - ([pointModel.pointY floatValue]/100)) * (self.frame.size.height - 40)];
         [self.pointModelLits addObject:pointModel];
     }
 }

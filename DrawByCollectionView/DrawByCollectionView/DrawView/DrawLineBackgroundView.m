@@ -41,7 +41,7 @@
     UIImageView *backGroupImageView = [[UIImageView alloc] init];
     backGroupImageView.image = backGroupImage;
     
-    backGroupImageView.frame = CGRectMake(0, 10, self.frame.size.width, self.frame.size.height - 30);
+    backGroupImageView.frame = CGRectMake(0, 15, self.frame.size.width, self.frame.size.height - 40);
     [self addSubview:backGroupImageView];
 }
 
