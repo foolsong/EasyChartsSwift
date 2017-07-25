@@ -58,9 +58,19 @@
 #pragma mark - functions
 - (void)reloadCollectionData {
     [self reloadData];
+    [self scrollToRightmostCell];
 }
 
-- (void)p_setupCellSelected {
+- (void)scrollToRightmostCell {
+    CGFloat offsetX = ([[self pointModelList] count] - 3) * self.cellWidth + 0.2 * 2;
+    self.contentOffset = CGPointMake(offsetX, 0);
+    self.currentIndex = [[self pointModelList] count] - 1;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self setupCellSelected];
+    });
+}
+
+- (void)setupCellSelected {
     NSInteger index = 0;
     if (self.currentIndex == 0) {
         index = 0;
@@ -124,7 +134,7 @@
 
 #pragma mark - UICollectionViewDataSource
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    [self p_setupCellSelected];
+    [self setupCellSelected];
 }
 
 -(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
@@ -170,7 +180,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
                          if (self.currentIndex != indexPath.row) {
                              [self p_setupCellUnSelected];
                              self.currentIndex = indexPath.row;
-                             [self p_setupCellSelected];
+                             [self setupCellSelected];
                          }
                      }];
     

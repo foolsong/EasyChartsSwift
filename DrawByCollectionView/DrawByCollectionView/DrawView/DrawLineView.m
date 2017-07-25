@@ -89,7 +89,7 @@
         pointModel.leftLineType = [self lineTypeWithNumString:numString nearNumString:lastNumString];
         pointModel.rightLineType = [self lineTypeWithNumString:numString nearNumString:nextNumString];
         pointModel.pointY = [@"-1" isEqualToString:numString] ? @"0" : [NSString stringWithFormat:@"%f",[numString floatValue]];
-        pointModel.titleText = @"12.1~12.31";
+        pointModel.titleText = titleTextList[i];
         pointModel.pointY = [NSString stringWithFormat:@"%f",15 + (1 - ([pointModel.pointY floatValue]/100)) * (self.frame.size.height - 40)];
         [modelMutableArray addObject:pointModel];
     }
