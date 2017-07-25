@@ -65,7 +65,7 @@
 - (CGSize)collectionView:(UICollectionView *)collectionView
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGFloat itemW = self.frame.size.width * 0.2 + 0.2;
-    return CGSizeMake(itemW, 210);
+    return CGSizeMake(itemW, self.frame.size.height);
 }
 
 - (NSArray *)pointYList {

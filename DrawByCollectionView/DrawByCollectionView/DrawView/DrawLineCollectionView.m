@@ -28,16 +28,17 @@
 
 @property (nonatomic, strong) DrawLineCollectionViewCell *currentCell;
 @property (nonatomic, assign) NSInteger currentIndex;
+@property (nonatomic, assign) CGFloat cellWidth;
 
 @property (nonatomic, assign) BOOL isNeedSettingLastCell;
 
 @end
 
 @implementation DrawLineCollectionView
-+ (instancetype)collectionViewWithFrame:(CGRect)frmae {
++ (instancetype)collectionViewWithFrame:(CGRect)frame {
     DrawLineCollectionViewFlowLayout *layout = [self collectionViewFlowLayout];
     DrawLineCollectionView *collectionView =
-    [[self alloc]initWithFrame:CGRectMake(0, 0,frmae.size.width ,frmae.size.height)
+    [[self alloc]initWithFrame:CGRectMake(0, 0,frame.size.width ,frame.size.height)
           collectionViewLayout:layout];
     __weak typeof(collectionView) weakself = collectionView;
     layout.indexBlock = ^(NSInteger index){
@@ -108,7 +109,7 @@
     self.showsVerticalScrollIndicator = NO;
     self.showsHorizontalScrollIndicator = NO;
     
-    self.contentInset = UIEdgeInsetsMake(0, (ScreenW * 0.2 + 0.2) * 2 , 0, (ScreenW * 0.2 + 0.2) * 2);
+    self.contentInset = UIEdgeInsetsMake(0, self.cellWidth * 2 , 0, self.cellWidth * 2);
 }
 
 - (void)didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -166,8 +167,8 @@
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat cellWidth = (ScreenW * 0.2) + 0.2;
-    CGFloat offsetX = (indexPath.row - 2) * cellWidth + 0.2 * 2;
+//    CGFloat cellWidth = (ScreenW * 0.2) + 0.2;
+    CGFloat offsetX = (indexPath.row - 2) * self.cellWidth + 0.2 * 2;
     [UIView animateWithDuration:0.3
                      animations:^{
                          self.contentOffset = CGPointMake(offsetX, 0);
@@ -247,6 +248,9 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     }
 }
 
+- (CGFloat)cellWidth {
+    return self.frame.size.width * 0.2 + 0.2;
+}
 
 @end
 #pragma mark - collectionView 的 flowLayout
@@ -303,7 +307,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         centerDiff = CGFLOAT_MAX;
     }
     //返回期望滑到的点的x加偏移量
-    NSInteger blockIndex = (proposedOffsetX + centerDiff) / ([UIScreen mainScreen].bounds.size.width * 0.2 ) + 2.1;
+    NSInteger blockIndex = (proposedOffsetX + centerDiff) / (self.collectionView.bounds.size.width * 0.2 + 0.2) + 2.1;
+
     _indexBlock(blockIndex);
     return CGPointMake(proposedOffsetX + centerDiff, 0);
 }

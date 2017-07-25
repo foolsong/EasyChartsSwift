@@ -24,6 +24,7 @@
 + (instancetype)backgroundViewWithFrame:(CGRect)frame {
     DrawLineBackgroundView *view = [[self alloc] init];
     view.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
+    [view setupBackGroupImageView];
     return view;
 }
 
@@ -31,7 +32,6 @@
     self = [super init];
     if (self) {
         [self configOwnProperties];
-        [self setupBackGroupImageView];
     }
     return self;
 }
@@ -40,7 +40,8 @@
     UIImage *backGroupImage = [UIImage imageNamed:@"lineBackground"];
     UIImageView *backGroupImageView = [[UIImageView alloc] init];
     backGroupImageView.image = backGroupImage;
-    backGroupImageView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, backGroupImage.size.height);
+    
+    backGroupImageView.frame = CGRectMake(0, 10, self.frame.size.width, self.frame.size.height - 30);
     [self addSubview:backGroupImageView];
 }
 
