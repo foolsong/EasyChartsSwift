@@ -1,9 +1,9 @@
 //  ************************************************************************
 //
-//  DrawLineViewController.m
+//  BrokenLine2ViewController.m
 //  DrawByCollectionView
 //
-//  Created by 宋永建 on 2017/6/6.
+//  Created by 宋永建 on 2017/8/26.
 //  Copyright © 2017年 宋永建. All rights reserved.
 //
 //  Main function:
@@ -12,17 +12,17 @@
 //
 //  ************************************************************************
 
-#import "DrawLineViewController.h"
+#import "BrokenLine2ViewController.h"
 #import "DrawLineView.h"
 
-#define ScreenW [UIScreen mainScreen].bounds.size.width
-@interface DrawLineViewController ()
+@interface BrokenLine2ViewController ()
 
 @property (nonatomic, strong) DrawLineView *lineView;
 
 @end
 
-@implementation DrawLineViewController
+@implementation BrokenLine2ViewController
+
 
 #pragma mark - LifeCircle
 - (void)viewDidLoad {
@@ -48,7 +48,7 @@
 
 - (void)setupDrawLineView {
     CGRect frame = CGRectMake(0, 120, [UIScreen mainScreen].bounds.size.width, 300);
-    DrawLineView *lineView = [DrawLineView lineViewWithFrame:frame];
+    DrawLineView *lineView = [DrawLineView lineView2WithFrame:frame];
     [self.view addSubview:lineView];
     self.lineView = lineView;
 }
@@ -58,7 +58,7 @@
 }
 
 - (void)test {
-    [self.lineView reloadLineViewDataWithPointValveList:@[@"12",@"90",@"-1",@"56",@"34"]
+    [self.lineView reloadLineViewDataWithPointValveList:@[@"12",@"100",@"-1",@"56",@"34"]
                                               titleText:@[@"1月",@"2月",@"3月",@"4月",@"5月"]];
 }
 
@@ -66,6 +66,5 @@
     [self.lineView reloadLineViewDataWithPointValveList:@[@"34",@"12",@"100",@"16",@"1"]
                                               titleText:@[@"1月",@"2月",@"3月",@"4月",@"5月"]];
 }
-
 
 @end

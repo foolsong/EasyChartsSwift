@@ -14,12 +14,14 @@
 
 #import "DrawLineView.h"
 #import "DrawLineCollectionView.h"
+#import "BrokenLine2CollectionView.h"
 #import "DrawLineBackgroundView.h"
 #import "PointViewModel.h"
+#import "BrokenLineBackgroundView.h"
 
-@interface DrawLineView ()<DrawLineCollectionViewDataSource>
+@interface DrawLineView ()<DrawLineCollectionViewDataSource,BrokenLine2CollectionViewDataSource>
 
-@property (nonatomic, strong) DrawLineCollectionView *lineCollectionView;
+@property (nonatomic, strong) UICollectionView *lineCollectionView;
 @property (nonatomic, copy) NSArray <PointViewModel *>*pointModelList;
 @property (nonatomic, assign) CGSize lineViewSize;
 
@@ -41,14 +43,39 @@
     return lineView;
 }
 
++ (instancetype)lineView2WithFrame:(CGRect) frame {
+    DrawLineView *lineView = [[self alloc] init];
+    lineView.frame = frame;
+    [lineView setupSubviews2];
+    return lineView;
+}
+
 - (void)setupSubviews {
     [self setupBackgroundViewWithFrame:self.frame];
     [self setupCollectionView];
 }
 
+- (void)setupSubviews2 {
+//    [self setupBackgroundViewWithFrame:self.frame];
+    
+    BrokenLineBackgroundView *backgroupView = [[BrokenLineBackgroundView alloc] initWithFrame:self.bounds];
+    [self addSubview:backgroupView];
+
+    
+    [self setupBrokenLine2CollectionView];
+}
+
 - (void)setupBackgroundViewWithFrame:(CGRect) frame {
     DrawLineBackgroundView *backgroupView = [DrawLineBackgroundView backgroundViewWithFrame:frame];
     [self addSubview:backgroupView];
+}
+
+- (void)setupBrokenLine2CollectionView {
+    BrokenLine2CollectionView *lineCollectionView =
+    [BrokenLine2CollectionView collectionViewWithFrame:self.frame];
+    lineCollectionView.drawLineDataSource = self;
+    self.lineCollectionView = lineCollectionView;
+    [self addSubview:lineCollectionView];
 }
 
 - (void)setupCollectionView {
@@ -73,7 +100,8 @@
                                    titleText:(NSArray *)titleTextList{
     [self computerAndCombinationModelListWithPointValveList:pointValueList
                                                   titleText:titleTextList];
-    [self.lineCollectionView reloadCollectionData];
+#warning TODO
+//    [self.lineCollectionView reloadCollectionData];
 }
 
 #pragma mark - computer pointY

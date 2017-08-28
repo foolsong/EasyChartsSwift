@@ -23,6 +23,9 @@
 		846555951EE69876008B902A /* DrawLineBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846555941EE69876008B902A /* DrawLineBackgroundView.m */; };
 		8465559D1EE6C738008B902A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8465559C1EE6C738008B902A /* Images.xcassets */; };
 		846555A61EE8E567008B902A /* DrawLineCirclePointLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 846555A51EE8E566008B902A /* DrawLineCirclePointLayer.m */; };
+		847B57F41F51619D003555EF /* BrokenLine2CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 847B57F31F51619D003555EF /* BrokenLine2CollectionView.m */; };
+		847B57F71F51692E003555EF /* BrokenLine2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847B57F61F51692D003555EF /* BrokenLine2ViewController.m */; };
+		847B57FA1F516E57003555EF /* BrokenLineBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 847B57F91F516E57003555EF /* BrokenLineBackgroundView.m */; };
 		8491B66A1EEA78E400AF335F /* DrawBarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491B6691EEA78E400AF335F /* DrawBarCollectionView.m */; };
 		8491B66D1EEA7DE400AF335F /* DrawBarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491B66C1EEA7DE400AF335F /* DrawBarCollectionViewCell.m */; };
 		8491B6701EEA7E5C00AF335F /* DrawBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491B66F1EEA7E5C00AF335F /* DrawBarViewController.m */; };
@@ -66,6 +69,12 @@
 		846555A41EE8E566008B902A /* DrawLineCirclePointLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineCirclePointLayer.h; sourceTree = "<group>"; };
 		846555A51EE8E566008B902A /* DrawLineCirclePointLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineCirclePointLayer.m; sourceTree = "<group>"; };
 		846555AA1EE8F0D1008B902A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		847B57F21F51619D003555EF /* BrokenLine2CollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenLine2CollectionView.h; sourceTree = "<group>"; };
+		847B57F31F51619D003555EF /* BrokenLine2CollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenLine2CollectionView.m; sourceTree = "<group>"; };
+		847B57F51F51692D003555EF /* BrokenLine2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenLine2ViewController.h; sourceTree = "<group>"; };
+		847B57F61F51692D003555EF /* BrokenLine2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenLine2ViewController.m; sourceTree = "<group>"; };
+		847B57F81F516E57003555EF /* BrokenLineBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenLineBackgroundView.h; sourceTree = "<group>"; };
+		847B57F91F516E57003555EF /* BrokenLineBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenLineBackgroundView.m; sourceTree = "<group>"; };
 		8491B6681EEA78E400AF335F /* DrawBarCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawBarCollectionView.h; sourceTree = "<group>"; };
 		8491B6691EEA78E400AF335F /* DrawBarCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawBarCollectionView.m; sourceTree = "<group>"; };
 		8491B66B1EEA7DE400AF335F /* DrawBarCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawBarCollectionViewCell.h; sourceTree = "<group>"; };
@@ -143,6 +152,8 @@
 				8465558F1EE67BD3008B902A /* ProgressViewViewController.m */,
 				8491B66E1EEA7E5C00AF335F /* DrawBarViewController.h */,
 				8491B66F1EEA7E5C00AF335F /* DrawBarViewController.m */,
+				847B57F51F51692D003555EF /* BrokenLine2ViewController.h */,
+				847B57F61F51692D003555EF /* BrokenLine2ViewController.m */,
 				842CBDC71EAE0F5F0090D92F /* Main.storyboard */,
 				842CBDCA1EAE0F5F0090D92F /* Assets.xcassets */,
 				842CBDCC1EAE0F5F0090D92F /* LaunchScreen.storyboard */,
@@ -176,6 +187,10 @@
 				846555941EE69876008B902A /* DrawLineBackgroundView.m */,
 				846555A41EE8E566008B902A /* DrawLineCirclePointLayer.h */,
 				846555A51EE8E566008B902A /* DrawLineCirclePointLayer.m */,
+				847B57F21F51619D003555EF /* BrokenLine2CollectionView.h */,
+				847B57F31F51619D003555EF /* BrokenLine2CollectionView.m */,
+				847B57F81F516E57003555EF /* BrokenLineBackgroundView.h */,
+				847B57F91F516E57003555EF /* BrokenLineBackgroundView.m */,
 			);
 			path = DrawView;
 			sourceTree = "<group>";
@@ -263,7 +278,7 @@
 				TargetAttributes = {
 					842CBDBA1EAE0F5F0090D92F = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = 4Q29PW3YHN;
+						DevelopmentTeam = DJT5B363GH;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -305,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847B57F41F51619D003555EF /* BrokenLine2CollectionView.m in Sources */,
 				846555951EE69876008B902A /* DrawLineBackgroundView.m in Sources */,
 				842CBDDE1EAE125D0090D92F /* DrawLineView.m in Sources */,
 				841B3E251EF130D200B4A637 /* EasyPieChartView.m in Sources */,
@@ -314,12 +330,14 @@
 				AA362FA31EB4F342007E710A /* PointViewModel.m in Sources */,
 				842CBDD81EAE10DD0090D92F /* DrawLineCollectionView.m in Sources */,
 				842CBDC61EAE0F5F0090D92F /* ViewController.m in Sources */,
+				847B57F71F51692E003555EF /* BrokenLine2ViewController.m in Sources */,
 				8491B6841EEBEC0F00AF335F /* DrawPieChartModel.m in Sources */,
 				84AD075A1EB2134900AA1A2A /* DottedLineView.m in Sources */,
 				8465558D1EE67B7A008B902A /* DrawCircleViewController.m in Sources */,
 				842CBDC31EAE0F5F0090D92F /* AppDelegate.m in Sources */,
 				8491B66D1EEA7DE400AF335F /* DrawBarCollectionViewCell.m in Sources */,
 				8465558A1EE67B21008B902A /* DrawLineViewController.m in Sources */,
+				847B57FA1F516E57003555EF /* BrokenLineBackgroundView.m in Sources */,
 				8491B66A1EEA78E400AF335F /* DrawBarCollectionView.m in Sources */,
 				8491B6701EEA7E5C00AF335F /* DrawBarViewController.m in Sources */,
 				842CBDDB1EAE110E0090D92F /* DrawLineCollectionViewCell.m in Sources */,
@@ -446,7 +464,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4Q29PW3YHN;
+				DEVELOPMENT_TEAM = DJT5B363GH;
 				INFOPLIST_FILE = DrawByCollectionView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -459,7 +477,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 4Q29PW3YHN;
+				DEVELOPMENT_TEAM = DJT5B363GH;
 				INFOPLIST_FILE = DrawByCollectionView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

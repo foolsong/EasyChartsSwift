@@ -13,6 +13,8 @@
 + (instancetype)lineViewWithFrame:(CGRect) frame;
 
 
++ (instancetype)lineView2WithFrame:(CGRect) frame;
+
 /**
  重新设置图标的数据
 
