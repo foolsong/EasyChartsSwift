@@ -8,9 +8,10 @@
 
 #import <QuartzCore/QuartzCore.h>
 
+@class DrawConfig;
 @interface DrawLineCirclePointLayer : CAShapeLayer
 
-+ (instancetype)circlePointLayer;
-+ (instancetype)circlePointSelectedLayer;
++ (instancetype)circlePointLayerWithDrawConfig:(DrawConfig *)drawConfig;
++ (instancetype)circlePointSelectedLayerWithDrawConfig:(DrawConfig *)drawConfig;
 
 @end

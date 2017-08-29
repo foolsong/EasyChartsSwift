@@ -101,6 +101,10 @@
         return [path1 compare:path2];
     }];
     
+    if (index >= [sortedIndexPaths count]) {
+        return;
+    }
+    
     self.currentCell = sortedIndexPaths[index];
     [self.currentCell setupCellSelected:YES];
 }
@@ -154,6 +158,7 @@
 - ( UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     DrawLineCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DrawLineCollectionViewCell" forIndexPath:indexPath];
     [cell setItemSize:[self sizeForItemAtIndexPath:indexPath]];
+    [cell setupDrawConfig:self.drawConfig];
     
     if ([[self pointModelList] count] - 1 == indexPath.row && self.isNeedSettingLastCell) {
         self.isNeedSettingLastCell = NO;
@@ -171,7 +176,7 @@
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    [(DrawLineCollectionViewCell *)cell setupDrawConfig:self.drawConfig];
+//    [(DrawLineCollectionViewCell *)cell setupDrawConfig:self.drawConfig];
     [(DrawLineCollectionViewCell *)cell configureCellWithPointYList:[self pointModelList] withIndex:indexPath.row];
 }
 

@@ -61,4 +61,24 @@
     return _backVeiwTextColor;
 }
 
+- (UIColor *)backVeiwBackGroupColor {
+    if (_backVeiwBackGroupColor == nil) {
+        _backVeiwBackGroupColor =
+        self.brokenLineType == BrokenLineTypeMiddlePoint ?
+        [UIColor colorWithRed:(255)/255.0 green:(209)/255.0 blue:(93)/255.0 alpha:1.0] :
+        [UIColor whiteColor];
+    }
+    return _backVeiwBackGroupColor;
+}
+
+- (UIColor *)brokenAbscissaColor {
+    if (_brokenAbscissaColor == nil) {
+        _brokenAbscissaColor =
+        self.brokenLineType == BrokenLineTypeMiddlePoint ?
+        [UIColor colorWithRed:(255)/255.0 green:(209)/255.0 blue:(93)/255.0 alpha:0.8]:
+        [UIColor colorWithRed:(150)/255.0 green:(150)/255.0 blue:(150)/255.0 alpha:0.8];
+    }
+    return _brokenAbscissaColor;
+}
+
 @end

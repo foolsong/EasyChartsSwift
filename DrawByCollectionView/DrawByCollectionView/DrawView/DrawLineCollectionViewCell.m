@@ -57,6 +57,7 @@
 
 - (void)setupDrawConfig:(DrawConfig *)drawConfig {
     self.drawConfig = drawConfig;
+    [self.datelabel setTextColor:self.drawConfig.brokenAbscissaColor];
 }
 
 - (void)configureCellWithPointYList:(NSArray *)pointYList
@@ -171,7 +172,7 @@
 
 - (DrawLineCirclePointLayer *)circleLayer {
     if (_circleLayer == nil) {
-        _circleLayer = [DrawLineCirclePointLayer circlePointLayer];
+        _circleLayer = [DrawLineCirclePointLayer circlePointLayerWithDrawConfig:self.drawConfig];
         [self.layer addSublayer:_circleLayer];
     }
     return _circleLayer;
@@ -179,7 +180,8 @@
 
 - (DrawLineCirclePointLayer *)circleSelectedLayer {
     if (_circleSelectedLayer == nil) {
-        _circleSelectedLayer = [DrawLineCirclePointLayer circlePointSelectedLayer];
+        _circleSelectedLayer =
+        [DrawLineCirclePointLayer circlePointSelectedLayerWithDrawConfig:self.drawConfig];
     }
     return _circleSelectedLayer;
 }
@@ -190,7 +192,7 @@
     datelabel.textAlignment = NSTextAlignmentCenter;
     datelabel.frame = CGRectMake(0, self.frame.size.height - 16, self.frame.size.width, 15);
     [datelabel setFont:[UIFont systemFontOfSize:11]];
-    [datelabel setTextColor:[UIColor colorWithRed:(255)/255.0 green:(209)/255.0 blue:(93)/255.0 alpha:0.8]];
+    [datelabel setTextColor:self.drawConfig.brokenAbscissaColor];
     [self addSubview:datelabel];
     self.datelabel = datelabel;
 }
@@ -206,17 +208,16 @@
 - (void)setupCellSelected:(BOOL)selected {
     if (selected) {
         [self p_setupCircleSelectedLayer];
-        [self.datelabel setTextColor:kColorC3_1];
+        [self.datelabel setTextColor:self.drawConfig.brokenLineColor];
         [self.datelabel setFont:[UIFont boldSystemFontOfSize:T9_22PX]];
     } else {
         if (_circleSelectedLayer) {
             [_circleSelectedLayer removeFromSuperlayer];
             _circleSelectedLayer = nil;
         }
-        [self.datelabel setTextColor:[kColorC5_1 colorWithAlphaComponent:0.8]];
+        [self.datelabel setTextColor:self.drawConfig.brokenAbscissaColor];
         [self.datelabel setFont:[UIFont systemFontOfSize:T9_22PX]];
     }
-    
 }
 
 - (NSMutableArray *)lineLayerList {

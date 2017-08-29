@@ -40,25 +40,13 @@
     return lineBackgroundView;
 }
 
-//- (instancetype)initWithFrame:(CGRect)frame{
-//    NSAssert(NO, @"Use initWithFrame:chartContainer:");
-//    return [self initWithFrame:frame chartContainer:nil];
-//}
-
 - (void)drawRect:(CGRect)rect {
     CGContextRef context = UIGraphicsGetCurrentContext();
     UIBezierPath *boundsPath = [UIBezierPath bezierPathWithRect:self.bounds];
-    //yjSong   背景色
-//    CGContextSetFillColorWithColor(context, [[UIColor colorWithRed:52.0/255.0
-//                                                             green:61.0/255.0
-//                                                              blue:75.0/255.0
-//                                                             alpha:1.0] CGColor]);
-        CGContextSetFillColorWithColor(context, [[UIColor whiteColor] CGColor]);
+    CGContextSetFillColorWithColor(context, [[UIColor whiteColor] CGColor]);
     [boundsPath fill];
     
     CGFloat maxHeight = [self viewHeight];
-    
-    //  [[UIColor colorWithRed:0.329 green:0.322 blue:0.620 alpha:1.000] setStroke];
     [[UIColor redColor]setStroke];
     UIBezierPath *gridLinePath = [UIBezierPath bezierPath];
     CGPoint startPoint = CGPointMake(35.0,CGRectGetHeight([self frame]) - 25);
@@ -80,10 +68,6 @@
         [self.drawConfig.backVeiwLineColor setStroke];
         [gridLinePath stroke];
         NSString *stringToDraw = [NSString stringWithFormat:@"%.f",0 + i * maxIntervalDiff];
-        UIColor *stringColor = [UIColor colorWithRed:52.0/255.0
-                                               green:61.0/255.0
-                                                blue:75.0/255.0
-                                               alpha:1.0];//[self.chartContainer gridIntervalFontColor];
         NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
         [paragraphStyle setLineBreakMode:NSLineBreakByTruncatingTail];
         

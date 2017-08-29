@@ -15,6 +15,7 @@
 #import "DrawLineCirclePointLayer.h"
 #import <UIKit/UIKit.h>
 #import "CommonColor.h"
+#import "DrawConfig.h"
 
 #define CIRCLE_SIZE 8.5
 
@@ -22,15 +23,16 @@
 
 @interface DrawLineCirclePointLayer ()
 
-//@property (nonatomic, strong) UIImage *circleImage;
+@property (nonatomic, strong) DrawConfig *drawConfig;
 
 @end
 
 @implementation DrawLineCirclePointLayer
 
-+ (instancetype)circlePointLayer {
++ (instancetype)circlePointLayerWithDrawConfig:(DrawConfig *)drawConfig {
     DrawLineCirclePointLayer *circleLayer = [self layer];
-    UIImage *img = [self circleImage];
+    circleLayer.drawConfig = drawConfig;
+    UIImage *img = [self circleImageWithDrawConfig:drawConfig];
     [circleLayer setContents:(id)img.CGImage];
     [circleLayer setFrame:CGRectMake(0,0, img.size.width, img.size.height)];
     [circleLayer setGeometryFlipped:YES];
@@ -39,8 +41,9 @@
     return circleLayer;
 }
 
-+ (instancetype)circlePointSelectedLayer {
++ (instancetype)circlePointSelectedLayerWithDrawConfig:(DrawConfig *)drawConfig {
     DrawLineCirclePointLayer *circleLayer = [self layer];
+    circleLayer.drawConfig = drawConfig;
     [circleLayer setFrame:CGRectMake(0,0,21,21)];
     [circleLayer setGeometryFlipped:YES];
     [circleLayer setLineJoin:kCALineJoinBevel];
@@ -49,14 +52,15 @@
 }
 
 - (void)drawBackGroupCircle {
+    //kColorC5_1  kColorC3_1
     [self drawCircleWithLineWidth:4.5f
-                        lineColor:kColorC5_1
+                        lineColor:self.drawConfig.backVeiwBackGroupColor
                            radius:2.25];
     [self drawCircleWithLineWidth:2.0f
-                        lineColor:kColorC3_1
+                        lineColor:self.drawConfig.brokenLineColor
                            radius:5.5];
     [self drawCircleWithLineWidth:4.0f
-                        lineColor:[kColorC3_1 colorWithAlphaComponent:0.3]
+                        lineColor:[self.drawConfig.brokenLineColor colorWithAlphaComponent:0.3]
                            radius:8.5];
 }
 
@@ -82,12 +86,12 @@
 }
 
 
-+ (UIImage *)circleImage{
++ (UIImage *)circleImageWithDrawConfig:(DrawConfig *)drawConfig{
     UIImage *circleImage;
     CGSize imageSize = CGSizeMake(CIRCLE_SIZE, CIRCLE_SIZE);
     CGFloat strokeWidth = 1.5;
     
-    UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0.0);//[UIImage imageNamed:@"circle"];
+    UIGraphicsBeginImageContextWithOptions(imageSize, NO, 0.0);
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     [[UIColor clearColor] setFill];
@@ -98,14 +102,14 @@
     
     CGContextSaveGState(context);
     //yjSong 圆圈填充
-    UIColor *color = [UIColor colorWithRed:(255)/255.0 green:(209)/255.0 blue:(93)/255.0 alpha:1.0];
+    UIColor *color = drawConfig.backVeiwBackGroupColor;//[UIColor colorWithRed:(255)/255.0 green:(209)/255.0 blue:(93)/255.0 alpha:1.0];
     [color setFill];
     
     [ovalPath fill];
     CGContextRestoreGState(context);
     
     // 圆圈边框
-    [[UIColor whiteColor] setStroke];
+    [drawConfig.brokenLineColor setStroke];
     [ovalPath setLineWidth:strokeWidth];
     [ovalPath stroke];
     
