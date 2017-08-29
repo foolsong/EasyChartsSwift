@@ -61,8 +61,11 @@
 }
 
 - (void)test {
-    [self.lineView reloadLineViewDataWithPointValveList:@[@"12",@"100",@"-1",@"56",@"34"]
-                                              titleText:@[@"1月",@"2月",@"3月",@"4月",@"5月"]];
+//    [self.lineView reloadLineViewDataWithPointValveList:@[@"12",@"100",@"-1",@"56",@"34"]
+//                                              titleText:@[@"1月",@"2月",@"3月",@"4月",@"5月"]];
+    
+    [self.lineView reloadLineViewDataWithPointValveList:@[@"12",@"100",@"-1",@"56",@"34",@"-12",@"100",@"1",@"56",@"-34",@"12",@"100",@"1",@"56",@"34"]
+                                              titleText:@[@"1月",@"2月",@"3月",@"4月",@"5月",@"1月",@"2月",@"3月",@"4月",@"5月",@"1月",@"2月",@"3月",@"4月",@"5月"]];
 }
 
 - (void)test1 {

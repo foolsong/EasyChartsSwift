@@ -16,8 +16,6 @@
 
 @interface DrawConfig ()
 
-@property (nonatomic, assign) BrokenLineType brokenLineType;
-
 @end
 
 @implementation DrawConfig

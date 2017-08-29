@@ -104,9 +104,9 @@
     CGPoint firstPoint = CGPointMake(0, [self lastPointY]);
     CGPoint nextPoint = CGPointMake(self.cellSize.width * 0.5, [self currentPointY]);
     if (self.pointModel.leftLineType == LineTypeNormal) {
-        [self drawLineFirstPoint:firstPoint nextPoint:nextPoint dotted:NO];
+        [self drawLineFirstPoint:firstPoint nextPoint:nextPoint dotted:NO lineWidth:1.3];
     } else if (self.pointModel.leftLineType == LineTypeDotted) {
-        [self drawLineFirstPoint:firstPoint nextPoint:nextPoint dotted:YES];
+        [self drawLineFirstPoint:firstPoint nextPoint:nextPoint dotted:YES lineWidth:1.3];
     }
 }
 
@@ -114,27 +114,25 @@
     CGPoint firstPoint = CGPointMake(self.cellSize.width * 0.5, [self currentPointY]);
     CGPoint nextPoint = CGPointMake(self.cellSize.width, [self nextPointY]);
     if (self.pointModel.rightLineType == LineTypeNormal) {
-        [self drawLineFirstPoint:firstPoint nextPoint:nextPoint dotted:NO];
+        [self drawLineFirstPoint:firstPoint nextPoint:nextPoint dotted:NO lineWidth:1.3];
     } else if (self.pointModel.rightLineType == LineTypeDotted) {
-        [self drawLineFirstPoint:firstPoint nextPoint:nextPoint dotted:YES];
+        [self drawLineFirstPoint:firstPoint nextPoint:nextPoint dotted:YES lineWidth:1.3];
     }
 }
 
 - (void)drawLineFirstPoint:(CGPoint)firstPoint
                  nextPoint:(CGPoint)nextPoint
-                    dotted:(BOOL) dotted {
-    // 线的路径
+                    dotted:(BOOL) dotted
+                 lineWidth:(CGFloat) lineWidth{
     UIBezierPath *linePath = [UIBezierPath bezierPath];
-    // 起点
     [linePath moveToPoint:firstPoint];
-    // 其他点
     [linePath addLineToPoint:nextPoint];
     
     CAShapeLayer *lineLayer = [CAShapeLayer layer];
     if (dotted) {
         lineLayer.lineDashPattern = @[@5, @5];
     }
-    lineLayer.lineWidth = 1.3;
+    lineLayer.lineWidth = lineWidth;
     lineLayer.strokeColor = self.drawConfig.brokenLineColor.CGColor;
     lineLayer.path = linePath.CGPath;
     lineLayer.fillColor = nil; // 默认为blackColor
@@ -207,17 +205,31 @@
 
 - (void)setupCellSelected:(BOOL)selected {
     if (selected) {
-        [self p_setupCircleSelectedLayer];
-        [self.datelabel setTextColor:self.drawConfig.brokenLineColor];
-        [self.datelabel setFont:[UIFont boldSystemFontOfSize:T9_22PX]];
+        [self cellSelected];
     } else {
-        if (_circleSelectedLayer) {
-            [_circleSelectedLayer removeFromSuperlayer];
-            _circleSelectedLayer = nil;
-        }
-        [self.datelabel setTextColor:self.drawConfig.brokenAbscissaColor];
-        [self.datelabel setFont:[UIFont systemFontOfSize:T9_22PX]];
+        [self cellUnselected];
     }
+}
+
+- (void)cellSelected {
+    [self p_setupCircleSelectedLayer];
+    [self.datelabel setTextColor:self.drawConfig.brokenLineColor];
+    [self.datelabel setFont:[UIFont boldSystemFontOfSize:T9_22PX]];
+    
+    if (self.drawConfig.brokenLineType == BrokenLineTypeNormal) {
+        CGPoint firstPoint = CGPointMake(self.cellSize.width * 0.5, [self currentPointY]);
+        CGPoint nextPoint = CGPointMake(self.cellSize.width * 0.5, self.bounds.size.height - 25);
+        [self drawLineFirstPoint:firstPoint nextPoint:nextPoint dotted:YES lineWidth:0.8];
+    }
+}
+
+- (void)cellUnselected {
+    if (_circleSelectedLayer) {
+        [_circleSelectedLayer removeFromSuperlayer];
+        _circleSelectedLayer = nil;
+    }
+    [self.datelabel setTextColor:self.drawConfig.brokenAbscissaColor];
+    [self.datelabel setFont:[UIFont systemFontOfSize:T9_22PX]];
 }
 
 - (NSMutableArray *)lineLayerList {

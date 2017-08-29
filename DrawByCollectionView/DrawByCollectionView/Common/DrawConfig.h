@@ -18,6 +18,8 @@
 @property (nonatomic, strong) UIColor *backVeiwBackGroupColor;
 @property (nonatomic, strong) UIColor *brokenAbscissaColor;
 
+@property (nonatomic, assign) BrokenLineType brokenLineType;
+
 
 + (instancetype)drawConfigWithBrokenLineType:(BrokenLineType)brokenLineType;
 
