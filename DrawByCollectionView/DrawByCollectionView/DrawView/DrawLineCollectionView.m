@@ -16,6 +16,7 @@
 #import "DrawLineCollectionViewCell.h"
 #import "PointViewModel.h"
 #import "CommonColor.h"
+#import "DrawConfig.h"
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 
@@ -28,14 +29,18 @@
 
 @property (nonatomic, assign) BOOL isNeedSettingLastCell;
 
+@property (nonatomic, strong) DrawConfig *drawConfig;
+
 @end
 
 @implementation DrawLineCollectionView
-+ (instancetype)collectionViewWithFrame:(CGRect)frame {
++ (instancetype)collectionViewWithFrame:(CGRect)frame
+                         withDrawConfig:(DrawConfig *)drawConfig {
     DrawLineCollectionViewFlowLayout *layout = [self collectionViewFlowLayout];
     DrawLineCollectionView *collectionView =
     [[self alloc]initWithFrame:CGRectMake(0, 0,frame.size.width ,frame.size.height)
           collectionViewLayout:layout];
+    collectionView.drawConfig = drawConfig;
     __weak typeof(collectionView) weakself = collectionView;
     layout.indexBlock = ^(NSInteger index){
         weakself.currentIndex = index;
@@ -166,6 +171,7 @@
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    [(DrawLineCollectionViewCell *)cell setupDrawConfig:self.drawConfig];
     [(DrawLineCollectionViewCell *)cell configureCellWithPointYList:[self pointModelList] withIndex:indexPath.row];
 }
 

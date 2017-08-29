@@ -14,6 +14,7 @@
 
 #import "BrokenLine2ViewController.h"
 #import "DrawLineView.h"
+#import "CommonColor.h"
 
 @interface BrokenLine2ViewController ()
 
@@ -37,7 +38,7 @@
 
 #pragma mark - Functions
 - (void)p_configOwnProperties {
-    [self.view setBackgroundColor:[UIColor whiteColor]];
+    [self.view setBackgroundColor:KColorBackGround];
 }
 
 #pragma mark - HandleViews
@@ -48,7 +49,9 @@
 
 - (void)setupDrawLineView {
     CGRect frame = CGRectMake(0, 120, [UIScreen mainScreen].bounds.size.width, 300);
-    DrawLineView *lineView = [DrawLineView lineView2WithFrame:frame];
+    DrawLineView *lineView = [DrawLineView lineView2WithFrame:frame
+                                               withDrawConfig:nil
+                                               brokenLineType:BrokenLineTypeNormal];
     [self.view addSubview:lineView];
     self.lineView = lineView;
 }

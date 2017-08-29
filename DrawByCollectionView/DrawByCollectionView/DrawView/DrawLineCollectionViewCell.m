@@ -15,7 +15,7 @@
 #import "DrawLineCollectionViewCell.h"
 #import "PointViewModel.h"
 #import "CommonColor.h"
-
+#import "DrawConfig.h"
 #import "DrawLineCirclePointLayer.h"
 
 #define CIRCLE_SIZE 7.0
@@ -40,6 +40,8 @@
 
 @property (nonatomic, strong) NSMutableArray *lineLayerList;
 
+@property (nonatomic, strong) DrawConfig *drawConfig;
+
 @end
 
 @implementation DrawLineCollectionViewCell
@@ -51,6 +53,10 @@
         [self setupNumLabel];
     }
     return self;
+}
+
+- (void)setupDrawConfig:(DrawConfig *)drawConfig {
+    self.drawConfig = drawConfig;
 }
 
 - (void)configureCellWithPointYList:(NSArray *)pointYList
@@ -128,7 +134,7 @@
         lineLayer.lineDashPattern = @[@5, @5];
     }
     lineLayer.lineWidth = 1.3;
-    lineLayer.strokeColor = [UIColor whiteColor].CGColor;
+    lineLayer.strokeColor = self.drawConfig.brokenLineColor.CGColor;
     lineLayer.path = linePath.CGPath;
     lineLayer.fillColor = nil; // 默认为blackColor
     [self.layer insertSublayer:lineLayer below:self.circleLayer];

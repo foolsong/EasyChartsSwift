@@ -13,7 +13,7 @@
 //@end
 
 
-@class BrokenLine2CollectionView;
+@class BrokenLine2CollectionView,DrawConfig;
 @protocol BrokenLine2CollectionViewDataSource <NSObject>
 
 - (NSArray *)collectionViewPointYList:(BrokenLine2CollectionView *)collectionView;
@@ -33,7 +33,8 @@
 
 @property (nonatomic, weak) id<BrokenLine2CollectionViewDataSource> drawLineDataSource;
 @property (nonatomic, weak) id<BrokenLine2CollectionViewDelegate> drawLineDelegate;
-+ (instancetype)collectionViewWithFrame:(CGRect)frmae;
++ (instancetype)collectionViewWithFrame:(CGRect)frame
+                         withDrawConfig:(DrawConfig *)drawConfig;
 - (void)reloadCollectionData;
 
 @end

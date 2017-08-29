@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class DrawLineCollectionView;
+@class DrawLineCollectionView,DrawConfig;
 @protocol DrawLineCollectionViewDataSource <NSObject>
 
 - (NSArray *)collectionViewPointYList:(DrawLineCollectionView *)collectionView;
@@ -28,7 +28,8 @@
 
 @property (nonatomic, weak) id<DrawLineCollectionViewDataSource> drawLineDataSource;
 @property (nonatomic, weak) id<DrawLineCollectionViewDelegate> drawLineDelegate;
-+ (instancetype)collectionViewWithFrame:(CGRect)frmae;
++ (instancetype)collectionViewWithFrame:(CGRect)frame
+                         withDrawConfig:(DrawConfig *)drawConfig;
 - (void)reloadCollectionData;
 
 @end

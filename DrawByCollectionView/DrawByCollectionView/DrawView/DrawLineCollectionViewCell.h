@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class DrawConfig;
 @interface DrawLineCollectionViewCell : UICollectionViewCell
 
 - (void)configureCellWithPointYList:(NSArray *)pointXList
                           withIndex:(NSInteger)index;
-
 - (void)setItemSize:(CGSize)size;
-
 - (void)setupCellSelected:(BOOL)selected;
+
+- (void)setupDrawConfig:(DrawConfig *)drawConfig;
 
 @end

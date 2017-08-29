@@ -16,25 +16,28 @@
 #import "DrawLineCollectionViewCell.h"
 #import "PointViewModel.h"
 #import "CommonColor.h"
+#import "DrawConfig.h"
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 
 @interface BrokenLine2CollectionView ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
-@property (nonatomic, strong) DrawLineCollectionViewCell *currentCell;
+//@property (nonatomic, strong) DrawLineCollectionViewCell *currentCell;
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, assign) CGFloat cellWidth;
 
-@property (nonatomic, assign) BOOL isNeedSettingLastCell;
+@property (nonatomic, strong) DrawConfig *drawConfig;
 
 @end
 
 @implementation BrokenLine2CollectionView
-+ (instancetype)collectionViewWithFrame:(CGRect)frame {
++ (instancetype)collectionViewWithFrame:(CGRect)frame
+                         withDrawConfig:(DrawConfig *)drawConfig {
     BrokenLine2CollectionViewFlowLayout *layout = [self collectionViewFlowLayout];
     BrokenLine2CollectionView *collectionView =
-    [[self alloc]initWithFrame:CGRectMake(50, 0,frame.size.width - 50 ,frame.size.height)
+    [[self alloc]initWithFrame:CGRectMake(35, 0,frame.size.width - 35 ,frame.size.height)
           collectionViewLayout:layout];
+    collectionView.drawConfig = drawConfig;
     [collectionView registerClass:[DrawLineCollectionViewCell class] forCellWithReuseIdentifier:@"DrawLineCollectionViewCell"];
     return collectionView;
 }
@@ -58,41 +61,6 @@
     CGFloat offsetX = ([[self pointModelList] count] - 3) * self.cellWidth + 0.2 * 2;
     self.contentOffset = CGPointMake(offsetX, 0);
     self.currentIndex = [[self pointModelList] count] - 1;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self setupCellSelected];
-    });
-}
-
-- (void)setupCellSelected {
-    NSInteger index = 0;
-    if (self.currentIndex == 0) {
-        index = 0;
-    } else if (self.currentIndex == 1) {
-        index = 1;
-    } else {
-        index = 2;
-    }
-    
-    if ([self.visibleCells count] < index) {
-        return;
-    }
-    [self p_setupCellUnSelected];
-    
-    NSArray *visibleCellIndex = [self visibleCells];
-    NSArray *sortedIndexPaths = [visibleCellIndex sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        NSIndexPath *path1 = (NSIndexPath *)[self indexPathForCell:obj1];
-        NSIndexPath *path2 = (NSIndexPath *)[self indexPathForCell:obj2];
-        return [path1 compare:path2];
-    }];
-    
-    self.currentCell = sortedIndexPaths[index];
-    [self.currentCell setupCellSelected:YES];
-}
-
-- (void)p_setupCellUnSelected {
-    if (self.currentCell) {
-        [self.currentCell setupCellSelected:NO];
-    }
 }
 
 - (void)p_configOwnProperties {
@@ -122,15 +90,6 @@
 }
 
 #pragma mark - UICollectionViewDataSource
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    [self setupCellSelected];
-}
-
--(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView {
-    [self p_setupCellUnSelected];
-}
-
-
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return [[self pointModelList] count];
 }
@@ -139,13 +98,6 @@
     DrawLineCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DrawLineCollectionViewCell" forIndexPath:indexPath];
     [cell setItemSize:[self sizeForItemAtIndexPath:indexPath]];
     
-    if ([[self pointModelList] count] - 1 == indexPath.row && self.isNeedSettingLastCell) {
-        self.isNeedSettingLastCell = NO;
-        [self p_setupCellUnSelected];
-        self.currentCell = cell;
-        self.currentIndex = indexPath.row;
-        [self.currentCell setupCellSelected:YES];
-    }
     return cell;
 }
 
@@ -155,23 +107,20 @@
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    [(DrawLineCollectionViewCell *)cell setupDrawConfig:self.drawConfig];
     [(DrawLineCollectionViewCell *)cell configureCellWithPointYList:[self pointModelList] withIndex:indexPath.row];
+    if (self.currentIndex == indexPath.row) {
+        [(DrawLineCollectionViewCell *)cell setupCellSelected:YES];
+    } else {
+        [(DrawLineCollectionViewCell *)cell setupCellSelected:NO];
+    }
 }
 
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat offsetX = (indexPath.row - 2) * self.cellWidth + 0.2 * 2;
-    [UIView animateWithDuration:0.3
-                     animations:^{
-                         self.contentOffset = CGPointMake(offsetX, 0);
-                     } completion:^(BOOL finished) {
-                         if (self.currentIndex != indexPath.row) {
-                             [self p_setupCellUnSelected];
-                             self.currentIndex = indexPath.row;
-                             [self setupCellSelected];
-                         }
-                     }];
+    self.currentIndex = indexPath.row;
+    [self reloadData];
     
     if (_drawLineDelegate && [_drawLineDelegate respondsToSelector:@selector(collectionViewPointYList:
                                                                              didSelectItemAtIndexPath:)]) {
@@ -213,59 +162,5 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 @end
 
 @implementation BrokenLine2CollectionViewFlowLayout
-
-//- (void)prepareLayout {
-//    [super prepareLayout];
-//}
-//
-//- (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset
-//                                 withScrollingVelocity:(CGPoint)velocity {
-//    //获取期望滑到的位置的点的x值
-//    CGFloat proposedOffsetX = [super targetContentOffsetForProposedContentOffset:proposedContentOffset
-//                                                           withScrollingVelocity:velocity].x;
-//    
-//    CGRect proposedRect = CGRectMake(proposedContentOffset.x,
-//                                     proposedContentOffset.y,
-//                                     self.collectionView.bounds.size.width,
-//                                     self.collectionView.bounds.size.height);
-//    
-//    //拿到正在显示的 cell 的 Attributes
-//    NSArray *proposedAttrs = [self layoutAttributesForElementsInRect:proposedRect];
-//    //拿到正在显示的 rect 中点
-//    CGFloat centerX = proposedOffsetX + self.collectionView.bounds.size.width * 0.5;
-//    
-//    CGFloat cache = CGFLOAT_MAX;
-//    NSInteger index = 0;
-//    
-//    for (int i = 0; i < proposedAttrs.count; i++) {
-//        UICollectionViewLayoutAttributes *attr = proposedAttrs[i];
-//        //计算 cell 距离正在显示的 rect 中点的距离
-//        CGFloat centerDiffABS = ABS(attr.center.x - centerX);
-//        //保留距离最小的 cell 作为最后要显示的cell
-//        if (centerDiffABS < cache) {
-//            cache = centerDiffABS;
-//            index = i;
-//        }
-//    }
-//    
-//    CGFloat centerDiff = 0;
-//    //拿到距离屏幕中心最近的cell
-//    if (proposedAttrs.count > index) {
-//        UICollectionViewLayoutAttributes *attr = proposedAttrs[index];
-//        //计算该cell的center和屏幕的center的距离 即偏移量
-//        centerDiff = attr.center.x - centerX;
-//    } else {
-//        centerDiff = CGFLOAT_MAX;
-//    }
-//    //返回期望滑到的点的x加偏移量
-//    NSInteger blockIndex = (proposedOffsetX + centerDiff) / (self.collectionView.bounds.size.width * 0.2 + 0.2) + 2.1;
-//    
-//    _indexBlock(blockIndex);
-//    return CGPointMake(proposedOffsetX + centerDiff, 0);
-//}
-//
-//-(BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
-//    return YES;
-//}
 
 @end

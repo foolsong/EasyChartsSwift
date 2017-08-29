@@ -19,11 +19,15 @@
 #import "PointViewModel.h"
 #import "BrokenLineBackgroundView.h"
 
+#import "DrawConfig.h"
+
 @interface DrawLineView ()<DrawLineCollectionViewDataSource,BrokenLine2CollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *lineCollectionView;
 @property (nonatomic, copy) NSArray <PointViewModel *>*pointModelList;
 @property (nonatomic, assign) CGSize lineViewSize;
+@property (nonatomic, strong) DrawConfig *drawConfig;
+@property (nonatomic, assign) BrokenLineType brokenLineType;
 
 @end
 
@@ -38,13 +42,19 @@
 
 + (instancetype)lineViewWithFrame:(CGRect) frame {
     DrawLineView *lineView = [[self alloc] init];
+    lineView.brokenLineType = BrokenLineTypeMiddlePoint;
+    lineView.drawConfig = nil;
     lineView.frame = frame;
     [lineView setupSubviews];
     return lineView;
 }
 
-+ (instancetype)lineView2WithFrame:(CGRect) frame {
++ (instancetype)lineView2WithFrame:(CGRect) frame
+                    withDrawConfig:(DrawConfig *)drawConfig
+                    brokenLineType:(BrokenLineType)brokenLineType {
     DrawLineView *lineView = [[self alloc] init];
+    lineView.brokenLineType = brokenLineType;
+    lineView.drawConfig = drawConfig;
     lineView.frame = frame;
     [lineView setupSubviews2];
     return lineView;
@@ -56,12 +66,10 @@
 }
 
 - (void)setupSubviews2 {
-//    [self setupBackgroundViewWithFrame:self.frame];
-    
-    BrokenLineBackgroundView *backgroupView = [[BrokenLineBackgroundView alloc] initWithFrame:self.bounds];
+    BrokenLineBackgroundView *backgroupView =
+    [BrokenLineBackgroundView lineBackgroundViewWithFrame:self.bounds
+                                           withDrawConfig:self.drawConfig];
     [self addSubview:backgroupView];
-
-    
     [self setupBrokenLine2CollectionView];
 }
 
@@ -72,7 +80,8 @@
 
 - (void)setupBrokenLine2CollectionView {
     BrokenLine2CollectionView *lineCollectionView =
-    [BrokenLine2CollectionView collectionViewWithFrame:self.frame];
+    [BrokenLine2CollectionView collectionViewWithFrame:self.frame
+                                        withDrawConfig:self.drawConfig];
     lineCollectionView.drawLineDataSource = self;
     self.lineCollectionView = lineCollectionView;
     [self addSubview:lineCollectionView];
@@ -80,7 +89,7 @@
 
 - (void)setupCollectionView {
     DrawLineCollectionView *lineCollectionView =
-    [DrawLineCollectionView collectionViewWithFrame:self.frame];
+    [DrawLineCollectionView collectionViewWithFrame:self.frame withDrawConfig:self.drawConfig];
     lineCollectionView.drawLineDataSource = self;
     self.lineCollectionView = lineCollectionView;
     [self addSubview:lineCollectionView];
@@ -148,6 +157,13 @@
         _pointModelList = [NSArray array];
     }
     return _pointModelList;
+}
+
+- (DrawConfig *)drawConfig {
+    if (_drawConfig == nil) {
+        _drawConfig = [DrawConfig drawConfigWithBrokenLineType:self.brokenLineType];
+    }
+    return _drawConfig;
 }
 
 @end

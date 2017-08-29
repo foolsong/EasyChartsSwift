@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CommonColor.h"
 
+@class DrawConfig;
 @interface DrawLineView : UIView
 
 + (instancetype)lineViewWithFrame:(CGRect) frame;
-
-
-+ (instancetype)lineView2WithFrame:(CGRect) frame;
++ (instancetype)lineView2WithFrame:(CGRect) frame
+                    withDrawConfig:(DrawConfig *)drawConfig
+                    brokenLineType:(BrokenLineType)brokenLineType;
 
 /**
  重新设置图标的数据

@@ -6,6 +6,14 @@
 //  Copyright © 2017年 topglobaledu. All rights reserved.
 //
 
+
+typedef NS_ENUM(NSUInteger, BrokenLineType) {
+    BrokenLineTypeMiddlePoint = 0,
+    BrokenLineTypeNormal,
+};
+
+
+
 #define randomColor [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1.0]
 
 //色彩标准
