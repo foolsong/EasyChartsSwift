@@ -1,7 +1,7 @@
 //  ************************************************************************
 //
-//  EasyPieChartView.m
-//  DrawByCollectionView
+//  ECPieChartView.m
+//  EasyCharts
 //
 //  Created by 宋永建 on 2017/6/14.
 //  Copyright © 2017年 宋永建. All rights reserved.
@@ -12,12 +12,12 @@
 //
 //  ************************************************************************
 
-#import "EasyPieChartView.h"
+#import "ECPieChartView.h"
 #import "DrawPieChartView.h"
 #import "DrawPieChartLineView.h"
 #import "DrawPieChartModel.h"
 
-@interface EasyPieChartView ()
+@interface ECPieChartView ()
 
 @property (nonatomic, assign) CGPoint arcCenter;
 @property (nonatomic, strong) DrawPieChartView *pieChartView;
@@ -31,10 +31,10 @@
 
 @end
 
-@implementation EasyPieChartView
+@implementation ECPieChartView
 
 + (instancetype)pieChartViewWithFrame:(CGRect)frame {
-    EasyPieChartView *pieChartView = [[self alloc] initWithFrame:frame];
+    ECPieChartView *pieChartView = [[self alloc] initWithFrame:frame];
     pieChartView.arcCenter = CGPointMake(frame.size.width * 0.5, frame.size.height * 0.5);
     [pieChartView setupSubviews];
     return pieChartView;

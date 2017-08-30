@@ -11,7 +11,7 @@
 
 @interface ECBrokenLineCollectionViewFactory : NSObject
 
-+ (id<ECBrokenLineProtocol>)collectionViewWithFrame:(CGRect)frame
-                               withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig;
+//+ (id<ECBrokenLineProtocol>)collectionViewWithFrame:(CGRect)frame
+//                               withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig;
 
 @end

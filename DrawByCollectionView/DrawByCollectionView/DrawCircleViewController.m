@@ -16,7 +16,7 @@
 #import "DrawPieChartView.h"
 #import "DrawPieChartModel.h"
 #import "DrawPieChartLineView.h"
-#import "EasyPieChartView.h"
+#import "ECPieChartView.h"
 
 #define STDScreenW [UIScreen mainScreen].bounds.size.width
 
@@ -33,7 +33,7 @@
 @property (nonatomic, copy) NSArray<UIColor *> *colorList;
 @property (nonatomic, copy) NSArray<NSString *> *arcTextList;
 
-@property (nonatomic, strong) EasyPieChartView *pieView;
+@property (nonatomic, strong) ECPieChartView *pieView;
 
 @end
 
@@ -58,7 +58,7 @@
 }
 
 - (void)p_configSubViews {
-    EasyPieChartView *pieView = [EasyPieChartView pieChartViewWithFrame:CGRectMake(0, 100, STDScreenW, 200)];
+    ECPieChartView *pieView = [ECPieChartView pieChartViewWithFrame:CGRectMake(0, 100, STDScreenW, 200)];
     [self.view addSubview:pieView];
     self.pieView = pieView;
     
