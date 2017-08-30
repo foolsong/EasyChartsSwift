@@ -6,12 +6,7 @@
 //  Copyright © 2017年 宋永建. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
-//@interface BrokenLine2CollectionViewController : UICollectionViewController
-//
-//@end
-
+#import "ECBrokenLineCollectionView.h"
 
 @class ECBrokenLineNormalCollectionView,ECBrokenLineConfig;
 @protocol BrokenLine2CollectionViewDataSource <NSObject>
@@ -29,7 +24,7 @@
 
 @end
 
-@interface ECBrokenLineNormalCollectionView : UICollectionView
+@interface ECBrokenLineNormalCollectionView : ECBrokenLineCollectionView
 
 @property (nonatomic, weak) id<BrokenLine2CollectionViewDataSource> drawLineDataSource;
 @property (nonatomic, weak) id<BrokenLine2CollectionViewDelegate> drawLineDelegate;

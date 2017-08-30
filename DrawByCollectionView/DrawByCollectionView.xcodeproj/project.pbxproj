@@ -29,6 +29,7 @@
 		846361DC1F569352000B65DC /* DrawPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361C81F569352000B65DC /* DrawPieChartView.m */; };
 		846361DD1F569352000B65DC /* EasyPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361CA1F569352000B65DC /* EasyPieChartView.m */; };
 		846361DE1F569352000B65DC /* DrawProgressChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361CD1F569352000B65DC /* DrawProgressChartView.m */; };
+		846361E11F56BDE0000B65DC /* ECBrokenLineCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361E01F56BDE0000B65DC /* ECBrokenLineCollectionView.m */; };
 		8465558A1EE67B21008B902A /* DrawLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846555891EE67B21008B902A /* DrawLineViewController.m */; };
 		8465558D1EE67B7A008B902A /* DrawCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8465558C1EE67B7A008B902A /* DrawCircleViewController.m */; };
 		846555901EE67BD3008B902A /* ProgressViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8465558F1EE67BD3008B902A /* ProgressViewViewController.m */; };
@@ -82,6 +83,8 @@
 		846361CA1F569352000B65DC /* EasyPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyPieChartView.m; sourceTree = "<group>"; };
 		846361CC1F569352000B65DC /* DrawProgressChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawProgressChartView.h; sourceTree = "<group>"; };
 		846361CD1F569352000B65DC /* DrawProgressChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawProgressChartView.m; sourceTree = "<group>"; };
+		846361DF1F56BDE0000B65DC /* ECBrokenLineCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECBrokenLineCollectionView.h; sourceTree = "<group>"; };
+		846361E01F56BDE0000B65DC /* ECBrokenLineCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECBrokenLineCollectionView.m; sourceTree = "<group>"; };
 		846555881EE67B21008B902A /* DrawLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineViewController.h; sourceTree = "<group>"; };
 		846555891EE67B21008B902A /* DrawLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineViewController.m; sourceTree = "<group>"; };
 		8465558B1EE67B7A008B902A /* DrawCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawCircleViewController.h; sourceTree = "<group>"; };
@@ -205,6 +208,8 @@
 				846361B91F569352000B65DC /* ECBrokenLineView.m */,
 				846361BA1F569352000B65DC /* ECBrokenLinePointModel.h */,
 				846361BB1F569352000B65DC /* ECBrokenLinePointModel.m */,
+				846361DF1F56BDE0000B65DC /* ECBrokenLineCollectionView.h */,
+				846361E01F56BDE0000B65DC /* ECBrokenLineCollectionView.m */,
 			);
 			path = BrokenLineChart;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 				842CBDC31EAE0F5F0090D92F /* AppDelegate.m in Sources */,
 				846361D11F569352000B65DC /* BrokenLineBackgroundView.m in Sources */,
 				846361D21F569352000B65DC /* ECBrokenLineConfig.m in Sources */,
+				846361E11F56BDE0000B65DC /* ECBrokenLineCollectionView.m in Sources */,
 				846361D41F569352000B65DC /* ECBrokenLineCircleLayer.m in Sources */,
 				8465558A1EE67B21008B902A /* DrawLineViewController.m in Sources */,
 				846361DC1F569352000B65DC /* DrawPieChartView.m in Sources */,
