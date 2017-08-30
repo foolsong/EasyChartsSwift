@@ -13,8 +13,8 @@
 //  ************************************************************************
 
 #import "ECBrokenLineView.h"
-#import "DrawLineCollectionView.h"
-#import "BrokenLine2CollectionView.h"
+#import "ECBrokenLineCenterCollectionView.h"
+#import "ECBrokenLineNormalCollectionView.h"
 #import "DrawLineBackgroundView.h"
 #import "ECBrokenLinePointModel.h"
 #import "BrokenLineBackgroundView.h"
@@ -79,8 +79,8 @@
 }
 
 - (void)setupBrokenLine2CollectionView {
-    BrokenLine2CollectionView *lineCollectionView =
-    [BrokenLine2CollectionView collectionViewWithFrame:self.frame
+    ECBrokenLineNormalCollectionView *lineCollectionView =
+    [ECBrokenLineNormalCollectionView collectionViewWithFrame:self.frame
                                         withBrokenLineConfig:self.brokenLineConfig];
     lineCollectionView.drawLineDataSource = self;
     self.lineCollectionView = lineCollectionView;
@@ -88,14 +88,14 @@
 }
 
 - (void)setupCollectionView {
-    DrawLineCollectionView *lineCollectionView =
-    [DrawLineCollectionView collectionViewWithFrame:self.frame withDrawConfig:self.brokenLineConfig];
+    ECBrokenLineCenterCollectionView *lineCollectionView =
+    [ECBrokenLineCenterCollectionView collectionViewWithFrame:self.frame withDrawConfig:self.brokenLineConfig];
     lineCollectionView.drawLineDataSource = self;
     self.lineCollectionView = lineCollectionView;
     [self addSubview:lineCollectionView];
 }
 
-- (NSArray *)collectionViewPointYList:(DrawLineCollectionView *)collectionView {
+- (NSArray *)collectionViewPointYList:(ECBrokenLineCenterCollectionView *)collectionView {
     return self.pointModelList;
 }
 

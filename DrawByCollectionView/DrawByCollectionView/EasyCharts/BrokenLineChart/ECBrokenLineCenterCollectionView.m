@@ -1,7 +1,7 @@
 //  ************************************************************************
 //
-//  DrawLineCollectionView.m
-//  DrawByCollectionView
+//  ECBrokenLineCenterCollectionView.h
+//  EasyCharts
 //
 //  Created by 宋永建 on 2017/4/24.
 //  Copyright © 2017年 宋永建. All rights reserved.
@@ -12,7 +12,7 @@
 //
 //  ************************************************************************
 
-#import "DrawLineCollectionView.h"
+#import "ECBrokenLineCenterCollectionView.h"
 #import "ECBrokenLineCollectionViewCell.h"
 #import "ECBrokenLinePointModel.h"
 #import "CommonColor.h"
@@ -20,7 +20,7 @@
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 
-@interface DrawLineCollectionView ()<UICollectionViewDelegate,
+@interface ECBrokenLineCenterCollectionView ()<UICollectionViewDelegate,
                                    UICollectionViewDataSource>
 
 @property (nonatomic, strong) ECBrokenLineCollectionViewCell *currentCell;
@@ -33,11 +33,11 @@
 
 @end
 
-@implementation DrawLineCollectionView
+@implementation ECBrokenLineCenterCollectionView
 + (instancetype)collectionViewWithFrame:(CGRect)frame
                          withDrawConfig:(ECBrokenLineConfig *)brokenLineConfig {
     DrawLineCollectionViewFlowLayout *layout = [self collectionViewFlowLayout];
-    DrawLineCollectionView *collectionView =
+    ECBrokenLineCenterCollectionView *collectionView =
     [[self alloc]initWithFrame:CGRectMake(0, 0,frame.size.width ,frame.size.height)
           collectionViewLayout:layout];
     collectionView.brokenLineConfig = brokenLineConfig;

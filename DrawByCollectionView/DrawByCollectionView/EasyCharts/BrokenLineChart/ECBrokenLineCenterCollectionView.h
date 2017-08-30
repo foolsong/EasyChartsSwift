@@ -1,6 +1,6 @@
 //
-//  DrawLineCollectionView.h
-//  DrawByCollectionView
+//  ECBrokenLineCenterCollectionView.h
+//  EasyCharts
 //
 //  Created by 宋永建 on 2017/4/24.
 //  Copyright © 2017年 宋永建. All rights reserved.
@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class DrawLineCollectionView,ECBrokenLineConfig;
+@class ECBrokenLineCenterCollectionView,ECBrokenLineConfig;
 @protocol DrawLineCollectionViewDataSource <NSObject>
 
-- (NSArray *)collectionViewPointYList:(DrawLineCollectionView *)collectionView;
+- (NSArray *)collectionViewPointYList:(ECBrokenLineCenterCollectionView *)collectionView;
 - (CGSize)collectionView:(UICollectionView *)collectionView
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
 
@@ -19,12 +19,12 @@
 
 @protocol DrawLineCollectionViewDelegate <NSObject>
 
-- (void)collectionViewPointYList:(DrawLineCollectionView *)collectionView
+- (void)collectionViewPointYList:(ECBrokenLineCenterCollectionView *)collectionView
         didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
 
 @end
 
-@interface DrawLineCollectionView : UICollectionView
+@interface ECBrokenLineCenterCollectionView : UICollectionView
 
 @property (nonatomic, weak) id<DrawLineCollectionViewDataSource> drawLineDataSource;
 @property (nonatomic, weak) id<DrawLineCollectionViewDelegate> drawLineDelegate;

@@ -1,7 +1,7 @@
 //  ************************************************************************
 //
-//  BrokenLine2CollectionViewController.m
-//  DrawByCollectionView
+//  ECBrokenLineNormalCollectionView.m
+//  EasyCharts
 //
 //  Created by 宋永建 on 2017/8/26.
 //  Copyright © 2017年 宋永建. All rights reserved.
@@ -12,7 +12,7 @@
 //
 //  ************************************************************************
 
-#import "BrokenLine2CollectionView.h"
+#import "ECBrokenLineNormalCollectionView.h"
 #import "ECBrokenLineCollectionViewCell.h"
 #import "ECBrokenLinePointModel.h"
 #import "CommonColor.h"
@@ -20,7 +20,7 @@
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 
-@interface BrokenLine2CollectionView ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface ECBrokenLineNormalCollectionView ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, assign) CGFloat cellWidth;
@@ -29,12 +29,12 @@
 
 @end
 
-@implementation BrokenLine2CollectionView
+@implementation ECBrokenLineNormalCollectionView
 
 + (instancetype)collectionViewWithFrame:(CGRect)frame
                    withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig {
     BrokenLine2CollectionViewFlowLayout *layout = [self collectionViewFlowLayout];
-    BrokenLine2CollectionView *collectionView =
+    ECBrokenLineNormalCollectionView *collectionView =
     [[self alloc]initWithFrame:CGRectMake(35, 0,frame.size.width - 35 ,frame.size.height)
           collectionViewLayout:layout];
     collectionView.brokenLineConfig = brokenLineConfig;
