@@ -1,5 +1,5 @@
 //
-//  DrawBarCollectionView.h
+//  DrawBarCollectionViewCell.h
 //  DrawByCollectionView
 //
 //  Created by 宋永建 on 2017/6/9.
@@ -8,9 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DrawBarCollectionView : UICollectionView
+@interface ECBarCollectionViewCell : UICollectionViewCell
 
-+ (instancetype)collectionView;
-- (void)reset:(NSInteger)cellCount;
+- (void)reset;
 
 @end

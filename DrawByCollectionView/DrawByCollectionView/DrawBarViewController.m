@@ -13,13 +13,13 @@
 //  ************************************************************************
 
 #import "DrawBarViewController.h"
-#import "DrawBarCollectionView.h"
+#import "ECBarCollectionView.h"
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 
 @interface DrawBarViewController ()
 
-@property (nonatomic, strong) DrawBarCollectionView *barView;
+@property (nonatomic, strong) ECBarCollectionView *barView;
 
 @end
 
@@ -56,7 +56,7 @@
 
 #pragma mark - HandleViews
 - (void)p_configSubViews {
-    DrawBarCollectionView *barView = [DrawBarCollectionView collectionView];
+    ECBarCollectionView *barView = [ECBarCollectionView collectionView];
     [barView setBackgroundColor:[UIColor whiteColor]];
     barView.frame = CGRectMake(0, 120, ScreenW, 210);
     [self.view addSubview:barView];

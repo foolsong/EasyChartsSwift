@@ -13,8 +13,8 @@
 		842CBDC91EAE0F5F0090D92F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842CBDC71EAE0F5F0090D92F /* Main.storyboard */; };
 		842CBDCB1EAE0F5F0090D92F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842CBDCA1EAE0F5F0090D92F /* Assets.xcassets */; };
 		842CBDCE1EAE0F5F0090D92F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842CBDCC1EAE0F5F0090D92F /* LaunchScreen.storyboard */; };
-		846361CE1F569352000B65DC /* DrawBarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361A61F569352000B65DC /* DrawBarCollectionView.m */; };
-		846361CF1F569352000B65DC /* DrawBarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361A81F569352000B65DC /* DrawBarCollectionViewCell.m */; };
+		846361CE1F569352000B65DC /* ECBarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361A61F569352000B65DC /* ECBarCollectionView.m */; };
+		846361CF1F569352000B65DC /* ECBarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361A81F569352000B65DC /* ECBarCollectionViewCell.m */; };
 		846361D01F569352000B65DC /* ECBrokenLineNormalCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361AB1F569352000B65DC /* ECBrokenLineNormalCollectionView.m */; };
 		846361D11F569352000B65DC /* ECBrokenLineNormalBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361AD1F569352000B65DC /* ECBrokenLineNormalBackgroundView.m */; };
 		846361D21F569352000B65DC /* ECBrokenLineConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361AF1F569352000B65DC /* ECBrokenLineConfig.m */; };
@@ -28,7 +28,7 @@
 		846361DB1F569352000B65DC /* ECPieChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361C61F569352000B65DC /* ECPieChartModel.m */; };
 		846361DC1F569352000B65DC /* ECPieChartCoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361C81F569352000B65DC /* ECPieChartCoreView.m */; };
 		846361DD1F569352000B65DC /* ECPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361CA1F569352000B65DC /* ECPieChartView.m */; };
-		846361DE1F569352000B65DC /* DrawProgressChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361CD1F569352000B65DC /* DrawProgressChartView.m */; };
+		846361DE1F569352000B65DC /* ECProgressChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361CD1F569352000B65DC /* ECProgressChartView.m */; };
 		846361E11F56BDE0000B65DC /* ECBrokenLineCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361E01F56BDE0000B65DC /* ECBrokenLineCollectionView.m */; };
 		846361E51F56CB6E000B65DC /* ECBrokenLineCollectionViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361E41F56CB6E000B65DC /* ECBrokenLineCollectionViewFactory.m */; };
 		8465558A1EE67B21008B902A /* DrawLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846555891EE67B21008B902A /* DrawLineViewController.m */; };
@@ -50,10 +50,10 @@
 		842CBDCA1EAE0F5F0090D92F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		842CBDCD1EAE0F5F0090D92F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		842CBDCF1EAE0F5F0090D92F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		846361A51F569352000B65DC /* DrawBarCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawBarCollectionView.h; sourceTree = "<group>"; };
-		846361A61F569352000B65DC /* DrawBarCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawBarCollectionView.m; sourceTree = "<group>"; };
-		846361A71F569352000B65DC /* DrawBarCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawBarCollectionViewCell.h; sourceTree = "<group>"; };
-		846361A81F569352000B65DC /* DrawBarCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawBarCollectionViewCell.m; sourceTree = "<group>"; };
+		846361A51F569352000B65DC /* ECBarCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECBarCollectionView.h; sourceTree = "<group>"; };
+		846361A61F569352000B65DC /* ECBarCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECBarCollectionView.m; sourceTree = "<group>"; };
+		846361A71F569352000B65DC /* ECBarCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECBarCollectionViewCell.h; sourceTree = "<group>"; };
+		846361A81F569352000B65DC /* ECBarCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECBarCollectionViewCell.m; sourceTree = "<group>"; };
 		846361AA1F569352000B65DC /* ECBrokenLineNormalCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECBrokenLineNormalCollectionView.h; sourceTree = "<group>"; };
 		846361AB1F569352000B65DC /* ECBrokenLineNormalCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECBrokenLineNormalCollectionView.m; sourceTree = "<group>"; };
 		846361AC1F569352000B65DC /* ECBrokenLineNormalBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECBrokenLineNormalBackgroundView.h; sourceTree = "<group>"; };
@@ -82,8 +82,8 @@
 		846361C81F569352000B65DC /* ECPieChartCoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPieChartCoreView.m; sourceTree = "<group>"; };
 		846361C91F569352000B65DC /* ECPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPieChartView.h; sourceTree = "<group>"; };
 		846361CA1F569352000B65DC /* ECPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPieChartView.m; sourceTree = "<group>"; };
-		846361CC1F569352000B65DC /* DrawProgressChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawProgressChartView.h; sourceTree = "<group>"; };
-		846361CD1F569352000B65DC /* DrawProgressChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawProgressChartView.m; sourceTree = "<group>"; };
+		846361CC1F569352000B65DC /* ECProgressChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECProgressChartView.h; sourceTree = "<group>"; };
+		846361CD1F569352000B65DC /* ECProgressChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECProgressChartView.m; sourceTree = "<group>"; };
 		846361DF1F56BDE0000B65DC /* ECBrokenLineCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECBrokenLineCollectionView.h; sourceTree = "<group>"; };
 		846361E01F56BDE0000B65DC /* ECBrokenLineCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECBrokenLineCollectionView.m; sourceTree = "<group>"; };
 		846361E21F56C9A1000B65DC /* ECBrokenLineProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ECBrokenLineProtocol.h; sourceTree = "<group>"; };
@@ -183,10 +183,10 @@
 		846361A41F569352000B65DC /* BarGraph */ = {
 			isa = PBXGroup;
 			children = (
-				846361A51F569352000B65DC /* DrawBarCollectionView.h */,
-				846361A61F569352000B65DC /* DrawBarCollectionView.m */,
-				846361A71F569352000B65DC /* DrawBarCollectionViewCell.h */,
-				846361A81F569352000B65DC /* DrawBarCollectionViewCell.m */,
+				846361A51F569352000B65DC /* ECBarCollectionView.h */,
+				846361A61F569352000B65DC /* ECBarCollectionView.m */,
+				846361A71F569352000B65DC /* ECBarCollectionViewCell.h */,
+				846361A81F569352000B65DC /* ECBarCollectionViewCell.m */,
 			);
 			path = BarGraph;
 			sourceTree = "<group>";
@@ -247,8 +247,8 @@
 		846361CB1F569352000B65DC /* ProgressView */ = {
 			isa = PBXGroup;
 			children = (
-				846361CC1F569352000B65DC /* DrawProgressChartView.h */,
-				846361CD1F569352000B65DC /* DrawProgressChartView.m */,
+				846361CC1F569352000B65DC /* ECProgressChartView.h */,
+				846361CD1F569352000B65DC /* ECProgressChartView.m */,
 			);
 			path = ProgressView;
 			sourceTree = "<group>";
@@ -334,7 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				846361DE1F569352000B65DC /* DrawProgressChartView.m in Sources */,
+				846361DE1F569352000B65DC /* ECProgressChartView.m in Sources */,
 				846361D71F569352000B65DC /* ECBrokenLineView.m in Sources */,
 				846361E51F56CB6E000B65DC /* ECBrokenLineCollectionViewFactory.m in Sources */,
 				846361D61F569352000B65DC /* ECBrokenLineCollectionViewCell.m in Sources */,
@@ -354,8 +354,8 @@
 				8465558A1EE67B21008B902A /* DrawLineViewController.m in Sources */,
 				846361DC1F569352000B65DC /* ECPieChartCoreView.m in Sources */,
 				8491B6701EEA7E5C00AF335F /* DrawBarViewController.m in Sources */,
-				846361CE1F569352000B65DC /* DrawBarCollectionView.m in Sources */,
-				846361CF1F569352000B65DC /* DrawBarCollectionViewCell.m in Sources */,
+				846361CE1F569352000B65DC /* ECBarCollectionView.m in Sources */,
+				846361CF1F569352000B65DC /* ECBarCollectionViewCell.m in Sources */,
 				842CBDC01EAE0F5F0090D92F /* main.m in Sources */,
 				846361DA1F569352000B65DC /* ECPieChartLineView.m in Sources */,
 				846361DB1F569352000B65DC /* ECPieChartModel.m in Sources */,

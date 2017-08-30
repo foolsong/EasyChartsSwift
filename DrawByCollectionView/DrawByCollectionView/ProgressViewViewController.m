@@ -13,12 +13,12 @@
 //  ************************************************************************
 
 #import "ProgressViewViewController.h"
-#import "DrawProgressChartView.h"
+#import "ECProgressChartView.h"
 
 #define STDScreenW [UIScreen mainScreen].bounds.size.width
 @interface ProgressViewViewController ()
 
-@property (nonatomic, strong) DrawProgressChartView *progressView;
+@property (nonatomic, strong) ECProgressChartView *progressView;
 
 @end
 
@@ -54,7 +54,7 @@
     CGFloat y = CGRectGetMaxY(self.progressView.frame) + 100;
     
     CGRect frame = CGRectMake(x ,y ,width , height);;
-    DrawProgressChartView *progressView = [DrawProgressChartView progressChartViewWithFrame:frame];
+    ECProgressChartView *progressView = [ECProgressChartView progressChartViewWithFrame:frame];
     [self.view addSubview:progressView];
     self.progressView = progressView;
 }

@@ -1,7 +1,7 @@
 //  ************************************************************************
 //
-//  DrawProgressByShapeLayer.m
-//  DrawByCollectionView
+//  ECProgressChartView.m
+//  EasyCharts
 //
 //  Created by 宋永建 on 2017/5/8.
 //  Copyright © 2017年 宋永建. All rights reserved.
@@ -12,11 +12,11 @@
 //
 //  ************************************************************************
 
-#import "DrawProgressChartView.h"
+#import "ECProgressChartView.h"
 
 #define animationDuration 0.4
 
-@interface DrawProgressChartView ()
+@interface ECProgressChartView ()
 
 @property (nonatomic, assign) CGFloat currentProgress;
 @property (nonatomic, assign) CGFloat fromValue;
@@ -32,7 +32,7 @@
 
 @end
 
-@implementation DrawProgressChartView
+@implementation ECProgressChartView
 
 - (instancetype)init {
     self = [super init];
@@ -42,7 +42,7 @@
 }
 
 + (instancetype)progressChartViewWithFrame:(CGRect)frame {
-    DrawProgressChartView *chartView = [[DrawProgressChartView alloc] init];
+    ECProgressChartView *chartView = [[ECProgressChartView alloc] init];
     [chartView computerRadiusAndCircleCenterWithFrame:frame];
     chartView.frame = frame;
     [chartView setupNumlabelWithFrame:frame];

@@ -12,16 +12,16 @@
 //
 //  ************************************************************************
 
-#import "DrawBarCollectionViewCell.h"
+#import "ECBarCollectionViewCell.h"
 
-@interface DrawBarCollectionViewCell()
+@interface ECBarCollectionViewCell()
 
 @property (nonatomic, strong) CAShapeLayer *lastWeekLayer;
 @property (nonatomic, strong) CAShapeLayer *currentWeekLayer;
 
 @end
 
-@implementation DrawBarCollectionViewCell
+@implementation ECBarCollectionViewCell
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

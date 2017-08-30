@@ -12,25 +12,25 @@
 //
 //  ************************************************************************
 
-#import "DrawBarCollectionView.h"
-#import "DrawBarCollectionViewCell.h"
+#import "ECBarCollectionView.h"
+#import "ECBarCollectionViewCell.h"
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 
-@interface DrawBarCollectionView ()<UICollectionViewDelegate,
+@interface ECBarCollectionView ()<UICollectionViewDelegate,
                                   UICollectionViewDataSource>
 
 @property (nonatomic, assign) NSInteger cellCount;
 
 @end
 
-@implementation DrawBarCollectionView
+@implementation ECBarCollectionView
 
 + (instancetype)collectionView {
-    DrawBarCollectionView *collectionView =
+    ECBarCollectionView *collectionView =
     [[self alloc]initWithFrame:CGRectMake(0, 0,[UIScreen mainScreen].bounds.size.width ,210)
           collectionViewLayout:[self collectionViewFlowLayout]];
-    [collectionView registerClass:[DrawBarCollectionViewCell class] forCellWithReuseIdentifier:@"DrawBarCollectionViewCell"];
+    [collectionView registerClass:[ECBarCollectionViewCell class] forCellWithReuseIdentifier:@"ECBarCollectionViewCell"];
     return collectionView;
 }
 
@@ -72,7 +72,7 @@
 }
 
 - ( UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    DrawBarCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DrawBarCollectionViewCell" forIndexPath:indexPath];
+    ECBarCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ECBarCollectionViewCell" forIndexPath:indexPath];
     return cell;
 }
 
@@ -94,7 +94,7 @@
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
 //    [(DrawBarCollectionViewCell *)cell configureCellWithPointYList:self.pointModelLits withIndex:indexPath.row];
-    [(DrawBarCollectionViewCell *)cell reset];
+    [(ECBarCollectionViewCell *)cell reset];
 }
 
 #pragma mark - UICollectionViewDelegate
