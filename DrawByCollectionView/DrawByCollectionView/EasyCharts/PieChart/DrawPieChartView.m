@@ -8,7 +8,7 @@
 
 #import "DrawPieChartView.h"
 #import "DrawPieChartModel.h"
-#import "DrawLineCirclePointLayer.h"
+#import "ECBrokenLineCircleLayer.h"
 
 @interface DrawPieChartView()
 

@@ -1,7 +1,7 @@
 //  ************************************************************************
 //
-//  DrawLineCirclePointLayer.m
-//  DrawByCollectionView
+//  ECBrokenLineCircleLayer.m
+//  EasyCharts
 //
 //  Created by 宋永建 on 2017/6/8.
 //  Copyright © 2017年 宋永建. All rights reserved.
@@ -12,7 +12,7 @@
 //
 //  ************************************************************************
 
-#import "DrawLineCirclePointLayer.h"
+#import "ECBrokenLineCircleLayer.h"
 #import <UIKit/UIKit.h>
 #import "CommonColor.h"
 #import "ECBrokenLineConfig.h"
@@ -21,16 +21,16 @@
 
 #define SELECT_CIRCLE_SIZE 21.0
 
-@interface DrawLineCirclePointLayer ()
+@interface ECBrokenLineCircleLayer ()
 
 @property (nonatomic, strong) ECBrokenLineConfig *brokenLineConfig;
 
 @end
 
-@implementation DrawLineCirclePointLayer
+@implementation ECBrokenLineCircleLayer
 
 + (instancetype)circlePointLayerWithBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig {
-    DrawLineCirclePointLayer *circleLayer = [self layer];
+    ECBrokenLineCircleLayer *circleLayer = [self layer];
     circleLayer.brokenLineConfig = brokenLineConfig;
     UIImage *img = [self circleImageWithDrawConfig:brokenLineConfig];
     [circleLayer setContents:(id)img.CGImage];
@@ -42,7 +42,7 @@
 }
 
 + (instancetype)circlePointSelectedLayerWithBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig {
-    DrawLineCirclePointLayer *circleLayer = [self layer];
+    ECBrokenLineCircleLayer *circleLayer = [self layer];
     circleLayer.brokenLineConfig = brokenLineConfig;
     [circleLayer setFrame:CGRectMake(0,0,21,21)];
     [circleLayer setGeometryFlipped:YES];

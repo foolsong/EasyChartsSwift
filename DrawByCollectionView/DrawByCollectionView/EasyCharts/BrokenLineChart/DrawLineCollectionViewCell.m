@@ -16,7 +16,7 @@
 #import "ECBrokenLinePointModel.h"
 #import "CommonColor.h"
 #import "ECBrokenLineConfig.h"
-#import "DrawLineCirclePointLayer.h"
+#import "ECBrokenLineCircleLayer.h"
 
 #define CIRCLE_SIZE 7.0
 
@@ -33,8 +33,8 @@
 
 @property (nonatomic, strong) UIImage *circleImage;
 
-@property (nonatomic, strong) DrawLineCirclePointLayer *circleLayer;
-@property (nonatomic, strong) DrawLineCirclePointLayer *circleSelectedLayer;
+@property (nonatomic, strong) ECBrokenLineCircleLayer *circleLayer;
+@property (nonatomic, strong) ECBrokenLineCircleLayer *circleSelectedLayer;
 
 @property (nonatomic, strong) UILabel *datelabel;
 
@@ -168,19 +168,19 @@
 }
 
 
-- (DrawLineCirclePointLayer *)circleLayer {
+- (ECBrokenLineCircleLayer *)circleLayer {
     if (_circleLayer == nil) {
         _circleLayer =
-        [DrawLineCirclePointLayer circlePointLayerWithBrokenLineConfig:self.brokenLineConfig];
+        [ECBrokenLineCircleLayer circlePointLayerWithBrokenLineConfig:self.brokenLineConfig];
         [self.layer addSublayer:_circleLayer];
     }
     return _circleLayer;
 }
 
-- (DrawLineCirclePointLayer *)circleSelectedLayer {
+- (ECBrokenLineCircleLayer *)circleSelectedLayer {
     if (_circleSelectedLayer == nil) {
         _circleSelectedLayer =
-        [DrawLineCirclePointLayer circlePointSelectedLayerWithBrokenLineConfig:self.brokenLineConfig];
+        [ECBrokenLineCircleLayer circlePointSelectedLayerWithBrokenLineConfig:self.brokenLineConfig];
     }
     return _circleSelectedLayer;
 }
