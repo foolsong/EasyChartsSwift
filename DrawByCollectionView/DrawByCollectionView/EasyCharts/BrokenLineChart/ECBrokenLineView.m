@@ -1,6 +1,6 @@
 //  ************************************************************************
 //
-//  DrawLineView.m
+//  ECBrokenLineView.m
 //  DrawByCollectionView
 //
 //  Created by 宋永建 on 2017/4/24.
@@ -12,7 +12,7 @@
 //
 //  ************************************************************************
 
-#import "DrawLineView.h"
+#import "ECBrokenLineView.h"
 #import "DrawLineCollectionView.h"
 #import "BrokenLine2CollectionView.h"
 #import "DrawLineBackgroundView.h"
@@ -21,7 +21,7 @@
 
 #import "ECBrokenLineConfig.h"
 
-@interface DrawLineView ()<DrawLineCollectionViewDataSource,BrokenLine2CollectionViewDataSource>
+@interface ECBrokenLineView ()<DrawLineCollectionViewDataSource,BrokenLine2CollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *lineCollectionView;
 @property (nonatomic, copy) NSArray <ECBrokenLinePointModel *>*pointModelList;
@@ -31,7 +31,7 @@
 
 @end
 
-@implementation DrawLineView
+@implementation ECBrokenLineView
 
 - (instancetype)init {
     self = [super init];
@@ -41,7 +41,7 @@
 }
 
 + (instancetype)lineViewWithFrame:(CGRect) frame {
-    DrawLineView *lineView = [[self alloc] init];
+    ECBrokenLineView *lineView = [[self alloc] init];
     lineView.brokenLineType = BrokenLineTypeMiddlePoint;
     lineView.brokenLineConfig = nil;
     lineView.frame = frame;
@@ -50,9 +50,9 @@
 }
 
 + (instancetype)lineView2WithFrame:(CGRect) frame
-                    withDrawConfig:(ECBrokenLineConfig *)brokenLineConfig
+              withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig
                     brokenLineType:(BrokenLineType)brokenLineType {
-    DrawLineView *lineView = [[self alloc] init];
+    ECBrokenLineView *lineView = [[self alloc] init];
     lineView.brokenLineType = brokenLineType;
     lineView.brokenLineConfig = brokenLineConfig;
     lineView.frame = frame;

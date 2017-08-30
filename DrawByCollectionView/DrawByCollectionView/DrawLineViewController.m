@@ -13,12 +13,12 @@
 //  ************************************************************************
 
 #import "DrawLineViewController.h"
-#import "DrawLineView.h"
+#import "ECBrokenLineView.h"
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 @interface DrawLineViewController ()
 
-@property (nonatomic, strong) DrawLineView *lineView;
+@property (nonatomic, strong) ECBrokenLineView *brokenLineView;
 
 @end
 
@@ -48,9 +48,9 @@
 
 - (void)setupDrawLineView {
     CGRect frame = CGRectMake(0, 120, [UIScreen mainScreen].bounds.size.width, 300);
-    DrawLineView *lineView = [DrawLineView lineViewWithFrame:frame];
-    [self.view addSubview:lineView];
-    self.lineView = lineView;
+    ECBrokenLineView *brokenLineView = [ECBrokenLineView lineViewWithFrame:frame];
+    [self.view addSubview:brokenLineView];
+    self.brokenLineView = brokenLineView;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -58,12 +58,12 @@
 }
 
 - (void)test {
-    [self.lineView reloadLineViewDataWithPointValveList:@[@"12",@"90",@"-1",@"56",@"34"]
+    [self.brokenLineView reloadLineViewDataWithPointValveList:@[@"12",@"90",@"-1",@"56",@"34"]
                                               titleText:@[@"1月",@"2月",@"3月",@"4月",@"5月"]];
 }
 
 - (void)test1 {
-    [self.lineView reloadLineViewDataWithPointValveList:@[@"34",@"12",@"100",@"16",@"1"]
+    [self.brokenLineView reloadLineViewDataWithPointValveList:@[@"34",@"12",@"100",@"16",@"1"]
                                               titleText:@[@"1月",@"2月",@"3月",@"4月",@"5月"]];
 }
 

@@ -1,5 +1,5 @@
 //
-//  DrawLineView.h
+//  ECBrokenLineView.h
 //  DrawByCollectionView
 //
 //  Created by 宋永建 on 2017/4/24.
@@ -10,11 +10,11 @@
 #import "CommonColor.h"
 
 @class ECBrokenLineConfig;
-@interface DrawLineView : UIView
+@interface ECBrokenLineView : UIView
 
 + (instancetype)lineViewWithFrame:(CGRect) frame;
 + (instancetype)lineView2WithFrame:(CGRect) frame
-                    withDrawConfig:(ECBrokenLineConfig *)drawConfig
+              withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig
                     brokenLineType:(BrokenLineType)brokenLineType;
 
 /**
