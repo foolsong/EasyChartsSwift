@@ -12,16 +12,16 @@
 //
 //  ************************************************************************
 
-#import "DrawConfig.h"
+#import "ECBrokenLineConfig.h"
 
-@interface DrawConfig ()
+@interface ECBrokenLineConfig ()
 
 @end
 
-@implementation DrawConfig
+@implementation ECBrokenLineConfig
 
-+ (instancetype)drawConfigWithBrokenLineType:(BrokenLineType)brokenLineType {
-    DrawConfig *drawConfig = [[DrawConfig alloc] init];
++ (instancetype)configWithBrokenLineType:(BrokenLineType)brokenLineType {
+    ECBrokenLineConfig *drawConfig = [[ECBrokenLineConfig alloc] init];
     drawConfig.minValue = -20;
     drawConfig.maxValue = 80;
     drawConfig.numberOfIntervalLines = 5;

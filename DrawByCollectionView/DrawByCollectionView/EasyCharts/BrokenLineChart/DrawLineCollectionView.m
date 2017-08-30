@@ -16,7 +16,7 @@
 #import "DrawLineCollectionViewCell.h"
 #import "PointViewModel.h"
 #import "CommonColor.h"
-#import "DrawConfig.h"
+#import "ECBrokenLineConfig.h"
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 
@@ -29,18 +29,18 @@
 
 @property (nonatomic, assign) BOOL isNeedSettingLastCell;
 
-@property (nonatomic, strong) DrawConfig *drawConfig;
+@property (nonatomic, strong) ECBrokenLineConfig *brokenLineConfig;
 
 @end
 
 @implementation DrawLineCollectionView
 + (instancetype)collectionViewWithFrame:(CGRect)frame
-                         withDrawConfig:(DrawConfig *)drawConfig {
+                         withDrawConfig:(ECBrokenLineConfig *)brokenLineConfig {
     DrawLineCollectionViewFlowLayout *layout = [self collectionViewFlowLayout];
     DrawLineCollectionView *collectionView =
     [[self alloc]initWithFrame:CGRectMake(0, 0,frame.size.width ,frame.size.height)
           collectionViewLayout:layout];
-    collectionView.drawConfig = drawConfig;
+    collectionView.brokenLineConfig = brokenLineConfig;
     __weak typeof(collectionView) weakself = collectionView;
     layout.indexBlock = ^(NSInteger index){
         weakself.currentIndex = index;
@@ -158,7 +158,7 @@
 - ( UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     DrawLineCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DrawLineCollectionViewCell" forIndexPath:indexPath];
     [cell setItemSize:[self sizeForItemAtIndexPath:indexPath]];
-    [cell setupDrawConfig:self.drawConfig];
+    [cell setupBrokenLineConfig:self.brokenLineConfig];
     
     if ([[self pointModelList] count] - 1 == indexPath.row && self.isNeedSettingLastCell) {
         self.isNeedSettingLastCell = NO;

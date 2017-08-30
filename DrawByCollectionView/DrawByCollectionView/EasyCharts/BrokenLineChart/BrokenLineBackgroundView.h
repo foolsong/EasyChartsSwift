@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class DrawConfig;
+@class ECBrokenLineConfig;
 @interface BrokenLineBackgroundView : UIView
 
 + (instancetype)lineBackgroundViewWithFrame:(CGRect)frame
-                             withDrawConfig:(DrawConfig *)drawConfig;
+                       withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig;
 
 @end

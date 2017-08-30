@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "CommonColor.h"
 
-@class DrawConfig;
+@class ECBrokenLineConfig;
 @interface DrawLineView : UIView
 
 + (instancetype)lineViewWithFrame:(CGRect) frame;
 + (instancetype)lineView2WithFrame:(CGRect) frame
-                    withDrawConfig:(DrawConfig *)drawConfig
+                    withDrawConfig:(ECBrokenLineConfig *)drawConfig
                     brokenLineType:(BrokenLineType)brokenLineType;
 
 /**

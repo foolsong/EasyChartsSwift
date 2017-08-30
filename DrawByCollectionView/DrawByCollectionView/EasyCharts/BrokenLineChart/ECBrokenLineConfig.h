@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "CommonColor.h"
 
-@interface DrawConfig : NSObject
+@interface ECBrokenLineConfig : NSObject
 
 @property (nonatomic, strong) UIColor *brokenLineColor;
 @property (nonatomic, strong) UIColor *backVeiwLineColor;
@@ -26,6 +26,6 @@
 @property (nonatomic, assign) BrokenLineType brokenLineType;
 
 
-+ (instancetype)drawConfigWithBrokenLineType:(BrokenLineType)brokenLineType;
++ (instancetype)configWithBrokenLineType:(BrokenLineType)brokenLineType;
 
 @end

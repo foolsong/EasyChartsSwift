@@ -17,7 +17,7 @@
 		846361CF1F569352000B65DC /* DrawBarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361A81F569352000B65DC /* DrawBarCollectionViewCell.m */; };
 		846361D01F569352000B65DC /* BrokenLine2CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361AB1F569352000B65DC /* BrokenLine2CollectionView.m */; };
 		846361D11F569352000B65DC /* BrokenLineBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361AD1F569352000B65DC /* BrokenLineBackgroundView.m */; };
-		846361D21F569352000B65DC /* DrawConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361AF1F569352000B65DC /* DrawConfig.m */; };
+		846361D21F569352000B65DC /* ECBrokenLineConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361AF1F569352000B65DC /* ECBrokenLineConfig.m */; };
 		846361D31F569352000B65DC /* DrawLineBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361B11F569352000B65DC /* DrawLineBackgroundView.m */; };
 		846361D41F569352000B65DC /* DrawLineCirclePointLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361B31F569352000B65DC /* DrawLineCirclePointLayer.m */; };
 		846361D51F569352000B65DC /* DrawLineCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361B51F569352000B65DC /* DrawLineCollectionView.m */; };
@@ -56,8 +56,8 @@
 		846361AB1F569352000B65DC /* BrokenLine2CollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenLine2CollectionView.m; sourceTree = "<group>"; };
 		846361AC1F569352000B65DC /* BrokenLineBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenLineBackgroundView.h; sourceTree = "<group>"; };
 		846361AD1F569352000B65DC /* BrokenLineBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenLineBackgroundView.m; sourceTree = "<group>"; };
-		846361AE1F569352000B65DC /* DrawConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawConfig.h; sourceTree = "<group>"; };
-		846361AF1F569352000B65DC /* DrawConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawConfig.m; sourceTree = "<group>"; };
+		846361AE1F569352000B65DC /* ECBrokenLineConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECBrokenLineConfig.h; sourceTree = "<group>"; };
+		846361AF1F569352000B65DC /* ECBrokenLineConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECBrokenLineConfig.m; sourceTree = "<group>"; };
 		846361B01F569352000B65DC /* DrawLineBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineBackgroundView.h; sourceTree = "<group>"; };
 		846361B11F569352000B65DC /* DrawLineBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineBackgroundView.m; sourceTree = "<group>"; };
 		846361B21F569352000B65DC /* DrawLineCirclePointLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineCirclePointLayer.h; sourceTree = "<group>"; };
@@ -191,8 +191,8 @@
 				846361AB1F569352000B65DC /* BrokenLine2CollectionView.m */,
 				846361AC1F569352000B65DC /* BrokenLineBackgroundView.h */,
 				846361AD1F569352000B65DC /* BrokenLineBackgroundView.m */,
-				846361AE1F569352000B65DC /* DrawConfig.h */,
-				846361AF1F569352000B65DC /* DrawConfig.m */,
+				846361AE1F569352000B65DC /* ECBrokenLineConfig.h */,
+				846361AF1F569352000B65DC /* ECBrokenLineConfig.m */,
 				846361B01F569352000B65DC /* DrawLineBackgroundView.h */,
 				846361B11F569352000B65DC /* DrawLineBackgroundView.m */,
 				846361B21F569352000B65DC /* DrawLineCirclePointLayer.h */,
@@ -335,7 +335,7 @@
 				8465558D1EE67B7A008B902A /* DrawCircleViewController.m in Sources */,
 				842CBDC31EAE0F5F0090D92F /* AppDelegate.m in Sources */,
 				846361D11F569352000B65DC /* BrokenLineBackgroundView.m in Sources */,
-				846361D21F569352000B65DC /* DrawConfig.m in Sources */,
+				846361D21F569352000B65DC /* ECBrokenLineConfig.m in Sources */,
 				846361D41F569352000B65DC /* DrawLineCirclePointLayer.m in Sources */,
 				8465558A1EE67B21008B902A /* DrawLineViewController.m in Sources */,
 				846361DC1F569352000B65DC /* DrawPieChartView.m in Sources */,

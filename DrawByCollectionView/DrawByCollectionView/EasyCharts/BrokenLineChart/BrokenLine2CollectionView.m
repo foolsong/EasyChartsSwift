@@ -16,7 +16,7 @@
 #import "DrawLineCollectionViewCell.h"
 #import "PointViewModel.h"
 #import "CommonColor.h"
-#import "DrawConfig.h"
+#import "ECBrokenLineConfig.h"
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 
@@ -26,18 +26,19 @@
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, assign) CGFloat cellWidth;
 
-@property (nonatomic, strong) DrawConfig *drawConfig;
+@property (nonatomic, strong) ECBrokenLineConfig *brokenLineConfig;
 
 @end
 
 @implementation BrokenLine2CollectionView
+
 + (instancetype)collectionViewWithFrame:(CGRect)frame
-                         withDrawConfig:(DrawConfig *)drawConfig {
+                   withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig {
     BrokenLine2CollectionViewFlowLayout *layout = [self collectionViewFlowLayout];
     BrokenLine2CollectionView *collectionView =
     [[self alloc]initWithFrame:CGRectMake(35, 0,frame.size.width - 35 ,frame.size.height)
           collectionViewLayout:layout];
-    collectionView.drawConfig = drawConfig;
+    collectionView.brokenLineConfig = brokenLineConfig;
     [collectionView registerClass:[DrawLineCollectionViewCell class] forCellWithReuseIdentifier:@"DrawLineCollectionViewCell"];
     return collectionView;
 }
@@ -107,7 +108,7 @@
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    [(DrawLineCollectionViewCell *)cell setupDrawConfig:self.drawConfig];
+    [(DrawLineCollectionViewCell *)cell setupBrokenLineConfig:self.brokenLineConfig];
     [(DrawLineCollectionViewCell *)cell configureCellWithPointYList:[self pointModelList] withIndex:indexPath.row];
     if (self.currentIndex == indexPath.row) {
         [(DrawLineCollectionViewCell *)cell setupCellSelected:YES];

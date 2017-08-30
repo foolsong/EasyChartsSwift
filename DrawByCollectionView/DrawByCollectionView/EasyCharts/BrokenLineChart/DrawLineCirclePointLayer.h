@@ -8,10 +8,10 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-@class DrawConfig;
+@class ECBrokenLineConfig;
 @interface DrawLineCirclePointLayer : CAShapeLayer
 
-+ (instancetype)circlePointLayerWithDrawConfig:(DrawConfig *)drawConfig;
-+ (instancetype)circlePointSelectedLayerWithDrawConfig:(DrawConfig *)drawConfig;
++ (instancetype)circlePointLayerWithBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig;
++ (instancetype)circlePointSelectedLayerWithBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig;
 
 @end

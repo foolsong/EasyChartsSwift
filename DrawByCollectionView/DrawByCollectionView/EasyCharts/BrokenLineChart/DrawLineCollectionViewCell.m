@@ -15,7 +15,7 @@
 #import "DrawLineCollectionViewCell.h"
 #import "PointViewModel.h"
 #import "CommonColor.h"
-#import "DrawConfig.h"
+#import "ECBrokenLineConfig.h"
 #import "DrawLineCirclePointLayer.h"
 
 #define CIRCLE_SIZE 7.0
@@ -40,7 +40,7 @@
 
 @property (nonatomic, strong) NSMutableArray *lineLayerList;
 
-@property (nonatomic, strong) DrawConfig *drawConfig;
+@property (nonatomic, strong) ECBrokenLineConfig *brokenLineConfig;
 
 @end
 
@@ -55,9 +55,9 @@
     return self;
 }
 
-- (void)setupDrawConfig:(DrawConfig *)drawConfig {
-    self.drawConfig = drawConfig;
-    [self.datelabel setTextColor:self.drawConfig.brokenAbscissaColor];
+- (void)setupBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig {
+    self.brokenLineConfig = brokenLineConfig;
+    [self.datelabel setTextColor:self.brokenLineConfig.brokenAbscissaColor];
 }
 
 - (void)configureCellWithPointYList:(NSArray *)pointYList
@@ -133,7 +133,7 @@
         lineLayer.lineDashPattern = @[@5, @5];
     }
     lineLayer.lineWidth = lineWidth;
-    lineLayer.strokeColor = self.drawConfig.brokenLineColor.CGColor;
+    lineLayer.strokeColor = self.brokenLineConfig.brokenLineColor.CGColor;
     lineLayer.path = linePath.CGPath;
     lineLayer.fillColor = nil; // 默认为blackColor
     [self.layer insertSublayer:lineLayer below:self.circleLayer];
@@ -170,7 +170,8 @@
 
 - (DrawLineCirclePointLayer *)circleLayer {
     if (_circleLayer == nil) {
-        _circleLayer = [DrawLineCirclePointLayer circlePointLayerWithDrawConfig:self.drawConfig];
+        _circleLayer =
+        [DrawLineCirclePointLayer circlePointLayerWithBrokenLineConfig:self.brokenLineConfig];
         [self.layer addSublayer:_circleLayer];
     }
     return _circleLayer;
@@ -179,7 +180,7 @@
 - (DrawLineCirclePointLayer *)circleSelectedLayer {
     if (_circleSelectedLayer == nil) {
         _circleSelectedLayer =
-        [DrawLineCirclePointLayer circlePointSelectedLayerWithDrawConfig:self.drawConfig];
+        [DrawLineCirclePointLayer circlePointSelectedLayerWithBrokenLineConfig:self.brokenLineConfig];
     }
     return _circleSelectedLayer;
 }
@@ -190,7 +191,7 @@
     datelabel.textAlignment = NSTextAlignmentCenter;
     datelabel.frame = CGRectMake(0, self.frame.size.height - 16, self.frame.size.width, 15);
     [datelabel setFont:[UIFont systemFontOfSize:11]];
-    [datelabel setTextColor:self.drawConfig.brokenAbscissaColor];
+    [datelabel setTextColor:self.brokenLineConfig.brokenAbscissaColor];
     [self addSubview:datelabel];
     self.datelabel = datelabel;
 }
@@ -213,10 +214,10 @@
 
 - (void)cellSelected {
     [self p_setupCircleSelectedLayer];
-    [self.datelabel setTextColor:self.drawConfig.brokenLineColor];
+    [self.datelabel setTextColor:self.brokenLineConfig.brokenLineColor];
     [self.datelabel setFont:[UIFont boldSystemFontOfSize:T9_22PX]];
     
-    if (self.drawConfig.brokenLineType == BrokenLineTypeNormal) {
+    if (self.brokenLineConfig.brokenLineType == BrokenLineTypeNormal) {
         CGPoint firstPoint = CGPointMake(self.cellSize.width * 0.5, [self currentPointY]);
         CGPoint nextPoint = CGPointMake(self.cellSize.width * 0.5, self.bounds.size.height - 25);
         [self drawLineFirstPoint:firstPoint nextPoint:nextPoint dotted:YES lineWidth:0.8];
@@ -228,7 +229,7 @@
         [_circleSelectedLayer removeFromSuperlayer];
         _circleSelectedLayer = nil;
     }
-    [self.datelabel setTextColor:self.drawConfig.brokenAbscissaColor];
+    [self.datelabel setTextColor:self.brokenLineConfig.brokenAbscissaColor];
     [self.datelabel setFont:[UIFont systemFontOfSize:T9_22PX]];
 }
 

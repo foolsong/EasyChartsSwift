@@ -19,14 +19,14 @@
 #import "PointViewModel.h"
 #import "BrokenLineBackgroundView.h"
 
-#import "DrawConfig.h"
+#import "ECBrokenLineConfig.h"
 
 @interface DrawLineView ()<DrawLineCollectionViewDataSource,BrokenLine2CollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *lineCollectionView;
 @property (nonatomic, copy) NSArray <PointViewModel *>*pointModelList;
 @property (nonatomic, assign) CGSize lineViewSize;
-@property (nonatomic, strong) DrawConfig *drawConfig;
+@property (nonatomic, strong) ECBrokenLineConfig *brokenLineConfig;
 @property (nonatomic, assign) BrokenLineType brokenLineType;
 
 @end
@@ -43,18 +43,18 @@
 + (instancetype)lineViewWithFrame:(CGRect) frame {
     DrawLineView *lineView = [[self alloc] init];
     lineView.brokenLineType = BrokenLineTypeMiddlePoint;
-    lineView.drawConfig = nil;
+    lineView.brokenLineConfig = nil;
     lineView.frame = frame;
     [lineView setupSubviews];
     return lineView;
 }
 
 + (instancetype)lineView2WithFrame:(CGRect) frame
-                    withDrawConfig:(DrawConfig *)drawConfig
+                    withDrawConfig:(ECBrokenLineConfig *)brokenLineConfig
                     brokenLineType:(BrokenLineType)brokenLineType {
     DrawLineView *lineView = [[self alloc] init];
     lineView.brokenLineType = brokenLineType;
-    lineView.drawConfig = drawConfig;
+    lineView.brokenLineConfig = brokenLineConfig;
     lineView.frame = frame;
     [lineView setupSubviews2];
     return lineView;
@@ -68,7 +68,7 @@
 - (void)setupSubviews2 {
     BrokenLineBackgroundView *backgroupView =
     [BrokenLineBackgroundView lineBackgroundViewWithFrame:self.bounds
-                                           withDrawConfig:self.drawConfig];
+                                           withBrokenLineConfig:self.brokenLineConfig];
     [self addSubview:backgroupView];
     [self setupBrokenLine2CollectionView];
 }
@@ -81,7 +81,7 @@
 - (void)setupBrokenLine2CollectionView {
     BrokenLine2CollectionView *lineCollectionView =
     [BrokenLine2CollectionView collectionViewWithFrame:self.frame
-                                        withDrawConfig:self.drawConfig];
+                                        withBrokenLineConfig:self.brokenLineConfig];
     lineCollectionView.drawLineDataSource = self;
     self.lineCollectionView = lineCollectionView;
     [self addSubview:lineCollectionView];
@@ -89,7 +89,7 @@
 
 - (void)setupCollectionView {
     DrawLineCollectionView *lineCollectionView =
-    [DrawLineCollectionView collectionViewWithFrame:self.frame withDrawConfig:self.drawConfig];
+    [DrawLineCollectionView collectionViewWithFrame:self.frame withDrawConfig:self.brokenLineConfig];
     lineCollectionView.drawLineDataSource = self;
     self.lineCollectionView = lineCollectionView;
     [self addSubview:lineCollectionView];
@@ -126,16 +126,16 @@
         pointModel.leftLineType = [self lineTypeWithNumString:numString nearNumString:lastNumString];
         pointModel.rightLineType = [self lineTypeWithNumString:numString nearNumString:nextNumString];
         
-        if ([numString floatValue] > self.drawConfig.maxValue) {
-            pointModel.pointY = [NSString stringWithFormat:@"%f",self.drawConfig.maxValue];
-        } else if ([numString floatValue] < self.drawConfig.minValue) {
-            pointModel.pointY = [NSString stringWithFormat:@"%f",self.drawConfig.minValue];
+        if ([numString floatValue] > self.brokenLineConfig.maxValue) {
+            pointModel.pointY = [NSString stringWithFormat:@"%f",self.brokenLineConfig.maxValue];
+        } else if ([numString floatValue] < self.brokenLineConfig.minValue) {
+            pointModel.pointY = [NSString stringWithFormat:@"%f",self.brokenLineConfig.minValue];
         } else {
             pointModel.pointY = [NSString stringWithFormat:@"%f",[numString floatValue]];
         }
         
         pointModel.titleText = titleTextList[i];
-        pointModel.pointY = [NSString stringWithFormat:@"%f",15 + (1 - (([pointModel.pointY floatValue] - self.drawConfig.minValue)/(self.drawConfig.maxValue - self.drawConfig.minValue))) * (self.frame.size.height - 40)];
+        pointModel.pointY = [NSString stringWithFormat:@"%f",15 + (1 - (([pointModel.pointY floatValue] - self.brokenLineConfig.minValue)/(self.brokenLineConfig.maxValue - self.brokenLineConfig.minValue))) * (self.frame.size.height - 40)];
         [modelMutableArray addObject:pointModel];
     }
     self.pointModelList = [modelMutableArray copy];
@@ -153,10 +153,10 @@
 }
 
 - (BOOL)isDottedLineWithNumString:(NSString *) numString nearNumString:(NSString *) nearNumString {
-    return [nearNumString floatValue] > self.drawConfig.maxValue ||
-            [nearNumString floatValue] < self.drawConfig.minValue ||
-            [numString floatValue] > self.drawConfig.maxValue ||
-            [numString floatValue] < self.drawConfig.minValue;
+    return [nearNumString floatValue] > self.brokenLineConfig.maxValue ||
+            [nearNumString floatValue] < self.brokenLineConfig.minValue ||
+            [numString floatValue] > self.brokenLineConfig.maxValue ||
+            [numString floatValue] < self.brokenLineConfig.minValue;
 }
 
 - (NSString *)numStringWithIndex:(NSInteger)index
@@ -175,11 +175,11 @@
     return _pointModelList;
 }
 
-- (DrawConfig *)drawConfig {
-    if (_drawConfig == nil) {
-        _drawConfig = [DrawConfig drawConfigWithBrokenLineType:self.brokenLineType];
+- (ECBrokenLineConfig *)brokenLineConfig {
+    if (_brokenLineConfig == nil) {
+        _brokenLineConfig = [ECBrokenLineConfig configWithBrokenLineType:self.brokenLineType];
     }
-    return _drawConfig;
+    return _brokenLineConfig;
 }
 
 @end

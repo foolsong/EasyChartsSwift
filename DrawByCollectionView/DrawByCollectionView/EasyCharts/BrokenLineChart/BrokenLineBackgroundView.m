@@ -13,14 +13,14 @@
 //  ************************************************************************
 
 #import "BrokenLineBackgroundView.h"
-#import "DrawConfig.h"
+#import "ECBrokenLineConfig.h"
 
 #define INTERVAL_TEXT_LEFT_MARGIN 10.0
 #define INTERVAL_TEXT_MAX_WIDTH 100.0
 
 @interface BrokenLineBackgroundView ()
 
-@property (nonatomic, strong) DrawConfig *drawConfig;
+@property (nonatomic, strong) ECBrokenLineConfig *brokenLineConfig;
 
 @end
 
@@ -34,9 +34,10 @@
     return self;
 }
 
-+ (instancetype)lineBackgroundViewWithFrame:(CGRect)frame withDrawConfig:(DrawConfig *)drawConfig {
++ (instancetype)lineBackgroundViewWithFrame:(CGRect)frame
+                             withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig {
     BrokenLineBackgroundView *lineBackgroundView = [[self alloc] initWithFrame:frame];
-    lineBackgroundView.drawConfig = drawConfig;
+    lineBackgroundView.brokenLineConfig = brokenLineConfig;
     return lineBackgroundView;
 }
 
@@ -57,15 +58,15 @@
     
     CGContextSaveGState(context);
     
-    NSUInteger numberOfIntervalLines = [self.drawConfig numberOfIntervalLines];
+    NSUInteger numberOfIntervalLines = [self.brokenLineConfig numberOfIntervalLines];
     CGFloat intervalSpacing = (maxHeight/(numberOfIntervalLines-1));
     
-    CGFloat maxIntervalValue = [self.drawConfig maxValue];
-    CGFloat minIntervalValue = [self.drawConfig minValue];
+    CGFloat maxIntervalValue = [self.brokenLineConfig maxValue];
+    CGFloat minIntervalValue = [self.brokenLineConfig minValue];
     CGFloat maxIntervalDiff = (maxIntervalValue - minIntervalValue) / (numberOfIntervalLines-1);
     
     for(NSUInteger i = 0;i<numberOfIntervalLines;i++) {
-        [self.drawConfig.backVeiwLineColor setStroke];
+        [self.brokenLineConfig.backVeiwLineColor setStroke];
         [gridLinePath stroke];
         NSString *stringToDraw = [NSString stringWithFormat:@"%.f",minIntervalValue + i * maxIntervalDiff];
         NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
@@ -75,7 +76,7 @@
                                             (CGRectGetHeight([self frame]) - 20 - [[UIFont systemFontOfSize:16] lineHeight]),
                                             INTERVAL_TEXT_MAX_WIDTH, [[UIFont systemFontOfSize:16] lineHeight])
                   withAttributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14],
-                                   NSForegroundColorAttributeName: self.drawConfig.backVeiwTextColor,
+                                   NSForegroundColorAttributeName: self.brokenLineConfig.backVeiwTextColor,
                                    NSParagraphStyleAttributeName: paragraphStyle
                                    }];
         

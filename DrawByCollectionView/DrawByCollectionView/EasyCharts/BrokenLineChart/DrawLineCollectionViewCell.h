@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class DrawConfig;
+@class ECBrokenLineConfig;
 @interface DrawLineCollectionViewCell : UICollectionViewCell
 
 - (void)configureCellWithPointYList:(NSArray *)pointXList
@@ -16,6 +16,6 @@
 - (void)setItemSize:(CGSize)size;
 - (void)setupCellSelected:(BOOL)selected;
 
-- (void)setupDrawConfig:(DrawConfig *)drawConfig;
+- (void)setupBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig;
 
 @end
