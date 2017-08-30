@@ -12,17 +12,16 @@
 //
 //  ************************************************************************
 
-#import "DrawLineBackgroundView.h"
+#import "ECBrokenLineCenterBackgroundView.h"
 
-@interface DrawLineBackgroundView ()
-
+@interface ECBrokenLineCenterBackgroundView ()
 
 @end
 
-@implementation DrawLineBackgroundView
+@implementation ECBrokenLineCenterBackgroundView
 
 + (instancetype)backgroundViewWithFrame:(CGRect)frame {
-    DrawLineBackgroundView *view = [[self alloc] init];
+    ECBrokenLineCenterBackgroundView *view = [[self alloc] init];
     view.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
     [view setupBackGroupImageView];
     return view;

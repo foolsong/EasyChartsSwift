@@ -15,13 +15,14 @@
 #import "ECBrokenLineView.h"
 #import "ECBrokenLineCenterCollectionView.h"
 #import "ECBrokenLineNormalCollectionView.h"
-#import "DrawLineBackgroundView.h"
+#import "ECBrokenLineCenterBackgroundView.h"
 #import "ECBrokenLinePointModel.h"
-#import "BrokenLineBackgroundView.h"
+#import "ECBrokenLineNormalBackgroundView.h"
 
 #import "ECBrokenLineConfig.h"
 
-@interface ECBrokenLineView ()<DrawLineCollectionViewDataSource,BrokenLine2CollectionViewDataSource>
+@interface ECBrokenLineView ()<ECBrokenLineCollectionViewDataSource,
+                               ECBrokenLineCollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *lineCollectionView;
 @property (nonatomic, copy) NSArray <ECBrokenLinePointModel *>*pointModelList;
@@ -66,15 +67,16 @@
 }
 
 - (void)setupSubviews2 {
-    BrokenLineBackgroundView *backgroupView =
-    [BrokenLineBackgroundView lineBackgroundViewWithFrame:self.bounds
-                                           withBrokenLineConfig:self.brokenLineConfig];
+    ECBrokenLineNormalBackgroundView *backgroupView =
+    [ECBrokenLineNormalBackgroundView lineBackgroundViewWithFrame:self.bounds
+                                             withBrokenLineConfig:self.brokenLineConfig];
     [self addSubview:backgroupView];
     [self setupBrokenLine2CollectionView];
 }
 
 - (void)setupBackgroundViewWithFrame:(CGRect) frame {
-    DrawLineBackgroundView *backgroupView = [DrawLineBackgroundView backgroundViewWithFrame:frame];
+    ECBrokenLineCenterBackgroundView *backgroupView =
+        [ECBrokenLineCenterBackgroundView backgroundViewWithFrame:frame];
     [self addSubview:backgroupView];
 }
 

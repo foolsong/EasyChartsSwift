@@ -16,9 +16,9 @@
 		846361CE1F569352000B65DC /* DrawBarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361A61F569352000B65DC /* DrawBarCollectionView.m */; };
 		846361CF1F569352000B65DC /* DrawBarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361A81F569352000B65DC /* DrawBarCollectionViewCell.m */; };
 		846361D01F569352000B65DC /* ECBrokenLineNormalCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361AB1F569352000B65DC /* ECBrokenLineNormalCollectionView.m */; };
-		846361D11F569352000B65DC /* BrokenLineBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361AD1F569352000B65DC /* BrokenLineBackgroundView.m */; };
+		846361D11F569352000B65DC /* ECBrokenLineNormalBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361AD1F569352000B65DC /* ECBrokenLineNormalBackgroundView.m */; };
 		846361D21F569352000B65DC /* ECBrokenLineConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361AF1F569352000B65DC /* ECBrokenLineConfig.m */; };
-		846361D31F569352000B65DC /* DrawLineBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361B11F569352000B65DC /* DrawLineBackgroundView.m */; };
+		846361D31F569352000B65DC /* ECBrokenLineCenterBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361B11F569352000B65DC /* ECBrokenLineCenterBackgroundView.m */; };
 		846361D41F569352000B65DC /* ECBrokenLineCircleLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361B31F569352000B65DC /* ECBrokenLineCircleLayer.m */; };
 		846361D51F569352000B65DC /* ECBrokenLineCenterCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361B51F569352000B65DC /* ECBrokenLineCenterCollectionView.m */; };
 		846361D61F569352000B65DC /* ECBrokenLineCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361B71F569352000B65DC /* ECBrokenLineCollectionViewCell.m */; };
@@ -55,12 +55,12 @@
 		846361A81F569352000B65DC /* DrawBarCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawBarCollectionViewCell.m; sourceTree = "<group>"; };
 		846361AA1F569352000B65DC /* ECBrokenLineNormalCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECBrokenLineNormalCollectionView.h; sourceTree = "<group>"; };
 		846361AB1F569352000B65DC /* ECBrokenLineNormalCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECBrokenLineNormalCollectionView.m; sourceTree = "<group>"; };
-		846361AC1F569352000B65DC /* BrokenLineBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenLineBackgroundView.h; sourceTree = "<group>"; };
-		846361AD1F569352000B65DC /* BrokenLineBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenLineBackgroundView.m; sourceTree = "<group>"; };
+		846361AC1F569352000B65DC /* ECBrokenLineNormalBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECBrokenLineNormalBackgroundView.h; sourceTree = "<group>"; };
+		846361AD1F569352000B65DC /* ECBrokenLineNormalBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECBrokenLineNormalBackgroundView.m; sourceTree = "<group>"; };
 		846361AE1F569352000B65DC /* ECBrokenLineConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECBrokenLineConfig.h; sourceTree = "<group>"; };
 		846361AF1F569352000B65DC /* ECBrokenLineConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECBrokenLineConfig.m; sourceTree = "<group>"; };
-		846361B01F569352000B65DC /* DrawLineBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineBackgroundView.h; sourceTree = "<group>"; };
-		846361B11F569352000B65DC /* DrawLineBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineBackgroundView.m; sourceTree = "<group>"; };
+		846361B01F569352000B65DC /* ECBrokenLineCenterBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECBrokenLineCenterBackgroundView.h; sourceTree = "<group>"; };
+		846361B11F569352000B65DC /* ECBrokenLineCenterBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECBrokenLineCenterBackgroundView.m; sourceTree = "<group>"; };
 		846361B21F569352000B65DC /* ECBrokenLineCircleLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECBrokenLineCircleLayer.h; sourceTree = "<group>"; };
 		846361B31F569352000B65DC /* ECBrokenLineCircleLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECBrokenLineCircleLayer.m; sourceTree = "<group>"; };
 		846361B41F569352000B65DC /* ECBrokenLineCenterCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECBrokenLineCenterCollectionView.h; sourceTree = "<group>"; };
@@ -192,24 +192,24 @@
 			children = (
 				846361AA1F569352000B65DC /* ECBrokenLineNormalCollectionView.h */,
 				846361AB1F569352000B65DC /* ECBrokenLineNormalCollectionView.m */,
-				846361AC1F569352000B65DC /* BrokenLineBackgroundView.h */,
-				846361AD1F569352000B65DC /* BrokenLineBackgroundView.m */,
-				846361AE1F569352000B65DC /* ECBrokenLineConfig.h */,
-				846361AF1F569352000B65DC /* ECBrokenLineConfig.m */,
-				846361B01F569352000B65DC /* DrawLineBackgroundView.h */,
-				846361B11F569352000B65DC /* DrawLineBackgroundView.m */,
-				846361B21F569352000B65DC /* ECBrokenLineCircleLayer.h */,
-				846361B31F569352000B65DC /* ECBrokenLineCircleLayer.m */,
 				846361B41F569352000B65DC /* ECBrokenLineCenterCollectionView.h */,
 				846361B51F569352000B65DC /* ECBrokenLineCenterCollectionView.m */,
+				846361DF1F56BDE0000B65DC /* ECBrokenLineCollectionView.h */,
+				846361E01F56BDE0000B65DC /* ECBrokenLineCollectionView.m */,
+				846361AC1F569352000B65DC /* ECBrokenLineNormalBackgroundView.h */,
+				846361AD1F569352000B65DC /* ECBrokenLineNormalBackgroundView.m */,
+				846361AE1F569352000B65DC /* ECBrokenLineConfig.h */,
+				846361AF1F569352000B65DC /* ECBrokenLineConfig.m */,
+				846361B01F569352000B65DC /* ECBrokenLineCenterBackgroundView.h */,
+				846361B11F569352000B65DC /* ECBrokenLineCenterBackgroundView.m */,
+				846361B21F569352000B65DC /* ECBrokenLineCircleLayer.h */,
+				846361B31F569352000B65DC /* ECBrokenLineCircleLayer.m */,
 				846361B61F569352000B65DC /* ECBrokenLineCollectionViewCell.h */,
 				846361B71F569352000B65DC /* ECBrokenLineCollectionViewCell.m */,
 				846361B81F569352000B65DC /* ECBrokenLineView.h */,
 				846361B91F569352000B65DC /* ECBrokenLineView.m */,
 				846361BA1F569352000B65DC /* ECBrokenLinePointModel.h */,
 				846361BB1F569352000B65DC /* ECBrokenLinePointModel.m */,
-				846361DF1F56BDE0000B65DC /* ECBrokenLineCollectionView.h */,
-				846361E01F56BDE0000B65DC /* ECBrokenLineCollectionView.m */,
 			);
 			path = BrokenLineChart;
 			sourceTree = "<group>";
@@ -333,13 +333,13 @@
 				846361DD1F569352000B65DC /* EasyPieChartView.m in Sources */,
 				846361D51F569352000B65DC /* ECBrokenLineCenterCollectionView.m in Sources */,
 				846361D81F569352000B65DC /* ECBrokenLinePointModel.m in Sources */,
-				846361D31F569352000B65DC /* DrawLineBackgroundView.m in Sources */,
+				846361D31F569352000B65DC /* ECBrokenLineCenterBackgroundView.m in Sources */,
 				846555901EE67BD3008B902A /* ProgressViewViewController.m in Sources */,
 				842CBDC61EAE0F5F0090D92F /* ViewController.m in Sources */,
 				847B57F71F51692E003555EF /* BrokenLine2ViewController.m in Sources */,
 				8465558D1EE67B7A008B902A /* DrawCircleViewController.m in Sources */,
 				842CBDC31EAE0F5F0090D92F /* AppDelegate.m in Sources */,
-				846361D11F569352000B65DC /* BrokenLineBackgroundView.m in Sources */,
+				846361D11F569352000B65DC /* ECBrokenLineNormalBackgroundView.m in Sources */,
 				846361D21F569352000B65DC /* ECBrokenLineConfig.m in Sources */,
 				846361E11F56BDE0000B65DC /* ECBrokenLineCollectionView.m in Sources */,
 				846361D41F569352000B65DC /* ECBrokenLineCircleLayer.m in Sources */,

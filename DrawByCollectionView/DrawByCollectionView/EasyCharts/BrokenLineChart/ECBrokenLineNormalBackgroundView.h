@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class ECBrokenLineConfig;
-@interface BrokenLineBackgroundView : UIView
+@interface ECBrokenLineNormalBackgroundView : UIView
 
 + (instancetype)lineBackgroundViewWithFrame:(CGRect)frame
                        withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig;

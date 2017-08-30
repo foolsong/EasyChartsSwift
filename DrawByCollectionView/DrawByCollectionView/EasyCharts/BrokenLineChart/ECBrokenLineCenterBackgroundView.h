@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DrawLineBackgroundView : UIView
+@interface ECBrokenLineCenterBackgroundView : UIView
 
 + (instancetype)backgroundViewWithFrame:(CGRect)frame;
 

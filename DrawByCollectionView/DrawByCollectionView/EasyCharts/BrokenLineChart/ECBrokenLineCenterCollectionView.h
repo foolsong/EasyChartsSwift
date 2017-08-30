@@ -9,25 +9,25 @@
 #import "ECBrokenLineCollectionView.h"
 
 @class ECBrokenLineCenterCollectionView,ECBrokenLineConfig;
-@protocol DrawLineCollectionViewDataSource <NSObject>
-
-- (NSArray *)collectionViewPointYList:(ECBrokenLineCenterCollectionView *)collectionView;
-- (CGSize)collectionView:(UICollectionView *)collectionView
-  sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
-
-@end
-
-@protocol DrawLineCollectionViewDelegate <NSObject>
-
-- (void)collectionViewPointYList:(ECBrokenLineCenterCollectionView *)collectionView
-        didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
-
-@end
+//@protocol DrawLineCollectionViewDataSource <NSObject>
+//
+//- (NSArray *)collectionViewPointYList:(ECBrokenLineCenterCollectionView *)collectionView;
+//- (CGSize)collectionView:(UICollectionView *)collectionView
+//  sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
+//
+//@end
+//
+//@protocol DrawLineCollectionViewDelegate <NSObject>
+//
+//- (void)collectionViewPointYList:(ECBrokenLineCenterCollectionView *)collectionView
+//        didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
+//
+//@end
 
 @interface ECBrokenLineCenterCollectionView : ECBrokenLineCollectionView
 
-@property (nonatomic, weak) id<DrawLineCollectionViewDataSource> drawLineDataSource;
-@property (nonatomic, weak) id<DrawLineCollectionViewDelegate> drawLineDelegate;
+@property (nonatomic, weak) id<ECBrokenLineCollectionViewDataSource> drawLineDataSource;
+@property (nonatomic, weak) id<ECBrokenLineCollectionViewDelegate> drawLineDelegate;
 + (instancetype)collectionViewWithFrame:(CGRect)frame
                          withDrawConfig:(ECBrokenLineConfig *)brokenLineConfig;
 - (void)reloadCollectionData;

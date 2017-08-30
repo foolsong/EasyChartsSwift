@@ -12,19 +12,19 @@
 //
 //  ************************************************************************
 
-#import "BrokenLineBackgroundView.h"
+#import "ECBrokenLineNormalBackgroundView.h"
 #import "ECBrokenLineConfig.h"
 
 #define INTERVAL_TEXT_LEFT_MARGIN 10.0
 #define INTERVAL_TEXT_MAX_WIDTH 100.0
 
-@interface BrokenLineBackgroundView ()
+@interface ECBrokenLineNormalBackgroundView ()
 
 @property (nonatomic, strong) ECBrokenLineConfig *brokenLineConfig;
 
 @end
 
-@implementation BrokenLineBackgroundView
+@implementation ECBrokenLineNormalBackgroundView
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -36,7 +36,7 @@
 
 + (instancetype)lineBackgroundViewWithFrame:(CGRect)frame
                              withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig {
-    BrokenLineBackgroundView *lineBackgroundView = [[self alloc] initWithFrame:frame];
+    ECBrokenLineNormalBackgroundView *lineBackgroundView = [[self alloc] initWithFrame:frame];
     lineBackgroundView.brokenLineConfig = brokenLineConfig;
     return lineBackgroundView;
 }
