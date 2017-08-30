@@ -7,6 +7,7 @@
 //
 
 #import "ECBrokenLineCollectionView.h"
+#import "ECBrokenLineProtocol.h"
 
 @class ECBrokenLineNormalCollectionView,ECBrokenLineConfig;
 //@protocol BrokenLine2CollectionViewDataSource <NSObject>
@@ -24,7 +25,7 @@
 //
 //@end
 
-@interface ECBrokenLineNormalCollectionView : ECBrokenLineCollectionView
+@interface ECBrokenLineNormalCollectionView : ECBrokenLineCollectionView <ECBrokenLineProtocol>
 
 @property (nonatomic, weak) id<ECBrokenLineCollectionViewDataSource> drawLineDataSource;
 @property (nonatomic, weak) id<ECBrokenLineCollectionViewDelegate> drawLineDelegate;

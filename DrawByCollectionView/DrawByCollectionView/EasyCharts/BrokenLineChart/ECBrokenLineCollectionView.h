@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class ECBrokenLineCollectionView;
+@class ECBrokenLineCollectionView,ECBrokenLineConfig;
 @protocol ECBrokenLineCollectionViewDataSource <NSObject>
 
 - (NSArray *)collectionViewPointYList:(ECBrokenLineCollectionView *)collectionView;
@@ -24,7 +24,10 @@
 
 @end
 
-
 @interface ECBrokenLineCollectionView : UICollectionView
+
+//+ (instancetype)collectionViewWithFrame:(CGRect)frame
+//                         withDrawConfig:(ECBrokenLineConfig *)brokenLineConfig;
+//- (void)reloadCollectionData;
 
 @end

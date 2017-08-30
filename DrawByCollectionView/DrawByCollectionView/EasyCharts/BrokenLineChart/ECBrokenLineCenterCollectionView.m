@@ -34,8 +34,9 @@
 @end
 
 @implementation ECBrokenLineCenterCollectionView
+
 + (instancetype)collectionViewWithFrame:(CGRect)frame
-                         withDrawConfig:(ECBrokenLineConfig *)brokenLineConfig {
+                   withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig {
     DrawLineCollectionViewFlowLayout *layout = [self collectionViewFlowLayout];
     ECBrokenLineCenterCollectionView *collectionView =
     [[self alloc]initWithFrame:CGRectMake(0, 0,frame.size.width ,frame.size.height)

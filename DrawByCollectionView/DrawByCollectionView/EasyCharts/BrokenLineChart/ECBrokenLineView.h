@@ -12,8 +12,7 @@
 @class ECBrokenLineConfig;
 @interface ECBrokenLineView : UIView
 
-+ (instancetype)lineViewWithFrame:(CGRect) frame;
-+ (instancetype)lineView2WithFrame:(CGRect) frame
++ (instancetype)lineViewWithFrame:(CGRect) frame
               withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig
                     brokenLineType:(BrokenLineType)brokenLineType;
 

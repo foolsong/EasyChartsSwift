@@ -41,46 +41,45 @@
     return self;
 }
 
-+ (instancetype)lineViewWithFrame:(CGRect) frame {
+//+ (instancetype)lineViewWithFrame:(CGRect) frame {
+//    ECBrokenLineView *lineView = [[self alloc] init];
+//    lineView.brokenLineType = BrokenLineTypeMiddlePoint;
+//    lineView.brokenLineConfig = nil;
+//    lineView.frame = frame;
+//    [lineView setupSubviews];
+//    return lineView;
+//}
+
++ (instancetype)lineViewWithFrame:(CGRect) frame
+              withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig
+                    brokenLineType:(BrokenLineType)brokenLineType {
+    
     ECBrokenLineView *lineView = [[self alloc] init];
-    lineView.brokenLineType = BrokenLineTypeMiddlePoint;
-    lineView.brokenLineConfig = nil;
+    lineView.brokenLineType = brokenLineType;
+    lineView.brokenLineConfig = brokenLineConfig;
     lineView.frame = frame;
     [lineView setupSubviews];
     return lineView;
 }
 
-+ (instancetype)lineView2WithFrame:(CGRect) frame
-              withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig
-                    brokenLineType:(BrokenLineType)brokenLineType {
-    ECBrokenLineView *lineView = [[self alloc] init];
-    lineView.brokenLineType = brokenLineType;
-    lineView.brokenLineConfig = brokenLineConfig;
-    lineView.frame = frame;
-    [lineView setupSubviews2];
-    return lineView;
-}
-
 - (void)setupSubviews {
-    [self setupBackgroundViewWithFrame:self.frame];
-    [self setupCollectionView];
+    if (self.brokenLineType == BrokenLineTypeMiddlePoint) {
+        [self setupCenterCollectionViewBackgroundView];
+        [self setupCenterCollectionView];
+    } else {
+        [self setupNormalCollectionViewBackgroundView];
+        [self setupNormalCollectionView];
+    }
 }
 
-- (void)setupSubviews2 {
+- (void)setupNormalCollectionViewBackgroundView {
     ECBrokenLineNormalBackgroundView *backgroupView =
     [ECBrokenLineNormalBackgroundView lineBackgroundViewWithFrame:self.bounds
                                              withBrokenLineConfig:self.brokenLineConfig];
     [self addSubview:backgroupView];
-    [self setupBrokenLine2CollectionView];
 }
 
-- (void)setupBackgroundViewWithFrame:(CGRect) frame {
-    ECBrokenLineCenterBackgroundView *backgroupView =
-        [ECBrokenLineCenterBackgroundView backgroundViewWithFrame:frame];
-    [self addSubview:backgroupView];
-}
-
-- (void)setupBrokenLine2CollectionView {
+- (void)setupNormalCollectionView {
     ECBrokenLineNormalCollectionView *lineCollectionView =
     [ECBrokenLineNormalCollectionView collectionViewWithFrame:self.frame
                                         withBrokenLineConfig:self.brokenLineConfig];
@@ -89,12 +88,18 @@
     [self addSubview:lineCollectionView];
 }
 
-- (void)setupCollectionView {
+- (void)setupCenterCollectionView  {
     ECBrokenLineCenterCollectionView *lineCollectionView =
-    [ECBrokenLineCenterCollectionView collectionViewWithFrame:self.frame withDrawConfig:self.brokenLineConfig];
+    [ECBrokenLineCenterCollectionView collectionViewWithFrame:self.frame withBrokenLineConfig:self.brokenLineConfig];
     lineCollectionView.drawLineDataSource = self;
     self.lineCollectionView = lineCollectionView;
     [self addSubview:lineCollectionView];
+}
+
+- (void)setupCenterCollectionViewBackgroundView {
+    ECBrokenLineCenterBackgroundView *backgroupView =
+    [ECBrokenLineCenterBackgroundView backgroundViewWithFrame:self.frame];
+    [self addSubview:backgroupView];
 }
 
 - (NSArray *)collectionViewPointYList:(ECBrokenLineCenterCollectionView *)collectionView {

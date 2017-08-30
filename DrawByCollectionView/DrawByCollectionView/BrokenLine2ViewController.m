@@ -49,7 +49,7 @@
 
 - (void)setupDrawLineView {
     CGRect frame = CGRectMake(0, 120, [UIScreen mainScreen].bounds.size.width, 300);
-    ECBrokenLineView *brokenLineView = [ECBrokenLineView lineView2WithFrame:frame
+    ECBrokenLineView *brokenLineView = [ECBrokenLineView lineViewWithFrame:frame
                                                        withBrokenLineConfig:nil
                                                              brokenLineType:BrokenLineTypeNormal];
     [self.view addSubview:brokenLineView];

@@ -7,29 +7,17 @@
 //
 
 #import "ECBrokenLineCollectionView.h"
+#import "ECBrokenLineProtocol.h"
 
 @class ECBrokenLineCenterCollectionView,ECBrokenLineConfig;
-//@protocol DrawLineCollectionViewDataSource <NSObject>
-//
-//- (NSArray *)collectionViewPointYList:(ECBrokenLineCenterCollectionView *)collectionView;
-//- (CGSize)collectionView:(UICollectionView *)collectionView
-//  sizeForItemAtIndexPath:(NSIndexPath *)indexPath;
-//
-//@end
-//
-//@protocol DrawLineCollectionViewDelegate <NSObject>
-//
-//- (void)collectionViewPointYList:(ECBrokenLineCenterCollectionView *)collectionView
-//        didSelectItemAtIndexPath:(NSIndexPath *)indexPath;
-//
-//@end
 
-@interface ECBrokenLineCenterCollectionView : ECBrokenLineCollectionView
+@interface ECBrokenLineCenterCollectionView : ECBrokenLineCollectionView <ECBrokenLineProtocol>
 
 @property (nonatomic, weak) id<ECBrokenLineCollectionViewDataSource> drawLineDataSource;
 @property (nonatomic, weak) id<ECBrokenLineCollectionViewDelegate> drawLineDelegate;
+
 + (instancetype)collectionViewWithFrame:(CGRect)frame
-                         withDrawConfig:(ECBrokenLineConfig *)brokenLineConfig;
+                   withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig;
 - (void)reloadCollectionData;
 
 @end
