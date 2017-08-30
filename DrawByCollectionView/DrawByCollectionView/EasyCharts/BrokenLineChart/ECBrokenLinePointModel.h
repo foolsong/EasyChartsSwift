@@ -1,6 +1,6 @@
 //
-//  PointViewModel.h
-//  DrawByCollectionView
+//  ECBrokenLinePointModel.h
+//  EasyCharts
 //
 //  Created by yjsong on 17/4/30.
 //  Copyright © 2017年 宋永建. All rights reserved.
@@ -15,7 +15,7 @@ typedef NS_ENUM(NSUInteger, LineType) {
     LineTypeNoline
 };
 
-@interface PointViewModel : NSObject
+@interface ECBrokenLinePointModel : NSObject
 
 @property(nonatomic, assign) LineType leftLineType;
 @property(nonatomic, assign) LineType rightLineType;

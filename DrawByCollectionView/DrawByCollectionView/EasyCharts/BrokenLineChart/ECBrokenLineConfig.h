@@ -1,6 +1,6 @@
 //
-//  DrawConfig.h
-//  DrawByCollectionView
+//  ECBrokenLinePointModel.h
+//  EasyCharts
 //
 //  Created by 宋永建 on 2017/8/29.
 //  Copyright © 2017年 宋永建. All rights reserved.

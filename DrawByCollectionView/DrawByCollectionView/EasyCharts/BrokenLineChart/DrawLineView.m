@@ -16,7 +16,7 @@
 #import "DrawLineCollectionView.h"
 #import "BrokenLine2CollectionView.h"
 #import "DrawLineBackgroundView.h"
-#import "PointViewModel.h"
+#import "ECBrokenLinePointModel.h"
 #import "BrokenLineBackgroundView.h"
 
 #import "ECBrokenLineConfig.h"
@@ -24,7 +24,7 @@
 @interface DrawLineView ()<DrawLineCollectionViewDataSource,BrokenLine2CollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *lineCollectionView;
-@property (nonatomic, copy) NSArray <PointViewModel *>*pointModelList;
+@property (nonatomic, copy) NSArray <ECBrokenLinePointModel *>*pointModelList;
 @property (nonatomic, assign) CGSize lineViewSize;
 @property (nonatomic, strong) ECBrokenLineConfig *brokenLineConfig;
 @property (nonatomic, assign) BrokenLineType brokenLineType;
@@ -122,7 +122,7 @@
         NSString *lastNumString = [self numStringWithIndex:i - 1 pointValveList:pointValueList];
         NSString *nextNumString = [self numStringWithIndex:i + 1 pointValveList:pointValueList];;
         
-        PointViewModel *pointModel = [[PointViewModel alloc] init];
+        ECBrokenLinePointModel *pointModel = [[ECBrokenLinePointModel alloc] init];
         pointModel.leftLineType = [self lineTypeWithNumString:numString nearNumString:lastNumString];
         pointModel.rightLineType = [self lineTypeWithNumString:numString nearNumString:nextNumString];
         
@@ -168,7 +168,7 @@
     }
 }
 
-- (NSArray<PointViewModel *> *)pointModelList {
+- (NSArray<ECBrokenLinePointModel *> *)pointModelList {
     if (_pointModelList == nil) {
         _pointModelList = [NSArray array];
     }

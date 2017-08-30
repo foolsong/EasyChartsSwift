@@ -13,7 +13,7 @@
 //  ************************************************************************
 
 #import "DrawLineCollectionViewCell.h"
-#import "PointViewModel.h"
+#import "ECBrokenLinePointModel.h"
 #import "CommonColor.h"
 #import "ECBrokenLineConfig.h"
 #import "DrawLineCirclePointLayer.h"
@@ -27,7 +27,7 @@
 @property (nonatomic, copy) NSArray *pointYList;
 @property (nonatomic, assign) NSInteger index;
 
-@property (nonatomic, strong) PointViewModel *pointModel;
+@property (nonatomic, strong) ECBrokenLinePointModel *pointModel;
 
 @property (nonatomic, assign) CGContextRef context;
 
@@ -155,7 +155,7 @@
     if (self.index + 1 >= [self.pointYList count]) {
         return 0;
     }
-    PointViewModel *pointModel = self.pointYList[self.index + 1];
+    ECBrokenLinePointModel *pointModel = self.pointYList[self.index + 1];
     return ([pointModel.pointY floatValue] + [self currentPointY]) * 0.5;
 }
 
@@ -163,7 +163,7 @@
     if (self.index - 1 < 0) {
         return 0;
     }
-    PointViewModel *pointModel = self.pointYList[self.index - 1];
+    ECBrokenLinePointModel *pointModel = self.pointYList[self.index - 1];
     return ([pointModel.pointY floatValue] + [self currentPointY]) * 0.5;
 }
 

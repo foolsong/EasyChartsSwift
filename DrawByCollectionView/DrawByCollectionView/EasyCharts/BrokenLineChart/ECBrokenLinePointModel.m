@@ -1,18 +1,18 @@
 //
-//  PointViewModel.m
-//  DrawByCollectionView
+//  ECBrokenLinePointModel.m
+//  EasyCharts
 //
 //  Created by yjsong on 17/4/30.
 //  Copyright © 2017年 宋永建. All rights reserved.
 //
 
-#import "PointViewModel.h"
+#import "ECBrokenLinePointModel.h"
 
-@interface PointViewModel ()
+@interface ECBrokenLinePointModel ()
 
 @end
 
-@implementation PointViewModel
+@implementation ECBrokenLinePointModel
 
 - (instancetype)init {
     self = [super init];

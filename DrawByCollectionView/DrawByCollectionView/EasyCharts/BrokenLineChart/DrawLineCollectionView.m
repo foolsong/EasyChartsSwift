@@ -14,7 +14,7 @@
 
 #import "DrawLineCollectionView.h"
 #import "DrawLineCollectionViewCell.h"
-#import "PointViewModel.h"
+#import "ECBrokenLinePointModel.h"
 #import "CommonColor.h"
 #import "ECBrokenLineConfig.h"
 

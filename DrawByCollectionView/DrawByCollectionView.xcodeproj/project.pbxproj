@@ -23,7 +23,7 @@
 		846361D51F569352000B65DC /* DrawLineCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361B51F569352000B65DC /* DrawLineCollectionView.m */; };
 		846361D61F569352000B65DC /* DrawLineCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361B71F569352000B65DC /* DrawLineCollectionViewCell.m */; };
 		846361D71F569352000B65DC /* DrawLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361B91F569352000B65DC /* DrawLineView.m */; };
-		846361D81F569352000B65DC /* PointViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361BB1F569352000B65DC /* PointViewModel.m */; };
+		846361D81F569352000B65DC /* ECBrokenLinePointModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361BB1F569352000B65DC /* ECBrokenLinePointModel.m */; };
 		846361DA1F569352000B65DC /* DrawPieChartLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361C41F569352000B65DC /* DrawPieChartLineView.m */; };
 		846361DB1F569352000B65DC /* DrawPieChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361C61F569352000B65DC /* DrawPieChartModel.m */; };
 		846361DC1F569352000B65DC /* DrawPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361C81F569352000B65DC /* DrawPieChartView.m */; };
@@ -68,8 +68,8 @@
 		846361B71F569352000B65DC /* DrawLineCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineCollectionViewCell.m; sourceTree = "<group>"; };
 		846361B81F569352000B65DC /* DrawLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineView.h; sourceTree = "<group>"; };
 		846361B91F569352000B65DC /* DrawLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineView.m; sourceTree = "<group>"; };
-		846361BA1F569352000B65DC /* PointViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointViewModel.h; sourceTree = "<group>"; };
-		846361BB1F569352000B65DC /* PointViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointViewModel.m; sourceTree = "<group>"; };
+		846361BA1F569352000B65DC /* ECBrokenLinePointModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECBrokenLinePointModel.h; sourceTree = "<group>"; };
+		846361BB1F569352000B65DC /* ECBrokenLinePointModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECBrokenLinePointModel.m; sourceTree = "<group>"; };
 		846361BD1F569352000B65DC /* CommonColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonColor.h; sourceTree = "<group>"; };
 		846361C11F569352000B65DC /* EasyCharts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyCharts.h; sourceTree = "<group>"; };
 		846361C31F569352000B65DC /* DrawPieChartLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawPieChartLineView.h; sourceTree = "<group>"; };
@@ -203,8 +203,8 @@
 				846361B71F569352000B65DC /* DrawLineCollectionViewCell.m */,
 				846361B81F569352000B65DC /* DrawLineView.h */,
 				846361B91F569352000B65DC /* DrawLineView.m */,
-				846361BA1F569352000B65DC /* PointViewModel.h */,
-				846361BB1F569352000B65DC /* PointViewModel.m */,
+				846361BA1F569352000B65DC /* ECBrokenLinePointModel.h */,
+				846361BB1F569352000B65DC /* ECBrokenLinePointModel.m */,
 			);
 			path = BrokenLineChart;
 			sourceTree = "<group>";
@@ -327,7 +327,7 @@
 				846361D61F569352000B65DC /* DrawLineCollectionViewCell.m in Sources */,
 				846361DD1F569352000B65DC /* EasyPieChartView.m in Sources */,
 				846361D51F569352000B65DC /* DrawLineCollectionView.m in Sources */,
-				846361D81F569352000B65DC /* PointViewModel.m in Sources */,
+				846361D81F569352000B65DC /* ECBrokenLinePointModel.m in Sources */,
 				846361D31F569352000B65DC /* DrawLineBackgroundView.m in Sources */,
 				846555901EE67BD3008B902A /* ProgressViewViewController.m in Sources */,
 				842CBDC61EAE0F5F0090D92F /* ViewController.m in Sources */,
