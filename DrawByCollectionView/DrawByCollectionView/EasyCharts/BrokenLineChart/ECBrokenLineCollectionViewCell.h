@@ -1,6 +1,6 @@
 //
-//  DrawLineCollectionViewCell.h
-//  DrawByCollectionView
+//  ECBrokenLineCollectionViewCell.h
+//  EasyCharts
 //
 //  Created by 宋永建 on 2017/4/24.
 //  Copyright © 2017年 宋永建. All rights reserved.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class ECBrokenLineConfig;
-@interface DrawLineCollectionViewCell : UICollectionViewCell
+@interface ECBrokenLineCollectionViewCell : UICollectionViewCell
 
 - (void)configureCellWithPointYList:(NSArray *)pointXList
                           withIndex:(NSInteger)index;

@@ -1,7 +1,7 @@
 //  ************************************************************************
 //
-//  DrawLineCollectionViewCell.m
-//  DrawByCollectionView
+//  ECBrokenLineCollectionViewCell.m
+//  EasyCharts
 //
 //  Created by 宋永建 on 2017/4/24.
 //  Copyright © 2017年 宋永建. All rights reserved.
@@ -12,7 +12,7 @@
 //
 //  ************************************************************************
 
-#import "DrawLineCollectionViewCell.h"
+#import "ECBrokenLineCollectionViewCell.h"
 #import "ECBrokenLinePointModel.h"
 #import "CommonColor.h"
 #import "ECBrokenLineConfig.h"
@@ -20,7 +20,7 @@
 
 #define CIRCLE_SIZE 7.0
 
-@interface DrawLineCollectionViewCell ()
+@interface ECBrokenLineCollectionViewCell ()
 
 @property (nonatomic, assign) CGSize cellSize;
 
@@ -44,7 +44,7 @@
 
 @end
 
-@implementation DrawLineCollectionViewCell
+@implementation ECBrokenLineCollectionViewCell
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];

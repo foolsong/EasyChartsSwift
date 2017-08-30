@@ -13,7 +13,7 @@
 //  ************************************************************************
 
 #import "DrawLineCollectionView.h"
-#import "DrawLineCollectionViewCell.h"
+#import "ECBrokenLineCollectionViewCell.h"
 #import "ECBrokenLinePointModel.h"
 #import "CommonColor.h"
 #import "ECBrokenLineConfig.h"
@@ -23,7 +23,7 @@
 @interface DrawLineCollectionView ()<UICollectionViewDelegate,
                                    UICollectionViewDataSource>
 
-@property (nonatomic, strong) DrawLineCollectionViewCell *currentCell;
+@property (nonatomic, strong) ECBrokenLineCollectionViewCell *currentCell;
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, assign) CGFloat cellWidth;
 
@@ -47,7 +47,7 @@
         [weakself didSelectItemAtIndexPath:[NSIndexPath indexPathForRow:index inSection:0]];
     };
     
-    [collectionView registerClass:[DrawLineCollectionViewCell class] forCellWithReuseIdentifier:@"DrawLineCollectionViewCell"];
+    [collectionView registerClass:[ECBrokenLineCollectionViewCell class] forCellWithReuseIdentifier:@"ECBrokenLineCollectionViewCell"];
     return collectionView;
 }
 
@@ -156,7 +156,7 @@
 }
 
 - ( UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    DrawLineCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DrawLineCollectionViewCell" forIndexPath:indexPath];
+    ECBrokenLineCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ECBrokenLineCollectionViewCell" forIndexPath:indexPath];
     [cell setItemSize:[self sizeForItemAtIndexPath:indexPath]];
     [cell setupBrokenLineConfig:self.brokenLineConfig];
     
@@ -177,7 +177,7 @@
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
 //    [(DrawLineCollectionViewCell *)cell setupDrawConfig:self.drawConfig];
-    [(DrawLineCollectionViewCell *)cell configureCellWithPointYList:[self pointModelList] withIndex:indexPath.row];
+    [(ECBrokenLineCollectionViewCell *)cell configureCellWithPointYList:[self pointModelList] withIndex:indexPath.row];
 }
 
 #pragma mark - UICollectionViewDelegate

@@ -13,7 +13,7 @@
 //  ************************************************************************
 
 #import "BrokenLine2CollectionView.h"
-#import "DrawLineCollectionViewCell.h"
+#import "ECBrokenLineCollectionViewCell.h"
 #import "ECBrokenLinePointModel.h"
 #import "CommonColor.h"
 #import "ECBrokenLineConfig.h"
@@ -22,7 +22,6 @@
 
 @interface BrokenLine2CollectionView ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
-//@property (nonatomic, strong) DrawLineCollectionViewCell *currentCell;
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, assign) CGFloat cellWidth;
 
@@ -39,7 +38,7 @@
     [[self alloc]initWithFrame:CGRectMake(35, 0,frame.size.width - 35 ,frame.size.height)
           collectionViewLayout:layout];
     collectionView.brokenLineConfig = brokenLineConfig;
-    [collectionView registerClass:[DrawLineCollectionViewCell class] forCellWithReuseIdentifier:@"DrawLineCollectionViewCell"];
+    [collectionView registerClass:[ECBrokenLineCollectionViewCell class] forCellWithReuseIdentifier:@"ECBrokenLineCollectionViewCell"];
     return collectionView;
 }
 
@@ -96,7 +95,7 @@
 }
 
 - ( UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    DrawLineCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DrawLineCollectionViewCell" forIndexPath:indexPath];
+    ECBrokenLineCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ECBrokenLineCollectionViewCell" forIndexPath:indexPath];
     [cell setItemSize:[self sizeForItemAtIndexPath:indexPath]];
     
     return cell;
@@ -108,12 +107,12 @@
 
 #pragma mark - UICollectionViewDelegateFlowLayout
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
-    [(DrawLineCollectionViewCell *)cell setupBrokenLineConfig:self.brokenLineConfig];
-    [(DrawLineCollectionViewCell *)cell configureCellWithPointYList:[self pointModelList] withIndex:indexPath.row];
+    [(ECBrokenLineCollectionViewCell *)cell setupBrokenLineConfig:self.brokenLineConfig];
+    [(ECBrokenLineCollectionViewCell *)cell configureCellWithPointYList:[self pointModelList] withIndex:indexPath.row];
     if (self.currentIndex == indexPath.row) {
-        [(DrawLineCollectionViewCell *)cell setupCellSelected:YES];
+        [(ECBrokenLineCollectionViewCell *)cell setupCellSelected:YES];
     } else {
-        [(DrawLineCollectionViewCell *)cell setupCellSelected:NO];
+        [(ECBrokenLineCollectionViewCell *)cell setupCellSelected:NO];
     }
 }
 
