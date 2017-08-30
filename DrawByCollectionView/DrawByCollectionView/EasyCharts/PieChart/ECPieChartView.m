@@ -13,14 +13,14 @@
 //  ************************************************************************
 
 #import "ECPieChartView.h"
-#import "DrawPieChartView.h"
+#import "ECPieChartCoreView.h"
 #import "DrawPieChartLineView.h"
 #import "ECPieChartModel.h"
 
 @interface ECPieChartView ()
 
 @property (nonatomic, assign) CGPoint arcCenter;
-@property (nonatomic, strong) DrawPieChartView *pieChartView;
+@property (nonatomic, strong) ECPieChartCoreView *pieChartView;
 @property (nonatomic, strong) DrawPieChartLineView *pieChartLineView;
 
 @property (nonatomic, copy) NSArray<NSNumber *> *percentList;
@@ -46,7 +46,7 @@
 }
 
 - (void)setupDrawCircleView {
-    DrawPieChartView *pieChartView = [[DrawPieChartView alloc] init];
+    ECPieChartCoreView *pieChartView = [[ECPieChartCoreView alloc] init];
     pieChartView.arcCenter = self.arcCenter;
     pieChartView.frame = self.frame;
     [self addSubview:pieChartView];

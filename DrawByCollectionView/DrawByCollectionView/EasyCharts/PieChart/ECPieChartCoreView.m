@@ -1,23 +1,23 @@
 //
-//  DrawCircleView.m
+//  ECPieChartCoreView.m
 //  EasyCharts
 //
 //  Created by yjsong on 17/5/7.
 //  Copyright © 2017年 宋永建. All rights reserved.
 //
 
-#import "DrawPieChartView.h"
+#import "ECPieChartCoreView.h"
 #import "ECPieChartModel.h"
 #import "ECBrokenLineCircleLayer.h"
 
-@interface DrawPieChartView()
+@interface ECPieChartCoreView()
 
 @property (nonatomic, copy) NSArray *circleModelList;
 @property (nonatomic, strong) NSMutableArray *layerMutableArray;
 
 @end
 
-@implementation DrawPieChartView
+@implementation ECPieChartCoreView
 - (instancetype)init {
     self = [super init];
     if (self) {

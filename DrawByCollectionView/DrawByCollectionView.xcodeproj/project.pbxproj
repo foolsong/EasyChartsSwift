@@ -24,9 +24,9 @@
 		846361D61F569352000B65DC /* ECBrokenLineCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361B71F569352000B65DC /* ECBrokenLineCollectionViewCell.m */; };
 		846361D71F569352000B65DC /* ECBrokenLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361B91F569352000B65DC /* ECBrokenLineView.m */; };
 		846361D81F569352000B65DC /* ECBrokenLinePointModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361BB1F569352000B65DC /* ECBrokenLinePointModel.m */; };
-		846361DA1F569352000B65DC /* DrawPieChartLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361C41F569352000B65DC /* DrawPieChartLineView.m */; };
+		846361DA1F569352000B65DC /* ECPieChartLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361C41F569352000B65DC /* ECPieChartLineView.m */; };
 		846361DB1F569352000B65DC /* ECPieChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361C61F569352000B65DC /* ECPieChartModel.m */; };
-		846361DC1F569352000B65DC /* DrawPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361C81F569352000B65DC /* DrawPieChartView.m */; };
+		846361DC1F569352000B65DC /* ECPieChartCoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361C81F569352000B65DC /* ECPieChartCoreView.m */; };
 		846361DD1F569352000B65DC /* ECPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361CA1F569352000B65DC /* ECPieChartView.m */; };
 		846361DE1F569352000B65DC /* DrawProgressChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361CD1F569352000B65DC /* DrawProgressChartView.m */; };
 		846361E11F56BDE0000B65DC /* ECBrokenLineCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361E01F56BDE0000B65DC /* ECBrokenLineCollectionView.m */; };
@@ -74,12 +74,12 @@
 		846361BB1F569352000B65DC /* ECBrokenLinePointModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECBrokenLinePointModel.m; sourceTree = "<group>"; };
 		846361BD1F569352000B65DC /* CommonColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonColor.h; sourceTree = "<group>"; };
 		846361C11F569352000B65DC /* EasyCharts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyCharts.h; sourceTree = "<group>"; };
-		846361C31F569352000B65DC /* DrawPieChartLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawPieChartLineView.h; sourceTree = "<group>"; };
-		846361C41F569352000B65DC /* DrawPieChartLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawPieChartLineView.m; sourceTree = "<group>"; };
+		846361C31F569352000B65DC /* ECPieChartLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPieChartLineView.h; sourceTree = "<group>"; };
+		846361C41F569352000B65DC /* ECPieChartLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPieChartLineView.m; sourceTree = "<group>"; };
 		846361C51F569352000B65DC /* ECPieChartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPieChartModel.h; sourceTree = "<group>"; };
 		846361C61F569352000B65DC /* ECPieChartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPieChartModel.m; sourceTree = "<group>"; };
-		846361C71F569352000B65DC /* DrawPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawPieChartView.h; sourceTree = "<group>"; };
-		846361C81F569352000B65DC /* DrawPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawPieChartView.m; sourceTree = "<group>"; };
+		846361C71F569352000B65DC /* ECPieChartCoreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPieChartCoreView.h; sourceTree = "<group>"; };
+		846361C81F569352000B65DC /* ECPieChartCoreView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPieChartCoreView.m; sourceTree = "<group>"; };
 		846361C91F569352000B65DC /* ECPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPieChartView.h; sourceTree = "<group>"; };
 		846361CA1F569352000B65DC /* ECPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPieChartView.m; sourceTree = "<group>"; };
 		846361CC1F569352000B65DC /* DrawProgressChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawProgressChartView.h; sourceTree = "<group>"; };
@@ -232,12 +232,12 @@
 		846361C21F569352000B65DC /* PieChart */ = {
 			isa = PBXGroup;
 			children = (
-				846361C31F569352000B65DC /* DrawPieChartLineView.h */,
-				846361C41F569352000B65DC /* DrawPieChartLineView.m */,
+				846361C31F569352000B65DC /* ECPieChartLineView.h */,
+				846361C41F569352000B65DC /* ECPieChartLineView.m */,
 				846361C51F569352000B65DC /* ECPieChartModel.h */,
 				846361C61F569352000B65DC /* ECPieChartModel.m */,
-				846361C71F569352000B65DC /* DrawPieChartView.h */,
-				846361C81F569352000B65DC /* DrawPieChartView.m */,
+				846361C71F569352000B65DC /* ECPieChartCoreView.h */,
+				846361C81F569352000B65DC /* ECPieChartCoreView.m */,
 				846361C91F569352000B65DC /* ECPieChartView.h */,
 				846361CA1F569352000B65DC /* ECPieChartView.m */,
 			);
@@ -352,12 +352,12 @@
 				846361E11F56BDE0000B65DC /* ECBrokenLineCollectionView.m in Sources */,
 				846361D41F569352000B65DC /* ECBrokenLineCircleLayer.m in Sources */,
 				8465558A1EE67B21008B902A /* DrawLineViewController.m in Sources */,
-				846361DC1F569352000B65DC /* DrawPieChartView.m in Sources */,
+				846361DC1F569352000B65DC /* ECPieChartCoreView.m in Sources */,
 				8491B6701EEA7E5C00AF335F /* DrawBarViewController.m in Sources */,
 				846361CE1F569352000B65DC /* DrawBarCollectionView.m in Sources */,
 				846361CF1F569352000B65DC /* DrawBarCollectionViewCell.m in Sources */,
 				842CBDC01EAE0F5F0090D92F /* main.m in Sources */,
-				846361DA1F569352000B65DC /* DrawPieChartLineView.m in Sources */,
+				846361DA1F569352000B65DC /* ECPieChartLineView.m in Sources */,
 				846361DB1F569352000B65DC /* ECPieChartModel.m in Sources */,
 				846361D01F569352000B65DC /* ECBrokenLineNormalCollectionView.m in Sources */,
 			);

@@ -12,10 +12,10 @@
 //
 //  ************************************************************************
 
-#import "DrawPieChartLineView.h"
+#import "ECPieChartLineView.h"
 #import "ECPieChartModel.h"
 
-@interface DrawPieChartLineView ()
+@interface ECPieChartLineView ()
 
 @property (nonatomic, strong) NSMutableArray *layerMutableList;
 
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation DrawPieChartLineView
+@implementation ECPieChartLineView
 
 - (instancetype)init {
     self = [super init];
