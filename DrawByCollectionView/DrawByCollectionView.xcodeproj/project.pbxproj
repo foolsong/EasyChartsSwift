@@ -13,23 +13,22 @@
 		842CBDC91EAE0F5F0090D92F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842CBDC71EAE0F5F0090D92F /* Main.storyboard */; };
 		842CBDCB1EAE0F5F0090D92F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 842CBDCA1EAE0F5F0090D92F /* Assets.xcassets */; };
 		842CBDCE1EAE0F5F0090D92F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 842CBDCC1EAE0F5F0090D92F /* LaunchScreen.storyboard */; };
-		846361911F568295000B65DC /* DrawConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 8463616B1F568295000B65DC /* DrawConfig.m */; };
-		846361921F568295000B65DC /* DottedLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8463616E1F568295000B65DC /* DottedLineView.m */; };
-		846361931F568295000B65DC /* DrawBarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361711F568295000B65DC /* DrawBarCollectionView.m */; };
-		846361941F568295000B65DC /* DrawBarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361731F568295000B65DC /* DrawBarCollectionViewCell.m */; };
-		846361951F568295000B65DC /* DrawPieChartLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361761F568295000B65DC /* DrawPieChartLineView.m */; };
-		846361961F568295000B65DC /* DrawPieChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361781F568295000B65DC /* DrawPieChartModel.m */; };
-		846361971F568295000B65DC /* DrawPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8463617A1F568295000B65DC /* DrawPieChartView.m */; };
-		846361981F568295000B65DC /* EasyPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8463617C1F568295000B65DC /* EasyPieChartView.m */; };
-		846361991F568295000B65DC /* DrawProgressChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8463617F1F568295000B65DC /* DrawProgressChartView.m */; };
-		8463619A1F568295000B65DC /* BrokenLine2CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361821F568295000B65DC /* BrokenLine2CollectionView.m */; };
-		8463619B1F568295000B65DC /* BrokenLineBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361841F568295000B65DC /* BrokenLineBackgroundView.m */; };
-		8463619C1F568295000B65DC /* DrawLineBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361861F568295000B65DC /* DrawLineBackgroundView.m */; };
-		8463619D1F568295000B65DC /* DrawLineCirclePointLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361881F568295000B65DC /* DrawLineCirclePointLayer.m */; };
-		8463619E1F568295000B65DC /* DrawLineCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8463618A1F568295000B65DC /* DrawLineCollectionView.m */; };
-		8463619F1F568295000B65DC /* DrawLineCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8463618C1F568295000B65DC /* DrawLineCollectionViewCell.m */; };
-		846361A01F568295000B65DC /* DrawLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8463618E1F568295000B65DC /* DrawLineView.m */; };
-		846361A11F568295000B65DC /* PointViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361901F568295000B65DC /* PointViewModel.m */; };
+		846361CE1F569352000B65DC /* DrawBarCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361A61F569352000B65DC /* DrawBarCollectionView.m */; };
+		846361CF1F569352000B65DC /* DrawBarCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361A81F569352000B65DC /* DrawBarCollectionViewCell.m */; };
+		846361D01F569352000B65DC /* BrokenLine2CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361AB1F569352000B65DC /* BrokenLine2CollectionView.m */; };
+		846361D11F569352000B65DC /* BrokenLineBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361AD1F569352000B65DC /* BrokenLineBackgroundView.m */; };
+		846361D21F569352000B65DC /* DrawConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361AF1F569352000B65DC /* DrawConfig.m */; };
+		846361D31F569352000B65DC /* DrawLineBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361B11F569352000B65DC /* DrawLineBackgroundView.m */; };
+		846361D41F569352000B65DC /* DrawLineCirclePointLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361B31F569352000B65DC /* DrawLineCirclePointLayer.m */; };
+		846361D51F569352000B65DC /* DrawLineCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361B51F569352000B65DC /* DrawLineCollectionView.m */; };
+		846361D61F569352000B65DC /* DrawLineCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361B71F569352000B65DC /* DrawLineCollectionViewCell.m */; };
+		846361D71F569352000B65DC /* DrawLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361B91F569352000B65DC /* DrawLineView.m */; };
+		846361D81F569352000B65DC /* PointViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361BB1F569352000B65DC /* PointViewModel.m */; };
+		846361DA1F569352000B65DC /* DrawPieChartLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361C41F569352000B65DC /* DrawPieChartLineView.m */; };
+		846361DB1F569352000B65DC /* DrawPieChartModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361C61F569352000B65DC /* DrawPieChartModel.m */; };
+		846361DC1F569352000B65DC /* DrawPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361C81F569352000B65DC /* DrawPieChartView.m */; };
+		846361DD1F569352000B65DC /* EasyPieChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361CA1F569352000B65DC /* EasyPieChartView.m */; };
+		846361DE1F569352000B65DC /* DrawProgressChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 846361CD1F569352000B65DC /* DrawProgressChartView.m */; };
 		8465558A1EE67B21008B902A /* DrawLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846555891EE67B21008B902A /* DrawLineViewController.m */; };
 		8465558D1EE67B7A008B902A /* DrawCircleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8465558C1EE67B7A008B902A /* DrawCircleViewController.m */; };
 		846555901EE67BD3008B902A /* ProgressViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8465558F1EE67BD3008B902A /* ProgressViewViewController.m */; };
@@ -49,42 +48,40 @@
 		842CBDCA1EAE0F5F0090D92F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		842CBDCD1EAE0F5F0090D92F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		842CBDCF1EAE0F5F0090D92F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		846361691F568295000B65DC /* CommonColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonColor.h; sourceTree = "<group>"; };
-		8463616A1F568295000B65DC /* DrawConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawConfig.h; sourceTree = "<group>"; };
-		8463616B1F568295000B65DC /* DrawConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawConfig.m; sourceTree = "<group>"; };
-		8463616D1F568295000B65DC /* DottedLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DottedLineView.h; sourceTree = "<group>"; };
-		8463616E1F568295000B65DC /* DottedLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DottedLineView.m; sourceTree = "<group>"; };
-		846361701F568295000B65DC /* DrawBarCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawBarCollectionView.h; sourceTree = "<group>"; };
-		846361711F568295000B65DC /* DrawBarCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawBarCollectionView.m; sourceTree = "<group>"; };
-		846361721F568295000B65DC /* DrawBarCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawBarCollectionViewCell.h; sourceTree = "<group>"; };
-		846361731F568295000B65DC /* DrawBarCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawBarCollectionViewCell.m; sourceTree = "<group>"; };
-		846361751F568295000B65DC /* DrawPieChartLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawPieChartLineView.h; sourceTree = "<group>"; };
-		846361761F568295000B65DC /* DrawPieChartLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawPieChartLineView.m; sourceTree = "<group>"; };
-		846361771F568295000B65DC /* DrawPieChartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawPieChartModel.h; sourceTree = "<group>"; };
-		846361781F568295000B65DC /* DrawPieChartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawPieChartModel.m; sourceTree = "<group>"; };
-		846361791F568295000B65DC /* DrawPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawPieChartView.h; sourceTree = "<group>"; };
-		8463617A1F568295000B65DC /* DrawPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawPieChartView.m; sourceTree = "<group>"; };
-		8463617B1F568295000B65DC /* EasyPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyPieChartView.h; sourceTree = "<group>"; };
-		8463617C1F568295000B65DC /* EasyPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyPieChartView.m; sourceTree = "<group>"; };
-		8463617E1F568295000B65DC /* DrawProgressChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawProgressChartView.h; sourceTree = "<group>"; };
-		8463617F1F568295000B65DC /* DrawProgressChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawProgressChartView.m; sourceTree = "<group>"; };
-		846361811F568295000B65DC /* BrokenLine2CollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenLine2CollectionView.h; sourceTree = "<group>"; };
-		846361821F568295000B65DC /* BrokenLine2CollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenLine2CollectionView.m; sourceTree = "<group>"; };
-		846361831F568295000B65DC /* BrokenLineBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenLineBackgroundView.h; sourceTree = "<group>"; };
-		846361841F568295000B65DC /* BrokenLineBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenLineBackgroundView.m; sourceTree = "<group>"; };
-		846361851F568295000B65DC /* DrawLineBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineBackgroundView.h; sourceTree = "<group>"; };
-		846361861F568295000B65DC /* DrawLineBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineBackgroundView.m; sourceTree = "<group>"; };
-		846361871F568295000B65DC /* DrawLineCirclePointLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineCirclePointLayer.h; sourceTree = "<group>"; };
-		846361881F568295000B65DC /* DrawLineCirclePointLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineCirclePointLayer.m; sourceTree = "<group>"; };
-		846361891F568295000B65DC /* DrawLineCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineCollectionView.h; sourceTree = "<group>"; };
-		8463618A1F568295000B65DC /* DrawLineCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineCollectionView.m; sourceTree = "<group>"; };
-		8463618B1F568295000B65DC /* DrawLineCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineCollectionViewCell.h; sourceTree = "<group>"; };
-		8463618C1F568295000B65DC /* DrawLineCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineCollectionViewCell.m; sourceTree = "<group>"; };
-		8463618D1F568295000B65DC /* DrawLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineView.h; sourceTree = "<group>"; };
-		8463618E1F568295000B65DC /* DrawLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineView.m; sourceTree = "<group>"; };
-		8463618F1F568295000B65DC /* PointViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointViewModel.h; sourceTree = "<group>"; };
-		846361901F568295000B65DC /* PointViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointViewModel.m; sourceTree = "<group>"; };
-		846361A21F568454000B65DC /* EasyCharts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EasyCharts.h; sourceTree = "<group>"; };
+		846361A51F569352000B65DC /* DrawBarCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawBarCollectionView.h; sourceTree = "<group>"; };
+		846361A61F569352000B65DC /* DrawBarCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawBarCollectionView.m; sourceTree = "<group>"; };
+		846361A71F569352000B65DC /* DrawBarCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawBarCollectionViewCell.h; sourceTree = "<group>"; };
+		846361A81F569352000B65DC /* DrawBarCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawBarCollectionViewCell.m; sourceTree = "<group>"; };
+		846361AA1F569352000B65DC /* BrokenLine2CollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenLine2CollectionView.h; sourceTree = "<group>"; };
+		846361AB1F569352000B65DC /* BrokenLine2CollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenLine2CollectionView.m; sourceTree = "<group>"; };
+		846361AC1F569352000B65DC /* BrokenLineBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenLineBackgroundView.h; sourceTree = "<group>"; };
+		846361AD1F569352000B65DC /* BrokenLineBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenLineBackgroundView.m; sourceTree = "<group>"; };
+		846361AE1F569352000B65DC /* DrawConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawConfig.h; sourceTree = "<group>"; };
+		846361AF1F569352000B65DC /* DrawConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawConfig.m; sourceTree = "<group>"; };
+		846361B01F569352000B65DC /* DrawLineBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineBackgroundView.h; sourceTree = "<group>"; };
+		846361B11F569352000B65DC /* DrawLineBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineBackgroundView.m; sourceTree = "<group>"; };
+		846361B21F569352000B65DC /* DrawLineCirclePointLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineCirclePointLayer.h; sourceTree = "<group>"; };
+		846361B31F569352000B65DC /* DrawLineCirclePointLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineCirclePointLayer.m; sourceTree = "<group>"; };
+		846361B41F569352000B65DC /* DrawLineCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineCollectionView.h; sourceTree = "<group>"; };
+		846361B51F569352000B65DC /* DrawLineCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineCollectionView.m; sourceTree = "<group>"; };
+		846361B61F569352000B65DC /* DrawLineCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineCollectionViewCell.h; sourceTree = "<group>"; };
+		846361B71F569352000B65DC /* DrawLineCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineCollectionViewCell.m; sourceTree = "<group>"; };
+		846361B81F569352000B65DC /* DrawLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineView.h; sourceTree = "<group>"; };
+		846361B91F569352000B65DC /* DrawLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineView.m; sourceTree = "<group>"; };
+		846361BA1F569352000B65DC /* PointViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointViewModel.h; sourceTree = "<group>"; };
+		846361BB1F569352000B65DC /* PointViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PointViewModel.m; sourceTree = "<group>"; };
+		846361BD1F569352000B65DC /* CommonColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonColor.h; sourceTree = "<group>"; };
+		846361C11F569352000B65DC /* EasyCharts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyCharts.h; sourceTree = "<group>"; };
+		846361C31F569352000B65DC /* DrawPieChartLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawPieChartLineView.h; sourceTree = "<group>"; };
+		846361C41F569352000B65DC /* DrawPieChartLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawPieChartLineView.m; sourceTree = "<group>"; };
+		846361C51F569352000B65DC /* DrawPieChartModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawPieChartModel.h; sourceTree = "<group>"; };
+		846361C61F569352000B65DC /* DrawPieChartModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawPieChartModel.m; sourceTree = "<group>"; };
+		846361C71F569352000B65DC /* DrawPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawPieChartView.h; sourceTree = "<group>"; };
+		846361C81F569352000B65DC /* DrawPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawPieChartView.m; sourceTree = "<group>"; };
+		846361C91F569352000B65DC /* EasyPieChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyPieChartView.h; sourceTree = "<group>"; };
+		846361CA1F569352000B65DC /* EasyPieChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EasyPieChartView.m; sourceTree = "<group>"; };
+		846361CC1F569352000B65DC /* DrawProgressChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawProgressChartView.h; sourceTree = "<group>"; };
+		846361CD1F569352000B65DC /* DrawProgressChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawProgressChartView.m; sourceTree = "<group>"; };
 		846555881EE67B21008B902A /* DrawLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawLineViewController.h; sourceTree = "<group>"; };
 		846555891EE67B21008B902A /* DrawLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawLineViewController.m; sourceTree = "<group>"; };
 		8465558B1EE67B7A008B902A /* DrawCircleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawCircleViewController.h; sourceTree = "<group>"; };
@@ -130,7 +127,7 @@
 		842CBDBD1EAE0F5F0090D92F /* DrawByCollectionView */ = {
 			isa = PBXGroup;
 			children = (
-				846361671F568295000B65DC /* EasyCharts */,
+				846361A31F569352000B65DC /* EasyCharts */,
 				842CBDC11EAE0F5F0090D92F /* AppDelegate.h */,
 				842CBDC21EAE0F5F0090D92F /* AppDelegate.m */,
 				842CBDC41EAE0F5F0090D92F /* ViewController.h */,
@@ -163,95 +160,85 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		846361671F568295000B65DC /* EasyCharts */ = {
+		846361A31F569352000B65DC /* EasyCharts */ = {
 			isa = PBXGroup;
 			children = (
-				846361681F568295000B65DC /* Common */,
-				8463616C1F568295000B65DC /* DottedLine */,
-				8463616F1F568295000B65DC /* DrawBarChart */,
-				846361741F568295000B65DC /* DrawCircle */,
-				8463617D1F568295000B65DC /* DrawProgress */,
-				846361801F568295000B65DC /* DrawView */,
-				846361A21F568454000B65DC /* EasyCharts.h */,
+				846361A41F569352000B65DC /* BarGraph */,
+				846361A91F569352000B65DC /* BrokenLineChart */,
+				846361BC1F569352000B65DC /* Common */,
+				846361C11F569352000B65DC /* EasyCharts.h */,
+				846361C21F569352000B65DC /* PieChart */,
+				846361CB1F569352000B65DC /* ProgressView */,
 			);
 			path = EasyCharts;
 			sourceTree = "<group>";
 		};
-		846361681F568295000B65DC /* Common */ = {
+		846361A41F569352000B65DC /* BarGraph */ = {
 			isa = PBXGroup;
 			children = (
-				846361691F568295000B65DC /* CommonColor.h */,
-				8463616A1F568295000B65DC /* DrawConfig.h */,
-				8463616B1F568295000B65DC /* DrawConfig.m */,
+				846361A51F569352000B65DC /* DrawBarCollectionView.h */,
+				846361A61F569352000B65DC /* DrawBarCollectionView.m */,
+				846361A71F569352000B65DC /* DrawBarCollectionViewCell.h */,
+				846361A81F569352000B65DC /* DrawBarCollectionViewCell.m */,
+			);
+			path = BarGraph;
+			sourceTree = "<group>";
+		};
+		846361A91F569352000B65DC /* BrokenLineChart */ = {
+			isa = PBXGroup;
+			children = (
+				846361AA1F569352000B65DC /* BrokenLine2CollectionView.h */,
+				846361AB1F569352000B65DC /* BrokenLine2CollectionView.m */,
+				846361AC1F569352000B65DC /* BrokenLineBackgroundView.h */,
+				846361AD1F569352000B65DC /* BrokenLineBackgroundView.m */,
+				846361AE1F569352000B65DC /* DrawConfig.h */,
+				846361AF1F569352000B65DC /* DrawConfig.m */,
+				846361B01F569352000B65DC /* DrawLineBackgroundView.h */,
+				846361B11F569352000B65DC /* DrawLineBackgroundView.m */,
+				846361B21F569352000B65DC /* DrawLineCirclePointLayer.h */,
+				846361B31F569352000B65DC /* DrawLineCirclePointLayer.m */,
+				846361B41F569352000B65DC /* DrawLineCollectionView.h */,
+				846361B51F569352000B65DC /* DrawLineCollectionView.m */,
+				846361B61F569352000B65DC /* DrawLineCollectionViewCell.h */,
+				846361B71F569352000B65DC /* DrawLineCollectionViewCell.m */,
+				846361B81F569352000B65DC /* DrawLineView.h */,
+				846361B91F569352000B65DC /* DrawLineView.m */,
+				846361BA1F569352000B65DC /* PointViewModel.h */,
+				846361BB1F569352000B65DC /* PointViewModel.m */,
+			);
+			path = BrokenLineChart;
+			sourceTree = "<group>";
+		};
+		846361BC1F569352000B65DC /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				846361BD1F569352000B65DC /* CommonColor.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";
 		};
-		8463616C1F568295000B65DC /* DottedLine */ = {
+		846361C21F569352000B65DC /* PieChart */ = {
 			isa = PBXGroup;
 			children = (
-				8463616D1F568295000B65DC /* DottedLineView.h */,
-				8463616E1F568295000B65DC /* DottedLineView.m */,
+				846361C31F569352000B65DC /* DrawPieChartLineView.h */,
+				846361C41F569352000B65DC /* DrawPieChartLineView.m */,
+				846361C51F569352000B65DC /* DrawPieChartModel.h */,
+				846361C61F569352000B65DC /* DrawPieChartModel.m */,
+				846361C71F569352000B65DC /* DrawPieChartView.h */,
+				846361C81F569352000B65DC /* DrawPieChartView.m */,
+				846361C91F569352000B65DC /* EasyPieChartView.h */,
+				846361CA1F569352000B65DC /* EasyPieChartView.m */,
 			);
-			path = DottedLine;
+			path = PieChart;
 			sourceTree = "<group>";
 		};
-		8463616F1F568295000B65DC /* DrawBarChart */ = {
+		846361CB1F569352000B65DC /* ProgressView */ = {
 			isa = PBXGroup;
 			children = (
-				846361701F568295000B65DC /* DrawBarCollectionView.h */,
-				846361711F568295000B65DC /* DrawBarCollectionView.m */,
-				846361721F568295000B65DC /* DrawBarCollectionViewCell.h */,
-				846361731F568295000B65DC /* DrawBarCollectionViewCell.m */,
+				846361CC1F569352000B65DC /* DrawProgressChartView.h */,
+				846361CD1F569352000B65DC /* DrawProgressChartView.m */,
 			);
-			path = DrawBarChart;
-			sourceTree = "<group>";
-		};
-		846361741F568295000B65DC /* DrawCircle */ = {
-			isa = PBXGroup;
-			children = (
-				846361751F568295000B65DC /* DrawPieChartLineView.h */,
-				846361761F568295000B65DC /* DrawPieChartLineView.m */,
-				846361771F568295000B65DC /* DrawPieChartModel.h */,
-				846361781F568295000B65DC /* DrawPieChartModel.m */,
-				846361791F568295000B65DC /* DrawPieChartView.h */,
-				8463617A1F568295000B65DC /* DrawPieChartView.m */,
-				8463617B1F568295000B65DC /* EasyPieChartView.h */,
-				8463617C1F568295000B65DC /* EasyPieChartView.m */,
-			);
-			path = DrawCircle;
-			sourceTree = "<group>";
-		};
-		8463617D1F568295000B65DC /* DrawProgress */ = {
-			isa = PBXGroup;
-			children = (
-				8463617E1F568295000B65DC /* DrawProgressChartView.h */,
-				8463617F1F568295000B65DC /* DrawProgressChartView.m */,
-			);
-			path = DrawProgress;
-			sourceTree = "<group>";
-		};
-		846361801F568295000B65DC /* DrawView */ = {
-			isa = PBXGroup;
-			children = (
-				846361811F568295000B65DC /* BrokenLine2CollectionView.h */,
-				846361821F568295000B65DC /* BrokenLine2CollectionView.m */,
-				846361831F568295000B65DC /* BrokenLineBackgroundView.h */,
-				846361841F568295000B65DC /* BrokenLineBackgroundView.m */,
-				846361851F568295000B65DC /* DrawLineBackgroundView.h */,
-				846361861F568295000B65DC /* DrawLineBackgroundView.m */,
-				846361871F568295000B65DC /* DrawLineCirclePointLayer.h */,
-				846361881F568295000B65DC /* DrawLineCirclePointLayer.m */,
-				846361891F568295000B65DC /* DrawLineCollectionView.h */,
-				8463618A1F568295000B65DC /* DrawLineCollectionView.m */,
-				8463618B1F568295000B65DC /* DrawLineCollectionViewCell.h */,
-				8463618C1F568295000B65DC /* DrawLineCollectionViewCell.m */,
-				8463618D1F568295000B65DC /* DrawLineView.h */,
-				8463618E1F568295000B65DC /* DrawLineView.m */,
-				8463618F1F568295000B65DC /* PointViewModel.h */,
-				846361901F568295000B65DC /* PointViewModel.m */,
-			);
-			path = DrawView;
+			path = ProgressView;
 			sourceTree = "<group>";
 		};
 		846555A91EE8F0D1008B902A /* Frameworks */ = {
@@ -335,31 +322,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846361DE1F569352000B65DC /* DrawProgressChartView.m in Sources */,
+				846361D71F569352000B65DC /* DrawLineView.m in Sources */,
+				846361D61F569352000B65DC /* DrawLineCollectionViewCell.m in Sources */,
+				846361DD1F569352000B65DC /* EasyPieChartView.m in Sources */,
+				846361D51F569352000B65DC /* DrawLineCollectionView.m in Sources */,
+				846361D81F569352000B65DC /* PointViewModel.m in Sources */,
+				846361D31F569352000B65DC /* DrawLineBackgroundView.m in Sources */,
 				846555901EE67BD3008B902A /* ProgressViewViewController.m in Sources */,
 				842CBDC61EAE0F5F0090D92F /* ViewController.m in Sources */,
-				8463619A1F568295000B65DC /* BrokenLine2CollectionView.m in Sources */,
 				847B57F71F51692E003555EF /* BrokenLine2ViewController.m in Sources */,
 				8465558D1EE67B7A008B902A /* DrawCircleViewController.m in Sources */,
-				846361991F568295000B65DC /* DrawProgressChartView.m in Sources */,
-				846361951F568295000B65DC /* DrawPieChartLineView.m in Sources */,
-				8463619B1F568295000B65DC /* BrokenLineBackgroundView.m in Sources */,
-				846361941F568295000B65DC /* DrawBarCollectionViewCell.m in Sources */,
 				842CBDC31EAE0F5F0090D92F /* AppDelegate.m in Sources */,
-				846361971F568295000B65DC /* DrawPieChartView.m in Sources */,
-				846361931F568295000B65DC /* DrawBarCollectionView.m in Sources */,
-				846361A11F568295000B65DC /* PointViewModel.m in Sources */,
+				846361D11F569352000B65DC /* BrokenLineBackgroundView.m in Sources */,
+				846361D21F569352000B65DC /* DrawConfig.m in Sources */,
+				846361D41F569352000B65DC /* DrawLineCirclePointLayer.m in Sources */,
 				8465558A1EE67B21008B902A /* DrawLineViewController.m in Sources */,
-				846361981F568295000B65DC /* EasyPieChartView.m in Sources */,
-				8463619E1F568295000B65DC /* DrawLineCollectionView.m in Sources */,
-				8463619D1F568295000B65DC /* DrawLineCirclePointLayer.m in Sources */,
-				846361961F568295000B65DC /* DrawPieChartModel.m in Sources */,
+				846361DC1F569352000B65DC /* DrawPieChartView.m in Sources */,
 				8491B6701EEA7E5C00AF335F /* DrawBarViewController.m in Sources */,
-				846361A01F568295000B65DC /* DrawLineView.m in Sources */,
-				8463619C1F568295000B65DC /* DrawLineBackgroundView.m in Sources */,
+				846361CE1F569352000B65DC /* DrawBarCollectionView.m in Sources */,
+				846361CF1F569352000B65DC /* DrawBarCollectionViewCell.m in Sources */,
 				842CBDC01EAE0F5F0090D92F /* main.m in Sources */,
-				846361921F568295000B65DC /* DottedLineView.m in Sources */,
-				8463619F1F568295000B65DC /* DrawLineCollectionViewCell.m in Sources */,
-				846361911F568295000B65DC /* DrawConfig.m in Sources */,
+				846361DA1F569352000B65DC /* DrawPieChartLineView.m in Sources */,
+				846361DB1F569352000B65DC /* DrawPieChartModel.m in Sources */,
+				846361D01F569352000B65DC /* BrokenLine2CollectionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
