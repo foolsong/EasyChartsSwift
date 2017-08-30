@@ -1,7 +1,7 @@
 //  ************************************************************************
 //
-//  DrawCircleModel.m
-//  DrawByCollectionView
+//  ECPieChartModel.m
+//  EasyCharts
 //
 //  Created by 宋永建 on 2017/6/10.
 //  Copyright © 2017年 宋永建. All rights reserved.
@@ -12,23 +12,23 @@
 //
 //  ************************************************************************
 
-#import "DrawPieChartModel.h"
+#import "ECPieChartModel.h"
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 
-@interface DrawPieChartModel ()
+@interface ECPieChartModel ()
 
 @property (nonatomic, assign) CGFloat offset;
 
 @end
 
-@implementation DrawPieChartModel
+@implementation ECPieChartModel
 
 + (instancetype)circleModelWithSrartAngle:(CGFloat)startAngle
                                arcPercent:(NSNumber *) arcPercent
                                     color:(UIColor *)color
                                   arcText:(NSString *)arcText
                                 arcCenter:(CGPoint)arcCenter {
-    DrawPieChartModel *model = [[self alloc] init];
+    ECPieChartModel *model = [[self alloc] init];
     model.arcCenter = arcCenter;
     model.circleColor = color;
     model.arcPercent = [arcPercent floatValue];

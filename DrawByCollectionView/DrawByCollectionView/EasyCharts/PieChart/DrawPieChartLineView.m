@@ -1,7 +1,7 @@
 //  ************************************************************************
 //
 //  DrawCircleLineView.m
-//  DrawByCollectionView
+//  EasyCharts
 //
 //  Created by 宋永建 on 2017/6/12.
 //  Copyright © 2017年 宋永建. All rights reserved.
@@ -13,7 +13,7 @@
 //  ************************************************************************
 
 #import "DrawPieChartLineView.h"
-#import "DrawPieChartModel.h"
+#import "ECPieChartModel.h"
 
 @interface DrawPieChartLineView ()
 
@@ -33,7 +33,7 @@
     return self;
 }
 
-- (void)setupLabel:(DrawPieChartModel *)model {
+- (void)setupLabel:(ECPieChartModel *)model {
     CGRect frame;
     if (model.arcCenterQuadrant == ArcCenterQuadrantFourth || model.arcCenterQuadrant == ArcCenterQuadrantFirst) {
         frame = CGRectMake(model.textLeftCenterPoint.x + 4, model.textLeftCenterPoint.y - 11, 32, 22);
@@ -58,7 +58,7 @@
 
 - (void)drawHalvingLine:(NSArray *)circleModelList {
     for (int i = 0; i < [circleModelList count]; i ++) {
-        DrawPieChartModel *model = circleModelList[i];
+        ECPieChartModel *model = circleModelList[i];
         if (model.arcPercent >= 1) {
             break;
         }
@@ -72,7 +72,7 @@
 
 - (void)drawDescriptionLabel:(NSArray *)circleModelList {
     for (int i = 0; i < [circleModelList count]; i ++) {
-        DrawPieChartModel *model = circleModelList[i];
+        ECPieChartModel *model = circleModelList[i];
         [self drawLine:model];
         [self setupLabel:model];
     }
@@ -90,7 +90,7 @@
     [self.layerMutableList removeAllObjects];
 }
 
-- (void)drawLine:(DrawPieChartModel *)model{
+- (void)drawLine:(ECPieChartModel *)model{
     UIBezierPath *linePath = [UIBezierPath bezierPath];
     [linePath moveToPoint:model.textLeftCenterPoint];
     [linePath addLineToPoint:model.inflectionPoint];

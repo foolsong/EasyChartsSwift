@@ -13,9 +13,9 @@
 //  ************************************************************************
 
 #import "DrawCircleViewController.h"
-#import "DrawPieChartView.h"
-#import "DrawPieChartModel.h"
-#import "DrawPieChartLineView.h"
+//#import "DrawPieChartView.h"
+//#import "DrawPieChartModel.h"
+//#import "DrawPieChartLineView.h"
 #import "ECPieChartView.h"
 
 #define STDScreenW [UIScreen mainScreen].bounds.size.width
@@ -26,8 +26,8 @@
 
 @interface DrawCircleViewController ()
 
-@property (nonatomic, strong) DrawPieChartView *circleView;
-@property (nonatomic, strong) DrawPieChartLineView *lineView;
+//@property (nonatomic, strong) DrawPieChartView *circleView;
+//@property (nonatomic, strong) DrawPieChartLineView *lineView;
 
 @property (nonatomic, copy) NSArray<NSNumber *> *percentList;
 @property (nonatomic, copy) NSArray<UIColor *> *colorList;

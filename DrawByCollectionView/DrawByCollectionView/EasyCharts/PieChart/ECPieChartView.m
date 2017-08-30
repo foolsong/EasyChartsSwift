@@ -15,7 +15,7 @@
 #import "ECPieChartView.h"
 #import "DrawPieChartView.h"
 #import "DrawPieChartLineView.h"
-#import "DrawPieChartModel.h"
+#import "ECPieChartModel.h"
 
 @interface ECPieChartView ()
 
@@ -100,20 +100,20 @@
     
     CGFloat startAngle = 0;
     for (int i = 0 ; i < [self.percentList count]; i++) {
-        DrawPieChartModel *model = [DrawPieChartModel circleModelWithSrartAngle:startAngle
-                                                                     arcPercent:self.percentList[i]
-                                                                          color:self.colorList[i]
-                                                                        arcText:self.arcTextList[i]
-                                                                      arcCenter:self.arcCenter];
+        ECPieChartModel *model = [ECPieChartModel circleModelWithSrartAngle:startAngle
+                                                                 arcPercent:self.percentList[i]
+                                                                      color:self.colorList[i]
+                                                                    arcText:self.arcTextList[i]
+                                                                  arcCenter:self.arcCenter];
         startAngle = model.endAngle;
         [self.pieChartModelList addObject:model];
     }
 }
 
 - (void)checkExceptionData {
-    DrawPieChartModel *lastModel = nil;
+    ECPieChartModel *lastModel = nil;
     
-    for (DrawPieChartModel *model in self.pieChartModelList) {
+    for (ECPieChartModel *model in self.pieChartModelList) {
         if (lastModel == nil) {
             lastModel = [self.pieChartModelList lastObject];
         }

@@ -1,6 +1,6 @@
 //
-//  DrawCircleModel.h
-//  DrawByCollectionView
+//  ECPieChartModel.h
+//  EasyCharts
 //
 //  Created by 宋永建 on 2017/6/10.
 //  Copyright © 2017年 宋永建. All rights reserved.
@@ -16,7 +16,7 @@ typedef NS_ENUM(NSInteger, ArcCenterQuadrant) {
     ArcCenterQuadrantFourth
 };
 
-@interface DrawPieChartModel : UIView
+@interface ECPieChartModel : UIView
 
 @property (nonatomic, assign) CGFloat startAngle;
 @property (nonatomic, assign) CGFloat endAngle;

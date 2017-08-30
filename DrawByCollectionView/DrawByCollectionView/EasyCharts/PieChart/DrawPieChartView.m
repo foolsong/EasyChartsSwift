@@ -1,13 +1,13 @@
 //
 //  DrawCircleView.m
-//  DrawByCollectionView
+//  EasyCharts
 //
 //  Created by yjsong on 17/5/7.
 //  Copyright © 2017年 宋永建. All rights reserved.
 //
 
 #import "DrawPieChartView.h"
-#import "DrawPieChartModel.h"
+#import "ECPieChartModel.h"
 #import "ECBrokenLineCircleLayer.h"
 
 @interface DrawPieChartView()
@@ -34,7 +34,7 @@
 - (void)resetCircleList:(NSArray *)circleModelList {
     [self clearLayerMutableArray];
     self.circleModelList = circleModelList;
-    for (DrawPieChartModel *model in self.circleModelList) {
+    for (ECPieChartModel *model in self.circleModelList) {
         [self drawBackGroupCircle:model];
     }
 }
@@ -47,7 +47,7 @@
 }
 
 #pragma mark - subviewsDrawCircleModel
-- (void)drawBackGroupCircle:(DrawPieChartModel *)model {
+- (void)drawBackGroupCircle:(ECPieChartModel *)model {
     [self drawCircleWithLineWidth:5.0f
                         lineColor:[model.circleColor colorWithAlphaComponent:0.4]
                            radius:35
