@@ -18,6 +18,11 @@
 @property (nonatomic, strong) UIColor *backVeiwBackGroupColor;
 @property (nonatomic, strong) UIColor *brokenAbscissaColor;
 
+@property (nonatomic, assign) CGFloat minValue;
+@property (nonatomic, assign) CGFloat maxValue;
+
+@property (nonatomic, assign) CGFloat numberOfIntervalLines;
+
 @property (nonatomic, assign) BrokenLineType brokenLineType;
 
 

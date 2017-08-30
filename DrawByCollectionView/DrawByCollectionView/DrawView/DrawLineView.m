@@ -125,9 +125,17 @@
         PointViewModel *pointModel = [[PointViewModel alloc] init];
         pointModel.leftLineType = [self lineTypeWithNumString:numString nearNumString:lastNumString];
         pointModel.rightLineType = [self lineTypeWithNumString:numString nearNumString:nextNumString];
-        pointModel.pointY = [@"-1" isEqualToString:numString] ? @"0" : [NSString stringWithFormat:@"%f",[numString floatValue]];
+        
+        if ([numString floatValue] > self.drawConfig.maxValue) {
+            pointModel.pointY = [NSString stringWithFormat:@"%f",self.drawConfig.maxValue];
+        } else if ([numString floatValue] < self.drawConfig.minValue) {
+            pointModel.pointY = [NSString stringWithFormat:@"%f",self.drawConfig.minValue];
+        } else {
+            pointModel.pointY = [NSString stringWithFormat:@"%f",[numString floatValue]];
+        }
+        
         pointModel.titleText = titleTextList[i];
-        pointModel.pointY = [NSString stringWithFormat:@"%f",15 + (1 - ([pointModel.pointY floatValue]/100)) * (self.frame.size.height - 40)];
+        pointModel.pointY = [NSString stringWithFormat:@"%f",15 + (1 - (([pointModel.pointY floatValue] - self.drawConfig.minValue)/(self.drawConfig.maxValue - self.drawConfig.minValue))) * (self.frame.size.height - 40)];
         [modelMutableArray addObject:pointModel];
     }
     self.pointModelList = [modelMutableArray copy];
@@ -136,11 +144,19 @@
 - (LineType)lineTypeWithNumString:(NSString *) numString nearNumString:(NSString *) nearNumString{
     if (nearNumString == nil) {
         return  LineTypeNoline;
-    } else if ([@"-1" isEqualToString:nearNumString] || [@"-1" isEqualToString:numString]) {
+    } else if ([self isDottedLineWithNumString:numString nearNumString:nearNumString]) {
         return LineTypeDotted;
     } else {
         return LineTypeNormal;
     }
+    
+}
+
+- (BOOL)isDottedLineWithNumString:(NSString *) numString nearNumString:(NSString *) nearNumString {
+    return [nearNumString floatValue] > self.drawConfig.maxValue ||
+            [nearNumString floatValue] < self.drawConfig.minValue ||
+            [numString floatValue] > self.drawConfig.maxValue ||
+            [numString floatValue] < self.drawConfig.minValue;
 }
 
 - (NSString *)numStringWithIndex:(NSInteger)index

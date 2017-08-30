@@ -53,21 +53,21 @@
     CGPoint endPoint = CGPointMake(CGRectGetMaxX(rect), CGRectGetHeight([self frame]) - 25);
     [gridLinePath moveToPoint:startPoint];
     [gridLinePath addLineToPoint:endPoint];
-    [gridLinePath setLineWidth:1.0];
+    [gridLinePath setLineWidth:0.6];
     
     CGContextSaveGState(context);
     
-    NSUInteger numberOfIntervalLines =  5;//[self.chartContainer numberOfIntervalLines];
+    NSUInteger numberOfIntervalLines = [self.drawConfig numberOfIntervalLines];
     CGFloat intervalSpacing = (maxHeight/(numberOfIntervalLines-1));
     
-    CGFloat maxIntervalValue = 100;//[self.chartContainer maxValue];
-    CGFloat minIntervalValue = 0;//[self.chartContainer minValue];
+    CGFloat maxIntervalValue = [self.drawConfig maxValue];
+    CGFloat minIntervalValue = [self.drawConfig minValue];
     CGFloat maxIntervalDiff = (maxIntervalValue - minIntervalValue) / (numberOfIntervalLines-1);
     
     for(NSUInteger i = 0;i<numberOfIntervalLines;i++) {
         [self.drawConfig.backVeiwLineColor setStroke];
         [gridLinePath stroke];
-        NSString *stringToDraw = [NSString stringWithFormat:@"%.f",0 + i * maxIntervalDiff];
+        NSString *stringToDraw = [NSString stringWithFormat:@"%.f",minIntervalValue + i * maxIntervalDiff];
         NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle defaultParagraphStyle] mutableCopy];
         [paragraphStyle setLineBreakMode:NSLineBreakByTruncatingTail];
         

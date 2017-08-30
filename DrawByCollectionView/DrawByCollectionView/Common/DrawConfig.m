@@ -22,6 +22,9 @@
 
 + (instancetype)drawConfigWithBrokenLineType:(BrokenLineType)brokenLineType {
     DrawConfig *drawConfig = [[DrawConfig alloc] init];
+    drawConfig.minValue = -20;
+    drawConfig.maxValue = 80;
+    drawConfig.numberOfIntervalLines = 5;
     drawConfig.brokenLineType = brokenLineType;
     return drawConfig;
 }
