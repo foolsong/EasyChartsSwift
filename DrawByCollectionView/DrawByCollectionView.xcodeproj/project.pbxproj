@@ -72,7 +72,7 @@
 		846361B91F569352000B65DC /* ECBrokenLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECBrokenLineView.m; sourceTree = "<group>"; };
 		846361BA1F569352000B65DC /* ECBrokenLinePointModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECBrokenLinePointModel.h; sourceTree = "<group>"; };
 		846361BB1F569352000B65DC /* ECBrokenLinePointModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECBrokenLinePointModel.m; sourceTree = "<group>"; };
-		846361BD1F569352000B65DC /* CommonColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonColor.h; sourceTree = "<group>"; };
+		846361BD1F569352000B65DC /* ECCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECCommon.h; sourceTree = "<group>"; };
 		846361C11F569352000B65DC /* EasyCharts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyCharts.h; sourceTree = "<group>"; };
 		846361C31F569352000B65DC /* ECPieChartLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPieChartLineView.h; sourceTree = "<group>"; };
 		846361C41F569352000B65DC /* ECPieChartLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPieChartLineView.m; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 		846361BC1F569352000B65DC /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				846361BD1F569352000B65DC /* CommonColor.h */,
+				846361BD1F569352000B65DC /* ECCommon.h */,
 			);
 			path = Common;
 			sourceTree = "<group>";

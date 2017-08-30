@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "CommonColor.h"
+#import "ECCommon.h"
 
 @class ECBrokenLineConfig;
 @interface ECBrokenLineView : UIView

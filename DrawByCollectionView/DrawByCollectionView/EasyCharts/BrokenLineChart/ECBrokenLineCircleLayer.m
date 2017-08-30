@@ -14,7 +14,7 @@
 
 #import "ECBrokenLineCircleLayer.h"
 #import <UIKit/UIKit.h>
-#import "CommonColor.h"
+#import "ECCommon.h"
 #import "ECBrokenLineConfig.h"
 
 #define CIRCLE_SIZE 8.5

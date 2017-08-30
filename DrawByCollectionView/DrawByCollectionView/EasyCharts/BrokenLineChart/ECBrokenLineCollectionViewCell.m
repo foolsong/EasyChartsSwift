@@ -14,7 +14,7 @@
 
 #import "ECBrokenLineCollectionViewCell.h"
 #import "ECBrokenLinePointModel.h"
-#import "CommonColor.h"
+#import "ECCommon.h"
 #import "ECBrokenLineConfig.h"
 #import "ECBrokenLineCircleLayer.h"
 
@@ -215,7 +215,7 @@
 - (void)cellSelected {
     [self p_setupCircleSelectedLayer];
     [self.datelabel setTextColor:self.brokenLineConfig.brokenLineColor];
-    [self.datelabel setFont:[UIFont boldSystemFontOfSize:T9_22PX]];
+    [self.datelabel setFont:[UIFont boldSystemFontOfSize:11]];
     
     if (self.brokenLineConfig.brokenLineType == BrokenLineTypeNormal) {
         CGPoint firstPoint = CGPointMake(self.cellSize.width * 0.5, [self currentPointY]);
@@ -230,7 +230,7 @@
         _circleSelectedLayer = nil;
     }
     [self.datelabel setTextColor:self.brokenLineConfig.brokenAbscissaColor];
-    [self.datelabel setFont:[UIFont systemFontOfSize:T9_22PX]];
+    [self.datelabel setFont:[UIFont systemFontOfSize:11]];
 }
 
 - (NSMutableArray *)lineLayerList {

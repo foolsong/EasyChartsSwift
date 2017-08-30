@@ -15,7 +15,7 @@
 #import "ECBrokenLineNormalCollectionView.h"
 #import "ECBrokenLineCollectionViewCell.h"
 #import "ECBrokenLinePointModel.h"
-#import "CommonColor.h"
+#import "ECCommon.h"
 #import "ECBrokenLineConfig.h"
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width

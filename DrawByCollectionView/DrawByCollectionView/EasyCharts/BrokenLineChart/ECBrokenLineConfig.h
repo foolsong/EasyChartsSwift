@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "CommonColor.h"
+#import "ECCommon.h"
 
 @interface ECBrokenLineConfig : NSObject
 
