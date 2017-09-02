@@ -18,7 +18,7 @@
 
 + (instancetype)collectionViewWithFrame:(CGRect)frame
                    withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig;
-- (void)reloadCollectionData;
+
 
 @end
 

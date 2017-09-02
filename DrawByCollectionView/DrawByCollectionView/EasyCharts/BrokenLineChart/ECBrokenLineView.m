@@ -18,13 +18,13 @@
 #import "ECBrokenLineCenterBackgroundView.h"
 #import "ECBrokenLinePointModel.h"
 #import "ECBrokenLineNormalBackgroundView.h"
-
+#import "ECBrokenLineCollectionView.h"
 #import "ECBrokenLineConfig.h"
 
 @interface ECBrokenLineView ()<ECBrokenLineCollectionViewDataSource,
                                ECBrokenLineCollectionViewDataSource>
 
-@property (nonatomic, strong) UICollectionView *lineCollectionView;
+@property (nonatomic, strong) ECBrokenLineCollectionView *lineCollectionView;
 @property (nonatomic, copy) NSArray <ECBrokenLinePointModel *>*pointModelList;
 @property (nonatomic, assign) CGSize lineViewSize;
 @property (nonatomic, strong) ECBrokenLineConfig *brokenLineConfig;
@@ -116,8 +116,7 @@
                                    titleText:(NSArray *)titleTextList{
     [self computerAndCombinationModelListWithPointValveList:pointValueList
                                                   titleText:titleTextList];
-#warning TODO
-//    [self.lineCollectionView reloadCollectionData];
+    [self.lineCollectionView reloadCollectionData];
 }
 
 #pragma mark - computer pointY

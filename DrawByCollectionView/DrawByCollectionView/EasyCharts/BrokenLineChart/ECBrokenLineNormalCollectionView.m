@@ -33,7 +33,7 @@
 
 + (instancetype)collectionViewWithFrame:(CGRect)frame
                    withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig {
-    BrokenLine2CollectionViewFlowLayout *layout = [self collectionViewFlowLayout];
+    ECBrokenLineNormalCollectionViewFlowLayout *layout = [self collectionViewFlowLayout];
     ECBrokenLineNormalCollectionView *collectionView =
     [[self alloc]initWithFrame:CGRectMake(35, 0,frame.size.width - 35 ,frame.size.height)
           collectionViewLayout:layout];
@@ -82,31 +82,41 @@
 }
 
 #pragma mark - CollectionViewFlowLayout
-+ (BrokenLine2CollectionViewFlowLayout *)collectionViewFlowLayout {
-    BrokenLine2CollectionViewFlowLayout *layout = [BrokenLine2CollectionViewFlowLayout new];
++ (ECBrokenLineNormalCollectionViewFlowLayout *)collectionViewFlowLayout {
+    ECBrokenLineNormalCollectionViewFlowLayout *layout =
+        [ECBrokenLineNormalCollectionViewFlowLayout new];
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     layout.minimumLineSpacing = 0;
     return layout;
 }
 
 #pragma mark - UICollectionViewDataSource
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView
+     numberOfItemsInSection:(NSInteger)section {
     return [[self pointModelList] count];
 }
 
-- ( UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    ECBrokenLineCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ECBrokenLineCollectionViewCell" forIndexPath:indexPath];
+- ( UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    ECBrokenLineCollectionViewCell *cell =
+        [collectionView dequeueReusableCellWithReuseIdentifier:@"ECBrokenLineCollectionViewCell"
+                                                  forIndexPath:indexPath];
     [cell setItemSize:[self sizeForItemAtIndexPath:indexPath]];
     
     return cell;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return [self sizeForItemAtIndexPath:indexPath];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
-- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void)collectionView:(UICollectionView *)collectionView
+       willDisplayCell:(UICollectionViewCell *)cell
+    forItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     [(ECBrokenLineCollectionViewCell *)cell setupBrokenLineConfig:self.brokenLineConfig];
     [(ECBrokenLineCollectionViewCell *)cell configureCellWithPointYList:[self pointModelList] withIndex:indexPath.row];
     if (self.currentIndex == indexPath.row) {
@@ -121,7 +131,6 @@
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     self.currentIndex = indexPath.row;
     [self reloadData];
-    
     if (_drawLineDelegate && [_drawLineDelegate respondsToSelector:@selector(collectionViewPointYList:
                                                                              didSelectItemAtIndexPath:)]) {
         [_drawLineDelegate collectionViewPointYList:self didSelectItemAtIndexPath:indexPath];
@@ -153,14 +162,15 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 @end
+
 #pragma mark - collectionView 的 flowLayout
 /**
  collectionView 的 flowLayout
  */
-@interface BrokenLine2CollectionViewFlowLayout()
+@interface ECBrokenLineNormalCollectionViewFlowLayout()
 
 @end
 
-@implementation BrokenLine2CollectionViewFlowLayout
+@implementation ECBrokenLineNormalCollectionViewFlowLayout
 
 @end

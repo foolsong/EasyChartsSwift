@@ -71,7 +71,8 @@
     CGFloat offsetX = ([[self pointModelList] count] - 3) * self.cellWidth + 0.2 * 2;
     self.contentOffset = CGPointMake(offsetX, 0);
     self.currentIndex = [[self pointModelList] count] - 1;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)),
+                   dispatch_get_main_queue(), ^{
         [self setupCellSelected];
     });
 }
@@ -96,7 +97,8 @@
     [self p_setupCellUnSelected];
     
     NSArray *visibleCellIndex = [self visibleCells];
-    NSArray *sortedIndexPaths = [visibleCellIndex sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+    NSArray *sortedIndexPaths =
+        [visibleCellIndex sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         NSIndexPath *path1 = (NSIndexPath *)[self indexPathForCell:obj1];
         NSIndexPath *path2 = (NSIndexPath *)[self indexPathForCell:obj2];
         return [path1 compare:path2];
@@ -152,12 +154,17 @@
 }
 
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+- (NSInteger)collectionView:(UICollectionView *)collectionView
+     numberOfItemsInSection:(NSInteger)section {
     return [[self pointModelList] count];
 }
 
-- ( UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    ECBrokenLineCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ECBrokenLineCollectionViewCell" forIndexPath:indexPath];
+- ( UICollectionViewCell *)collectionView:(UICollectionView *)collectionView
+                   cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    ECBrokenLineCollectionViewCell *cell =
+        [collectionView dequeueReusableCellWithReuseIdentifier:@"ECBrokenLineCollectionViewCell"
+                                                  forIndexPath:indexPath];
     [cell setItemSize:[self sizeForItemAtIndexPath:indexPath]];
     [cell setupBrokenLineConfig:self.brokenLineConfig];
     
@@ -171,14 +178,21 @@
     return cell;
 }
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     return [self sizeForItemAtIndexPath:indexPath];
 }
 
 #pragma mark - UICollectionViewDelegateFlowLayout
-- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+- (void)collectionView:(UICollectionView *)collectionView
+       willDisplayCell:(UICollectionViewCell *)cell
+    forItemAtIndexPath:(NSIndexPath *)indexPath {
+    
 //    [(DrawLineCollectionViewCell *)cell setupDrawConfig:self.drawConfig];
-    [(ECBrokenLineCollectionViewCell *)cell configureCellWithPointYList:[self pointModelList] withIndex:indexPath.row];
+    [(ECBrokenLineCollectionViewCell *)cell configureCellWithPointYList:[self pointModelList]
+                                                              withIndex:indexPath.row];
 }
 
 #pragma mark - UICollectionViewDelegate
@@ -244,8 +258,9 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 - (CGPoint)targetContentOffsetForProposedContentOffset:(CGPoint)proposedContentOffset
                                  withScrollingVelocity:(CGPoint)velocity {
     //获取期望滑到的位置的点的x值
-    CGFloat proposedOffsetX = [super targetContentOffsetForProposedContentOffset:proposedContentOffset
-                                                           withScrollingVelocity:velocity].x;
+    CGFloat proposedOffsetX =
+        [super targetContentOffsetForProposedContentOffset:proposedContentOffset
+                                     withScrollingVelocity:velocity].x;
     
     CGRect proposedRect = CGRectMake(proposedContentOffset.x,
                                      proposedContentOffset.y,
@@ -281,7 +296,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         centerDiff = CGFLOAT_MAX;
     }
     //返回期望滑到的点的x加偏移量
-    NSInteger blockIndex = (proposedOffsetX + centerDiff) / (self.collectionView.bounds.size.width * 0.2 + 0.2) + 2.1;
+    NSInteger blockIndex = (proposedOffsetX + centerDiff) /
+        (self.collectionView.bounds.size.width * 0.2 + 0.2) + 2.1;
 
     _indexBlock(blockIndex);
     return CGPointMake(proposedOffsetX + centerDiff, 0);

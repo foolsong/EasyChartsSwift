@@ -28,6 +28,6 @@
 
 //+ (instancetype)collectionViewWithFrame:(CGRect)frame
 //                         withDrawConfig:(ECBrokenLineConfig *)brokenLineConfig;
-//- (void)reloadCollectionData;
+- (void)reloadCollectionData;
 
 @end
