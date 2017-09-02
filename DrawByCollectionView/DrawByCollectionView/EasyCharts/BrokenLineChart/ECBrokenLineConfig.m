@@ -22,8 +22,8 @@
 
 + (instancetype)configWithBrokenLineType:(BrokenLineType)brokenLineType {
     ECBrokenLineConfig *drawConfig = [[ECBrokenLineConfig alloc] init];
-    drawConfig.minValue = -20;
-    drawConfig.maxValue = 80;
+    drawConfig.minValue = 0;
+    drawConfig.maxValue = 100;
     drawConfig.numberOfIntervalLines = 5;
     drawConfig.brokenLineType = brokenLineType;
     return drawConfig;

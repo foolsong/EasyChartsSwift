@@ -15,7 +15,7 @@
 #import "DrawCircleViewController.h"
 #import "EasyCharts.h"
 
-#define STDScreenW [UIScreen mainScreen].bounds.size.width
+
 
 #define random(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 
@@ -55,7 +55,7 @@
 }
 
 - (void)p_configSubViews {
-    ECPieChartView *pieView = [ECPieChartView pieChartViewWithFrame:CGRectMake(0, 100, STDScreenW, 200)];
+    ECPieChartView *pieView = [ECPieChartView pieChartViewWithFrame:CGRectMake(0, 100, ECScreenW, 200)];
     [self.view addSubview:pieView];
     self.pieView = pieView;
     
@@ -91,7 +91,7 @@
 - (void)setupTestButton {
     CGFloat width = 80;
     CGFloat height = 40;
-    CGFloat x = (STDScreenW - width) * 0.5;
+    CGFloat x = (ECScreenW - width) * 0.5;
     CGFloat y = CGRectGetMaxY(self.pieView.frame) + 180;
     UIButton *testButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [testButton setTitle:@"点击测试" forState:UIControlStateNormal];

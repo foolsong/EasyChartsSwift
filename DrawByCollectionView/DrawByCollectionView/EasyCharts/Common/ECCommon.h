@@ -12,6 +12,8 @@ typedef NS_ENUM(NSUInteger, BrokenLineType) {
     BrokenLineTypeNormal,
 };
 
+#define ECScreenW [UIScreen mainScreen].bounds.size.width
+
 //#define RGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 //
 //

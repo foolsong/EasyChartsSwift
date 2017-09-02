@@ -61,6 +61,8 @@
     CGFloat offsetX = ([[self pointModelList] count] - 3) * self.cellWidth + 0.2 * 2;
     self.contentOffset = CGPointMake(offsetX, 0);
     self.currentIndex = [[self pointModelList] count] - 1;
+    
+    [self didSelectItemAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
 }
 
 - (void)p_configOwnProperties {
@@ -131,10 +133,11 @@
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     self.currentIndex = indexPath.row;
     [self reloadData];
-    if (_drawLineDelegate && [_drawLineDelegate respondsToSelector:@selector(collectionViewPointYList:
-                                                                             didSelectItemAtIndexPath:)]) {
-        [_drawLineDelegate collectionViewPointYList:self didSelectItemAtIndexPath:indexPath];
-    }
+    [self didSelectItemAtIndexPath:indexPath];
+//    if (_drawLineDelegate && [_drawLineDelegate respondsToSelector:@selector(collectionViewPointYList:
+//                                                                             didSelectItemAtIndexPath:)]) {
+//        [_drawLineDelegate collectionViewPointYList:self didSelectItemAtIndexPath:indexPath];
+//    }
 }
 
 - (NSArray *)pointModelList {

@@ -107,7 +107,6 @@
 #pragma ECBrokenLineCollectionViewDelegate
 - (void)collectionViewPointYList:(ECBrokenLineCollectionView *)collectionView
         didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%ld",(long)indexPath.row);
     if (_delegate && [_delegate respondsToSelector:@selector(brokenLineView:selectedAtIndexPath:)]) {
         [_delegate brokenLineView:self selectedAtIndexPath:indexPath];
     }

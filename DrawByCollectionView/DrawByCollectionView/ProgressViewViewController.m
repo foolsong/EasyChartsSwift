@@ -15,8 +15,6 @@
 #import "ProgressViewViewController.h"
 #import "EasyCharts.h"
 
-#define STDScreenW [UIScreen mainScreen].bounds.size.width
-
 @interface ProgressViewViewController ()
 
 @property (nonatomic, strong) ECProgressChartView *progressView;
@@ -51,7 +49,7 @@
     
     CGFloat width = 200;
     CGFloat height = 200;
-    CGFloat x = (STDScreenW - width) * 0.5;
+    CGFloat x = (ECScreenW - width) * 0.5;
     CGFloat y = CGRectGetMaxY(self.progressView.frame) + 100;
     
     CGRect frame = CGRectMake(x ,y ,width , height);;
@@ -67,7 +65,7 @@
 - (void)setupTestButton {
     CGFloat width = 80;
     CGFloat height = 40;
-    CGFloat x = (STDScreenW - width) * 0.5;
+    CGFloat x = (ECScreenW - width) * 0.5;
     CGFloat y = CGRectGetMaxY(self.progressView.frame) + 100;
     UIButton *testButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [testButton setTitle:@"点击测试" forState:UIControlStateNormal];
