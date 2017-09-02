@@ -87,9 +87,9 @@
         index = 2;
     }
     
-//        if ([self.visibleCells count] > 5) {
-//            index = 3;
-//        }
+    if ([self.visibleCells count] > 5) {
+        index = 3;
+    }
     
     if ([self.visibleCells count] < index) {
         return;

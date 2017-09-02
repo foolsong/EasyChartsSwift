@@ -15,7 +15,7 @@
 #import "BrokenLine2ViewController.h"
 #import "EasyCharts.h"
 
-@interface BrokenLine2ViewController ()
+@interface BrokenLine2ViewController ()<ECBrokenLineViewDelegate>
 
 @property (nonatomic, strong) ECBrokenLineView *brokenLineView;
 
@@ -43,6 +43,12 @@
                                                   alpha:1.0]];
 }
 
+#pragma ECBrokenLineViewDelegate
+- (void)brokenLineView:(ECBrokenLineView *)brokenLineView
+   selectedAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"delegate");
+}
+
 #pragma mark - HandleViews
 - (void)p_configSubViews {
     [self setupDrawLineView];
@@ -54,6 +60,7 @@
     ECBrokenLineView *brokenLineView = [ECBrokenLineView lineViewWithFrame:frame
                                                        withBrokenLineConfig:nil
                                                              brokenLineType:BrokenLineTypeNormal];
+    brokenLineView.delegate = self;
     [self.view addSubview:brokenLineView];
     self.brokenLineView = brokenLineView;
 }

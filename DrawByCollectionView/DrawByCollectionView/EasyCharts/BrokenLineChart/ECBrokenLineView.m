@@ -22,7 +22,7 @@
 #import "ECBrokenLineConfig.h"
 
 @interface ECBrokenLineView ()<ECBrokenLineCollectionViewDataSource,
-                               ECBrokenLineCollectionViewDataSource>
+                               ECBrokenLineCollectionViewDelegate>
 
 @property (nonatomic, strong) ECBrokenLineCollectionView *lineCollectionView;
 @property (nonatomic, copy) NSArray <ECBrokenLinePointModel *>*pointModelList;
@@ -84,6 +84,7 @@
     [ECBrokenLineNormalCollectionView collectionViewWithFrame:self.frame
                                         withBrokenLineConfig:self.brokenLineConfig];
     lineCollectionView.drawLineDataSource = self;
+    lineCollectionView.drawLineDelegate = self;
     self.lineCollectionView = lineCollectionView;
     [self addSubview:lineCollectionView];
 }
@@ -92,6 +93,7 @@
     ECBrokenLineCenterCollectionView *lineCollectionView =
     [ECBrokenLineCenterCollectionView collectionViewWithFrame:self.frame withBrokenLineConfig:self.brokenLineConfig];
     lineCollectionView.drawLineDataSource = self;
+    lineCollectionView.drawLineDelegate = self;
     self.lineCollectionView = lineCollectionView;
     [self addSubview:lineCollectionView];
 }
@@ -102,6 +104,16 @@
     [self addSubview:backgroupView];
 }
 
+#pragma ECBrokenLineCollectionViewDelegate
+- (void)collectionViewPointYList:(ECBrokenLineCollectionView *)collectionView
+        didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"%ld",(long)indexPath.row);
+    if (_delegate && [_delegate respondsToSelector:@selector(brokenLineView:selectedAtIndexPath:)]) {
+        [_delegate brokenLineView:self selectedAtIndexPath:indexPath];
+    }
+}
+
+#pragma ECBrokenLineCollectionViewDataSource
 - (NSArray *)collectionViewPointYList:(ECBrokenLineCenterCollectionView *)collectionView {
     return self.pointModelList;
 }

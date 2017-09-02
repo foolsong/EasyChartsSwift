@@ -16,7 +16,7 @@
 #import "EasyCharts.h"
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
-@interface DrawLineViewController ()
+@interface DrawLineViewController ()<ECBrokenLineViewDelegate>
 
 @property (nonatomic, strong) ECBrokenLineView *brokenLineView;
 
@@ -40,6 +40,12 @@
     [self.view setBackgroundColor:[UIColor whiteColor]];
 }
 
+#pragma ECBrokenLineViewDelegate
+- (void)brokenLineView:(ECBrokenLineView *)brokenLineView
+   selectedAtIndexPath:(NSIndexPath *)indexPath {
+    NSLog(@"delegate");
+}
+
 #pragma mark - HandleViews
 - (void)p_configSubViews {
     [self setupDrawLineView];
@@ -51,22 +57,23 @@
     ECBrokenLineView *brokenLineView = [ECBrokenLineView lineViewWithFrame:frame
                                                       withBrokenLineConfig:nil
                                                             brokenLineType:BrokenLineTypeMiddlePoint];
+    brokenLineView.delegate = self;
     [self.view addSubview:brokenLineView];
     self.brokenLineView = brokenLineView;
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-//    [self test1];
+    [self test1];
 }
 
 - (void)test {
     [self.brokenLineView reloadLineViewDataWithPointValveList:@[@"12",@"90",@"-1",@"56",@"34"]
-                                              titleText:@[@"1月",@"2月",@"3月",@"4月",@"5月"]];
+                                              titleText:@[@"Jan",@"Feb",@"Mar",@"Apr",@"May"]];
 }
 
 - (void)test1 {
     [self.brokenLineView reloadLineViewDataWithPointValveList:@[@"34",@"12",@"100",@"16",@"1"]
-                                              titleText:@[@"1月",@"2月",@"3月",@"4月",@"5月"]];
+                                              titleText:@[@"Jan",@"Feb",@"Mar",@"Apr",@"May"]];
 }
 
 
