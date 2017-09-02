@@ -13,7 +13,7 @@
 //  ************************************************************************
 
 #import "DrawLineViewController.h"
-#import "ECBrokenLineView.h"
+#import "EasyCharts.h"
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 @interface DrawLineViewController ()

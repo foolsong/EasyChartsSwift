@@ -13,9 +13,10 @@
 //  ************************************************************************
 
 #import "ProgressViewViewController.h"
-#import "ECProgressChartView.h"
+#import "EasyCharts.h"
 
 #define STDScreenW [UIScreen mainScreen].bounds.size.width
+
 @interface ProgressViewViewController ()
 
 @property (nonatomic, strong) ECProgressChartView *progressView;

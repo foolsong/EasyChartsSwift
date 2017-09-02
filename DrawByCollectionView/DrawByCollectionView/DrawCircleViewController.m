@@ -13,10 +13,7 @@
 //  ************************************************************************
 
 #import "DrawCircleViewController.h"
-//#import "DrawPieChartView.h"
-//#import "DrawPieChartModel.h"
-//#import "DrawPieChartLineView.h"
-#import "ECPieChartView.h"
+#import "EasyCharts.h"
 
 #define STDScreenW [UIScreen mainScreen].bounds.size.width
 

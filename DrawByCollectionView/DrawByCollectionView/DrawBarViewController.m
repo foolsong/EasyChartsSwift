@@ -14,6 +14,7 @@
 
 #import "DrawBarViewController.h"
 #import "ECBarCollectionView.h"
+#import "EasyCharts.h"
 
 #define ScreenW [UIScreen mainScreen].bounds.size.width
 

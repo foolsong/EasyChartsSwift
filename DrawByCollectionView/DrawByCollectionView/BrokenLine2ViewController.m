@@ -13,8 +13,7 @@
 //  ************************************************************************
 
 #import "BrokenLine2ViewController.h"
-#import "ECBrokenLineView.h"
-#import "ECCommon.h"
+#import "EasyCharts.h"
 
 @interface BrokenLine2ViewController ()
 

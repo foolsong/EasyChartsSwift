@@ -7,4 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DrawLineView.h"
+
+#import "ECBrokenLineView.h"
+#import "ECBrokenLineView.h"
+#import "ECCommon.h"
+#import "ECProgressChartView.h"
+#import "ECPieChartView.h"
