@@ -11,7 +11,7 @@
 @class ECBrokenLineConfig;
 @interface ECBrokenLineNormalBackgroundView : UIView
 
-//+ (instancetype)lineBackgroundViewWithFrame:(CGRect)frame
-//                       withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig;
++ (instancetype)lineBackgroundViewWithFrame:(CGRect)frame
+                       withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig;
 
 @end

@@ -80,7 +80,6 @@
                                    NSParagraphStyleAttributeName: paragraphStyle
                                    }];
         
-        
         CGContextTranslateCTM(context, 0.0, - intervalSpacing);
     }
     

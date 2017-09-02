@@ -16,11 +16,17 @@
 
 @interface ECBrokenLineCollectionView ()
 
-
-
 @end
 
 @implementation ECBrokenLineCollectionView
 
+//+ (instancetype)lineBackgroundViewWithFrame:(CGRect)frame
+//                       withBrokenLineConfig:(ECBrokenLineConfig *)brokenLineConfig {
+//    return [[self alloc] init];
+//}
+
+- (void)reloadCollectionData {
+    NSLog(@"Do Nothing");
+}
 
 @end

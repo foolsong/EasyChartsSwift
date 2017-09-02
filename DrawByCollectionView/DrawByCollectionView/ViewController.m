@@ -108,7 +108,7 @@
 
 - (NSArray *)titleList {
     if (_titleList == nil) {
-        _titleList = @[@"折线图",@"折线图",@"圆饼图",@"进度条",@"柱状图"];
+        _titleList = @[@"LineChart-1",@"LineChart-2",@"PieChart",@"进度条",@"柱状图"];
     }
     return _titleList;
 }
