@@ -70,9 +70,6 @@
 }
 
 - (void)test {
-//    [self.brokenLineView reloadLineViewDataWithPointValveList:@[@"12",@"100",@"-1",@"56",@"34"]
-//                                              titleText:@[@"1月",@"2月",@"3月",@"4月",@"5月"]];
-    
     [self.brokenLineView reloadLineViewDataWithPointValveList:@[@"12",@"80",@"-1",@"56",@"80",@"-12",@"0",@"1",@"56",@"-14",@"12",@"80",@"1",@"56",@"34"]
                                               titleText:@[@"Jan",@"Feb",@"Mar",@"Apr",@"May",@"Jun",@"Jul",@"Aug",@"Sept",@"Oct",@"Nov",@"Dec",@"Jan",@"Feb",@"Mar"]];
 }

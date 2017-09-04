@@ -30,7 +30,7 @@
     [super viewDidLoad];
     [self setupTableView];
     
-    [self.view setBackgroundColor:[UIColor whiteColor]];
+    
 }
 
 - (void)setupTableView {
@@ -108,7 +108,7 @@
 
 - (NSArray *)titleList {
     if (_titleList == nil) {
-        _titleList = @[@"LineChart-1",@"LineChart-2",@"PieChart",@"进度条",@"柱状图"];
+        _titleList = @[@"LineChart-1",@"LineChart-2",@"PieChart",@"progressCircle"]; //,@"柱状图"
     }
     return _titleList;
 }

@@ -36,6 +36,7 @@
 		846555901EE67BD3008B902A /* ProgressViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8465558F1EE67BD3008B902A /* ProgressViewViewController.m */; };
 		8465559D1EE6C738008B902A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8465559C1EE6C738008B902A /* Images.xcassets */; };
 		847B57F71F51692E003555EF /* BrokenLine2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 847B57F61F51692D003555EF /* BrokenLine2ViewController.m */; };
+		847F9D491F5C008D0015FBC8 /* EasyChartsBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 847F9D481F5C008D0015FBC8 /* EasyChartsBundle.bundle */; };
 		8491B6701EEA7E5C00AF335F /* DrawBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491B66F1EEA7E5C00AF335F /* DrawBarViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -99,6 +100,7 @@
 		846555AA1EE8F0D1008B902A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		847B57F51F51692D003555EF /* BrokenLine2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrokenLine2ViewController.h; sourceTree = "<group>"; };
 		847B57F61F51692D003555EF /* BrokenLine2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrokenLine2ViewController.m; sourceTree = "<group>"; };
+		847F9D481F5C008D0015FBC8 /* EasyChartsBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = EasyChartsBundle.bundle; sourceTree = "<group>"; };
 		8491B66E1EEA7E5C00AF335F /* DrawBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DrawBarViewController.h; sourceTree = "<group>"; };
 		8491B66F1EEA7E5C00AF335F /* DrawBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DrawBarViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -224,6 +226,7 @@
 		846361BC1F569352000B65DC /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				847F9D481F5C008D0015FBC8 /* EasyChartsBundle.bundle */,
 				846361BD1F569352000B65DC /* ECCommon.h */,
 			);
 			path = Common;
@@ -324,6 +327,7 @@
 				8465559D1EE6C738008B902A /* Images.xcassets in Resources */,
 				842CBDCB1EAE0F5F0090D92F /* Assets.xcassets in Resources */,
 				842CBDC91EAE0F5F0090D92F /* Main.storyboard in Resources */,
+				847F9D491F5C008D0015FBC8 /* EasyChartsBundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,10 @@ typedef NS_ENUM(NSUInteger, BrokenLineType) {
 
 #define ECScreenW [UIScreen mainScreen].bounds.size.width
 
+#define MYBUNDLE_NAME   @"EasyChartsBundle.bundle"
+#define MYBUNDLE_PATH   [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:MYBUNDLE_NAME]
+#define MYBUNDLE        [NSBundle bundleWithPath:MYBUNDLE_PATH]
+
 //#define RGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 //
 //
