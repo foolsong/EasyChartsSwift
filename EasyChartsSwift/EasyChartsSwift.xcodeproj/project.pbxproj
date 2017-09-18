@@ -12,6 +12,9 @@
 		844DB0BF1F6EDB29000E3309 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844DB0BD1F6EDB29000E3309 /* Main.storyboard */; };
 		844DB0C11F6EDB29000E3309 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844DB0C01F6EDB29000E3309 /* Assets.xcassets */; };
 		844DB0C41F6EDB29000E3309 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844DB0C21F6EDB29000E3309 /* LaunchScreen.storyboard */; };
+		844DB0CD1F6F8D14000E3309 /* RadarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844DB0CC1F6F8D14000E3309 /* RadarChartViewController.swift */; };
+		844DB0D11F6F97B5000E3309 /* RadarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844DB0D01F6F97B5000E3309 /* RadarChartView.swift */; };
+		84F830891F6FB5E100FD1891 /* RadarChartConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F830881F6FB5E100FD1891 /* RadarChartConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		844DB0C01F6EDB29000E3309 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		844DB0C31F6EDB29000E3309 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		844DB0C51F6EDB29000E3309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		844DB0CC1F6F8D14000E3309 /* RadarChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarChartViewController.swift; sourceTree = "<group>"; };
+		844DB0D01F6F97B5000E3309 /* RadarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarChartView.swift; sourceTree = "<group>"; };
+		84F830881F6FB5E100FD1891 /* RadarChartConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarChartConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +44,8 @@
 		844DB0AD1F6EDB29000E3309 = {
 			isa = PBXGroup;
 			children = (
+				844DB0CE1F6F9753000E3309 /* EasyCharts */,
+				844DB0CB1F6F8CD7000E3309 /* ExamplesController */,
 				844DB0B81F6EDB29000E3309 /* EasyChartsSwift */,
 				844DB0B71F6EDB29000E3309 /* Products */,
 			);
@@ -62,6 +70,32 @@
 				844DB0C51F6EDB29000E3309 /* Info.plist */,
 			);
 			path = EasyChartsSwift;
+			sourceTree = "<group>";
+		};
+		844DB0CB1F6F8CD7000E3309 /* ExamplesController */ = {
+			isa = PBXGroup;
+			children = (
+				844DB0CC1F6F8D14000E3309 /* RadarChartViewController.swift */,
+			);
+			name = ExamplesController;
+			path = EasyChartsSwift/ExamplesController;
+			sourceTree = "<group>";
+		};
+		844DB0CE1F6F9753000E3309 /* EasyCharts */ = {
+			isa = PBXGroup;
+			children = (
+				844DB0CF1F6F9753000E3309 /* RadarChart */,
+			);
+			path = EasyCharts;
+			sourceTree = "<group>";
+		};
+		844DB0CF1F6F9753000E3309 /* RadarChart */ = {
+			isa = PBXGroup;
+			children = (
+				844DB0D01F6F97B5000E3309 /* RadarChartView.swift */,
+				84F830881F6FB5E100FD1891 /* RadarChartConfig.swift */,
+			);
+			path = RadarChart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +172,9 @@
 			files = (
 				844DB0BC1F6EDB29000E3309 /* ViewController.swift in Sources */,
 				844DB0BA1F6EDB29000E3309 /* AppDelegate.swift in Sources */,
+				844DB0D11F6F97B5000E3309 /* RadarChartView.swift in Sources */,
+				84F830891F6FB5E100FD1891 /* RadarChartConfig.swift in Sources */,
+				844DB0CD1F6F8D14000E3309 /* RadarChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +336,7 @@
 				844DB0CA1F6EDB29000E3309 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
