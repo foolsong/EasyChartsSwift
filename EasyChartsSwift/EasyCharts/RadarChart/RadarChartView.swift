@@ -28,14 +28,15 @@ class RadarChartView: UIView {
     }
     
     func setupSubView() {
-        
-//        let backgroupLineCount : NSInteger = self.radarChartConfig.drawPointList.count
         for i in 0..<radarChartConfig.backgroupLineNum {
             backgroupLineWithRadius(radius: radarChartConfig.radius -
                 (CGFloat(i) * (radarChartConfig.radius / CGFloat(radarChartConfig.backgroupLineNum))))
         }
     }
     
+    deinit {
+        ECLog("deinit")
+    }
     
 }
 
@@ -83,7 +84,6 @@ extension RadarChartView {
             lineShape.strokeColor = radarChartConfig.backgroupLineColor.cgColor
             lineShape.lineWidth = 0.8
             self.layer.addSublayer(lineShape);
-            
         }
     }
     
@@ -155,7 +155,6 @@ extension RadarChartView {
         lineShape.lineWidth = lineWidth;
         lineShape.lineCap = kCALineCapButt;
         lineShape.strokeColor = lineColor.cgColor;
-//        self.layer.addSublayer(lineShape);
         
         return lineShape
      }
@@ -163,7 +162,7 @@ extension RadarChartView {
 
 extension RadarChartView {
     func calcCircleCoordinate(center: CGPoint, angle: CGFloat, radius: CGFloat) -> CGPoint {
-        print(center , angle , radius)
+        ECLog("\(center)")
         let angleTemp : CGFloat = angle + 90.0
         let x : CGFloat = radius * CGFloat(cosf(Float(angleTemp) * Float.pi / 180.0))
         let y : CGFloat = radius * CGFloat(sinf(Float(angleTemp) * Float.pi / 180.0))
@@ -174,11 +173,9 @@ extension RadarChartView {
         self.radarChartConfig = radarChartConfig
         setupSubView()
         backgroupStraightLine()
-        
         for i in 0...self.radarChartConfig.drawLineColorList.count - 1 {
             radarLineWithRoleIndex(index: i)
         }
-        
         setupLabels()
     }
     
