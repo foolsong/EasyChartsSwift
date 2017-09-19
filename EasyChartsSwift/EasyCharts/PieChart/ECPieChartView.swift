@@ -12,6 +12,8 @@ class ECPieChartView: UIView {
     
     var arcCenter : CGPoint?
     var pieChartView : ECPieChartCoreView?
+    var pieChartLineView : ECPieChartLineView?
+    
     
     lazy var percentList : [CGFloat] = []
     lazy var colorList : [UIColor] = []
@@ -35,13 +37,19 @@ extension ECPieChartView {
     
     func setupSubviews() {
         setupDrawCircleView()
+        setupPieChartLineView()
     }
     
     func setupDrawCircleView() {
         pieChartView = ECPieChartCoreView.init(frame: self.bounds)
         pieChartView?.arcCenter = self.arcCenter
-        
         self.addSubview(pieChartView!)
+    }
+    
+    func setupPieChartLineView() {
+        pieChartLineView = ECPieChartLineView.init(frame: self.bounds)
+        pieChartLineView?.arcCenter = self.arcCenter!
+        self.addSubview(pieChartLineView!)
     }
 }
 
@@ -54,12 +62,15 @@ extension ECPieChartView {
         
         extractPieChartModelList()
         
+        checkExceptionData()
+        
         self.pieChartView?.resetCircleList(pieChartModelList: self.pieChartModelList)
+        
+        self.pieChartLineView?.resetLine(pieConfigList: self.pieChartModelList)
     }
     
-    
-    
     func extractPieChartModelList() {
+        self.pieChartModelList.removeAll()
         var startAngle : CGFloat = 0
         for i in 0..<self.percentList.count {
             let pieChartConfig : ECPieChartConfig = ECPieChartConfig.init(startAngle: startAngle,
@@ -71,5 +82,17 @@ extension ECPieChartView {
             self.pieChartModelList.insert(pieChartConfig, at: 0)
         }
         
+    }
+    
+    func checkExceptionData() {
+        var lastConfig : ECPieChartConfig = self.pieChartModelList.last!
+        
+        for config in self.pieChartModelList {
+            if config.arcCenterQuadrant == lastConfig.arcCenterQuadrant &&
+                fabs(config.textLeftCenterPoint.y - lastConfig.textLeftCenterPoint.y) < 15 {
+                config.resetLinePosition(pointY: lastConfig.textLeftCenterPoint.y)
+            }
+            lastConfig = config
+        }
     }
 }

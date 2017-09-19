@@ -12,11 +12,11 @@ class ECPieChartCoreView: UIView {
     
     var arcCenter : CGPoint?
     
+    var layerMutableList : [CAShapeLayer] = NSMutableArray() as! [CAShapeLayer]
     var pieChartModelList : [ECPieChartConfig] = NSArray() as! [ECPieChartConfig]
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        drawBackGroupCircle(config: <#ECPieChartConfig#>)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -27,6 +27,8 @@ class ECPieChartCoreView: UIView {
 extension ECPieChartCoreView {
     
     func resetCircleList(pieChartModelList: [ECPieChartConfig]) {
+        clearLayers()
+        
         self.pieChartModelList = pieChartModelList
         for config in self.pieChartModelList {
             drawBackGroupCircle(config: config)
@@ -69,6 +71,14 @@ extension ECPieChartCoreView {
         shapeLayer.lineCap = kCALineCapButt
         shapeLayer.strokeColor = color.cgColor
         self.layer.addSublayer(shapeLayer)
-        //        return shapeLayer
+        
+        self.layerMutableList.insert(shapeLayer, at: 0)
+    }
+    
+    func clearLayers() {
+        for layer in self.layerMutableList {
+            layer.removeFromSuperlayer()
+        }
+        self.layerMutableList.removeAll()
     }
 }

@@ -20,6 +20,7 @@
 		84F830931F70BFA400FD1891 /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F830921F70BFA400FD1891 /* PieChartViewController.swift */; };
 		84F830951F70C1BD00FD1891 /* ECPieChartConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F830941F70C1BD00FD1891 /* ECPieChartConfig.swift */; };
 		84F830971F70C9F400FD1891 /* ECPieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F830961F70C9F400FD1891 /* ECPieChartView.swift */; };
+		84F830991F70F3CD00FD1891 /* ECPieChartLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F830981F70F3CD00FD1891 /* ECPieChartLineView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		84F830921F70BFA400FD1891 /* PieChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
 		84F830941F70C1BD00FD1891 /* ECPieChartConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ECPieChartConfig.swift; sourceTree = "<group>"; };
 		84F830961F70C9F400FD1891 /* ECPieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ECPieChartView.swift; sourceTree = "<group>"; };
+		84F830981F70F3CD00FD1891 /* ECPieChartLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ECPieChartLineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				84F830901F70BA2100FD1891 /* ECPieChartCoreView.swift */,
 				84F830941F70C1BD00FD1891 /* ECPieChartConfig.swift */,
 				84F830961F70C9F400FD1891 /* ECPieChartView.swift */,
+				84F830981F70F3CD00FD1891 /* ECPieChartLineView.swift */,
 			);
 			path = PieChart;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			files = (
 				84F8308B1F70AE8E00FD1891 /* ECCommon.swift in Sources */,
 				844DB0BC1F6EDB29000E3309 /* ViewController.swift in Sources */,
+				84F830991F70F3CD00FD1891 /* ECPieChartLineView.swift in Sources */,
 				84F830971F70C9F400FD1891 /* ECPieChartView.swift in Sources */,
 				844DB0BA1F6EDB29000E3309 /* AppDelegate.swift in Sources */,
 				84F830911F70BA2100FD1891 /* ECPieChartCoreView.swift in Sources */,
