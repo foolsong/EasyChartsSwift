@@ -98,13 +98,13 @@ extension ECPieChartConfig {
     func resetLinePosition(pointY: CGFloat) {
         var currentPointY : CGFloat = 0
         if (self.arcCenterQuadrant == .ArcCenterQuadrantFirst) {
-            currentPointY = pointY + 15
+            currentPointY = pointY - 15
         } else if (self.arcCenterQuadrant == .ArcCenterQuadrantSecond) {
-            currentPointY = pointY - 15
-        } else if (self.arcCenterQuadrant == .ArcCenterQuadrantThird) {
-            currentPointY = pointY - 15
-        } else if (self.arcCenterQuadrant == .ArcCenterQuadrantFourth) {
             currentPointY = pointY + 15
+        } else if (self.arcCenterQuadrant == .ArcCenterQuadrantThird) {
+            currentPointY = pointY + 15
+        } else if (self.arcCenterQuadrant == .ArcCenterQuadrantFourth) {
+            currentPointY = pointY - 15
         }
         
         self.textLeftCenterPoint = CGPoint(x: self.textLeftCenterPoint.x, y: currentPointY)
