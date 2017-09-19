@@ -16,6 +16,10 @@
 		844DB0D11F6F97B5000E3309 /* RadarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844DB0D01F6F97B5000E3309 /* RadarChartView.swift */; };
 		84F830891F6FB5E100FD1891 /* RadarChartConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F830881F6FB5E100FD1891 /* RadarChartConfig.swift */; };
 		84F8308B1F70AE8E00FD1891 /* ECCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F8308A1F70AE8E00FD1891 /* ECCommon.swift */; };
+		84F830911F70BA2100FD1891 /* ECPieChartCoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F830901F70BA2100FD1891 /* ECPieChartCoreView.swift */; };
+		84F830931F70BFA400FD1891 /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F830921F70BFA400FD1891 /* PieChartViewController.swift */; };
+		84F830951F70C1BD00FD1891 /* ECPieChartConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F830941F70C1BD00FD1891 /* ECPieChartConfig.swift */; };
+		84F830971F70C9F400FD1891 /* ECPieChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F830961F70C9F400FD1891 /* ECPieChartView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		844DB0D01F6F97B5000E3309 /* RadarChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarChartView.swift; sourceTree = "<group>"; };
 		84F830881F6FB5E100FD1891 /* RadarChartConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarChartConfig.swift; sourceTree = "<group>"; };
 		84F8308A1F70AE8E00FD1891 /* ECCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ECCommon.swift; sourceTree = "<group>"; };
+		84F830901F70BA2100FD1891 /* ECPieChartCoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ECPieChartCoreView.swift; sourceTree = "<group>"; };
+		84F830921F70BFA400FD1891 /* PieChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
+		84F830941F70C1BD00FD1891 /* ECPieChartConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ECPieChartConfig.swift; sourceTree = "<group>"; };
+		84F830961F70C9F400FD1891 /* ECPieChartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ECPieChartView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				844DB0CC1F6F8D14000E3309 /* RadarChartViewController.swift */,
+				84F830921F70BFA400FD1891 /* PieChartViewController.swift */,
 			);
 			name = ExamplesController;
 			path = EasyChartsSwift/ExamplesController;
@@ -86,6 +95,7 @@
 		844DB0CE1F6F9753000E3309 /* EasyCharts */ = {
 			isa = PBXGroup;
 			children = (
+				84F8308F1F70B85800FD1891 /* PieChart */,
 				844DB0CF1F6F9753000E3309 /* RadarChart */,
 				84F8308A1F70AE8E00FD1891 /* ECCommon.swift */,
 			);
@@ -99,6 +109,16 @@
 				84F830881F6FB5E100FD1891 /* RadarChartConfig.swift */,
 			);
 			path = RadarChart;
+			sourceTree = "<group>";
+		};
+		84F8308F1F70B85800FD1891 /* PieChart */ = {
+			isa = PBXGroup;
+			children = (
+				84F830901F70BA2100FD1891 /* ECPieChartCoreView.swift */,
+				84F830941F70C1BD00FD1891 /* ECPieChartConfig.swift */,
+				84F830961F70C9F400FD1891 /* ECPieChartView.swift */,
+			);
+			path = PieChart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,9 +196,13 @@
 			files = (
 				84F8308B1F70AE8E00FD1891 /* ECCommon.swift in Sources */,
 				844DB0BC1F6EDB29000E3309 /* ViewController.swift in Sources */,
+				84F830971F70C9F400FD1891 /* ECPieChartView.swift in Sources */,
 				844DB0BA1F6EDB29000E3309 /* AppDelegate.swift in Sources */,
+				84F830911F70BA2100FD1891 /* ECPieChartCoreView.swift in Sources */,
 				844DB0D11F6F97B5000E3309 /* RadarChartView.swift in Sources */,
+				84F830951F70C1BD00FD1891 /* ECPieChartConfig.swift in Sources */,
 				84F830891F6FB5E100FD1891 /* RadarChartConfig.swift in Sources */,
+				84F830931F70BFA400FD1891 /* PieChartViewController.swift in Sources */,
 				844DB0CD1F6F8D14000E3309 /* RadarChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

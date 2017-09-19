@@ -53,12 +53,14 @@ extension ViewController :UITableViewDelegate,UITableViewDataSource {
             cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: identifier)
         }
         cell?.textLabel?.text = dataList[indexPath.row] as String
-//        cell?.detailTextLabel?.text = "\(indexPath.row)"
         return cell!
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 5 {
+        
+        if indexPath.row == 4 {
+            jump2PieChartViewController()
+        } else if indexPath.row == 5 {
             jump2RadarChartViewController()
         }
     }
@@ -68,5 +70,9 @@ extension ViewController {
     func jump2RadarChartViewController() {
         self.navigationController?.pushViewController(RadarChartViewController(), animated:true)
 //        self.navigationController?.pushViewController(, animated:ture as Bool)
+    }
+    
+    func jump2PieChartViewController() {
+        self.navigationController?.pushViewController(PieChartViewController(), animated:true)
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 
 func ECLog<T>(_ message : T, file : String = #file, funcName : String = #function, lineNum : Int = #line) {
@@ -19,3 +20,7 @@ func ECLog<T>(_ message : T, file : String = #file, funcName : String = #functio
         
     #endif
 }
+
+let  ECScreenW =  UIScreen.main.bounds.size.width
+
+let  ECScreenH =  UIScreen.main.bounds.size.height
