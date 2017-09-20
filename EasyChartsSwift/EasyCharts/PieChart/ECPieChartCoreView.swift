@@ -11,7 +11,6 @@ import UIKit
 class ECPieChartCoreView: UIView {
     
     var arcCenter : CGPoint?
-    
     var layerMutableList : [CAShapeLayer] = NSMutableArray() as! [CAShapeLayer]
     var pieChartModelList : [ECPieChartConfig] = NSArray() as! [ECPieChartConfig]
     
@@ -28,7 +27,6 @@ extension ECPieChartCoreView {
     
     func resetCircleList(pieChartModelList: [ECPieChartConfig]) {
         clearLayers()
-        
         self.pieChartModelList = pieChartModelList
         for config in self.pieChartModelList {
             drawBackGroupCircle(config: config)

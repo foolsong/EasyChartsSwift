@@ -29,7 +29,6 @@ class ViewController: UIViewController{
 
 extension ViewController{
     func setupTableView() {
-        
         tableview = UITableView(frame: CGRect(x: 0, y: 64, width: self.view.bounds.size.width,
                                               height: self.view.bounds.size.height - 64))
         tableview.frame = self.view.bounds
@@ -58,7 +57,6 @@ extension ViewController :UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         if indexPath.row == 4 {
             jump2PieChartViewController()
         } else if indexPath.row == 5 {
@@ -70,7 +68,6 @@ extension ViewController :UITableViewDelegate,UITableViewDataSource {
 extension ViewController {
     func jump2RadarChartViewController() {
         self.navigationController?.pushViewController(RadarChartViewController(), animated:true)
-//        self.navigationController?.pushViewController(, animated:ture as Bool)
     }
     
     func jump2PieChartViewController() {

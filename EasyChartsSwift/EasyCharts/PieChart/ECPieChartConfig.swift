@@ -20,7 +20,6 @@ class ECPieChartConfig: NSObject {
     var startAngle : CGFloat = 0
     var endAngle : CGFloat = 0
     var arcPercent : CGFloat = 0
-    
     var arcCenter : CGPoint = CGPoint()
     
     var arcCenterPoint : CGPoint = CGPoint()

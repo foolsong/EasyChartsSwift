@@ -45,7 +45,6 @@ extension RadarChartViewController {
     
     func setupRadarChartView2() {
         radarChartView = RadarChartView.init(frame:CGRect(x: 40, y: 400, width: 280, height: 200))
-        
         self.view.addSubview(radarChartView)
         
         let radarChartConfig = RadarChartConfig()

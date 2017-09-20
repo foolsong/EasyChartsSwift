@@ -14,7 +14,6 @@ class ECPieChartView: UIView {
     var pieChartView : ECPieChartCoreView?
     var pieChartLineView : ECPieChartLineView?
     
-    
     lazy var percentList : [CGFloat] = []
     lazy var colorList : [UIColor] = []
     lazy var arcTextList : [NSString] = []

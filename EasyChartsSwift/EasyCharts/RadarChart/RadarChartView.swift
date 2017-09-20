@@ -11,7 +11,6 @@ import UIKit
 class RadarChartView: UIView {
     
     var radarChartConfig : RadarChartConfig = RadarChartConfig()
-    
     var angleNum : NSInteger {
         get{
             return radarChartConfig.drawLineTitleList.count
@@ -69,7 +68,6 @@ extension RadarChartView {
     func backgroupStraightLine() {
         for i in 0..<self.angleNum {
             let linePath = UIBezierPath()
-            
             let point : CGPoint = calcCircleCoordinate(center: CGPoint(x: self.frame.size.width * 0.5,
                                                                        y: self.frame.size.height * 0.5),
                                                        angle: CGFloat((360.0 / Float(angleNum)) * (Float(i) + 1.0)),
@@ -78,7 +76,6 @@ extension RadarChartView {
             linePath.move(to: CGPoint(x: self.frame.size.width * 0.5, y: self.frame.size.height * 0.5))
             linePath.addLine(to: point)
             linePath.close();
-            
             let lineShape = CAShapeLayer()
             lineShape.path = linePath.cgPath
             lineShape.strokeColor = radarChartConfig.backgroupLineColor.cgColor
@@ -112,7 +109,6 @@ extension RadarChartView {
     func radarLineWithRoleIndex(index: NSInteger) {
         let valueList : [NSNumber] = self.radarChartConfig.drawPointList[index] as! [NSNumber]
         let lineColor : UIColor = self.radarChartConfig.drawLineColorList[index]
-        
         let linePath = UIBezierPath()
         for i in 0..<angleNum {
             let radius : CGFloat = CGFloat(valueList[i]) * self.radarChartConfig.radius
@@ -125,7 +121,6 @@ extension RadarChartView {
             } else {
                 linePath.addLine(to: point)
             }
-            
             let lineShape : CAShapeLayer = drawCircle(radius: 3, lineWidth: 1.5, lineColor: lineColor)
             lineShape.position = point
             self.layer.addSublayer(lineShape)
@@ -148,8 +143,9 @@ extension RadarChartView {
         let startAngle : CGFloat = -(CGFloat.pi / 2)
         let endAngle : CGFloat = -(CGFloat.pi / 2) + CGFloat.pi * 2
         
-        let linePath : UIBezierPath = UIBezierPath(arcCenter: CGPoint(x: 0, y: 0), radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
-        
+        let linePath : UIBezierPath = UIBezierPath(arcCenter: CGPoint(x: 0, y: 0),
+                                                   radius: radius, startAngle: startAngle,
+                                                   endAngle: endAngle, clockwise: true)
         lineShape.path = linePath.cgPath
         lineShape.fillColor = lineColor.cgColor;
         lineShape.lineWidth = lineWidth;
@@ -180,7 +176,9 @@ extension RadarChartView {
     }
     
     func textSize(text: String , font: UIFont , maxSize: CGSize) -> CGSize{
-        return text.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin], attributes: [NSFontAttributeName : font], context: nil).size
+        return text.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin],
+                                 attributes: [NSFontAttributeName : font],
+                                 context: nil).size
     }
 
 }
