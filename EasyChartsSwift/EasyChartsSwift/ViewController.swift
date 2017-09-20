@@ -18,6 +18,7 @@ class ViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        self.title = "ECS"
     }
 
     override func didReceiveMemoryWarning() {
