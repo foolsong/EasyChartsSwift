@@ -32,15 +32,13 @@ class RadarChartViewController: UIViewController {
 extension RadarChartViewController {
     func setupRadarChartView() {
         radarChartView = RadarChartView.init(frame:CGRect(x: 40, y: 120, width: 280, height: 200))
-        
         self.view.addSubview(radarChartView)
         
         let radarChartConfig = RadarChartConfig()
         radarChartConfig.radius = 110
-        radarChartConfig.drawLineTitleList = ["技术","执行力","思维","耐力","速度","力量"]
+        radarChartConfig.drawLineTitleList = ["Execution","Thinking","Endurance","Speed","Power","Technology"]
         radarChartConfig.drawPointList = [[(0.3),(0.6),(0.8),(0.2),(0.5),(0.3)],[(0.6),(0.1),(0.4),(0.8),(0.2),(0.9)]]
         radarChartConfig.drawLineColorList = [UIColor.orange, UIColor.red]
-        
         radarChartView.setupRadarChartConfig(radarChartConfig: radarChartConfig)
     }
     
@@ -52,10 +50,9 @@ extension RadarChartViewController {
         
         let radarChartConfig = RadarChartConfig()
         radarChartConfig.radius = 110
-        radarChartConfig.drawLineTitleList = ["技术","执行力","思维","耐力","速度"]
+        radarChartConfig.drawLineTitleList = ["Execution","Thinking","Endurance","Speed","Power"]
         radarChartConfig.drawPointList = [[(0.3),(0.6),(0.8),(0.2),(0.5)]]
         radarChartConfig.drawLineColorList = [UIColor.orange]
-        
         radarChartView.setupRadarChartConfig(radarChartConfig: radarChartConfig)
     }
 }

@@ -57,6 +57,8 @@ pieChartView.drawPieChart(percentList: self.percentList,
                                   arcTextList: self.arcTextList)
 ```
 
+
+
 **The effect of PieChart:**
 
 <img src="https://github.com/foolsong/EasyCharts/blob/master/gif/EC_%20PieChart_gif.gif"  width=300 alt="EC_lineCenterView" />
@@ -71,6 +73,39 @@ pieChartView.drawPieChart(percentList: self.percentList,
 
 -->
 
+### RadarChartView
+
+Initialization--Just transfer `frame`.
+
+```swift
+	var radarChartView : RadarChartView!
+	radarChartView = RadarChartView.init(frame:CGRect(x: 40, y: 120, width: 280, height: 200))
+	        self.view.addSubview(radarChartView)
+```
+
+Data filling:
+
+```swift
+	let radarChartConfig = RadarChartConfig()
+	        radarChartConfig.radius = 110
+	        radarChartConfig.drawLineTitleList = ["Execution","Thinking","Endurance","Speed","Power","Technology"]
+	        radarChartConfig.drawPointList = [[(0.3),(0.6),(0.8),(0.2),(0.5),(0.3)],[(0.6),(0.1),(0.4),(0.8),(0.2),(0.9)]]
+	        radarChartConfig.drawLineColorList = [UIColor.orange, UIColor.red]
+	        radarChartView.setupRadarChartConfig(radarChartConfig: radarChartConfig)
+```
+
+```swift
+	let radarChartConfig = RadarChartConfig()
+	        radarChartConfig.radius = 110
+	        radarChartConfig.drawLineTitleList = ["Execution","Thinking","Endurance","Speed","Power"]
+	        radarChartConfig.drawPointList = [[(0.3),(0.6),(0.8),(0.2),(0.5)]]
+	        radarChartConfig.drawLineColorList = [UIColor.orange]
+	        radarChartView.setupRadarChartConfig(radarChartConfig: radarChartConfig)
+```
+
+**The effect of PieChart:**
+
+<img src="https://github.com/foolsong/EasyCharts/blob/master/gif/EC_RadarChart.gif"  width=300 alt="EC_lineCenterView" />
 
 ## Communication
 
