@@ -31,7 +31,7 @@ At present
 
 ## Usage
 
-### Import header file
+<!--### Import header file-->
 
 
 The following describes the basic use of several graphs.
@@ -41,17 +41,20 @@ The following describes the basic use of several graphs.
 
 Initialization--Just transfer `frame`.
 
-```Objective-c
- ECPieChartView *pieView = [ECPieChartView pieChartViewWithFrame:CGRectMake(0, 100, ECScreenW, 200)];
-    [self.view addSubview:pieView];
+```Swift
+ var pieChartView : ECPieChartView!
+ pieChartView = ECPieChartView.init(frame: CGRect(x: 0, y: 100,
+                                                              width: ECScreenW, height: 260))
+        
+         self.view.addSubview(pieChartView)
 ```
 
 Data filling:Three parameters:percentList、colorList、arcTextList]
 
-```Objective-c
-[pieView drawPieChartWithPercentList:self.percentList
-                               colorList:self.colorList
-                             arcTextList:self.arcTextList];
+```Swift
+pieChartView.drawPieChart(percentList: self.percentList,
+                                  colorList: self.colorList,
+                                  arcTextList: self.arcTextList)
 ```
 
 **The effect of PieChart:**
