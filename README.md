@@ -43,10 +43,8 @@ Initialization--Just transfer `frame`.
 
 ```Swift
  var pieChartView : ECPieChartView!
- pieChartView = ECPieChartView.init(frame: CGRect(x: 0, y: 100,
-                                                              width: ECScreenW, height: 260))
-        
-         self.view.addSubview(pieChartView)
+ pieChartView = ECPieChartView.init(frame: CGRect(x: 0, y: 100, width: ECScreenW, height: 260))
+  self.view.addSubview(pieChartView)
 ```
 
 Data filling:Three parameters:percentList、colorList、arcTextList]
@@ -80,27 +78,27 @@ Initialization--Just transfer `frame`.
 ```swift
 	var radarChartView : RadarChartView!
 	radarChartView = RadarChartView.init(frame:CGRect(x: 40, y: 120, width: 280, height: 200))
-	        self.view.addSubview(radarChartView)
+	self.view.addSubview(radarChartView)
 ```
 
 Data filling:
 
 ```swift
 	let radarChartConfig = RadarChartConfig()
-	        radarChartConfig.radius = 110
-	        radarChartConfig.drawLineTitleList = ["Execution","Thinking","Endurance","Speed","Power","Technology"]
-	        radarChartConfig.drawPointList = [[(0.3),(0.6),(0.8),(0.2),(0.5),(0.3)],[(0.6),(0.1),(0.4),(0.8),(0.2),(0.9)]]
-	        radarChartConfig.drawLineColorList = [UIColor.orange, UIColor.red]
-	        radarChartView.setupRadarChartConfig(radarChartConfig: radarChartConfig)
+	radarChartConfig.radius = 110
+	radarChartConfig.drawLineTitleList = ["Execution","Thinking","Endurance","Speed","Power","Technology"]
+	radarChartConfig.drawPointList = [[(0.3),(0.6),(0.8),(0.2),(0.5),(0.3)],[(0.6),(0.1),(0.4),(0.8),(0.2),(0.9)]]
+	radarChartConfig.drawLineColorList = [UIColor.orange, UIColor.red]
+	radarChartView.setupRadarChartConfig(radarChartConfig: radarChartConfig)
 ```
 
 ```swift
 	let radarChartConfig = RadarChartConfig()
-	        radarChartConfig.radius = 110
-	        radarChartConfig.drawLineTitleList = ["Execution","Thinking","Endurance","Speed","Power"]
-	        radarChartConfig.drawPointList = [[(0.3),(0.6),(0.8),(0.2),(0.5)]]
-	        radarChartConfig.drawLineColorList = [UIColor.orange]
-	        radarChartView.setupRadarChartConfig(radarChartConfig: radarChartConfig)
+	radarChartConfig.radius = 110
+	radarChartConfig.drawLineTitleList = ["Execution","Thinking","Endurance","Speed","Power"]
+	radarChartConfig.drawPointList = [[(0.3),(0.6),(0.8),(0.2),(0.5)]]
+	radarChartConfig.drawLineColorList = [UIColor.orange]
+	radarChartView.setupRadarChartConfig(radarChartConfig: radarChartConfig)
 ```
 
 **The effect of PieChart:**
