@@ -111,7 +111,7 @@ extension RadarChartView {
         let lineColor : UIColor = self.radarChartConfig.drawLineColorList[index]
         let linePath = UIBezierPath()
         for i in 0..<angleNum {
-            let radius : CGFloat = CGFloat(valueList[i]) * self.radarChartConfig.radius
+            let radius : CGFloat = CGFloat(truncating: valueList[i]) * self.radarChartConfig.radius
             let point : CGPoint = calcCircleCoordinate(center: CGPoint(x: self.frame.size.width * 0.5,
                                                                        y: self.frame.size.height * 0.5),
                                                        angle: CGFloat((360.0 / Float(angleNum)) * (Float(i) + 1.0)),
