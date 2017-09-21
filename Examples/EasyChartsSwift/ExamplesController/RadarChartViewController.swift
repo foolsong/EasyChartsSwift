@@ -12,7 +12,6 @@ class RadarChartViewController: UIViewController {
 
     var radarChartView : ECRadarChartView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         configOwnProperties()
