@@ -62,7 +62,7 @@ extension PieChartViewController{
         self.view.addSubview(button)
     }
     
-    func testButtonClick(button:UIButton) {
+    @objc func testButtonClick(button:UIButton) {
         randomNumList()
         randomColorList()
         randomText()

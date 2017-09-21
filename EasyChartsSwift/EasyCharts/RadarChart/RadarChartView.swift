@@ -177,7 +177,7 @@ extension RadarChartView {
     
     func textSize(text: String , font: UIFont , maxSize: CGSize) -> CGSize{
         return text.boundingRect(with: maxSize, options: [.usesLineFragmentOrigin],
-                                 attributes: [NSFontAttributeName : font],
+                                 attributes: [NSAttributedStringKey.font : font],
                                  context: nil).size
     }
 
