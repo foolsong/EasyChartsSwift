@@ -13,7 +13,7 @@ class ViewController: UIViewController{
     var tableview : UITableView!
     
     fileprivate lazy var dataList : [NSString] = ["LineChart-1","LineChart-2","ProgressCircle",
-                                                   "LineChart & ProgressCircle","PieChart","BarChart"]
+                                                   "LineChart & ProgressCircle","PieChart","RadarChartView"]
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "844DB0B51F6EDB29000E3309"
-               BuildableName = "EasyChartsSwift.app"
-               BlueprintName = "EasyChartsSwift"
-               ReferencedContainer = "container:EasyChartsSwift.xcodeproj">
+               BuildableName = "Examples.app"
+               BlueprintName = "Examples"
+               ReferencedContainer = "container:Examples.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,9 +34,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "844DB0B51F6EDB29000E3309"
-            BuildableName = "EasyChartsSwift.app"
-            BlueprintName = "EasyChartsSwift"
-            ReferencedContainer = "container:EasyChartsSwift.xcodeproj">
+            BuildableName = "Examples.app"
+            BlueprintName = "Examples"
+            ReferencedContainer = "container:Examples.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -58,9 +58,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "844DB0B51F6EDB29000E3309"
-            BuildableName = "EasyChartsSwift.app"
-            BlueprintName = "EasyChartsSwift"
-            ReferencedContainer = "container:EasyChartsSwift.xcodeproj">
+            BuildableName = "Examples.app"
+            BlueprintName = "Examples"
+            ReferencedContainer = "container:Examples.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -77,9 +77,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "844DB0B51F6EDB29000E3309"
-            BuildableName = "EasyChartsSwift.app"
-            BlueprintName = "EasyChartsSwift"
-            ReferencedContainer = "container:EasyChartsSwift.xcodeproj">
+            BuildableName = "Examples.app"
+            BlueprintName = "Examples"
+            ReferencedContainer = "container:Examples.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

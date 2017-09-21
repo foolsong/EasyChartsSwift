@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RadarChartConfig: NSObject {
+class ECRadarChartConfig: NSObject {
     var backgroupLineNum : NSInteger  = 4
     var radius : CGFloat = 80
     

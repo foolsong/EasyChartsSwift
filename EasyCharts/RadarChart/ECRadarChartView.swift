@@ -8,9 +8,9 @@
 
 import UIKit
 
-class RadarChartView: UIView {
+class ECRadarChartView: UIView {
     
-    var radarChartConfig : RadarChartConfig = RadarChartConfig()
+    var radarChartConfig : ECRadarChartConfig = ECRadarChartConfig()
     var angleNum : NSInteger {
         get{
             return radarChartConfig.drawLineTitleList.count
@@ -39,7 +39,7 @@ class RadarChartView: UIView {
     
 }
 
-extension RadarChartView {
+extension ECRadarChartView {
     func backgroupLineWithRadius(radius: CGFloat) {
         let linePath = UIBezierPath()
         for i in 0..<angleNum {
@@ -156,7 +156,7 @@ extension RadarChartView {
      }
 }
 
-extension RadarChartView {
+extension ECRadarChartView {
     func calcCircleCoordinate(center: CGPoint, angle: CGFloat, radius: CGFloat) -> CGPoint {
         ECLog("\(center)")
         let angleTemp : CGFloat = angle + 90.0
@@ -165,7 +165,7 @@ extension RadarChartView {
         return CGPoint(x: center.x + x ,y: center.y - y)
     }
     
-    func setupRadarChartConfig(radarChartConfig: RadarChartConfig) {
+    func setupRadarChartConfig(radarChartConfig: ECRadarChartConfig) {
         self.radarChartConfig = radarChartConfig
         setupSubView()
         backgroupStraightLine()

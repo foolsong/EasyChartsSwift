@@ -10,7 +10,7 @@ import UIKit
 
 class RadarChartViewController: UIViewController {
 
-    var radarChartView : RadarChartView!
+    var radarChartView : ECRadarChartView!
     
     
     override func viewDidLoad() {
@@ -31,10 +31,10 @@ class RadarChartViewController: UIViewController {
 
 extension RadarChartViewController {
     func setupRadarChartView() {
-        radarChartView = RadarChartView.init(frame:CGRect(x: 40, y: 120, width: 280, height: 200))
+        radarChartView = ECRadarChartView.init(frame:CGRect(x: 40, y: 120, width: 280, height: 200))
         self.view.addSubview(radarChartView)
         
-        let radarChartConfig = RadarChartConfig()
+        let radarChartConfig = ECRadarChartConfig()
         radarChartConfig.radius = 110
         radarChartConfig.drawLineTitleList = ["Execution","Thinking","Endurance","Speed","Power","Technology"]
         radarChartConfig.drawPointList = [[(0.3),(0.6),(0.8),(0.2),(0.5),(0.3)],[(0.6),(0.1),(0.4),(0.8),(0.2),(0.9)]]
@@ -44,10 +44,10 @@ extension RadarChartViewController {
     
     
     func setupRadarChartView2() {
-        radarChartView = RadarChartView.init(frame:CGRect(x: 40, y: 400, width: 280, height: 200))
+        radarChartView = ECRadarChartView.init(frame:CGRect(x: 40, y: 400, width: 280, height: 200))
         self.view.addSubview(radarChartView)
         
-        let radarChartConfig = RadarChartConfig()
+        let radarChartConfig = ECRadarChartConfig()
         radarChartConfig.radius = 110
         radarChartConfig.drawLineTitleList = ["Execution","Thinking","Endurance","Speed","Power"]
         radarChartConfig.drawPointList = [[(0.3),(0.6),(0.8),(0.2),(0.5)]]
