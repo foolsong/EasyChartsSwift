@@ -54,7 +54,7 @@ extension ECBrokenLineView {
             } else if currentNum < self.minValue {
                 pointModel.pointY = self.minValue
             } else {
-                pointModel.pointY = currentNum
+                pointModel.pointY = 100 - currentNum
             }
             
             pointModel.titleText = titleText[i]

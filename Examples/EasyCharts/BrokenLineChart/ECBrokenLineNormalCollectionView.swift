@@ -52,10 +52,15 @@ extension ECBrokenLineNormalCollectionView : UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ECBrokenLineCollectionViewCell",
                                                       for: indexPath)
-        cell.layer.borderWidth = 3
-        cell.layer.borderColor = UIColor.ECRandomColor.cgColor
-        cell.backgroundColor = UIColor.ECRandomColor
+        cell.layer.borderWidth = 0.5
+//        cell.layer.borderColor = UIColor.ECRandomColor.cgColor
+//        cell.backgroundColor = UIColor.ECRandomColor
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+         let cell = cell as! ECBrokenLineCollectionViewCell
+        cell.configureCell(pointYList: self.pointModelList, index: indexPath.row)
     }
 }
 
@@ -67,7 +72,7 @@ extension ECBrokenLineNormalCollectionView {
 
 extension ECBrokenLineNormalCollectionView {
     func reloadCollectionData(modelList: [ECBrokenLinePointModel]) {
-        
+        self.pointModelList = modelList
         self.reloadData()
     }
 }
