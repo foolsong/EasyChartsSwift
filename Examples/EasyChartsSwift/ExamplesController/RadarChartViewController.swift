@@ -24,7 +24,7 @@ class RadarChartViewController: UIViewController {
     }
     
     func configOwnProperties() {
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = ECBackgroundColor
     }
 }
 

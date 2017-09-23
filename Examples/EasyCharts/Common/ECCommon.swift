@@ -25,9 +25,11 @@ let  ECScreenW =  UIScreen.main.bounds.size.width
 
 let  ECScreenH =  UIScreen.main.bounds.size.height
 
+let ECBackgroundColor = UIColor(red: (240)/255.0, green: (240)/255.0, blue: (240)/255.0, alpha: 1.0)
+
 extension UIColor {
     //返回随机颜色
-    class var randomColor: UIColor {
+    class var ECRandomColor: UIColor {
         get {
             let red = CGFloat(arc4random() % 256) / 255.0
             let green = CGFloat(arc4random() % 256) / 255.0

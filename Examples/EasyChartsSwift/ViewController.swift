@@ -57,11 +57,17 @@ extension ViewController :UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 4 {
+        if indexPath.row == 1 {
+            jump2BrokenLineViewController()
+        } else if indexPath.row == 4 {
             jump2PieChartViewController()
         } else if indexPath.row == 5 {
             jump2RadarChartViewController()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -72,5 +78,9 @@ extension ViewController {
     
     func jump2PieChartViewController() {
         self.navigationController?.pushViewController(PieChartViewController(), animated:true)
+    }
+    
+    func jump2BrokenLineViewController() {
+        self.navigationController?.pushViewController(BrokenLineViewController(), animated: true)
     }
 }

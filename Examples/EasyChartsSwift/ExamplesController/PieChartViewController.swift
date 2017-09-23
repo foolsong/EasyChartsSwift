@@ -31,7 +31,7 @@ class PieChartViewController: UIViewController {
     }
     
     func configOwnProperties() {
-        self.view.backgroundColor = UIColor.white
+        self.view.backgroundColor = ECBackgroundColor
     }
 }
 
@@ -48,7 +48,7 @@ extension PieChartViewController{
                                   arcTextList: self.arcTextList)
     }
     
-    func setupTestButton() {
+    private func setupTestButton() {
         let width : CGFloat = 80;
         let height : CGFloat = 40;
         let x : CGFloat = (ECScreenW - width) * 0.5;
@@ -93,7 +93,7 @@ extension PieChartViewController{
     func randomColorList() {
         var colorMutableList : [UIColor] = NSMutableArray() as! [UIColor]
         for _ in 0..<self.percentList.count {
-            colorMutableList.insert(UIColor.randomColor, at: 0)
+            colorMutableList.insert(UIColor.ECRandomColor, at: 0)
         }
         self.colorList = colorMutableList
     }

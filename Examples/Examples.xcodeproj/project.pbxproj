@@ -16,6 +16,8 @@
 		844DB0CD1F6F8D14000E3309 /* RadarChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844DB0CC1F6F8D14000E3309 /* RadarChartViewController.swift */; };
 		84914CB71F7379D6004841F3 /* ECRadarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84914CB61F7379D6004841F3 /* ECRadarChartView.swift */; };
 		84914CBA1F74A746004841F3 /* ECBrokenLineCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84914CB91F74A745004841F3 /* ECBrokenLineCollectionView.swift */; };
+		84914CBC1F74AECF004841F3 /* ECBrokenLineNormalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84914CBB1F74AECF004841F3 /* ECBrokenLineNormalCollectionView.swift */; };
+		84914CBE1F761FF8004841F3 /* BrokenLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84914CBD1F761FF8004841F3 /* BrokenLineViewController.swift */; };
 		84F830891F6FB5E100FD1891 /* ECRadarChartConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F830881F6FB5E100FD1891 /* ECRadarChartConfig.swift */; };
 		84F830911F70BA2100FD1891 /* ECPieChartCoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F830901F70BA2100FD1891 /* ECPieChartCoreView.swift */; };
 		84F830931F70BFA400FD1891 /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F830921F70BFA400FD1891 /* PieChartViewController.swift */; };
@@ -36,6 +38,8 @@
 		844DB0CC1F6F8D14000E3309 /* RadarChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarChartViewController.swift; sourceTree = "<group>"; };
 		84914CB61F7379D6004841F3 /* ECRadarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECRadarChartView.swift; sourceTree = "<group>"; };
 		84914CB91F74A745004841F3 /* ECBrokenLineCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECBrokenLineCollectionView.swift; sourceTree = "<group>"; };
+		84914CBB1F74AECF004841F3 /* ECBrokenLineNormalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECBrokenLineNormalCollectionView.swift; sourceTree = "<group>"; };
+		84914CBD1F761FF8004841F3 /* BrokenLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrokenLineViewController.swift; sourceTree = "<group>"; };
 		84F830881F6FB5E100FD1891 /* ECRadarChartConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ECRadarChartConfig.swift; sourceTree = "<group>"; };
 		84F830901F70BA2100FD1891 /* ECPieChartCoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ECPieChartCoreView.swift; sourceTree = "<group>"; };
 		84F830921F70BFA400FD1891 /* PieChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 			children = (
 				844DB0CC1F6F8D14000E3309 /* RadarChartViewController.swift */,
 				84F830921F70BFA400FD1891 /* PieChartViewController.swift */,
+				84914CBD1F761FF8004841F3 /* BrokenLineViewController.swift */,
 			);
 			name = ExamplesController;
 			path = EasyChartsSwift/ExamplesController;
@@ -128,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				84914CB91F74A745004841F3 /* ECBrokenLineCollectionView.swift */,
+				84914CBB1F74AECF004841F3 /* ECBrokenLineNormalCollectionView.swift */,
 			);
 			path = BrokenLineChart;
 			sourceTree = "<group>";
@@ -224,8 +230,10 @@
 				84F830911F70BA2100FD1891 /* ECPieChartCoreView.swift in Sources */,
 				84F830951F70C1BD00FD1891 /* ECPieChartConfig.swift in Sources */,
 				84914CBA1F74A746004841F3 /* ECBrokenLineCollectionView.swift in Sources */,
+				84914CBE1F761FF8004841F3 /* BrokenLineViewController.swift in Sources */,
 				841DF4E81F72174100FCA427 /* ECCommon.swift in Sources */,
 				84F830891F6FB5E100FD1891 /* ECRadarChartConfig.swift in Sources */,
+				84914CBC1F74AECF004841F3 /* ECBrokenLineNormalCollectionView.swift in Sources */,
 				84F830931F70BFA400FD1891 /* PieChartViewController.swift in Sources */,
 				844DB0CD1F6F8D14000E3309 /* RadarChartViewController.swift in Sources */,
 				84914CB71F7379D6004841F3 /* ECRadarChartView.swift in Sources */,
