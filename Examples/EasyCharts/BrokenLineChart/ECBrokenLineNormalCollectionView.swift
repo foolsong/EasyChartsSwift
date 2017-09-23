@@ -10,6 +10,7 @@ import UIKit
 
 class ECBrokenLineNormalCollectionView: ECBrokenLineCollectionView {
 
+    var pointModelList : [ECBrokenLinePointModel] = []
     let collectionViewFrame : CGRect?
     
     init(frame: CGRect) {
@@ -45,7 +46,7 @@ class ECBrokenLineNormalCollectionView: ECBrokenLineCollectionView {
 
 extension ECBrokenLineNormalCollectionView : UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return self.pointModelList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -61,5 +62,12 @@ extension ECBrokenLineNormalCollectionView : UICollectionViewDelegate, UICollect
 extension ECBrokenLineNormalCollectionView {
     fileprivate func cellWidth() -> CGFloat {
         return self.collectionViewFrame!.size.width * 0.2
+    }
+}
+
+extension ECBrokenLineNormalCollectionView {
+    func reloadCollectionData(modelList: [ECBrokenLinePointModel]) {
+        
+        self.reloadData()
     }
 }

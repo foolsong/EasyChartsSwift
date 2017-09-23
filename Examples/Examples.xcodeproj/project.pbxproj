@@ -20,6 +20,7 @@
 		84914CBE1F761FF8004841F3 /* BrokenLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84914CBD1F761FF8004841F3 /* BrokenLineViewController.swift */; };
 		84914CC01F7626F0004841F3 /* ECBrokenLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84914CBF1F7626F0004841F3 /* ECBrokenLineView.swift */; };
 		84914CC21F7632AF004841F3 /* ECBrokenLineCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84914CC11F7632AF004841F3 /* ECBrokenLineCollectionViewCell.swift */; };
+		84914CC41F7669AE004841F3 /* ECBrokenLinePointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84914CC31F7669AE004841F3 /* ECBrokenLinePointModel.swift */; };
 		84F830891F6FB5E100FD1891 /* ECRadarChartConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F830881F6FB5E100FD1891 /* ECRadarChartConfig.swift */; };
 		84F830911F70BA2100FD1891 /* ECPieChartCoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F830901F70BA2100FD1891 /* ECPieChartCoreView.swift */; };
 		84F830931F70BFA400FD1891 /* PieChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F830921F70BFA400FD1891 /* PieChartViewController.swift */; };
@@ -44,6 +45,7 @@
 		84914CBD1F761FF8004841F3 /* BrokenLineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrokenLineViewController.swift; sourceTree = "<group>"; };
 		84914CBF1F7626F0004841F3 /* ECBrokenLineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECBrokenLineView.swift; sourceTree = "<group>"; };
 		84914CC11F7632AF004841F3 /* ECBrokenLineCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECBrokenLineCollectionViewCell.swift; sourceTree = "<group>"; };
+		84914CC31F7669AE004841F3 /* ECBrokenLinePointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECBrokenLinePointModel.swift; sourceTree = "<group>"; };
 		84F830881F6FB5E100FD1891 /* ECRadarChartConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ECRadarChartConfig.swift; sourceTree = "<group>"; };
 		84F830901F70BA2100FD1891 /* ECPieChartCoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ECPieChartCoreView.swift; sourceTree = "<group>"; };
 		84F830921F70BFA400FD1891 /* PieChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PieChartViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				84914CBB1F74AECF004841F3 /* ECBrokenLineNormalCollectionView.swift */,
 				84914CBF1F7626F0004841F3 /* ECBrokenLineView.swift */,
 				84914CC11F7632AF004841F3 /* ECBrokenLineCollectionViewCell.swift */,
+				84914CC31F7669AE004841F3 /* ECBrokenLinePointModel.swift */,
 			);
 			path = BrokenLineChart;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				84914CBC1F74AECF004841F3 /* ECBrokenLineNormalCollectionView.swift in Sources */,
 				84F830931F70BFA400FD1891 /* PieChartViewController.swift in Sources */,
 				844DB0CD1F6F8D14000E3309 /* RadarChartViewController.swift in Sources */,
+				84914CC41F7669AE004841F3 /* ECBrokenLinePointModel.swift in Sources */,
 				84914CC01F7626F0004841F3 /* ECBrokenLineView.swift in Sources */,
 				84914CB71F7379D6004841F3 /* ECRadarChartView.swift in Sources */,
 			);
