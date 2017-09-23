@@ -2,16 +2,21 @@
 //  ECBrokenLineNormalCollectionView.swift
 //  Examples
 //
-//  Created by 宋永建 on 2017/9/22.
-//  Copyright © 2017年 Global. All rights reserved.
+//  Created by yjSong on 2017/9/22.
+//  Copyright © 2017 Global. All rights reserved.
 //
 
 import UIKit
 
 class ECBrokenLineNormalCollectionView: ECBrokenLineCollectionView {
 
-    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
-        super.init(frame: frame, collectionViewLayout: layout)
+    let collectionViewFrame : CGRect?
+    
+    init(frame: CGRect) {
+        self.collectionViewFrame = frame
+        super.init(frame: frame, collectionViewLayout: collectionViewLayout())
+        
+        setupCollectionView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -19,8 +24,22 @@ class ECBrokenLineNormalCollectionView: ECBrokenLineCollectionView {
     }
     
     func setupCollectionView() {
+        self.backgroundColor = UIColor.white
+        self.register(ECBrokenLineCollectionViewCell.self,
+                      forCellWithReuseIdentifier: "ECBrokenLineCollectionViewCell")
         self.dataSource = self
         self.delegate = self
+        self.showsVerticalScrollIndicator = false
+        self.showsHorizontalScrollIndicator = false
+        self.contentInset = UIEdgeInsetsMake(0, cellWidth() * 2, 0, cellWidth() * 2)
+    }
+    
+    private func collectionViewLayout() -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout.init()
+        layout.itemSize = CGSize.init(width: cellWidth(), height: 200)
+        layout.minimumLineSpacing = 0
+        layout.scrollDirection = .horizontal
+        return layout
     }
 }
 
@@ -30,8 +49,17 @@ extension ECBrokenLineNormalCollectionView : UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ECBrokenLineCollectionViewCell",
+                                                      for: indexPath)
+        cell.layer.borderWidth = 3
+        cell.layer.borderColor = UIColor.ECRandomColor.cgColor
+        cell.backgroundColor = UIColor.ECRandomColor
+        return cell
     }
-    
-    
+}
+
+extension ECBrokenLineNormalCollectionView {
+    fileprivate func cellWidth() -> CGFloat {
+        return self.collectionViewFrame!.size.width * 0.2
+    }
 }
