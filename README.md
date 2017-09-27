@@ -106,6 +106,8 @@ Data filling:
 <img src="https://github.com/foolsong/EasyCharts/blob/master/gif/EC_RadarChart.gif"  width=300 alt="EC_lineCenterView" />
 
 
+### ProgressView
+
 Initialization--Just transfer `frame`.
 
 ```swift
