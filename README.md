@@ -105,6 +105,28 @@ Data filling:
 
 <img src="https://github.com/foolsong/EasyCharts/blob/master/gif/EC_RadarChart.gif"  width=300 alt="EC_lineCenterView" />
 
+
+Initialization--Just transfer `frame`.
+
+```swift
+self.progressView = ECProgressChartView.init(frame: CGRect(x: (ECScreenW - 200) * 0.5,
+                                                                                                    y: 100,
+                                                                                                   width: 200,
+                                                                                                   height: 200))
+self.view.addSubview(progressView!)
+```
+
+Data filling：
+
+```swift
+ let progress = CGFloat(arc4random_uniform(100)) / 100.0
+ self.progressView?.resetProgress(progress: progress)
+```
+
+**The effect of ProgressView:**
+
+<img src="https://github.com/foolsong/EasyCharts/blob/master/gif/EC_%20ProgressView_gif.gif"  width=300 alt="EC_lineCenterView" />
+
 ## Communication
 
 * If you found a bug, and can provide steps to reliably reproduce it, open an issue.
