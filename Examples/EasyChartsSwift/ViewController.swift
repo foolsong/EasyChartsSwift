@@ -57,6 +57,11 @@ extension ViewController :UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.row == 3 {
+            jump2ProgressChartViewController()
+        }
+        
         if indexPath.row == 4 {
             jump2PieChartViewController()
         } else if indexPath.row == 5 {
@@ -72,5 +77,8 @@ extension ViewController {
     
     func jump2PieChartViewController() {
         self.navigationController?.pushViewController(PieChartViewController(), animated:true)
+    }
+    func jump2ProgressChartViewController() {
+        self.navigationController?.pushViewController(ProgressChartViewController(), animated: true)
     }
 }

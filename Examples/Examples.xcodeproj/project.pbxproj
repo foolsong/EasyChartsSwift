@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840E884E1F7A6F300006580C /* ECProgressChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E884D1F7A6F300006580C /* ECProgressChartView.swift */; };
+		840E88501F7A85390006580C /* ProgressChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840E884F1F7A85390006580C /* ProgressChartViewController.swift */; };
 		841DF4E81F72174100FCA427 /* ECCommon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841DF4E71F72174100FCA427 /* ECCommon.swift */; };
 		844DB0BA1F6EDB29000E3309 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844DB0B91F6EDB29000E3309 /* AppDelegate.swift */; };
 		844DB0BC1F6EDB29000E3309 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844DB0BB1F6EDB29000E3309 /* ViewController.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		840E884D1F7A6F300006580C /* ECProgressChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ECProgressChartView.swift; sourceTree = "<group>"; };
+		840E884F1F7A85390006580C /* ProgressChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressChartViewController.swift; sourceTree = "<group>"; };
 		841DF4E71F72174100FCA427 /* ECCommon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ECCommon.swift; sourceTree = "<group>"; };
 		844DB0B61F6EDB29000E3309 /* Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		844DB0B91F6EDB29000E3309 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +59,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		840E884C1F7A6F080006580C /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				840E884D1F7A6F300006580C /* ECProgressChartView.swift */,
+			);
+			path = ProgressView;
+			sourceTree = "<group>";
+		};
 		841DF4E61F72174100FCA427 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +111,7 @@
 			children = (
 				844DB0CC1F6F8D14000E3309 /* RadarChartViewController.swift */,
 				84F830921F70BFA400FD1891 /* PieChartViewController.swift */,
+				840E884F1F7A85390006580C /* ProgressChartViewController.swift */,
 			);
 			name = ExamplesController;
 			path = EasyChartsSwift/ExamplesController;
@@ -107,6 +120,7 @@
 		844DB0CE1F6F9753000E3309 /* EasyCharts */ = {
 			isa = PBXGroup;
 			children = (
+				840E884C1F7A6F080006580C /* ProgressView */,
 				84914CB81F74A6A4004841F3 /* BrokenLineChart */,
 				841DF4E61F72174100FCA427 /* Common */,
 				84F8308F1F70B85800FD1891 /* PieChart */,
@@ -221,7 +235,9 @@
 				84F830991F70F3CD00FD1891 /* ECPieChartLineView.swift in Sources */,
 				84F830971F70C9F400FD1891 /* ECPieChartView.swift in Sources */,
 				844DB0BA1F6EDB29000E3309 /* AppDelegate.swift in Sources */,
+				840E88501F7A85390006580C /* ProgressChartViewController.swift in Sources */,
 				84F830911F70BA2100FD1891 /* ECPieChartCoreView.swift in Sources */,
+				840E884E1F7A6F300006580C /* ECProgressChartView.swift in Sources */,
 				84F830951F70C1BD00FD1891 /* ECPieChartConfig.swift in Sources */,
 				84914CBA1F74A746004841F3 /* ECBrokenLineCollectionView.swift in Sources */,
 				841DF4E81F72174100FCA427 /* ECCommon.swift in Sources */,
