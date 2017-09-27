@@ -112,9 +112,9 @@ Initialization--Just transfer `frame`.
 
 ```swift
 self.progressView = ECProgressChartView.init(frame: CGRect(x: (ECScreenW - 200) * 0.5,
-                                                                                                    y: 100,
-                                                                                                   width: 200,
-                                                                                                   height: 200))
+                                                                   y: 100,
+                                                                   width: 200,
+                                                                   height: 200))
 self.view.addSubview(progressView!)
 ```
 
