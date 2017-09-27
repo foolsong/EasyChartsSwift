@@ -12,6 +12,7 @@ class ProgressChartViewController: UIViewController {
 
     var radarChartView : ECRadarChartView!
     var progressView : ECProgressChartView?
+    var progressLabel: UILabel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,7 @@ extension ProgressChartViewController {
     func setupSubviews() {
         setupProgressChartView()
         setupTestButton()
+        setupProgressLable()
     }
     
     func setupProgressChartView() {
@@ -60,7 +62,23 @@ extension ProgressChartViewController {
         self.view.addSubview(button)
     }
     
+    func setupProgressLable() {
+        let width : CGFloat = 80;
+        let height : CGFloat = 40;
+        let x : CGFloat = (ECScreenW - width) * 0.5;
+        let y : CGFloat = (self.progressView?.frame.maxY)! + 80;
+        
+        self.progressLabel = UILabel(frame: CGRect(x: x, y: y, width: width, height: height))
+        self.progressLabel?.tintColor = UIColor.black
+        self.progressLabel?.text = "0%"
+        self.progressLabel?.textAlignment = .center
+        self.view.addSubview(self.progressLabel!)
+    }
+    
     @objc func testButtonClick(button:UIButton) {
-        self.progressView?.resetProgress(progress: CGFloat(arc4random_uniform(100)) / 100.0)
+        let progress = CGFloat(arc4random_uniform(100)) / 100.0
+        
+        self.progressView?.resetProgress(progress: progress)
+        self.progressLabel?.text = String(stringInterpolationSegment: progress * 100) + "%"
     }
 }
