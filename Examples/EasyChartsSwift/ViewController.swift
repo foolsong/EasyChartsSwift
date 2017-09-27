@@ -58,7 +58,7 @@ extension ViewController :UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        if indexPath.row == 3 {
+        if indexPath.row == 2 {
             jump2ProgressChartViewController()
         }
         
