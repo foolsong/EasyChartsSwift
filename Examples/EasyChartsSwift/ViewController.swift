@@ -71,14 +71,15 @@ extension ViewController :UITableViewDelegate,UITableViewDataSource {
 }
 
 extension ViewController {
-    func jump2RadarChartViewController() {
+    fileprivate func jump2RadarChartViewController() {
         self.navigationController?.pushViewController(RadarChartViewController(), animated:true)
     }
     
-    func jump2PieChartViewController() {
+    fileprivate func jump2PieChartViewController() {
         self.navigationController?.pushViewController(PieChartViewController(), animated:true)
     }
-    func jump2ProgressChartViewController() {
+    
+    fileprivate func jump2ProgressChartViewController() {
         self.navigationController?.pushViewController(ProgressChartViewController(), animated: true)
     }
 }

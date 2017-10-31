@@ -69,7 +69,7 @@ extension ECProgressChartView {
 
 extension ECProgressChartView {
     
-    func drawBackGroupCircle() {
+    fileprivate func drawBackGroupCircle() {
         let backGroupColor : UIColor = UIColor(red: 255 / 255.0, green: 179 / 255.0,
                                                blue: 0 / 255.0, alpha: 1.0)
         let _ = drawCircle(lineWidth: 13.0, lineColor: backGroupColor)
@@ -79,27 +79,27 @@ extension ECProgressChartView {
         let _ = drawCircle(lineWidth: 5.0, lineColor: backLinecolor)
     }
     
-    func animationChangeProgress() {
+    fileprivate func animationChangeProgress() {
         self.progressPathAnima.fromValue = self.fromValue
         self.progressPathAnima.toValue = self.toValue
         self.progresShapeLayer.add(self.progressPathAnima, forKey: "strokeEndAnimation")
     }
     
-    func setDefaultValue() {
+    fileprivate func setDefaultValue() {
         self.fromValue = 0
         self.toValue = 0
         self.currentProgress = 0
         resetProgress(progress: self.currentProgress)
     }
     
-    func computerRadiusAndCircleCenter(frame: CGRect) {
+    fileprivate func computerRadiusAndCircleCenter(frame: CGRect) {
         let sideLength: CGFloat = frame.size.width > frame.size.height ?
             frame.size.height: frame.size.width;
         self.radius = (sideLength - 13) * 0.5
         self.circleCenter = CGPoint(x: frame.size.width * 0.5, y: frame.size.height * 0.5)
     }
     
-    func hideProgresShapeLayerIfNeeded() {
+    fileprivate func hideProgresShapeLayerIfNeeded() {
         if self.currentProgress * 100 == 0 {
             DispatchQueue.main.asyncAfter(deadline: .now() + ECAnimationDuration, execute: {
                 if self.currentProgress * 100 == 0 {

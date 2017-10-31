@@ -42,8 +42,6 @@ extension ProgressChartViewController {
                                                                    width: 200,
                                                                    height: 200))
         self.view.addSubview(progressView!)
-        
-//        self.progressView?.resetProgress(progress: 0.4)
     }
     
     func setupTestButton() {

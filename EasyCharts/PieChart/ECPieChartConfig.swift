@@ -47,18 +47,18 @@ class ECPieChartConfig: NSObject {
 }
 
 extension ECPieChartConfig {
-    func computerEndAngle() {
+    fileprivate func computerEndAngle() {
         self.endAngle = self.startAngle + 2.0 * CGFloat.pi * self.arcPercent
         self.offset = 10
     }
     
-    func computerArcCenterPoint() {
+    fileprivate func computerArcCenterPoint() {
         let pointX : CGFloat = self.arcCenter.x + 76.5 * cos(self.endAngle - (CGFloat.pi * self.arcPercent))
         let pointY : CGFloat = self.arcCenter.y + 76.5 * sin(self.endAngle - (CGFloat.pi * self.arcPercent))
         self.arcCenterPoint = CGPoint(x: pointX, y: pointY)
     }
     
-    func computerLinePoint() {
+    fileprivate func computerLinePoint() {
         if (self.arcCenterPoint.x >= self.arcCenter.x  && self.arcCenterPoint.y <= self.arcCenter.y) {
             fourthQuadrant()
             self.arcCenterQuadrant = .ArcCenterQuadrantFourth
@@ -74,22 +74,22 @@ extension ECPieChartConfig {
         }
     }
     
-    func firstQuadrant() {
+    fileprivate func firstQuadrant() {
         self.textLeftCenterPoint = CGPoint(x: ECScreenW - 64, y:self.arcCenterPoint.y + self.offset)
         self.inflectionPoint = CGPoint(x:self.arcCenterPoint.x + self.offset, y: self.textLeftCenterPoint.y)
     }
     
-    func secondQuadrant() {
+    fileprivate func secondQuadrant() {
         self.textLeftCenterPoint = CGPoint(x: 60.0, y: self.arcCenterPoint.y + self.offset)
         self.inflectionPoint = CGPoint(x: self.arcCenterPoint.x - self.offset, y: self.textLeftCenterPoint.y)
     }
     
-    func thirdQuadrant() {
+    fileprivate func thirdQuadrant() {
         self.textLeftCenterPoint = CGPoint(x: 60, y: self.arcCenterPoint.y - self.offset)
         self.inflectionPoint = CGPoint(x: self.arcCenterPoint.x - self.offset, y: self.textLeftCenterPoint.y)
     }
     
-    func fourthQuadrant() {
+    fileprivate func fourthQuadrant() {
         self.textLeftCenterPoint = CGPoint(x: ECScreenW - 64, y: self.arcCenterPoint.y - 10)
         self.inflectionPoint = CGPoint(x: self.arcCenterPoint.x + 10, y: self.textLeftCenterPoint.y)
     }

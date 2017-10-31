@@ -15,14 +15,12 @@ func ECLog<T>(_ message : T, file : String = #file, funcName : String = #functio
     #if DEBUG
         
         let fileName = (file as NSString).lastPathComponent
-        
         print("\(fileName):\(lineNum)   \t-->\(message)");
         
     #endif
 }
 
 let  ECScreenW =  UIScreen.main.bounds.size.width
-
 let  ECScreenH =  UIScreen.main.bounds.size.height
 
 extension UIColor {
